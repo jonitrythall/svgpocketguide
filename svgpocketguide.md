@@ -346,7 +346,7 @@ The <line> element defines a straight line with a start and end point.
 
 ![Line](images/basicline.png)
 
-Together the `x1` and `y1` values establish the coordinates for the start of the line, while the `y1` and `y2` values establish the end of the line. 
+Together the `x1` and `y1` values establish the coordinates for the start of the line, while the `x2` and `y2` values establish the end of the line. 
 
 #### Polyline
 
