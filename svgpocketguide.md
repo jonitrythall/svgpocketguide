@@ -136,13 +136,13 @@ Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/us
 
 Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende adicionar habilidades diretamente no próprio gráfico ou se necessitar de um acesso a dois arquivos individuais por exemplo, usá-lo com um `<img>` talvez seja melhor adequado ao seu projeto.  
 
-#### Vector Graphic Software
+#### Sofwares de Vetor Gráfico
 
-Vector graphic software options can be useful when looking to create more complex graphics that wouldn't be reasonable to write "by hand". Software such as [Adobe Illustrator](http://www.adobe.com/products/illustrator.html), [Inkscape](http://www.inkscape.org/en/), [Sketch](http://bohemiancoding.com/sketch/), [iDraw](http://www.indeeo.com/idraw/), or [WebCode](http://www.webcodeapp.com/) can be useful tools to add to your SVG bag of tricks.
+Softwares de vetor gráfico são opções quando você está procurando criar gráficos mais complexos que não existiria uma razão para escrevê-los a mão. Sotwares como [Adobe Illustrator](http://www.adobe.com/products/illustrator.html), [Inkscape](http://www.inkscape.org/en/), [Sketch](http://bohemiancoding.com/sketch/), [iDraw](http://www.indeeo.com/idraw/), ou [WebCode](http://www.webcodeapp.com/) podem ser ferramentas úteis para adicionar ao seu SVG uma maleta de truques.
 
-The advantage to these types of tools is that you can export their SVG code and embed it right into your HTML. We'll touch on that a bit later.
+A vantagem destes tipos de ferramentas é que você pode exportar seu código SVG e incorporá-lo diretamente em seu HTML. Vamos tocar nisso um pouco adiante.
 
-#### Inline SVG on the Web
+#### *Inline* SVG na Web
 
 For the sake of brevity throughout this book the SVG DOCTYPE, version number, [`xmlns`](http://www.w3.org/TR/REC-xml-names/), and [`xml:space`](http://www.w3.org/TR/2004/REC-xml11-20040204/#sec-white-space) have been excluded from all code samples.
 
