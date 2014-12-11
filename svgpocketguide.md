@@ -110,20 +110,21 @@ Your support for this book is so appreciated and I truly hope I have not offende
 	* Clipping Path
 * Conclusion
 		
-## Introduction 
+## Introdução  
 
-Scalable Vector Graphics (SVG) is a language for describing two-dimensional graphics in XML. These graphics can consist of paths, images, and/or text that are able to be scaled and resized without losing image quality. 
+Scalable Vector Graphics (SVG) é uma linguagem para descrever gráficos bidimensionais baseada no padrão XML. Esses gráficos consistem em caminhos, imagens e/ou textos capazes de serem escalados e redimensionados sem perder a qualidade de imagem.
 
-Inline SVG refers to the embedded code written within HTML to generate these graphics in a browser, which will be the focus of this book.
+Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML para gerar esses gráficos no browser, o qual inclusive, será o foco deste livro.
 
-There are many advantages to using SVG this way, including having access to all the graphic's individual parts for interactivity purposes, generating searchable text, DOM access for direct edits, and promoting user accessibility. 
+Existem muitas vantagens em usar o SVG dessa maneira, incluindo ter acesso a todos os gráficos, partes individuais com propósitos de individualidade, gerando textos pesquisáveis, acesso ao DOM para edições diretas, e promovendo a acessibilidade ao usuário.
 
-Starting with basic organization and simple shapes, we'll then continue on to describe the SVG coordinate system or "canvas", painting a graphic's interior and/or border, transforms, and using and manipulating graphical text. We'll wrap up by touching on more advanced features such as gradients and patterns.
 
-This guide is meant to provide a quick but thorough introduction to building SVG inline, and while it in no way covers all the available features, it should prove helpful in getting you started. It's intended for designers and developers looking to add SVG to their workflow in the most accessible way possible. 
+Começando com a organização básica e formatos simples, nós vamos então continuar a descrever o sistema de coordadenadas do SVG ou "canvas", pintando o interior do gráfico e/ou sua borda, transformando-o, e usando a "manipulação gráfica" do texto. Só então vamos acrescentá-lo com toques e técnicas mais avançadas como gradientes e moldes.
 
-From small stroke details to getting started with hand crafted patterns, this guide is intended to be an all around “go-to” reference for writing SVG.
 
+Esse guia tem o propósito de fornecer uma rápida porém consistente introdução para se construir SVG *inline*, e ao mesmo tempo, de forma alguma, abrange todos os recursos disponíveis, portanto, deve ser útil no processo de inicialização de Designers e Desenvolvedores que desejam adicionar o SVG em seu *workflow* de maneira mais acessível possível.
+
+A partir de pequenos detalhes de escrita, este livro pretende auxiliar aqueles que buscam de maneira mais mecânica e artesanal, este guia pretende ser um todo *"go-to"* referência para a escrita de SVG.
 
 ### Before You Begin
 
