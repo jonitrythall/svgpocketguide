@@ -124,11 +124,11 @@ Começando com a organização básica e formatos simples, nós vamos então con
 
 Esse guia tem o propósito de fornecer uma rápida porém consistente introdução para se construir SVG *inline*, e ao mesmo tempo, de forma alguma, abrange todos os recursos disponíveis, portanto, deve ser útil no processo de inicialização de Designers e Desenvolvedores que desejam adicionar o SVG em seu *workflow* de maneira mais acessível possível.
 
-A partir de pequenos detalhes de escrita, este livro pretende auxiliar aqueles que buscam de maneira mais mecânica e artesanal, este guia pretende ser um todo *"go-to"* referência para a escrita de SVG.
+A partir de pequenos detalhes de escrita, este livro pretende auxiliar aqueles que buscam utilizar o SCG de maneira mais mecânica e artesanal, este guia pretende ser um todo *"go-to"* referência para a escrita de SVG.
 
-### Before You Begin
+### Antes de você começar
 
-While this "Pocket Guide" is intended for those that already know a thing or two about HTML and CSS, there are a few additional things that will be helpful to know before diving into SVG code in your favorite browser, such as: the information needed within the SVG fragment for proper rendering, how to make your graphics as accessible as possible, and knowing how and when to use vector graphic software.
+Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa ou duas sobre HTML e CSS, existem algumas coisas adicionais que serão úteis em saber antes de aprofundar no código SVG em seu *browser* favorito, tais como: A informação necessária dentro do fragmento SVG para a renderização adequada, otimizsção de gráficos fazendo-os tão acessíveis quanto possível, e também para saber como e quando usar software geradores de vetores gráficos.
 
 #### Using SVG
 
