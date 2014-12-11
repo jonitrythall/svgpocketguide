@@ -128,13 +128,13 @@ A partir de pequenos detalhes de escrita, este livro pretende auxiliar aqueles q
 
 ### Antes de você começar
 
-Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa ou duas sobre HTML e CSS, existem algumas coisas adicionais que serão úteis em saber antes de aprofundar no código SVG em seu *browser* favorito, tais como: A informação necessária dentro do fragmento SVG para a renderização adequada, otimizsção de gráficos fazendo-os tão acessíveis quanto possível, e também para saber como e quando usar software geradores de vetores gráficos.
+Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa ou duas sobre HTML e CSS, existem algumas coisas adicionais que serão úteis em saber antes de aprofundar no código SVG em seu *browser* favorito, tais como: A informação necessária dentro do fragmento SVG para a renderização adequada, otimização de gráficos fazendo-os tão acessíveis quanto possível, e também para saber como e quando usar software geradores de vetores gráficos.
 
-#### Using SVG
+#### Usando SVG
 
-There are [a number of ways to include SVG](http://css-tricks.com/using-svg/) in your projects: inline, an `<img>`, a background-image, an `<object>`, or as Data URI's. We will be specifically addressing the use of SVG inline which involves writing SVG code within the body of a properly structured HTML document. 
+Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/using-svg/) em seus projetos: *inline*, com a tag `<img>`, como  *background-image*, com `<object>`, ou como *Data URI's*. Estaremos, de maneira específica, abordando o uso do SVG *inline* que envolve a escrita de código SVG diretamente dentro do corpo de um documento HTML devidamente estruturado. 
 
-So while we will only be addressing inline SVG here, there may be instances where another method may be more appropriate. For example, if you do not need editing abilities of the graphic itself or access to its individual parts, using it as an `<img>` may better suit your project. 
+Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende adicionar habilidades diretamente no próprio gráfico ou se necessitar de um acesso a dois arquivos individuais por exemplo, usá-lo com um `<img>` talvez seja melhor adequado ao seu projeto.  
 
 #### Vector Graphic Software
 
