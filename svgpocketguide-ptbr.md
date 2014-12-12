@@ -156,15 +156,15 @@ Vamos dar uma olhada nestes atributos agora, em um exemplo de código SVG gerado
 
 Na maioria dos casos o DOCTYPE e seus atributos dentro do elemento `<svg>` não são essenciais para que seu gráfico seja renderizados e podem ser descartados, substancialmente com o objetivo de "limpar" seu código.	
 
-#### SVG User Accessibility
+#### SVG - Acessibilidade do Usuário
 
-Utilizing [SVG accessibility](http://www.sitepoint.com/tips-accessible-svg/) features is a great habit to form, but again for the sake of brevity, descriptions and titles will not be included within the code throughout the book. 
+Utilizando [Acessibilidade SVG](http://www.sitepoint.com/tips-accessible-svg/) como mensionado, traz boas práticas ao projeto, mas novamente por questão de brevidade, descrições e títulos não serão incluídos no código no decorrer deste livro.
 
-Once you become more experienced writing SVG including these elements is going to make your graphics more accessible to users. For instance, content within the `<desc>` element allows you to provide a detailed description of a graphic to users with screen readers. 
+Uma vez quevocê se torne mais experiente ao escrever o SVG, a inclusão desses elementos irá tornar seus gráficos mais acessíveis aos usuários. Por exemplo, o conteúdo dentro do elemento `<desc>` permite o fornecimento de uma descrição detalhada de gráficos para usuários com *screen readers*.
 
-SVG text also provides a huge advantage over traditional raster-based images in terms of accessibility because SVG text is detected and read, and can easily be resized to accommodate specific reading preferences. 
+O texto em SVG também possui uma enorme vantagem sobre imagens baseadas em *raster* tradicionais em termos de acessibilidade. Isto porque o texto em SVG pode ser detectado e lido pelo *browser*, e pode facilmente ser redimensionado para acomodar as preferências específicas de leitura. 
 
-#### General Notes
+#### Notas Gerais
 
 A couple more general notes before diving in: the fonts used for the demos throughout the book are available through [Google Fonts](https://www.google.com/fonts). While you will see this spelled out through `font-family` here, what you will not see, and will have to include in your document, is the correlating `link` or `@import` obtained from Google Fonts.
 
