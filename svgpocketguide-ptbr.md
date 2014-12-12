@@ -166,7 +166,7 @@ O texto em SVG também possui uma enorme vantagem sobre imagens baseadas em *ras
 
 #### Notas Gerais
 
-A couple more general notes before diving in: the fonts used for the demos throughout the book are available through [Google Fonts](https://www.google.com/fonts). While you will see this spelled out through `font-family` here, what you will not see, and will have to include in your document, is the correlating `link` or `@import` obtained from Google Fonts.
+Um pouco mais de notas gerais antes de você mergulhar no livro: As fontes usadas ao longo deste livro estão disponíveis em [Google Fonts](https://www.google.com/fonts). Enquanto isso você terá acesso explicitado através do `font-family` aqui, o que você não verá e terá que incluir em seu documento, é o `link` ou o `@import` obtido através do Google Fonts.
 
 The examples throughout strictly use pixels and percentages as unit identifiers. Supported length units for SVG are: em, ex, px, pt, pc, cm, mm, in, and percentages.
 
