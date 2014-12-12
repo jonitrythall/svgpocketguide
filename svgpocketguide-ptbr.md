@@ -110,50 +110,51 @@ Your support for this book is so appreciated and I truly hope I have not offende
 	* Clipping Path
 * Conclusion
 		
-## Introduction 
+## Introdução  
 
-Scalable Vector Graphics (SVG) is a language for describing two-dimensional graphics in XML. These graphics can consist of paths, images, and/or text that are able to be scaled and resized without losing image quality. 
+Scalable Vector Graphics (SVG) é uma linguagem para descrever gráficos bidimensionais baseada no padrão XML. Esses gráficos consistem em caminhos, imagens e/ou textos capazes de serem escalados e redimensionados sem perder a qualidade de imagem.
 
-Inline SVG refers to the embedded code written within HTML to generate these graphics in a browser, which will be the focus of this book.
+Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML para gerar esses gráficos no browser, o qual inclusive, será o foco deste livro.
 
-There are many advantages to using SVG this way, including having access to all the graphic's individual parts for interactivity purposes, generating searchable text, DOM access for direct edits, and promoting user accessibility. 
-
-Starting with basic organization and simple shapes, we'll then continue on to describe the SVG coordinate system or "canvas", painting a graphic's interior and/or border, transforms, and using and manipulating graphical text. We'll wrap up by touching on more advanced features such as gradients and patterns.
-
-This guide is meant to provide a quick but thorough introduction to building SVG inline, and while it in no way covers all the available features, it should prove helpful in getting you started. It's intended for designers and developers looking to add SVG to their workflow in the most accessible way possible. 
-
-From small stroke details to getting started with hand crafted patterns, this guide is intended to be an all around “go-to” reference for writing SVG.
+Existem muitas vantagens em usar o SVG dessa maneira, incluindo ter acesso a todos os gráficos, partes individuais com propósitos de individualidade, gerando textos pesquisáveis, acesso ao DOM para edições diretas, e promovendo a acessibilidade ao usuário.
 
 
-### Before You Begin
+Começando com a organização básica e formatos simples, nós vamos então continuar a descrever o sistema de coordadenadas do SVG ou "canvas", pintando o interior do gráfico e/ou sua borda, transformando-o, e usando a "manipulação gráfica" do texto. Só então vamos acrescentá-lo com toques e técnicas mais avançadas como gradientes e moldes.
 
-While this "Pocket Guide" is intended for those that already know a thing or two about HTML and CSS, there are a few additional things that will be helpful to know before diving into SVG code in your favorite browser, such as: the information needed within the SVG fragment for proper rendering, how to make your graphics as accessible as possible, and knowing how and when to use vector graphic software.
 
-#### Using SVG
+Esse guia tem o propósito de fornecer uma rápida porém consistente introdução para se construir SVG *inline*, e ao mesmo tempo, de forma alguma, abrange todos os recursos disponíveis, portanto, deve ser útil no processo de inicialização de Designers e Desenvolvedores que desejam adicionar o SVG em seu *workflow* de maneira mais acessível possível.
 
-There are [a number of ways to include SVG](http://css-tricks.com/using-svg/) in your projects: inline, an `<img>`, a background-image, an `<object>`, or as Data URI's. We will be specifically addressing the use of SVG inline which involves writing SVG code within the body of a properly structured HTML document. 
+A partir de pequenos detalhes de escrita, este livro pretende auxiliar aqueles que buscam utilizar o SCG de maneira mais mecânica e artesanal, este guia pretende ser um todo *"go-to"* referência para a escrita de SVG.
 
-So while we will only be addressing inline SVG here, there may be instances where another method may be more appropriate. For example, if you do not need editing abilities of the graphic itself or access to its individual parts, using it as an `<img>` may better suit your project. 
+### Antes de você começar
 
-#### Vector Graphic Software
+Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa ou duas sobre HTML e CSS, existem algumas coisas adicionais que serão úteis em saber antes de aprofundar no código SVG em seu *browser* favorito, tais como: A informação necessária dentro do fragmento SVG para a renderização adequada, otimização de gráficos fazendo-os tão acessíveis quanto possível, e também para saber como e quando usar software geradores de vetores gráficos.
 
-Vector graphic software options can be useful when looking to create more complex graphics that wouldn't be reasonable to write "by hand". Software such as [Adobe Illustrator](http://www.adobe.com/products/illustrator.html), [Inkscape](http://www.inkscape.org/en/), [Sketch](http://bohemiancoding.com/sketch/), [iDraw](http://www.indeeo.com/idraw/), or [WebCode](http://www.webcodeapp.com/) can be useful tools to add to your SVG bag of tricks.
+#### Usando SVG
 
-The advantage to these types of tools is that you can export their SVG code and embed it right into your HTML. We'll touch on that a bit later.
+Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/using-svg/) em seus projetos: *inline*, com a tag `<img>`, como  *background-image*, com `<object>`, ou como *Data URI's*. Estaremos, de maneira específica, abordando o uso do SVG *inline* que envolve a escrita de código SVG diretamente dentro do corpo de um documento HTML devidamente estruturado. 
 
-#### Inline SVG on the Web
+Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende adicionar habilidades diretamente no próprio gráfico ou se necessitar de um acesso a dois arquivos individuais por exemplo, usá-lo com um `<img>` talvez seja melhor adequado ao seu projeto.  
 
-For the sake of brevity throughout this book the SVG DOCTYPE, version number, [`xmlns`](http://www.w3.org/TR/REC-xml-names/), and [`xml:space`](http://www.w3.org/TR/2004/REC-xml11-20040204/#sec-white-space) have been excluded from all code samples.
+#### Sofwares de Vetor Gráfico
 
-These attributes specify [the version of SVG](http://www.w3.org/TR/xml11/) being used and [the namespace](http://www.w3.org/TR/REC-xml-names/) of the document. The main thing to remember at this point is that you will generally not need to include these attributes to successfully render your graphic in the browser.  
+Softwares de vetor gráfico são opções quando você está procurando criar gráficos mais complexos que não existiria uma razão para escrevê-los a mão. Sotwares como [Adobe Illustrator](http://www.adobe.com/products/illustrator.html), [Inkscape](http://www.inkscape.org/en/), [Sketch](http://bohemiancoding.com/sketch/), [iDraw](http://www.indeeo.com/idraw/), ou [WebCode](http://www.webcodeapp.com/) podem ser ferramentas úteis para adicionar ao seu SVG uma maleta de truques.
 
-Let's take a look at these attributes now, in an example of SVG code generated by Illustrator, to ensure this doesn’t take you by surprise when getting started:
+A vantagem destes tipos de ferramentas é que você pode exportar seu código SVG e incorporá-lo diretamente em seu HTML. Vamos tocar nisso um pouco adiante.
+
+#### *Inline* SVG na Web
+
+Por razões de brevidade ao longo do livro, o DOCTYPE SVG, número da versão assim como xmlns e xml:space foram excluídos de todas os exemplos de código. 
+
+Esses atributos especificam ao *browser* a [versão do SVG](http://www.w3.org/TR/xml11/) sendo usado no momento assim como [*namespace*](http://www.w3.org/TR/REC-xml-names/) do documento. A principal coisa a lembrar neste momento é que você geralmente não precisa incluir esses atrtibutos para processar com sucesso o seu gráfico no navegador.
+
+Vamos dar uma olhada nestes atributos agora, em um exemplo de código SVG gerado pelo Illustrator, para garantir que isso não irá deixá-lo surpreso quando começar:
 
 	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 	</svg>
-	
-In most instances the DOCTYPE and attributes here within the `<svg>` element are not necessary and can be eliminated, substantially "cleaning up" your code.
+
+Na maioria dos casos o DOCTYPE e seus atributos dentro do elemento `<svg>` não são essenciais para que seu gráfico seja renderizados e podem ser descartados, substancialmente com o objetivo de "limpar" seu código.	
 
 #### SVG User Accessibility
 
