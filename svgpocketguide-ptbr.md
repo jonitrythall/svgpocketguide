@@ -191,13 +191,13 @@ Um fragmento de documento de SVG é feito de vários elementos contidos dentro d
 
 Esta seção irá introduzir a chave para escrever SVG - o elemento `<svg>`- e revisar alguns atributos comuns que irão auxiliar num documento inicial.
 
-#### svg Element 
+#### O elemento svg 
 
-The `<svg>` element is classified as both a container and a structural element, and can be used to nest a standalone SVG fragment inside the document. This fragment establishes its own coordinate system.
+O elemento `<svg>`é classificado tanto como um container quanto como um elemento estrutural, e pode ser usado para criar um fragmento SVG independente dentro do documento. Este fragmento tendo seu próprio sistema de coordenadas.
 
-The attributes used within this element, such as `width`, `height`, `preserveAspectRatio` and `viewBox` define the canvas for the graphic being written. 
+Os atributos usados neste elemento, como `width`, `height`, `preserveAspectRatio`e `viewBox`definem o espaço onde o gráfico será escrito.
 
-When obtaining SVG code from certain vector software there is [a lot of additional info](http://www.w3.org/TR/SVG/struct.html#SVGElement) within the `<svg>` element, such as the SVG version number (indicates the SVG language version being used) and DOCTYPE. As I’ve mentioned, that information will not be included in examples throughout this guide, and their exclusion will not prevent your graphics from rendering on the screen. 
+Ao obter o código SVG de algum software de vetor ele terá [várias informações](http://www.w3.org/TR/SVG/struct.html#SVGElement) dentro do elemento `<svg>`, como a versão do SVG (indica a versão da linguagem SVG que está sendo utilizada) e o DOCTYPE. Como mencionado anteriormente, essa informação não será incluída no decorrer deste guia, e sua exclusão não irá prejudicar a renderização do gráfico em sua tela.
 
 #### g Element
 
