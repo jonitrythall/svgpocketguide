@@ -116,15 +116,13 @@ Scalable Vector Graphics (SVG) é uma linguagem para descrever gráficos bidimen
 
 Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML para gerar esses gráficos no browser, o qual inclusive, será o foco deste livro.
 
-Existem muitas vantagens em usar o SVG dessa maneira, incluindo ter acesso a todos os gráficos, partes individuais com propósitos de individualidade, gerando textos pesquisáveis, acesso ao DOM para edições diretas, e promovendo a acessibilidade ao usuário.
+Existem muitas vantagens em usar o SVG dessa maneira, incluindo ter acesso a partes individuais do gráfico para propósitos de interatividade, gerando textos pesquisáveis, acesso ao DOM para edições diretas, e promovendo a acessibilidade ao usuário.
 
-
-Começando com a organização básica e formatos simples, nós vamos então continuar a descrever o sistema de coordadenadas do SVG ou "canvas", pintando o interior do gráfico e/ou sua borda, transformando-o, e usando a "manipulação gráfica" do texto. Só então vamos acrescentá-lo com toques e técnicas mais avançadas como gradientes e moldes.
-
+Começando com a organização básica e formas simples, nós vamos então continuar a descrever o sistema de coordenadas do SVG ou "canvas", pintando o interior do gráfico e/ou sua borda, transformando-o, e usando a "manipulação gráfica" do texto. Só então vamos acrescentá-lo com toques e técnicas mais avançadas como gradientes e padrões.
 
 Esse guia tem o propósito de fornecer uma rápida porém consistente introdução para se construir SVG *inline*, e ao mesmo tempo, de forma alguma, abrange todos os recursos disponíveis, portanto, deve ser útil no processo de inicialização de Designers e Desenvolvedores que desejam adicionar o SVG em seu *workflow* de maneira mais acessível possível.
 
-A partir de pequenos detalhes de escrita, este livro pretende auxiliar aqueles que buscam utilizar o SCG de maneira mais mecânica e artesanal, este guia pretende ser um todo *"go-to"* referência para a escrita de SVG.
+A partir de pequenos detalhes para começar a escrever seu próprio código, este guia pretende ser uma referência para escrever SVG.
 
 ### Antes de você começar
 
