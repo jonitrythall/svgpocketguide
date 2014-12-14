@@ -166,11 +166,11 @@ O texto em SVG também possui uma enorme vantagem sobre imagens baseadas em *ras
 
 Um pouco mais de notas gerais antes de você mergulhar no livro: As fontes usadas ao longo deste livro estão disponíveis em [Google Fonts](https://www.google.com/fonts). Enquanto isso você terá acesso explicitado através do `font-family` aqui, o que você não verá e terá que incluir em seu documento, é o `link` ou o `@import` obtido através do Google Fonts.
 
-Os exemplos impressos a seguir, utilizam-se de *pixiels* e porcentagem. Os tamanhos que suportam o SVG como *unit identifiers* são: em, ex, px, pt, pc, cm, mm, in, e porcentagens.
+Os exemplos, utilizam-se de *pixels* e porcentagem, como unidades de medida. Os tamanhos que suportam o SVG como unidades de medida são: em, ex, px, pt, pc, cm, mm, in, e porcentagens.
 
-Os códigos SVG neste livro podem ser adicionados em qualquer editor de texto e então visualizados em [qualquer *browser* que suporta *inline* SVG](http://caniuse.com/svg-html5). Enquanto o suporte dos *browsers* é muito presente para o SVG no geral, este suporte pode se tornar muito menos consistente com técnicas mais avançadas como gradientes, por exemplo. [*Can I Use*](http://caniuse.com/) é um ótimo lugar para checar o suporte do seu *browser* para esses tipos de técnicas, mas ultimamente nada que você vai aprender encontra-se em versão de teste ou erro.
+Os códigos SVG neste livro podem ser adicionados em qualquer editor de texto e então visualizados em [qualquer *browser* que suporte *inline* SVG](http://caniuse.com/svg-html5). Enquanto o suporte dos *browsers* é muito presente para o SVG no geral, este suporte pode se tornar muito menos consistente com técnicas mais avançadas como gradientes, por exemplo. [*Can I Use*](http://caniuse.com/) é um ótimo lugar para checar o suporte do seu *browser* para esses tipos de recursos, mas em última, nada que você vai aprender encontra-se em versão de teste.
 
-Além disso tudo, você pode também copiar o código como está, colar dentro da sessão do HTML dentro do [CodePen](http://codepen.io/), e pode ver instantâneamente o seu gráfico na tela. Não posso dizer tudo que essa ferramenta pode fornecer, mas posso dizer o que me interessa nessa tecnologia em primeiro lugar. É o meu jeito favorito de aprender: brincando, raciocinando e algumas vezes falhando miseravelmente.
+Além disso tudo, você pode também copiar o código como está, colar dentro da sessão do HTML dentro do [CodePen](http://codepen.io/), e pode ver instantâneamente o seu gráfico na tela. Não posso dizer tudo que essa ferramenta pode fornecer, já que estava interessada no SVG em primeiro lugar. É o meu jeito favorito de aprender: brincando, raciocinando e algumas vezes falhando miseravelmente.
 
 Finalmente, alguns exemplos irão conter porções de gráficos com códigos comentados a fim de minimizar o tamanho do bloco de código quando aquela porção particular não é essencial para a explicação do tópico em si.
 
