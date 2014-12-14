@@ -1,17 +1,18 @@
-# Pocket Guide to Writing SVG
-## [*By Joni Trythall*](http://jonibologna.com/)
-#### [Buy the PDF version here](http://svgpocketguide.com/)
+# Guia de bolso de SVG
+## [*Por Joni Trythall*](httpw://jonibologna.com/)
+### Tradução por [*Willian Justen*](http://github.com/willianjusten) e [*Lucas Maia*](http://github.com/lucasmaiaesilva)
+#### [Compre a versão PDF aqui](http://svgpocketguide.com/) (Versão em inglês)
 
-## Thank You!
+## Muito Obrigado!
 
-I would like to take this entire section to give a special “Thank you so much!” to: 
+Eu gostaria de deixar essa sessão inteira para deixar um especial "Muito obrigado!" para:
 
 * [CSS-Tricks](http://css-tricks.com/)
 * [Lincoln Loop](http://lincolnloop.com/)
 * [Designmodo](http://designmodo.com/)
 * [Tahoe Partners](http://tahoepartners.com/Pages/Tahoe%20Partners.aspx)
 
-Your support for this book is so appreciated and I truly hope I have not offended any of you by potentially excluding your favorite fruit. 
+O suporte de vocês foi muito e espero verdadeiramente não ter ofendido nenhum de vocês por não utilizar sua fruta favorita.
 
 ![Heart](images/heart.png)
 
