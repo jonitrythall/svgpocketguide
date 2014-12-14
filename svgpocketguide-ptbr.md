@@ -185,11 +185,11 @@ Os detalhes do SVG residem dentro do elemento `<svg>`. Este elemento contém als
 Como mencionado, gráficos *inline* podem ser escritos "na mão", ou incorporados acessando o código XML gerado pelos softwares gráficos. De qualquer forma, uma organização e estrutura adequedas são cruciais para uma escrita eficiente do SVG, principalmente porque a ordem dos elementos gráficos determinam sua ordem no *stack* (similar ao z-index de css).
 
 
-### Organization & Semantics 
+### Organização e Semântica 
 
-An SVG document fragment is made up of any number of SVG elements contained within the `<svg>` element. Organization within this document is crucial. Content within the document can expand rapidly, and proper organization promotes accessibility and efficiency throughout, benefitting both the author and users.  
+Um fragmento de documento de SVG é feito de vários elementos contidos dentro do elemento `<svg>`. A organização desse documento é crucial. O conteúdo deste documento pode aumentar rapidamente, e uma organização adequada promove acessibilidade e eficiência, beneficiando ambos, o autor e seus usuários.
 
-This section will introduce the key to writing SVG - the `<svg>` element - and review some common attributes that aid in the initial document setup. 
+Esta seção irá introduzir a chave para escrever SVG - o elemento `<svg>`- e revisar alguns atributos comuns que irão auxiliar num documento inicial.
 
 #### svg Element 
 
