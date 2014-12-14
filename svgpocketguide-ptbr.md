@@ -126,7 +126,7 @@ A partir de pequenos detalhes para começar a escrever seu próprio código, est
 
 ### Antes de você começar
 
-Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa ou duas sobre HTML e CSS, existem algumas coisas adicionais que serão úteis em saber antes de aprofundar no código SVG em seu *browser* favorito, tais como: A informação necessária dentro do fragmento SVG para a renderização adequada, otimização de gráficos fazendo-os tão acessíveis quanto possível, e também para saber como e quando usar software geradores de vetores gráficos.
+Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa ou duas sobre HTML e CSS, existem algumas coisas adicionais que serão úteis em saber antes de aprofundar no código SVG em seu *browser* favorito, tais como: A informação necessária dentro do fragmento SVG para a renderização adequada, como fazer seus gráficos tão acessíveis quanto possível, e também saber como e quando usar software geradores de vetores gráficos.
 
 #### Usando SVG
 
