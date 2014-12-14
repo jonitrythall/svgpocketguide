@@ -193,19 +193,19 @@ Esta seção irá introduzir a chave para escrever SVG - o elemento `<svg>`- e r
 
 #### O elemento svg 
 
-O elemento `<svg>`é classificado tanto como um container quanto como um elemento estrutural, e pode ser usado para criar um fragmento SVG independente dentro do documento. Este fragmento tendo seu próprio sistema de coordenadas.
+O elemento `<svg>`é classificado tanto como um *container* quanto como um elemento estrutural, e pode ser usado para criar um fragmento SVG independente dentro do documento. Este fragmento tendo seu próprio sistema de coordenadas.
 
 Os atributos usados neste elemento, como `width`, `height`, `preserveAspectRatio`e `viewBox`definem o espaço onde o gráfico será escrito.
 
 Ao obter o código SVG de algum software de vetor ele terá [várias informações](http://www.w3.org/TR/SVG/struct.html#SVGElement) dentro do elemento `<svg>`, como a versão do SVG (indica a versão da linguagem SVG que está sendo utilizada) e o DOCTYPE. Como mencionado anteriormente, essa informação não será incluída no decorrer deste guia, e sua exclusão não irá prejudicar a renderização do gráfico em sua tela.
 
-#### g Element
+#### O elemento g
 
-The `g` element is a container element for grouping related graphics together. Utilizing this element in conjunction with description and title elements provides information about your graphic, and aids in organization and accessibility by grouping related graphical components together. 
+O `g`é um elemento de *container* que serve para agrupar elementos gráficos relacionados. Utilizando este elemento junto com os elementos de descrição e título fornecem informações sobre o gráfico e ajudam na organização e acessibilidade através do agrupamento desses componentes.
 
-Also, by grouping related elements together you can manipulate the group as a whole versus the individual parts. This is especially handy when animating these elements, for example, as the animation can be applied to the group. 
+Além disso, ao agrupar elementos relacionados juntos, você pode manipular o grupo como um todo contra as partes individuais. Isto é especialmente útil quando se quer animar estes elementos, por exemplo, a animação pode ser aplicada ao grupo.
 
-Any element that is not contained within a `g` is assumed to be its own group. 
+Qualquer elemento que não está contido em um `g` é considerado como seu próprio grupo.
 
 #### use Element 
 
