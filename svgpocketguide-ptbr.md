@@ -201,9 +201,9 @@ Ao obter o código SVG de algum software de vetor ele terá [várias informaçõ
 
 #### O elemento g
 
-O `g`é um elemento de *container* que serve para agrupar elementos gráficos relacionados. Utilizando este elemento junto com os elementos de descrição e título fornecem informações sobre o gráfico e ajudam na organização e acessibilidade através do agrupamento desses componentes.
+O `g` é um elemento de *container* que serve para agrupar elementos gráficos relacionados. Utilizando este elemento junto com os elementos de descrição e título fornecem informações sobre o gráfico e ajudam na organização e acessibilidade através do agrupamento desses componentes.
 
-Além disso, ao agrupar elementos relacionados juntos, você pode manipular o grupo como um todo contra as partes individuais. Isto é especialmente útil quando se quer animar estes elementos, por exemplo, a animação pode ser aplicada ao grupo.
+Além disso, ao agrupar elementos relacionados, você pode manipular o grupo como um todo contra as partes individuais. Isto é especialmente útil quando se quer animar estes elementos, por exemplo, a animação pode ser aplicada ao grupo.
 
 Qualquer elemento que não está contido em um `g` é considerado como seu próprio grupo.
 
