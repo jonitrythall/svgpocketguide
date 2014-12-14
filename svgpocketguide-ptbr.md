@@ -168,19 +168,19 @@ O texto em SVG também possui uma enorme vantagem sobre imagens baseadas em *ras
 
 Um pouco mais de notas gerais antes de você mergulhar no livro: As fontes usadas ao longo deste livro estão disponíveis em [Google Fonts](https://www.google.com/fonts). Enquanto isso você terá acesso explicitado através do `font-family` aqui, o que você não verá e terá que incluir em seu documento, é o `link` ou o `@import` obtido através do Google Fonts.
 
-The examples throughout strictly use pixels and percentages as unit identifiers. Supported length units for SVG are: em, ex, px, pt, pc, cm, mm, in, and percentages.
+Os exemplos impressos a seguir, utilizam-se de *pixiels* e porcentagem. Os tamanhos que suportam o SVG como *unit identifiers* são: em, ex, px, pt, pc, cm, mm, in, e porcentagens.
 
-The SVG code in this book can be added to any text editor and then viewed in [any browser that supports inline SVG](http://caniuse.com/svg-html5). While browser support is very strong for SVG in general, this support can become much less consistent with more advanced features like gradients, for example. [Can I Use](http://caniuse.com/) is a great place to check on support for these types of features, but ultimately nothing will beat what you learn through trial and error. 
+Os códigos SVG neste livro podem ser adicionados em qualquer editor de texto e então visualizados em [qualquer *browser* que suporta *inline* SVG](http://caniuse.com/svg-html5). Enquanto o suporte dos *browsers* é muito presente para o SVG no geral, este suporte pode se tornar muito menos consistente com técnicas mais avançadas como gradientes, por exemplo. [*Can I Use*](http://caniuse.com/) é um ótimo lugar para checar o suporte do seu *browser* para esses tipos de técnicas, mas ultimamente nada que você vai aprender encontra-se em versão de teste ou erro.
 
-All that being said, you can also copy the code as is, place it into the HTML section of a pen over at [CodePen](http://codepen.io/), and instantly see your graphic on the screen. I cannot say enough great things about this tool as it was essentially what got me interested in SVG in the first place. It’s my favorite way to learn: playing, tinkering, and sometimes even failing miserably. 
+Além disso tudo, você pode também copiar o código como está, colar dentro da sessão do HTML dentro do [CodePen](http://codepen.io/), e pode ver instantâneamente o seu gráfico na tela. Não posso dizer tudo que essa ferramenta pode fornecer, mas posso dizer o que me interessa nessa tecnologia em primeiro lugar. É o meu jeito favorito de aprender: brincando, raciocinando e algumas vezes falhando miseravelmente.
 
-Finally, some examples will have portions of a graphic's code commented out to minimize the size of the block of code when that particular portion is not related to the topic at hand.
+Finalmente, alguns exemplos irão conter porções de gráficos com códigos comentados a fim de minimizar o tamanho do bloco de código quando aquela porção particular não é essencial para a explicação do tópico em si.
 
 	<svg>
 		<!--<path d=<this path is commented out> />-->
 	</svg>
 
-## Section 1. Document Organization 
+## Seção 1. Organização do documento
 
 SVG details reside within a `<svg>` element. This element contains several attributes which permit the customization of your graphic's "canvas". While these attributes are not completely necessary to render an image, omitting them may leave more complex graphics vulnerable when performing across browsers and make them susceptible to not rendering as intended. 
 
