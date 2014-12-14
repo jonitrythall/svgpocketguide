@@ -130,9 +130,9 @@ Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa 
 
 #### Usando SVG
 
-Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/using-svg/) em seus projetos: *inline*, com a tag `<img>`, como  *background-image*, com `<object>`, ou como *Data URI's*. Estaremos, de maneira específica, abordando o uso do SVG *inline* que envolve a escrita de código SVG diretamente dentro do corpo de um documento HTML devidamente estruturado. 
+Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/using-svg/) em seus projetos: *inline*, com a tag `<img>`, como *background-image*, como `<object>`, ou como *Data URI's*. Estaremos, de maneira específica, abordando o uso do SVG *inline* que envolve a escrita de código SVG diretamente dentro do corpo de um documento HTML devidamente estruturado. 
 
-Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende adicionar habilidades diretamente no próprio gráfico ou se necessitar de um acesso a dois arquivos individuais por exemplo, usá-lo com um `<img>` talvez seja melhor adequado ao seu projeto.  
+Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende editar propriedades diretamente no próprio gráfico ou acessar partes individuais do mesmo, usá-lo com um `<img>` talvez seja melhor adequado ao seu projeto.  
 
 #### Sofwares de Vetor Gráfico
 
