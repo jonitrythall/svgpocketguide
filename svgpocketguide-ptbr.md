@@ -136,9 +136,9 @@ Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver
 
 #### Sofwares de Vetor Gráfico
 
-Softwares de vetor gráfico são opções quando você está procurando criar gráficos mais complexos que não existiria uma razão para escrevê-los a mão. Sotwares como [Adobe Illustrator](http://www.adobe.com/products/illustrator.html), [Inkscape](http://www.inkscape.org/en/), [Sketch](http://bohemiancoding.com/sketch/), [iDraw](http://www.indeeo.com/idraw/), ou [WebCode](http://www.webcodeapp.com/) podem ser ferramentas úteis para adicionar ao seu SVG uma maleta de truques.
+Softwares de vetor gráfico são opções quando você está procurando criar gráficos mais complexos que não fariam sentido escrevê-los a mão. Sotwares como [Adobe Illustrator](http://www.adobe.com/products/illustrator.html), [Inkscape](http://www.inkscape.org/en/), [Sketch](http://bohemiancoding.com/sketch/), [iDraw](http://www.indeeo.com/idraw/), ou [WebCode](http://www.webcodeapp.com/) podem ser ferramentas úteis para o seu SVG.
 
-A vantagem destes tipos de ferramentas é que você pode exportar seu código SVG e incorporá-lo diretamente em seu HTML. Vamos tocar nisso um pouco adiante.
+A vantagem destes tipos de ferramentas é que você pode exportar seu código SVG e incorporá-lo diretamente em seu HTML. Vamos tocar nesse assunto um pouco adiante.
 
 #### *Inline* SVG na Web
 
