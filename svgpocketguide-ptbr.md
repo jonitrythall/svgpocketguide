@@ -144,7 +144,7 @@ A vantagem destes tipos de ferramentas é que você pode exportar seu código SV
 
 Por razões de brevidade ao longo do livro, o DOCTYPE SVG, número da versão assim como xmlns e xml:space foram excluídos de todas os exemplos de código. 
 
-Esses atributos especificam ao *browser* a [versão do SVG](http://www.w3.org/TR/xml11/) sendo usado no momento assim como [*namespace*](http://www.w3.org/TR/REC-xml-names/) do documento. A principal coisa a lembrar neste momento é que você geralmente não precisa incluir esses atrtibutos para processar com sucesso o seu gráfico no navegador.
+Esses atributos especificam ao *browser* a [versão do SVG](http://www.w3.org/TR/xml11/) sendo usado no momento assim como o [*namespace*](http://www.w3.org/TR/REC-xml-names/) do documento. A principal coisa a lembrar neste momento é que você geralmente não precisa incluir esses atrtibutos para renderizar com sucesso o seu gráfico no navegador.
 
 Vamos dar uma olhada nestes atributos agora, em um exemplo de código SVG gerado pelo Illustrator, para garantir que isso não irá deixá-lo surpreso quando começar:
 
@@ -152,13 +152,13 @@ Vamos dar uma olhada nestes atributos agora, em um exemplo de código SVG gerado
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
 	</svg>
 
-Na maioria dos casos o DOCTYPE e seus atributos dentro do elemento `<svg>` não são essenciais para que seu gráfico seja renderizados e podem ser descartados, substancialmente com o objetivo de "limpar" seu código.	
+Na maioria dos casos o DOCTYPE e seus atributos dentro do elemento `<svg>` não são essenciais para que seu gráfico seja renderizados e podem ser descartados, com o objetivo de "limpar" seu código.	
 
 #### SVG - Acessibilidade do Usuário
 
-Utilizando [Acessibilidade SVG](http://www.sitepoint.com/tips-accessible-svg/) como mensionado, traz boas práticas ao projeto, mas novamente por questão de brevidade, descrições e títulos não serão incluídos no código no decorrer deste livro.
+Utilizando recursos [Acessibilidade SVG](http://www.sitepoint.com/tips-accessible-svg/) é um ótimo hábito a se formar, mas novamente por questão de simplicidade, descrições e títulos não serão incluídos no código no decorrer deste livro.
 
-Uma vez quevocê se torne mais experiente ao escrever o SVG, a inclusão desses elementos irá tornar seus gráficos mais acessíveis aos usuários. Por exemplo, o conteúdo dentro do elemento `<desc>` permite o fornecimento de uma descrição detalhada de gráficos para usuários com *screen readers*.
+Uma vez que você se torne mais experiente ao escrever o SVG, a inclusão desses elementos irá tornar seus gráficos mais acessíveis aos usuários. Por exemplo, o conteúdo dentro do elemento `<desc>` permite o fornecimento de uma descrição detalhada de gráficos para usuários com *screen readers*.
 
 O texto em SVG também possui uma enorme vantagem sobre imagens baseadas em *raster* tradicionais em termos de acessibilidade. Isto porque o texto em SVG pode ser detectado e lido pelo *browser*, e pode facilmente ser redimensionado para acomodar as preferências específicas de leitura. 
 
