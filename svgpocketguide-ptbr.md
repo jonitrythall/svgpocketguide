@@ -5,7 +5,7 @@
 
 ## Muito Obrigado!
 
-Eu gostaria de deixar essa sessão inteira para deixar um especial "Muito obrigado!" para:
+Eu gostaria de pegar essa sessão inteira para deixar um especial "Muito obrigado!" para:
 
 * [CSS-Tricks](http://css-tricks.com/)
 * [Lincoln Loop](http://lincolnloop.com/)
