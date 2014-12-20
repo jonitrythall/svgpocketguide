@@ -5,14 +5,14 @@
 
 ## Muito Obrigado!
 
-Eu gostaria de pegar essa sessão inteira para deixar um especial "Muito obrigado!" para:
+Eu gostaria de dedicar essa sessão inteira para deixar um especial "Muito obrigado!" para:
 
 * [CSS-Tricks](http://css-tricks.com/)
 * [Lincoln Loop](http://lincolnloop.com/)
 * [Designmodo](http://designmodo.com/)
 * [Tahoe Partners](http://tahoepartners.com/Pages/Tahoe%20Partners.aspx)
 
-O suporte de vocês foi muito e espero verdadeiramente não ter ofendido nenhum de vocês por não utilizar sua fruta favorita.
+Fico bastante agradecida pelo suporte a este livro e espero realmente não ter ofendido nenhum de vocês por não utilizar sua fruta favorita.	
 
 ![Heart](images/heart.png)
 
