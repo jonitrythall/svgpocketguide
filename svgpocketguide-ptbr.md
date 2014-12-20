@@ -285,18 +285,19 @@ This method of determining stacking order also applies to the individual element
 
 ![Stem on top of grapes](images/stackingthree.png)
 
-## Section 2. Basic Shapes and Paths
+## Seção 2. Shapes e Paths básicos
 
-Basic SVG shapes can be written by hand in HTML but you may eventually experience the need to use a much more complex graphic inline. These more complex graphics can be created with vector software, but for now let’s look at the basics that can easily be hand coded.
+*Shapes* básicos em SVG podem ser escritos "na mão" em HTML, mas você pode eventualmente passar pela experiência de precisar usar gráficos inline muito mais complexos. Estes gráficos mais complexos podem ser gerados por softwares de vetores, mas por enquanto vamos nos atentar ao básico, que pode facilmente ser escrito "na mão".
 
 
-### Basic Shapes
+### *Shapes* Básicos
 
-SVG contains the following set of basic shape elements: rectangles, circles, ellipses, straight lines, polylines, and polygons. Each element requires a set of attributes before it renders, like coordinates and size details.
+O SVG possui os seguintes elementos que compõe os *shapes* básicos: retângulos, circulos, elipses, linhas simples, multi-linhas e polígonos. Cada elemento requer uma lista de atributos antes de serem renderizados, tais como coordenadas e detalhes de tamanho.
 
-#### Rectangle 
+#### Retângulo 
 
-The `<rect>` element defines a rectangle. 
+O elemento `<rect>` é usado para definir o retângulo.
+
 
 		<svg>
   			<rect width="200" height="100" fill="#BBC42A" />
@@ -304,15 +305,15 @@ The `<rect>` element defines a rectangle.
 
 ![Rectangle](images/basicrect.png)
 
-The `width` and `height` attributes establish the size of the rectangle, while `fill` sets the interior color for the shape. The numerical values default to pixels and `fill` would default to black when left unspecified. 
+Os atributos `width` e `height` estabelecem o tamanho do retângulo, enquanto `fill` define o preenchimento interior para o *shape*. Os valores numéricos padrão são em *pixiels* e o `fill` deverá permanecer na cor preta quando deixado sem especificação.
 
-Other attributes that can be included are `x` and `y` coordinates. These values will move the shape along the appropriate axis according to the dimensions set by the `<svg>` element. 
+Outros atributos que podem ser incluídos são as coordenadas `x` e `y`. Esses valores irão mover o *shape* apropriadamente de acordo com as dimensões setadas ao longo do documento `<svg>`.
 
-It is also possible to create rounded corners by specifying values within `rx` and `ry` attributes. For example, `rx="5" ry="10"` will produce horizontal sides of corners that have a 5px radius, and vertical sides of corners that have a 10px radius. 
+Também é possível criar cantos arredondados espeificando valores com os atributos `rx` e `ry`. Por exemplo, `rx="5" ry="10"` vão renderizar um *shape* com os cantos horizontais com 5px de *radius*, e verticais com 10px de *radius*.
 
-#### Circle
+#### Circulo
 
-The `<circle>` element is mapped based on a center point and an outer radius.
+O elemento `<circle>` é mapeado com base em um ponto central e pelo tamanho de seu raio.
 
 		<svg>
   			<circle cx="75" cy="75" r="75" fill="#ED6E46" />
@@ -320,13 +321,13 @@ The `<circle>` element is mapped based on a center point and an outer radius.
 
 ![Line](images/basiccircle.png)
 
-The `cx` and `cy` coordinates establish the location of the center of the circle in relation to the workplace dimensions set by the `<svg>`. 
+As coordenadas `cx` e `cy`estabelecem a localização do centro do circulo em relação as dimensões configuradas no seu *workplace* pelo elemento `<svg>`.
 
-The `r` attribute sets the size of the outer radius. 
+O atributo `r` define o tamanho do raio do circulo. 
 
-#### Ellipse
+#### Elipse
 
-An `<ellipse>` element defines an ellipse that is mapped based on a center point and two radii. 
+O elemento `<ellipse>` define uma elipse na qual seu mapeamento basea-se em um ponto central porém com dois raios.
 
 		<svg>
   			<ellipse cx="100" cy="100" rx="100" ry="50" fill="#7AA20D" />
@@ -334,11 +335,11 @@ An `<ellipse>` element defines an ellipse that is mapped based on a center point
 
 ![Ellipse](images/basicellipse.png)
 
-While the `cx` and `cy` values are establishing the center point based on pixel distance into the SVG coordinate space, the `rx` and `ry` values are defining the radius of the sides of the shape. 
+Enquanto os valores `cx` e `cy` estabelecem um ponto central baseado na distância das coordenadas de espaço dentro do `<svg>`, os valores de `rx` e `ry` definem os raios horizontais e verticais do *shape*.
 
-#### Line
+#### Linha Simples
 
-The <line> element defines a straight line with a start and end point. 
+O elemento `<line>` define uma linha simples com um ponto inicial e um ponto final.
 
 		<svg>
   			<line x1="5" y1="5" x2="100" y2="100" stroke="#765373" stroke-width="8"/>
@@ -346,11 +347,11 @@ The <line> element defines a straight line with a start and end point.
 
 ![Line](images/basicline.png)
 
-Together the `x1` and `y1` values establish the coordinates for the start of the line, while the `x2` and `y2` values establish the end of the line. 
+Juntos, os valores `x1` e `y1` estabelecem as coordenadas para o ponto de inicio da linha, enquanto os valores de `x2` e `y2` estabelecem o ponto final da linha.
 
-#### Polyline
+#### Multi-linha
 
-The `<polyline>` element defines a set of connected straight line segments, generally resulting in an open shape (start and end points that do not connect). 
+O elemento `<polyline>` é usado para definir um conjunto de linhas simples interligadas que, geralmente, resultam em um *shape* aberto (os pontos de início e fim não são conectados).
 
 		<svg>
   			<polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill="white" 			stroke="#BBC42A" stroke-width="6" />
@@ -358,13 +359,13 @@ The `<polyline>` element defines a set of connected straight line segments, gene
 
 ![Polyline](images/basicpolyline.png)
 
-The values within `points` establish the shape's location on the `x` and `y` axis throughout the shape and are grouped as `x,y` throughout the list of values. 
+Os valores dentro do atributo `points` estabelecem ao *shape* a localização de `x` e `y` distribuídos através do elemento `<polyline>` e são agrupados como `x,y` distribuido por uma lista de valores.
 
-An odd number of points here is an error.
+#An odd number of points here is an error.#
 
-#### Polygon 
+#### Polígono 
 
-A `<polygon>` element defines a closed shape consisting of connected lines. 
+O elemento `<polygon>` é usado para definir um *shape* fechado que consistem em linhas conectadas.
 
 		<svg>
   			<polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" 					fill="#ED6E46" />
@@ -372,23 +373,23 @@ A `<polygon>` element defines a closed shape consisting of connected lines.
 
 ![Polygon](images/basicpolygon.png)
 
-The points of the polygon shape are defined through a series of eight grouped `x,y` values. 
+Os pontos do polígono são definidos através de uma série de oito grupos de valores `x,y`.
 
-This element can also produce other closed shapes depending on the number of defined points. 
+Este elemento pode também, produzir outros tipos de *shapes* fechados dependendo do número de pontos definidos.
 
-### The path Element
+### O Elemento *Path* 
 
-SVG paths represent the outline of a shape. This shape can be filled, stroked, used to navigate text, and/or used as a clipping path.
+Os *paths* em SVG representam a linha externa do *shape*. Este *shape* pode ser preenchido, contornado, usado para navegação com texto, e/ou usado como *clipping path*.
 
-Depending on the shape this path can get very complex, especially when there are many [curves](http://www.w3.org/TR/SVG/paths.html#PathDataCurveCommands) involved. Gaining a basic understanding of how they work and the syntax involved, however, will help make these particular paths much more manageable. 
+Dependendo do *shape* este *path* pode se tornar muito complexo, especialmente quando existem muitas [curvas](http://www.w3.org/TR/SVG/paths.html#PathDataCurveCommands) envolvidas. Com um conhecimento básico de como funciona, a sintaxe envolvida, enfim, esses processos vão tornar esses *paths* muito mais gerenciáveis.
 
-#### path data
+#### dados do path
 
-The path data is contained in a `d` attribute within a `<path>` element, defining the outline for a shape: `<path d="<path data specifics>" />`.
+Os dados do *path* possuem o atributo `d` dentro do elemento `<path>`, definindo a borda externa do *shape*: `<path d="<dados específicos do path>" />`.
 
-This data included within the `d` attribute spell out the *moveto*, *line*, *curve*, *arc* and *closepath* instructions for the path.
+Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o *path* tais como *moveto*, *line*, *curve*, *arc* e *closepath*. 
 
-The `<path>` details below define the path specifics for a graphic of a lime: 
+O elemento `<path>` abaixo contém as coordenadas específicas para renderização de um limão:
 
 	<svg width="258px" height="184px">
   		<path fill="#7AA20D" stroke="#7AA20D" stroke-width="9" stroke-linejoin="round" d="M248.761,92c0,9.801-7.93,17.731-17.71,17.731c-0.319,0-0.617,0-0.935-0.021c-10.035,37.291-51.174,65.206-100.414,65.206 c-49.261,0-90.443-27.979-100.435-65.334c-0.765,0.106-1.531,0.149-2.317,0.149c-9.78,0-17.71-7.93-17.71-17.731 c0-9.78,7.93-17.71,17.71-17.71c0.787,0,1.552,0.042,2.317,0.149C39.238,37.084,80.419,9.083,129.702,9.083	c49.24,0,90.379,27.937,100.414,65.228h0.021c0.298-0.021,0.617-0.021,0.914-0.021C240.831,74.29,248.761,82.22,248.761,92z" />
@@ -522,107 +523,107 @@ The attributes within the `svg` element define the workspace, or “canvas” fo
 
 Once this code is copied it can be run through an SVG optimizer before being placed in HTML, which will help eliminate unnecessary code and spacing and in turn greatly reduce the file size. [Peter Collingridge's SVG Optimiser](http://petercollingridge.appspot.com/svg_optimiser) or [SVGO](https://github.com/svg/svgo) are tools that are very helpful in this regard.
 
-## Section 3. The Workspace
+## Seção 3. Workspace
 
-Perhaps the most important aspect of SVG, after understanding its general structure and how to create basic shapes, is getting a grasp of the workspace in use, or in other words, the coordinate system to which the graphics will be mapped. 
+Talvez o aspecto mais importante do SVG, depois de entender sua estrutura geral e como criar *shapes* básicos é aprender sobre o *workspace* em uso, em outras palavras, entender o sistema de coordenadas no qual os gráficos vão ser mapeados. 
 
-Understanding the workspace of SVG is helpful in properly rendering your artwork, but becomes crucial once you get into more advanced SVG features. For example, the mapping of gradients and patterns relies heavily on the established coordinate system. This workspace is defined by the dimensions of the viewport and `viewBox` attributes.  
+Entender o *workspace* do SVG é útil para saber como renderizar propriamente seu gráfico, porém se torna crucial entender técnicas mais avançadas em SVG. Por exemplo, o mapeamento de gradientes são fortemente estabelecidos pelo sistema de coordenadas do SVG. Este *workspce* é definido por dimensões dos atributos *viewport* e `viewbox`.  
 
-This pear, happily, has a matching viewport and `viewBox`:
+Esta pêra, felizmente possui o *viewport* e `viewBox` que correspondem um com o outro:
 
 		<svg width="115" height="190" viewBox="0 0 115 190">
-    		<!--<path <pear's drawing path> />-->
+    		<!--<path <path que desenha a pêra> />-->
   		</svg>
 
 ![Pear](images/viewboxpear1.png)
 
-The entire pear is visible in the browser and will scale accordingly when the viewport dimensions are changed. 
+A pêra é inteiramente visível no *browser* e vai possuir escala adaptável quando as dimensões do *viewport* são alterados.
 
 ### viewport
 
-The viewport is the visible section of an SVG. While SVG can be as wide or as high as you wish, limiting the viewport will mean that only a certain section of the image can be visible at a time.
+O *viewport* é a parte visiível do seu SVG. Enquanto SVG pode ter a largura ou a altura que você definir, limitar o *viewport* pode significar que somente uma certa parte da imagem será vista de cada vez.
 
-The viewport is set through `height` and `width` attributes within the `<svg>`.
+O *viewport* é configurado através dos atributos `width` e `height` dentro de `<svg>`.
 
-If these values are not defined, the dimensions of the viewport will generally be determined by other indicators within the SVG, like the width of the outermost SVG element. However, leaving this undefined leaves our artwork susceptible to being cut off.
+Se estes valores não forem definidos, as dimensões do *viewport* irão geralmente ser determinados por outros indicadores dentro do SVG, como o `width` de um elemento externo. Entretando, a não configuração desse elemento deixa o seu *artwork* suscetível a ser cortado.
 
 ### viewBox
 
-The `viewBox` allows for the specification that a given set of graphics stretch to fit a particular container element. These values include four numbers separated by commas or spaces: `min-x`, `min-y`, `width`, and `height` that should generally be set to the bounds of the viewport. 
+O `viewBox` permite a visualização de uma parte específica de uma parte de um elemento. Esses valores incluem quatro números separados por "commas" ou espaços: `min-x`, `min-y`, `width` e `height` esses parâmetros geralmente, são os mesmos setados non *viewport*.
 
-The `min` values represent at what point within the image the viewBox should start, while the `width` and `height` establish the size of the box. 
+Os valores `min` representam em qual ponto dentro da imagem o `viewBox` deve iniciar, enquanto o `width` e `height` estabelecem o tamanho do box. 
 
-If we choose not to define a `viewBox` the image will not scale to match the bounds set by the viewport. 
+Se nós optarmos por não definir o `viewBox` a imagem não será escalada e irá corresponder a configuração feita no *viewport*.
 
-If 50px were taken off the `width` and `height` of the pear image `viewBox`, the portion of the pear that is visible is reduced, but then what is left visible will scale to fit to the bounds of the viewport.
+Se 50px forem tirados de `width` e `height` do `viewBox`, a porção da imagem da pêra que está visível é reduzida, porém a parte que ainda pode ser visualizada se encaixa nas definições do *viewport*.
 
 		<svg width="115px" height="190px" viewBox="0 0 65 140">
-			<!--<path <pear's drawing path> />--> 
+			<!--<path <path que desenha a pêra> />--> 
 		</svg> 
 
 ![Pear](images/viewboxpear2reduced.png)
 
-The `min` values within the `viewBox` define the origin of the `viewBox` within the parent element. In other words, the point within the `viewBox` at which you want it to begin matching up the viewport. In the above pear image, the `min` values are set to 0,0 (top left). Let's change these to 50, 30: `viewBox="50 30 115 190"`.
+Os valores de `min` dentro do `viewBox` definem o início do `viewBox` dentro de seu elemento pai. Em outras palavras, os pontos dentro do `viewBox` são as coordenadas no qual iremos criar o campo de visualização. No desenho da pêra acima os valores de `min` eram 0,0 (topo, esquerda). Vamos mudar esses valores para 50, 30: `viewBox="50 30 115 190"`.
 
 		<svg width="115" height="190" viewBox="50 30 115 190">
-			<!--<path <pear's drawing path> />-->
+			<!--<path <path que desenha a pêra> />-->
 		</svg>
 
 ![Pear](images/viewboxpearminval.png)
 
-The `viewBox` now starts 50px in from the `x` axis and 30px in from the `y` axis. In altering these values the section of the pear that is focused on has changed.
+O `viewBox` agora começa com 50px de parâmetro `x` e 30px no parâmetro `y`. Alterando esses parâmtros a parte da pêra que está em foco é mudada.
 
 #### preserveAspectRatio
 
-If the viewport and `viewBox` do not have the same width to height ratio, the `preserveAspectRatio` attribute directs the browser how to display the image.
+Se o *viewport* e `viewBox` não possuirem as mesmas dimensões de `width` e `height`, o atributo `preserveAspectRatio`  direciona o browser em como efetuar o display da imagem.
 
-`preserveAspectRatio` takes two parameters, `<align>` and `<meetOrSlice>`. The first parameter takes two parts and directs the `viewBox`'s alignment within the viewport. The second is optional and indicates how the aspect ratio is to be preserved.
+O atributo `preserveAspectRatio` requer dois parâmetros, `<align>` e `<meetOrSlice>`. O primeiro parâmetro possui duas partes que direciona o alinhamento do `viewBox` dentro do *viewport*. O segundo é opcional e indica como o aspecto da dimensão será preservado.
 
 `preserveAspectRatio="xMaxYMax meet"`
 
-These values will align the bottom right corner of the `viewBox` to the bottom right corner of the viewport. `meet` preserves the aspect ratio by scaling the `viewBox` to fit within the viewport as much as possible.
+Estes valores vão alinhar o canto direito inferior do `viewBox` ao canto direito inferior do *viewport*. O `meet` preserva o aspecto da dimensão da escala do `viewBox` para se encaixar como o *viewport* o máximo possível.
 
-There are three `<meetOrSlice>` options: meet (default), slice, and none. While `meet` ensures complete visibility of the graphic (as much as possible), `slice` attempts to fill the viewport with the `viewBox` and will then slice off any part of the image that does not fit inside the viewport after this scaling. `none` results in no preserved aspect ratio and a potentially distorted image. 
+Existem três opções de `<meetOrSlice>`: `meet` (padrão), `slice`, e `none`. Enquanto o `meet` se encarrega de preoduzir uma visibilidade completa do gráfico (o máximo possível), a função do `slice` é preencher o *viewport* com o `viewBox` e então cortar qualquer outra parte da imagem que não estiver dentro do *viewport* despois desta escala. `none` resulta na não preservação da dimensão e uma provável distorção da imagem. 
 
-Perhaps the most straightforward value here is "none", which establishes that uniform scaling should not be applied. If we then increase the pixel values of the viewport, the below image of cherries will stretch non-uniformly and look distorted.
+Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala uniforme que talvez não deveria ser aplicada. Se aumentarmos os valores em pixiels do *viewport*, a imagem abaixo das cerejas vai se tornar não uniforme e ficará distorcida.
 
 		<svg width="500" height="400" viewBox="0 0 250 600" preserveAspectRatio="none">
-			<!--<path <cherry drawing path> />-->
+			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
 ![Cherries](images/preserverationone.png)
 
-The `preserveAspectRatio` for the image below is set to `xMinYMax meet` which is aligning the bottom left corner of the `viewBox` to the bottom left corner of the viewport (which is now outlined). `meet` is ensuring the image is scaling to fit inside the viewport as much as possible.  
+Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo do *viewport*. O `meet` se certifica que a imagem está escalada para se encaixar dentro do *viewport* da melhor maneira possível.
 
 		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
-			<!--<path <cherry drawing path> />-->
+			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
 ![Cherries](images/preserveaspect2.png)
 
-Here are the same cherries when `meet` is changed  to `slice`:
+Aqui nós temos as mesmas cerejas quando `meet` é mudado para `slice`:
 
 		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax slice" style="border: 1px solid #333333;">
-			<!--<path <cherry drawing path> />-->
+			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
 ![Cherries](images/preserveslice.png)
 
-Note that the alignment values do not have to correlate.
+Perceba que os valores de alinhamento não precisam ser corrigidos.
 
 		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMid slice" style="border: 1px solid #333333;">
-			<!--<path <cherry drawing path> />-->
+			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
 ![Cherries](images/preservenocorrelate.png)
 
-The above example has a `preserveAspectRatio` of `xMinYMid slice`; the cherries are now aligned along the middle of the `y` axis of the viewport.
+O exemplo mostrado tem o `preserveAspectRatio` de `xMinYMid slice`; as cerejas agora estão alinhadas pelo meio do parâmtro `y` do *viewport*.
 
-### Coordinate System Transforms
+### Sistema de transformação de coordenadas
 
-SVG enables the additional altering of graphics such as rotation, scaling, moving, and skewing through the use of transforms. The SVG author can apply transforms to individual elements or to an entire group of elements.
+O SVG dispõe de alterações adicionais no gráfico como rotação, escala, movimento, aceitando inclusive o uso de *transforms*. As transformações do SVG podem se aplicar desde elementos individuais até um grupo interiro de elementos.
 
-These functions are included within the element to be manipulated and reside within the `<transform>` attribute. Multiple transforms can be used by including several functions inside this attribute, for example: `transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`.
+Essas funções são incluidas dentro do elemento a ser manipulado e residem dentro do atributo `<transform>`. Multiplos *transforms* podem ser incluidos em diversas funções dentro deste atributo, por exemplo: `transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`.
 
 Something important to keep in mind when transforming SVG is that it will impact your coordinate system, or workspace. This is because [transforms create a new user space](http://www.w3.org/TR/SVG/coords.html#EstablishingANewUserSpace) by essentially copying the original and then placing the transformation on the new system itself.
 
