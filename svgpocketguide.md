@@ -9,7 +9,7 @@ I would like to take this entire section to give a special “Thank you so much!
 * [CSS-Tricks](http://css-tricks.com/)
 * [Lincoln Loop](http://lincolnloop.com/)
 * [Designmodo](http://designmodo.com/)
-* [Tahoe Partners](http://tahoepartners.com/Pages/Tahoe%20Partners.aspx)
+* [Tahoe Partners](http://www.tahoepartners.com/)
 
 Your support for this book is so appreciated and I truly hope I have not offended any of you by potentially excluding your favorite fruit. 
 
