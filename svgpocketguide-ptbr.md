@@ -286,7 +286,7 @@ This method of determining stacking order also applies to the individual element
 
 ![Stem on top of grapes](images/stackingthree.png)
 
-## Seção 2. Formas e Paths básicos
+## Seção 2. Formas e *Paths* básicos
 
 As formas (*Shapes*) básicas em SVG podem ser escritos "na mão" em HTML, mas você pode eventualmente passar pela experiência de precisar usar gráficos inline muito mais complexos. Estes gráficos mais complexos podem ser gerados por softwares de vetores, mas por enquanto vamos nos atentar ao básico, que pode facilmente ser escrito "na mão".
 
@@ -295,7 +295,7 @@ As formas (*Shapes*) básicas em SVG podem ser escritos "na mão" em HTML, mas v
 
 O SVG possui os seguintes elementos que compõe as formas básicas: retângulos, circulos, elipses, linhas simples, polyline e polígonos. Cada elemento requer uma lista de atributos antes de serem renderizados, tais como coordenadas e detalhes de tamanho.
 
-#### Retângulo 
+#### Rectangle 
 
 O elemento `<rect>` é usado para definir o retângulo.
 
@@ -312,9 +312,9 @@ Outros atributos que podem ser incluídos são as coordenadas `x` e `y`. Esses v
 Também é possível criar cantos arredondados espeificando valores com os atributos `rx` e `ry`. Por exemplo, `rx="5" ry="10"` vão renderizar uma forma com os cantos horizontais com 5px de *radius*, e verticais com 10px de *radius*.
 
 
-#### Circulo
+#### Circle
 
-O elemento `<circle>` é mapeado com base em um ponto central e pelo tamanho de seu raio.
+O elemento `<circle>` é usado para definir um círculo mapeado com base em um ponto central e pelo tamanho de seu raio.
 
 		<svg>
   			<circle cx="75" cy="75" r="75" fill="#ED6E46" />
@@ -326,7 +326,7 @@ As coordenadas `cx` e `cy`estabelecem a localização do centro do circulo em re
 
 O atributo `r` define o tamanho do raio do circulo. 
 
-#### Elipse
+#### Ellipse
 
 O elemento `<ellipse>` define uma elipse na qual seu mapeamento basea-se em um ponto central porém com dois raios.
 
@@ -339,7 +339,7 @@ O elemento `<ellipse>` define uma elipse na qual seu mapeamento basea-se em um p
 
 Enquanto os valores `cx` e `cy` estabelecem um ponto central baseado na distância das coordenadas de espaço dentro do `<svg>`, os valores de `rx` e `ry` definem os raios horizontais e verticais da forma.
 
-#### Linha Simples
+#### Line
 
 O elemento `<line>` define uma linha simples com um ponto inicial e um ponto final.
 
@@ -365,7 +365,7 @@ Os valores dentro do atributo `points` estabelecem ao formato a localização de
 
 Qualquer número diferente de entradas aqui, retornará erro.
 
-#### Polígono 
+#### Polygon 
 
 O elemento `<polygon>` é usado para definir uma forma fechada, que consistem em linhas conectadas.
 
@@ -389,7 +389,7 @@ Dependendo do *shape* este *path* pode se tornar muito complexo, especialmente q
 
 Os dados do *path* possuem o atributo `d` dentro do elemento `<path>`, definindo a borda externa do formato: `<path d="<dados específicos do path>" />`.
 
-Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o *path* tais como *moveto*, *line*, *curve*, *arc* e *closepath*. 
+Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o *path* tais como mover para (*moveto*), linha, curva, *arc* e *closepath*. 
 
 O elemento `<path>` abaixo contém as coordenadas específicas para renderização de um limão:
 
@@ -401,7 +401,7 @@ O elemento `<path>` abaixo contém as coordenadas específicas para renderizaç�
 
 ##### moveto
 
-The moveto commands (M or m) establish a new point, as lifting a pen and starting to draw in a new location on paper would. The line of code comprising the path data must begin with a moveto command, as shown in the above example of the lime.
+O comando *moveto* (M ou m) estabelece um novo ponto, como se fosse uma linha sendo movida por um traço por caneta. A linha de código compreende os dados do *path* precisa começar o comando *moveto*, como mostrado no exemplo acima do limão.
 
 moveto commands that follow the initial one represent the start of a new subpath, creating a compound path. An uppercase M here indicates absolute coordinates will follow, while a lowercase m indicates relative coordinates.
 
