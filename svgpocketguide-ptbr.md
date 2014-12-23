@@ -363,7 +363,7 @@ O elemento `<polyline>` é usado para definir um conjunto de linhas simples inte
 
 Os valores dentro do atributo `points` estabelecem ao *shape* a localização de `x` e `y` distribuídos através do elemento `<polyline>` e são agrupados como `x,y` distribuido por uma lista de valores.
 
-#An odd number of points here is an error.#
+Qualquer número diferente de entradas aqui, retornará erro.
 
 #### Polígono 
 
