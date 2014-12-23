@@ -286,14 +286,14 @@ This method of determining stacking order also applies to the individual element
 
 ![Stem on top of grapes](images/stackingthree.png)
 
-## Seção 2. Shapes e Paths básicos
+## Seção 2. Formas e Paths básicos
 
-*Shapes* básicos em SVG podem ser escritos "na mão" em HTML, mas você pode eventualmente passar pela experiência de precisar usar gráficos inline muito mais complexos. Estes gráficos mais complexos podem ser gerados por softwares de vetores, mas por enquanto vamos nos atentar ao básico, que pode facilmente ser escrito "na mão".
+As formas (*Shapes*) básicas em SVG podem ser escritos "na mão" em HTML, mas você pode eventualmente passar pela experiência de precisar usar gráficos inline muito mais complexos. Estes gráficos mais complexos podem ser gerados por softwares de vetores, mas por enquanto vamos nos atentar ao básico, que pode facilmente ser escrito "na mão".
 
 
-### *Shapes* Básicos
+### Formas básicas
 
-O SVG possui os seguintes elementos que compõe os *shapes* básicos: retângulos, circulos, elipses, linhas simples, multi-linhas e polígonos. Cada elemento requer uma lista de atributos antes de serem renderizados, tais como coordenadas e detalhes de tamanho.
+O SVG possui os seguintes elementos que compõe as formas básicas: retângulos, circulos, elipses, linhas simples, polyline e polígonos. Cada elemento requer uma lista de atributos antes de serem renderizados, tais como coordenadas e detalhes de tamanho.
 
 #### Retângulo 
 
@@ -305,11 +305,11 @@ O elemento `<rect>` é usado para definir o retângulo.
 
 ![Rectangle](images/basicrect.png)
 
-Os atributos `width` e `height` estabelecem o tamanho do retângulo, enquanto `fill` define o preenchimento interior para o *shape*. Os valores numéricos padrão são em *pixiels* e o `fill` deverá permanecer na cor preta quando deixado sem especificação.
+Os atributos `width` e `height` estabelecem o tamanho do retângulo, enquanto `fill` define o preenchimento interior para a forma. Os valores numéricos padrão são em *pixiels* e o `fill` deverá permanecer na cor preta quando deixado sem especificação.
 
-Outros atributos que podem ser incluídos são as coordenadas `x` e `y`. Esses valores irão mover o *shape* apropriadamente de acordo com as dimensões setadas ao longo do documento `<svg>`.
+Outros atributos que podem ser incluídos são as coordenadas `x` e `y`. Esses valores irão mover a forma apropriadamente de acordo com as dimensões setadas ao longo do documento `<svg>`.
 
-Também é possível criar cantos arredondados espeificando valores com os atributos `rx` e `ry`. Por exemplo, `rx="5" ry="10"` vão renderizar um *shape* com os cantos horizontais com 5px de *radius*, e verticais com 10px de *radius*.
+Também é possível criar cantos arredondados espeificando valores com os atributos `rx` e `ry`. Por exemplo, `rx="5" ry="10"` vão renderizar uma forma com os cantos horizontais com 5px de *radius*, e verticais com 10px de *radius*.
 
 
 #### Circulo
@@ -337,7 +337,7 @@ O elemento `<ellipse>` define uma elipse na qual seu mapeamento basea-se em um p
 
 ![Ellipse](images/basicellipse.png)
 
-Enquanto os valores `cx` e `cy` estabelecem um ponto central baseado na distância das coordenadas de espaço dentro do `<svg>`, os valores de `rx` e `ry` definem os raios horizontais e verticais do *shape*.
+Enquanto os valores `cx` e `cy` estabelecem um ponto central baseado na distância das coordenadas de espaço dentro do `<svg>`, os valores de `rx` e `ry` definem os raios horizontais e verticais da forma.
 
 #### Linha Simples
 
@@ -351,9 +351,9 @@ O elemento `<line>` define uma linha simples com um ponto inicial e um ponto fin
 
 Juntos, os valores `x1` e `y1` estabelecem as coordenadas para o ponto de inicio da linha, enquanto os valores de `x2` e `y2` estabelecem o ponto final da linha.
 
-#### Multi-linha
+#### Polyline
 
-O elemento `<polyline>` é usado para definir um conjunto de linhas simples interligadas que, geralmente, resultam em um *shape* aberto (os pontos de início e fim não são conectados).
+O elemento `<polyline>` é usado para definir um conjunto de linhas simples interligadas que, geralmente, resultam em um formato aberto (os pontos de início e fim não são conectados).
 
 		<svg>
   			<polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill="white" 			stroke="#BBC42A" stroke-width="6" />
@@ -361,13 +361,13 @@ O elemento `<polyline>` é usado para definir um conjunto de linhas simples inte
 
 ![Polyline](images/basicpolyline.png)
 
-Os valores dentro do atributo `points` estabelecem ao *shape* a localização de `x` e `y` distribuídos através do elemento `<polyline>` e são agrupados como `x,y` distribuido por uma lista de valores.
+Os valores dentro do atributo `points` estabelecem ao formato a localização de `x` e `y` distribuídos através do elemento `<polyline>` e são agrupados como `x,y` distribuido por uma lista de valores.
 
 Qualquer número diferente de entradas aqui, retornará erro.
 
 #### Polígono 
 
-O elemento `<polygon>` é usado para definir um *shape* fechado que consistem em linhas conectadas.
+O elemento `<polygon>` é usado para definir uma forma fechada, que consistem em linhas conectadas.
 
 		<svg>
   			<polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" 					fill="#ED6E46" />
@@ -377,17 +377,17 @@ O elemento `<polygon>` é usado para definir um *shape* fechado que consistem em
 
 Os pontos do polígono são definidos através de uma série de oito grupos de valores `x,y`.
 
-Este elemento pode também, produzir outros tipos de *shapes* fechados dependendo do número de pontos definidos.
+Este elemento pode também, produzir outros tipos de formatos fechados dependendo do número de pontos definidos.
 
 ### O Elemento *Path* 
 
-Os *paths* em SVG representam a linha externa do *shape*. Este *shape* pode ser preenchido, contornado, usado para navegação com texto, e/ou usado como *clipping path*.
+Os *paths* em SVG representam a linhas externas a forma. Essa forma pode ser preenchida, contornado, usado para navegação com texto, e/ou usado como *clipping path*.
 
 Dependendo do *shape* este *path* pode se tornar muito complexo, especialmente quando existem muitas [curvas](http://www.w3.org/TR/SVG/paths.html#PathDataCurveCommands) envolvidas. Com um conhecimento básico de como funciona, a sintaxe envolvida, enfim, esses processos vão tornar esses *paths* muito mais gerenciáveis.
 
 #### dados do path
 
-Os dados do *path* possuem o atributo `d` dentro do elemento `<path>`, definindo a borda externa do *shape*: `<path d="<dados específicos do path>" />`.
+Os dados do *path* possuem o atributo `d` dentro do elemento `<path>`, definindo a borda externa do formato: `<path d="<dados específicos do path>" />`.
 
 Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o *path* tais como *moveto*, *line*, *curve*, *arc* e *closepath*. 
 
@@ -527,7 +527,7 @@ Once this code is copied it can be run through an SVG optimizer before being pla
 
 ## Seção 3. Workspace
 
-Talvez o aspecto mais importante do SVG, depois de entender sua estrutura geral e como criar *shapes* básicos é aprender sobre o *workspace* em uso, em outras palavras, entender o sistema de coordenadas no qual os gráficos vão ser mapeados. 
+Talvez o aspecto mais importante do SVG, depois de entender sua estrutura geral e como criar formas básicas é aprender sobre o *workspace* em uso, em outras palavras, entender o sistema de coordenadas no qual os gráficos vão ser mapeados. 
 
 Entender o *workspace* do SVG é útil para saber como renderizar propriamente seu gráfico, porém se torna crucial entender técnicas mais avançadas em SVG. Por exemplo, o mapeamento de gradientes são fortemente estabelecidos pelo sistema de coordenadas do SVG. Este *workspce* é definido por dimensões dos atributos *viewport* e `viewbox`.  
 
