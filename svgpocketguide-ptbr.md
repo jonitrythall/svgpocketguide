@@ -437,37 +437,38 @@ Um *V* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um
 
 ##### Os comandos de curva
 
-Existem 3 grupos de comandos que desenham caminhos curvos: *Cubic Bézier* (C, c, S, s), *Quadratic Bézier* (Q, q, T, t), e *Elliptical arc* (A, a).
-
-The following curve sections will introduce the basic concept behind each curve command, review the mapping details, and then provide a diagram for further understanding.
+Existem 3 grupos de comandos que desenham caminhos curvos: *Curvas Cúbicas de Bézier* (C, c, S, s), *Curvas quadráticas de Bézier* (Q, q, T, t), e *Curva Elíptica* (A, a).
 
 A seguinte seção sobre curvas irá introduzir o conceito básico por trás de cada comando de curva, revisar os detalhes de posicionamento e em seguida, fornecer um diagrama para melhor compreensão. 
 
-###### Cubic Bézier
+###### Curvas Cúbicas de Bézier
 
-Os comandos C e c de *Cubic Bézier* desenham uma curva utilizando os parâmetros (x1,y1) como ponto de controle do início da curva e (x2,y2) como ponto de controle do final da curva, definindo assim a forma que esta irá possuir.
+Os comandos C e c das curvas cúbicas de Bézier desenham uma curva utilizando os parâmetros (x1,y1) como ponto de controle do início da curva e (x2,y2) como ponto de controle do final da curva, definindo assim a forma que esta irá possuir.
 
-Os comandos S e s também irão desenhar uma curva *Cubic Bézier*, mas neste caso iremos assumir que o primeiro ponto de controle é a *reflexão* do segundo ponto de controle.
+Os comandos S e s também irão desenhar uma curva cúbica de Bézier, mas neste caso iremos assumir que o primeiro ponto de controle é a *reflexão* do segundo ponto de controle.
 
-![Cubic Bézier](images/curvecubic.png)
+![Curvas Cúbicas de Bézier](images/curvecubic.png)
 
-The following code draws a basic Cubic Bézier curve:
+O seguinte código desenha uma curva cúbica de Bézier básica:
 
 	<svg>
   		<path fill="none" stroke="#333333" stroke-width="3" d="M10,55 C15,5 100,5 100,55" />
 	</svg>
 
-Manipulating the first and last sets of values for this curve will impact its start and end location, while manipulating the two center values will impact the shape and positioning of the curve itself at the beginning and end.
+Manipulando o primeiro e o último conjunto de pontos para essa curva, irá impactar na localização do seu início e fim, enquanto manipular os dois pontos centrais, irá impactar na forma e posicionamento da curva em si.
 
-The S and s commands also draw a Cubic Bézier curve, but in this instance there is an assumption that the first control point is a *reflection* of the last control point for the previous C command. This reflection is relative to the start point of the S command.
+Os comandos S e s também irão desenhar uma curva cúbica de Bézier, mas neste caso iremos assumir que o primeiro ponto de controle é a *reflexão* do último ponto de controle do comando *C* anterior. Esta reflexão é relativa ao ponto inicial do comando *S*.
 
-![S Command Reflection](images/scommand.png)
 
-An uppercase C signals that absolute positioning will follow, while a lowercase c is relative. This same logic applies to S and s.
+![Reflexão do comando S](images/scommand.png)
+
+Um *C* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *c* minúsculo usa posição relativa. A mesma lógica é aplicada a S e s.
 
 ###### Quadratic Bézier
 
 Quadratic Bézier curves (Q, q, T, t) are similar to Cubic Bézier curves except that they only have one control point.
+
+As curvas *Quadratic Bézier*
 
 ![Quadratic Bézier](images/curvequad.png)
 
