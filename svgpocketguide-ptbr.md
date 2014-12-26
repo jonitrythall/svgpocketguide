@@ -462,29 +462,27 @@ Os comandos S e s também irão desenhar uma curva cúbica de Bézier, mas neste
 
 ![Reflexão do comando S](images/scommand.png)
 
-Um *C* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *c* minúsculo usa posição relativa. A mesma lógica é aplicada a S e s.
+Um *C* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *c* minúsculo usa posição relativa. A mesma lógica é aplicada a *S* e *s*.
 
-###### Quadratic Bézier
+###### Curvas Quadráticas de Bézier
 
-Quadratic Bézier curves (Q, q, T, t) are similar to Cubic Bézier curves except that they only have one control point.
+As Curvas Quadráticas de Bézier (Q, q, T, t) são similares as Curvas Cúbicas de Bézier, exceto que elas possuem somente um ponto de controle.
 
-As curvas *Quadratic Bézier*
+![Curvas Quadráticas de Bézier](images/curvequad.png)
 
-![Quadratic Bézier](images/curvequad.png)
-
-The following code draws a basic Quadratic Bézier curve:
+O seguinte código desenha uma curva quadrática de Bézier básica:
 
 	<svg>
   		<path fill="none" stroke="#333333" stroke-width="3" d="M20,50 Q40,5 100,50" />
 	</svg>
 
-Manipulating the first and last sets of values, `M20,50` and `100,50`, impacts the positioning of the beginning and end points of the curve. The center set of values, `Q40,5`, define the control point for the curve, establishing its shape.
+Manipulando o primeiro e último conjunto de valores, `M20,50` e `100,50`, irá impactar no posicionamento dos pontos de início e fim da curva. O conjunto central dos valores, `Q40,5`, define o ponto de controle da curva, estabelecendo sua forma.
 
-Q and q draw the curve from the initial point to the end point using (x1,y1) as the control. T and t draw the curve from the initial point to the end point by assuming that the control point is a reflection of the control on the *previously* listed command relative to the start point of the new T or t command.
+Q e q desenham a curva do ponto inicial até o ponto final usando (x1,y1) como o ponto de controle. T e t desenham a curva do ponto inicial até o ponto final assumindo que o ponto de controle é a reflexão do ponto de controle listado anteriormente, relativo ao ponto de partida do novo comando T or t.
 
-![T Command Control Point](images/curvetcontrol.png)
+![Ponto de controle do comando T](images/curvetcontrol.png)
 
-An uppercase Q signals that absolute positioning will follow, while a lowercase q is relative. This same logic applies to T and t.
+Um *Q* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *q* minúsculo usa posição relativa. A mesma lógica é aplicada a *T* e *t*.
 
 ###### Elliptical Arc
 
