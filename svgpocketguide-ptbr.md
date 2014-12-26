@@ -236,13 +236,13 @@ Por exemplo, o seguinte código desenha um gradiente muito simples em um retâng
 
 O conteúdo de `<defs>` não tem saída visual até que seja chamado pela sua referência única, o `id`, que neste caso está sendo feito através do atributo `fill` do retângulo. 
 
-#### symbol Element
+#### O elemento symbol
 
-The `<symbol>` element is similar to `<g>` as it provides a way to group elements, however,  elements within `<symbol>` have no visual output (like `<defs>`) until called on with the `<use>` element.
+O elemento `<symbol>` é similar ao `<g>`, já que permite uma forma de agrupar elementos, entretanto, elementos com o `<symbol>` não tem saída visual (assim como `<defs>`), até que seja chamado pelo elemento `<use>`.
 
-Also unlike the `<g>` element, `<symbol>` establishes its own coordinate system separate from the viewport it's rendered in.
+Também diferente do elemento `<g>`, o `<symbol>` estabelece seu próprio sistema de coordenadas separado da *viewport* em que está renderizado.
 
-SVG viewport and `viewBox`, which establish the coordinate system for the graphics being mapped, will be addressed further in a different section.
+*SVG viewport* e `viewBox`, que estabelecem o sistema de coordenadas para os gráficos, serão falados mais tarde, numa seção diferente.
 
 ### Stacking Order
 
