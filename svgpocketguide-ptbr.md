@@ -399,13 +399,13 @@ O elemento `<path>` abaixo contém as coordenadas específicas para renderizaç�
 
 ![Path do Limão](images/pathlime.png)
 
-##### moveto
+##### O comando moveto
 
 O comando *moveto* (M ou m) estabelece um novo ponto, como se fosse uma linha sendo movida por um traço por caneta. A linha de código que compreende os dados do *path* precisa começar com o comando *moveto*, como mostrado no exemplo do limão, visto acima.
 
 Comandos moveto que começam com sua inicial representam um novo *subpath*, criando assim um novo um *path* composto. A inicial maiúscula *M* indica que irá seguir coordenadas absolutas, enquanto a inicial minúscula *m* indica coordenadas relativas.
 
-##### closepath
+##### O comando closepath
 
 O *closepath* (Z ou z) finaliza o *path* atual e resulta em uma linha reta sendo desenhada a partir do ponto inicial desse *path*.
 
@@ -413,27 +413,27 @@ Se o *closepath* é seguido imediatamente por um *moveto*, as coordenadas desse 
 
 Ambos maiúsculo e mínusculo z, tem o mesmo resultado.
 
-##### lineto
+##### O comando lineto
 
-The lineto commands draw straight lines from the current point to a new point.
+O comando lineto desenha uma linha reta do ponto atual até o novo ponto.
 
 ###### L, l
 
-The L and l commands draw a line from the current point to the next provided point coordinates. This new point then becomes the current point, and so on.
+Os comandos *L* e *l* desenham uma linha do ponto atual até o próximo ponto dado nas coordenadas. Este novo ponto se torno o ponto atual e por aí vai.
 
-An uppercase L signals that absolute positioning will follow, while a lowercase l is relative.
+Um *L* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *l* minúsculo usa posição relativa.
 
 ###### H, h
 
-The H and h commands draw a horizontal line from the current point.
+Os comandos H e h desenham uma linha horizontal do ponto atual.
 
-An uppercase H signals that absolute positioning will follow, while a lowercase h is relative.
+Um *H* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *h* minúsculo usa posição relativa.
 
 ###### V, v
 
-The V and v commands draw a vertical line from the current point.
+os comandos V e v desenham uma linha vertical do ponto atual.
 
-An uppercase V signals that absolute positioning will follow, while a lowercase v is relative.
+Um *V* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *v* minúsculo usa posição relativa.
 
 ##### Curve Commands
 
