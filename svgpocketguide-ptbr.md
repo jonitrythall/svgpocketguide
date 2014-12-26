@@ -284,7 +284,7 @@ Se o grupo que contém as uvas for movido para o fim do documento, ele irá apar
 
 Este método também determina a ordem que os elementos individuais irão empilhar. Por exemplo, movendo o caminho que desenha a haste das uvas para o fim do grupo, irá resultar numa imagem com a haste na frente.
 
-![Stem on top of grapes](images/stackingthree.png)
+![Haste na frente da uva](images/stackingthree.png)
 
 ## Seção 2. Formas e *Paths* básicos
 
