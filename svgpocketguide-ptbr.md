@@ -183,7 +183,7 @@ Finalmente, alguns exemplos irão conter porções de gráficos com códigos com
 
 Os detalhes do SVG residem dentro do elemento `<svg>`. Este elemento contém alguns atributos que permitem a custumização do seu gráfico no *"canvas"*. Enquanto esses atributos não são completamente necessários para renderizar uma imagem, não utilizá-los também pode deixar gráficos mais complexos vulneráveis a não renderizar corretamente em todos os browsers.
 
-Como mencionado, gráficos *inline* podem ser escritos "na mão", ou incorporados acessando o código XML gerado pelos softwares gráficos. De qualquer forma, uma organização e estrutura adequedas são cruciais para uma escrita eficiente do SVG, principalmente porque a ordem dos elementos gráficos determinam sua ordem no *stack* (similar ao z-index de css).
+Como mencionado, gráficos *inline* podem ser escritos "na mão", ou incorporados acessando o código XML gerado pelos softwares gráficos. De qualquer forma, uma organização e estrutura adequedas são cruciais para uma escrita eficiente do SVG, principalmente porque a ordem dos elementos gráficos determinam sua ordem no empilhamento.
 
 
 ### Organização e Semântica
