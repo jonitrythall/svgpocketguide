@@ -216,13 +216,13 @@ Usar o atributo `xlink:href`, permite que você chame o elemento para ser reutil
 g
 Este elemento pode poupar um tempo significante e minimizar a quantidade de código requerido.
 
-#### defs Element
+#### O elemento defs
 
-While `<use>` permits the reuse of a graphic already rendered, graphics within a `<defs>` element are not rendered onto the canvas, but are able to be referenced and then rendered through the use of `xlink:href`.
+Enquanto o `<use>` permite reutilizar um gráfico já renderizado, gráficos com o elemento `<defs>` não são renderizados no canvas, mas estão hábeis a serem referenciados e renderizados utilizando o `xlink:href`.
 
-Graphics are defined within `<defs>` and can then be used throughout the document by referencing the `id` of that graphic.
+Gráficos são definidos com o `<defs>` e podem ser utilizados no decorrer do documento referenciados a `id` desse gráfico.
 
-For example, the following code draws a very simple gradient within a rectangle:
+Por exemplo, o seguinte código desenha um gradiente muito simples em um retângulo:
 
 		<svg>
     		<defs>
@@ -234,7 +234,7 @@ For example, the following code draws a very simple gradient within a rectangle:
     		<rect x="10" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="3px" />
   		</svg>
 
-The contents of the `<defs>` has no visual output until called on by referencing its unique `id`, which in this instance is being done through the `fill` attribute of the rectangle.
+O conteúdo de `<defs>` não tem saída visual até que seja chamado pela sua referência única, o `id`, que neste caso está sendo feito através do atributo `fill` do retângulo. 
 
 #### symbol Element
 
