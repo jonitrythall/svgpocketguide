@@ -403,7 +403,7 @@ O elemento `<path>` abaixo contém as coordenadas específicas para renderizaç�
 
 O comando *moveto* (M ou m) estabelece um novo ponto, como se fosse uma linha sendo movida por um traço por caneta. A linha de código que compreende os dados do *path* precisa começar com o comando *moveto*, como mostrado no exemplo do limão, visto acima.
 
-moveto commands that follow the initial one represent the start of a new subpath, creating a compound path. An uppercase M here indicates absolute coordinates will follow, while a lowercase m indicates relative coordinates.
+Comandos moveto que começam com sua inicial representam um novo *subpath*, criando assim um novo um *path* composto. A inicial maiúscula *M* indica que irá seguir coordenadas absolutas, enquanto a inicial minúscula *m* indica coordenadas relativas.
 
 ##### closepath
 
