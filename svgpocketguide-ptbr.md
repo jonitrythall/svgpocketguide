@@ -484,21 +484,21 @@ Q e q desenham a curva do ponto inicial até o ponto final usando (x1,y1) como o
 
 Um *Q* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *q* minúsculo usa posição relativa. A mesma lógica é aplicada a *T* e *t*.
 
-###### Elliptical Arc
+###### Curva Elíptica 
 
-An Elliptical Arc (A, a) defines a segment of an ellipse. These segments are created through the A or a commands which create the arc by specifying the start point, end point, x and y radii, rotation, and direction.
+Uma curva elíptica (A, a) define um segmento de uma elipse. Esses segmentos são criados através dos comando *A* ou *a* que criam um arco especificando um ponto inicial, ponto final, raios x e y, rotação e direção.
 
-Here is a look at the code for a basic Elliptical Arc:
+Aqui está um código de um curva elptica básica:
 
 	<svg>
   		<path fill="none" stroke="#333333" stroke-width="3" d="M65,10 a50,25 0 1,0 50,25" />
 	</svg>
 
-The first and last sets of values within this path, `M65,10` and `50,25` represent initial and final coordinates, while the second set of values define the two radii. The values of `1,0` (large-arc-flag and sweep-flag) determine how the arc is drawn, as there are four different options here.
+O primeiro e último conjunto de valores dentro do *path*, `M65,10` and `50,25`, representam as coordenadas inicial e final, enquanto o segundo conjunto de valores definem os dois raios. O valor de `1.0` (*large-arc-flag* and *sweep-flag*) determina como o arqco será desenhado, a partir das quato diferentes opções.
 
-The following diagram shows the four arc options and the impact that large-arc-flag and sweep-flag values have on the final rendering of the arc segment.
+O seguinte diagrama mostra as quatro opções e o impacto que esses valores tem na renderização final do segmento de arco.
 
-![Elliptical Arc](images/curvearc.png)
+![Curva Elíptica](images/curvearc.png)
 
 
 ### Embeds From Vector Software
