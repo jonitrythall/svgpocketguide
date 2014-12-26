@@ -131,9 +131,9 @@ Enquanto esse "Guia de bolso" é destinado para aqueles que já sabem uma coisa 
 
 #### Usando SVG
 
-Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/using-svg/) em seus projetos: *inline*, com a tag `<img>`, como *background-image*, como `<object>`, ou como *Data URI's*. Estaremos, de maneira específica, abordando o uso do SVG *inline* que envolve a escrita de código SVG diretamente dentro do corpo de um documento HTML devidamente estruturado.
+Existem [algumas maneiras diferenças de incluir o SVG](http://css-tricks.com/using-svg/) em seus projetos: *inline*, com a tag `<img>`, como *background-image*, como `<object>`, ou como *Data URI's*. Estaremos, de maneira específica, abordando o uso do SVG *inline*, que envolve a escrita de código SVG diretamente dentro do corpo de um documento HTML devidamente estruturado.
 
-Por enquanto só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende editar propriedades diretamente no próprio gráfico ou acessar partes individuais do mesmo, usá-lo com um `<img>` talvez seja melhor adequado ao seu projeto.
+Por enquanto, só abordaremos SVG inline aqui, mas vale ressaltar que podem haver casos em que um outro método pode ser mais apropriado. Por exemplo, quando você não pretende editar propriedades diretamente no próprio gráfico ou acessar partes individuais do mesmo, usá-lo com um `<img>` talvez seja mais adequado ao seu projeto.
 
 #### Sofwares de Vetor Gráfico
 
@@ -143,7 +143,7 @@ A vantagem destes tipos de ferramentas é que você pode exportar seu código SV
 
 #### *Inline* SVG na Web
 
-Por razões de brevidade ao longo do livro, o DOCTYPE SVG, número da versão assim como xmlns e xml:space foram excluídos de todas os exemplos de código.
+Por razões de simplicidade, ao longo do livro, o DOCTYPE SVG, número da versão assim como xmlns e xml:space foram excluídos de todas os exemplos de código.
 
 Esses atributos especificam ao *browser* a [versão do SVG](http://www.w3.org/TR/xml11/) sendo usado no momento assim como o [*namespace*](http://www.w3.org/TR/REC-xml-names/) do documento. A principal coisa a lembrar neste momento é que você geralmente não precisa incluir esses atrtibutos para renderizar com sucesso o seu gráfico no navegador.
 
@@ -157,7 +157,7 @@ Na maioria dos casos o DOCTYPE e seus atributos dentro do elemento `<svg>` não 
 
 #### SVG - Acessibilidade do Usuário
 
-Utilizando recursos [Acessibilidade SVG](http://www.sitepoint.com/tips-accessible-svg/) é um ótimo hábito a se formar, mas novamente por questão de simplicidade, descrições e títulos não serão incluídos no código no decorrer deste livro.
+Utilizar recursos de [Acessibilidade SVG](http://www.sitepoint.com/tips-accessible-svg/) é um ótimo hábito a se formar, mas novamente por questão de simplicidade, descrições e títulos não serão incluídos no código no decorrer deste livro.
 
 Uma vez que você se torne mais experiente ao escrever o SVG, a inclusão desses elementos irá tornar seus gráficos mais acessíveis aos usuários. Por exemplo, o conteúdo dentro do elemento `<desc>` permite o fornecimento de uma descrição detalhada de gráficos para usuários com *screen readers*.
 
