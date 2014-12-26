@@ -544,11 +544,11 @@ A pêra é inteiramente visível no *browser* e vai possuir escala adaptável qu
 
 ### viewport
 
-O *viewport* é a parte visiível do seu SVG. Enquanto SVG pode ter a largura ou a altura que você definir, limitar o *viewport* pode significar que somente uma certa parte da imagem será vista de cada vez.
+O *viewport* é a parte visível do seu SVG. Enquanto SVG pode ter a largura ou a altura que você definir, limitar o *viewport* pode significar que somente uma certa parte da imagem será vista de cada vez.
 
 O *viewport* é configurado através dos atributos `width` e `height` dentro de `<svg>`.
 
-Se estes valores não forem definidos, as dimensões do *viewport* irão geralmente ser determinados por outros indicadores dentro do SVG, como o `width` de um elemento externo. Entretando, a não configuração desse elemento deixa o seu *artwork* suscetível a ser cortado.
+Se estes valores não forem definidos, as dimensões do *viewport* irão geralmente ser determinados por outros indicadores dentro do SVG, como o `width` do elemento mais externo. Entretando, a não configuração desse elemento deixa o seu gráfico suscetível a ser cortado.
 
 ### viewBox
 
