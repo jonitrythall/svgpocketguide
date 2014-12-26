@@ -552,7 +552,7 @@ Se estes valores não forem definidos, as dimensões do *viewport* irão geralme
 
 ### viewBox
 
-O `viewBox` permite a visualização de uma parte específica de uma parte de um elemento. Esses valores incluem quatro números separados por "commas" ou espaços: `min-x`, `min-y`, `width` e `height` esses parâmetros geralmente, são os mesmos setados non *viewport*.
+O `viewBox` permite a visualização de uma parte específica de uma parte de um elemento. Esses valores incluem quatro números separados por "commas" ou espaços: `min-x`, `min-y`, `width` e `height` esses parâmetros geralmente, são os limites da *viewport*.
 
 Os valores `min` representam em qual ponto dentro da imagem o `viewBox` deve iniciar, enquanto o `width` e `height` estabelecem o tamanho do box. 
 
@@ -564,7 +564,7 @@ Se 50px forem tirados de `width` e `height` do `viewBox`, a porção da imagem d
 			<!--<path <path que desenha a pêra> />--> 
 		</svg> 
 
-![Pear](images/viewboxpear2reduced.png)
+![Pêra](images/viewboxpear2reduced.png)
 
 Os valores de `min` dentro do `viewBox` definem o início do `viewBox` dentro de seu elemento pai. Em outras palavras, os pontos dentro do `viewBox` são as coordenadas no qual iremos criar o campo de visualização. No desenho da pêra acima os valores de `min` eram 0,0 (topo, esquerda). Vamos mudar esses valores para 50, 30: `viewBox="50 30 115 190"`.
 
@@ -572,9 +572,9 @@ Os valores de `min` dentro do `viewBox` definem o início do `viewBox` dentro de
 			<!--<path <path que desenha a pêra> />-->
 		</svg>
 
-![Pear](images/viewboxpearminval.png)
+![Pêra](images/viewboxpearminval.png)
 
-O `viewBox` agora começa com 50px de parâmetro `x` e 30px no parâmetro `y`. Alterando esses parâmtros a parte da pêra que está em foco é mudada.
+O `viewBox` agora começa com 50px ao longo do eixo `x` e 30px ao longo do eixo `y`. Alterando esses parâmtros a parte da pêra que está em foco é modificada.
 
 #### preserveAspectRatio
 
