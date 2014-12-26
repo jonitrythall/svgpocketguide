@@ -578,31 +578,31 @@ O `viewBox` agora começa com 50px ao longo do eixo `x` e 30px ao longo do eixo 
 
 #### preserveAspectRatio
 
-Se o *viewport* e `viewBox` não possuirem as mesmas dimensões de `width` e `height`, o atributo `preserveAspectRatio`  direciona o browser em como efetuar o display da imagem.
+Se o *viewport* e `viewBox` não possuirem as mesmas dimensões de `width` e `height`, o atributo `preserveAspectRatio` direciona o browser em como efetuar o display da imagem.
 
-O atributo `preserveAspectRatio` requer dois parâmetros, `<align>` e `<meetOrSlice>`. O primeiro parâmetro possui duas partes que direciona o alinhamento do `viewBox` dentro do *viewport*. O segundo é opcional e indica como o aspecto da dimensão será preservado.
+O atributo `preserveAspectRatio` requer dois parâmetros, `<align>` e `<meetOrSlice>`. O primeiro parâmetro possui duas partes que direciona o alinhamento do `viewBox` dentro da *viewport*. O segundo é opcional e indica como o aspecto da dimensão será preservado.
 
 `preserveAspectRatio="xMaxYMax meet"`
 
 Estes valores vão alinhar o canto direito inferior do `viewBox` ao canto direito inferior do *viewport*. O `meet` preserva o aspecto da dimensão da escala do `viewBox` para se encaixar como o *viewport* o máximo possível.
 
-Existem três opções de `<meetOrSlice>`: `meet` (padrão), `slice`, e `none`. Enquanto o `meet` se encarrega de preoduzir uma visibilidade completa do gráfico (o máximo possível), a função do `slice` é preencher o *viewport* com o `viewBox` e então cortar qualquer outra parte da imagem que não estiver dentro do *viewport* despois desta escala. `none` resulta na não preservação da dimensão e uma provável distorção da imagem. 
+Existem três opções de `<meetOrSlice>`: `meet` (padrão), `slice`, e `none`. Enquanto o `meet` se encarrega de produzir uma visibilidade completa do gráfico (o máximo possível), a função do `slice` é preencher a *viewport* com o `viewBox` e então cortar qualquer outra parte da imagem que não estiver dentro da *viewport* despois desta escala. `none` resulta na não preservação da dimensão e uma provável distorção da imagem. 
 
-Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala uniforme que talvez não deveria ser aplicada. Se aumentarmos os valores em pixiels do *viewport*, a imagem abaixo das cerejas vai se tornar não uniforme e ficará distorcida.
+Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala uniforme que talvez não deveria ser aplicada. Se aumentarmos os valores em pixels da *viewport*, a imagem abaixo das cerejas vai se tornar não uniforme e ficará distorcida.
 
 		<svg width="500" height="400" viewBox="0 0 250 600" preserveAspectRatio="none">
 			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
-![Cherries](images/preserverationone.png)
+![Cerejas](images/preserverationone.png)
 
-Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo do *viewport*. O `meet` se certifica que a imagem está escalada para se encaixar dentro do *viewport* da melhor maneira possível.
+Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo da *viewport*. O `meet` se certifica que a imagem está escalada para se encaixar dentro da *viewport* da melhor maneira possível.
 
 		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
 			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
-![Cherries](images/preserveaspect2.png)
+![Cerejas](images/preserveaspect2.png)
 
 Aqui nós temos as mesmas cerejas quando `meet` é mudado para `slice`:
 
@@ -610,7 +610,7 @@ Aqui nós temos as mesmas cerejas quando `meet` é mudado para `slice`:
 			<!--<path <path que desenha a cereja> />-->
 		</svg>
 
-![Cherries](images/preserveslice.png)
+![Cerejas](images/preserveslice.png)
 
 Perceba que os valores de alinhamento não precisam ser corrigidos.
 
@@ -620,7 +620,7 @@ Perceba que os valores de alinhamento não precisam ser corrigidos.
 
 ![Cherries](images/preservenocorrelate.png)
 
-O exemplo mostrado tem o `preserveAspectRatio` de `xMinYMid slice`; as cerejas agora estão alinhadas pelo meio do parâmtro `y` do *viewport*.
+O exemplo mostrado acima tem o `preserveAspectRatio` de `xMinYMid slice`; as cerejas agora estão alinhadas pelo meio do eixo `y` da *viewport*.
 
 ### Sistema de transformação de coordenadas
 
