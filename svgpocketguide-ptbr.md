@@ -12,7 +12,7 @@ Eu gostaria de dedicar essa sessão inteira para deixar um especial "Muito obrig
 * [Designmodo](http://designmodo.com/)
 * [Tahoe Partners](http://tahoepartners.com/Pages/Tahoe%20Partners.aspx)
 
-Fico bastante agradecida pelo suporte a este livro e espero realmente não ter ofendido nenhum de vocês por não utilizar sua fruta favorita.	
+Fico bastante agradecida pelo suporte a este livro e espero realmente não ter ofendido nenhum de vocês por não utilizar sua fruta favorita.
 
 ![Heart](images/heart.png)
 
@@ -196,7 +196,7 @@ Esta seção irá introduzir a chave para escrever SVG - o elemento `<svg>`- e r
 
 O elemento `<svg>`é classificado tanto como um *container* quanto como um elemento estrutural, e pode ser usado para criar um fragmento SVG independente dentro do documento. Este fragmento tendo seu próprio sistema de coordenadas.
 
-Os atributos usados neste elemento, como `width`, `height`, `preserveAspectRatio`e `viewBox`definem o espaço onde o gráfico será escrito.
+Os atributos usados neste elemento, como `width`, `height`, `preserveAspectRatio`e `viewBox` definem o espaço onde o gráfico será escrito.
 
 Ao obter o código SVG de algum software de vetor ele terá [várias informações](http://www.w3.org/TR/SVG/struct.html#SVGElement) dentro do elemento `<svg>`, como a versão do SVG (indica a versão da linguagem SVG que está sendo utilizada) e o DOCTYPE. Como mencionado anteriormente, essa informação não será incluída no decorrer deste guia, e sua exclusão não irá prejudicar a renderização do gráfico em sua tela.
 
@@ -234,7 +234,7 @@ Por exemplo, o seguinte código desenha um gradiente muito simples em um retâng
     		<rect x="10" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="3px" />
   		</svg>
 
-O conteúdo de `<defs>` não tem saída visual até que seja chamado pela sua referência única, o `id`, que neste caso está sendo feito através do atributo `fill` do retângulo. 
+O conteúdo de `<defs>` não tem saída visual até que seja chamado pela sua referência única, o `id`, que neste caso está sendo feito através do atributo `fill` do retângulo.
 
 #### O elemento symbol
 
@@ -295,7 +295,7 @@ As formas básicas em SVG podem ser escritas "na mão" em HTML, mas você pode e
 
 O SVG possui os seguintes elementos que compõe as formas básicas: retângulos, circulos, elipses, linhas simples, polyline e polígonos. Cada elemento requer uma lista de atributos antes de serem renderizados, tais como coordenadas e detalhes de tamanho.
 
-#### O elemento rect 
+#### O elemento rect
 
 O elemento `<rect>` é usado para definir o retângulo.
 
@@ -324,7 +324,7 @@ O elemento `<circle>` é usado para definir um círculo mapeado com base em um p
 
 As coordenadas `cx` e `cy`estabelecem a localização do centro do circulo em relação as dimensões configuradas no seu *workplace* pelo elemento `<svg>`.
 
-O atributo `r` define o tamanho do raio do circulo. 
+O atributo `r` define o tamanho do raio do circulo.
 
 #### O elemento ellipse
 
@@ -365,7 +365,7 @@ Os valores dentro do atributo `points` estabelecem ao formato a localização de
 
 Qualquer número diferente de entradas aqui, retornará erro.
 
-#### O elemento polygon 
+#### O elemento polygon
 
 O elemento `<polygon>` é usado para definir uma forma fechada, que consistem em linhas conectadas.
 
@@ -379,7 +379,7 @@ Os pontos do polígono são definidos através de uma série de oito grupos de v
 
 Este elemento pode também, produzir outros tipos de formatos fechados dependendo do número de pontos definidos.
 
-### O Elemento *path* 
+### O Elemento *path*
 
 Os *paths* em SVG representam as linhas externas de uma forma. Essa forma pode ser preenchida, contornada, usado para navegação com texto, e/ou usada como *clipping path*.
 
@@ -389,7 +389,7 @@ Dependendo da forma  este *path* pode se tornar muito complexo, especialmente qu
 
 Os dados do *path* possuem o atributo `d` dentro do elemento `<path>`, definindo a borda externa do formato: `<path d="<dados específicos do path>" />`.
 
-Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o *path* tais como *moveto*, *line*, *curve*, *arc* e *closepath*. 
+Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o *path* tais como *moveto*, *line*, *curve*, *arc* e *closepath*.
 
 O elemento `<path>` abaixo contém as coordenadas específicas para renderização de um limão:
 
@@ -409,7 +409,7 @@ Comandos moveto que começam com sua inicial representam um novo *subpath*, cria
 
 O *closepath* (Z ou z) finaliza o *path* atual e resulta em uma linha reta sendo desenhada a partir do ponto inicial desse *path*.
 
-Se o *closepath* é seguido imediatamente por um *moveto*, as coordenadas desse *moveto* representam o início de um novo *path*. Se este mesmo *closepath* é seguido de qualquer outro elemento sem ser o moveto, o próximo caminho irá iniciar no mesmo ponto do caminho anterior.  
+Se o *closepath* é seguido imediatamente por um *moveto*, as coordenadas desse *moveto* representam o início de um novo *path*. Se este mesmo *closepath* é seguido de qualquer outro elemento sem ser o moveto, o próximo caminho irá iniciar no mesmo ponto do caminho anterior.
 
 Ambos maiúsculo e mínusculo z, tem o mesmo resultado.
 
@@ -439,7 +439,7 @@ Um *V* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um
 
 Existem 3 grupos de comandos que desenham caminhos curvos: *Curvas Cúbicas de Bézier* (C, c, S, s), *Curvas quadráticas de Bézier* (Q, q, T, t), e *Curva Elíptica* (A, a).
 
-A seguinte seção sobre curvas irá introduzir o conceito básico por trás de cada comando de curva, revisar os detalhes de posicionamento e em seguida, fornecer um diagrama para melhor compreensão. 
+A seguinte seção sobre curvas irá introduzir o conceito básico por trás de cada comando de curva, revisar os detalhes de posicionamento e em seguida, fornecer um diagrama para melhor compreensão.
 
 ###### Curvas Cúbicas de Bézier
 
@@ -484,7 +484,7 @@ Q e q desenham a curva do ponto inicial até o ponto final usando (x1,y1) como o
 
 Um *Q* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *q* minúsculo usa posição relativa. A mesma lógica é aplicada a *T* e *t*.
 
-###### Curva Elíptica 
+###### Curva Elíptica
 
 Uma curva elíptica (A, a) define um segmento de uma elipse. Esses segmentos são criados através dos comando *A* ou *a* que criam um arco especificando um ponto inicial, ponto final, raios x e y, rotação e direção.
 
@@ -505,7 +505,7 @@ O seguinte diagrama mostra as quatro opções e o impacto que esses valores tem 
 
 Programas de vetor gráfico permitem a geração de formas e caminhos mais complexos, enquanto produzem código SVG que pode ser capturado, utilizado e manipulado em qualquer lugar.
 
-Uma vez que o desenho estiver completo, o código XML gerado, que pode ser um pouco grande dependendo de sua complexidade, pode ser copiado e incorporado no HTML. Quebrar cada seção do SVG e manter uma organização correta dos elementos, pode ser de grande ajuda na navegação e entendimento de documentos aparentemente complexos. 
+Uma vez que o desenho estiver completo, o código XML gerado, que pode ser um pouco grande dependendo de sua complexidade, pode ser copiado e incorporado no HTML. Quebrar cada seção do SVG e manter uma organização correta dos elementos, pode ser de grande ajuda na navegação e entendimento de documentos aparentemente complexos.
 
 Aqui está o código SVG de algumas cerejas com classes adicionadas para melhor navegação:
 
@@ -528,11 +528,11 @@ Uma vez que o código é copiado, ele pode passar por um otimizador de SVG antes
 
 ## Seção 3. Workspace
 
-Talvez o aspecto mais importante do SVG, depois de entender sua estrutura geral e como criar formas básicas é aprender sobre o *workspace* em uso, em outras palavras, entender o sistema de coordenadas no qual os gráficos vão ser mapeados. 
+Talvez o aspecto mais importante do SVG, depois de entender sua estrutura geral e como criar formas básicas é aprender sobre o *workspace* em uso, em outras palavras, entender o sistema de coordenadas no qual os gráficos vão ser mapeados.
 
-Entender o *workspace* do SVG é útil para saber como renderizar propriamente seu gráfico, porém se torna crucial entender técnicas mais avançadas em SVG. Por exemplo, o mapeamento de gradientes são fortemente estabelecidos pelo sistema de coordenadas do SVG. Este *workspce* é definido por dimensões da *viewport* e atributos da `viewbox`.  
+Entender o *workspace* do SVG é útil para saber como renderizar propriamente seu gráfico, porém se torna crucial entender técnicas mais avançadas em SVG. Por exemplo, o mapeamento de gradientes são fortemente estabelecidos pelo sistema de coordenadas do SVG. Este *workspce* é definido por dimensões da *viewport* e atributos da `viewbox`.
 
-Esta pêra, felizmente possui o *viewport* e `viewBox` que correspondem um com o outro:
+Esta pêra, felizmente possui a *viewport* e `viewBox` que correspondem um com o outro:
 
 		<svg width="115" height="190" viewBox="0 0 115 190">
     		<!--<path <path que desenha a pêra> />-->
@@ -540,33 +540,33 @@ Esta pêra, felizmente possui o *viewport* e `viewBox` que correspondem um com o
 
 ![Pêra](images/viewboxpear1.png)
 
-A pêra é inteiramente visível no *browser* e vai possuir escala adaptável quando as dimensões do *viewport* forem alteradas.
+A pêra é inteiramente visível no *browser* e vai possuir escala adaptável quando as dimensões da *viewport* forem alteradas.
 
 ### viewport
 
-O *viewport* é a parte visível do seu SVG. Enquanto SVG pode ter a largura ou a altura que você definir, limitar o *viewport* pode significar que somente uma certa parte da imagem será vista de cada vez.
+A *viewport* é a parte visível do seu SVG. Enquanto SVG pode ter a largura ou a altura que você definir, limitar a *viewport* pode significar que somente uma certa parte da imagem será vista de cada vez.
 
-O *viewport* é configurado através dos atributos `width` e `height` dentro de `<svg>`.
+A *viewport* é configurada através dos atributos `width` e `height` dentro de `<svg>`.
 
-Se estes valores não forem definidos, as dimensões do *viewport* irão geralmente ser determinados por outros indicadores dentro do SVG, como o `width` do elemento mais externo. Entretando, a não configuração desse elemento deixa o seu gráfico suscetível a ser cortado.
+Se estes valores não forem definidos, as dimensões da *viewport* irão geralmente ser determinados por outros indicadores dentro do SVG, como o `width` do elemento mais externo. Entretando, a não configuração desse elemento deixa o seu gráfico suscetível a ser cortado.
 
 ### viewBox
 
-O `viewBox` permite a visualização de uma parte específica de uma parte de um elemento. Esses valores incluem quatro números separados por "commas" ou espaços: `min-x`, `min-y`, `width` e `height` esses parâmetros geralmente, são os limites da *viewport*.
+A `viewBox` permite a visualização de uma parte específica de uma parte de um elemento. Esses valores incluem quatro números separados por "commas" ou espaços: `min-x`, `min-y`, `width` e `height` esses parâmetros geralmente, são os limites da *viewport*.
 
-Os valores `min` representam em qual ponto dentro da imagem o `viewBox` deve iniciar, enquanto o `width` e `height` estabelecem o tamanho do box. 
+Os valores `min` representam em qual ponto dentro da imagem a `viewBox` deve iniciar, enquanto o `width` e `height` estabelecem o tamanho do box.
 
-Se nós optarmos por não definir o `viewBox` a imagem não será escalada e irá corresponder a configuração feita no *viewport*.
+Se nós optarmos por não definir a `viewBox` a imagem não será escalada e irá corresponder a configuração feita na *viewport*.
 
-Se 50px forem tirados de `width` e `height` do `viewBox`, a porção da imagem da pêra que está visível é reduzida, porém a parte que ainda pode ser visualizada se encaixa nas definições do *viewport*.
+Se 50px forem tirados de `width` e `height` da `viewBox`, a porção da imagem da pêra que está visível é reduzida, porém a parte que ainda pode ser visualizada se encaixa nas definições da *viewport*.
 
 		<svg width="115px" height="190px" viewBox="0 0 65 140">
-			<!--<path <path que desenha a pêra> />--> 
-		</svg> 
+			<!--<path <path que desenha a pêra> />-->
+		</svg>
 
 ![Pêra](images/viewboxpear2reduced.png)
 
-Os valores de `min` dentro do `viewBox` definem o início do `viewBox` dentro de seu elemento pai. Em outras palavras, os pontos dentro do `viewBox` são as coordenadas no qual iremos criar o campo de visualização. No desenho da pêra acima os valores de `min` eram 0,0 (topo, esquerda). Vamos mudar esses valores para 50, 30: `viewBox="50 30 115 190"`.
+Os valores de `min` dentro da `viewBox` definem o início da `viewBox` dentro de seu elemento pai. Em outras palavras, os pontos dentro da `viewBox` são as coordenadas no qual iremos criar o campo de visualização. No desenho da pêra acima os valores de `min` eram 0,0 (topo, esquerda). Vamos mudar esses valores para 50, 30: `viewBox="50 30 115 190"`.
 
 		<svg width="115" height="190" viewBox="50 30 115 190">
 			<!--<path <path que desenha a pêra> />-->
@@ -574,19 +574,19 @@ Os valores de `min` dentro do `viewBox` definem o início do `viewBox` dentro de
 
 ![Pêra](images/viewboxpearminval.png)
 
-O `viewBox` agora começa com 50px ao longo do eixo `x` e 30px ao longo do eixo `y`. Alterando esses parâmtros a parte da pêra que está em foco é modificada.
+A `viewBox` agora começa com 50px ao longo do eixo `x` e 30px ao longo do eixo `y`. Alterando esses parâmtros a parte da pêra que está em foco é modificada.
 
 #### preserveAspectRatio
 
-Se o *viewport* e `viewBox` não possuirem as mesmas dimensões de `width` e `height`, o atributo `preserveAspectRatio` direciona o browser em como efetuar o display da imagem.
+Se a *viewport* e `viewBox` não possuirem as mesmas dimensões de `width` e `height`, o atributo `preserveAspectRatio` direciona o browser em como efetuar o display da imagem.
 
-O atributo `preserveAspectRatio` requer dois parâmetros, `<align>` e `<meetOrSlice>`. O primeiro parâmetro possui duas partes que direciona o alinhamento do `viewBox` dentro da *viewport*. O segundo é opcional e indica como o aspecto da dimensão será preservado.
+O atributo `preserveAspectRatio` requer dois parâmetros, `<align>` e `<meetOrSlice>`. O primeiro parâmetro possui duas partes que direciona o alinhamento da `viewBox` dentro da *viewport*. O segundo é opcional e indica como o aspecto da dimensão será preservado.
 
 `preserveAspectRatio="xMaxYMax meet"`
 
-Estes valores vão alinhar o canto direito inferior do `viewBox` ao canto direito inferior do *viewport*. O `meet` preserva o aspecto da dimensão da escala do `viewBox` para se encaixar como o *viewport* o máximo possível.
+Estes valores vão alinhar o canto direito inferior da `viewBox` ao canto direito inferior da *viewport*. O `meet` preserva o aspecto da dimensão da escala da `viewBox` para se encaixar como a *viewport* o máximo possível.
 
-Existem três opções de `<meetOrSlice>`: `meet` (padrão), `slice`, e `none`. Enquanto o `meet` se encarrega de produzir uma visibilidade completa do gráfico (o máximo possível), a função do `slice` é preencher a *viewport* com o `viewBox` e então cortar qualquer outra parte da imagem que não estiver dentro da *viewport* despois desta escala. `none` resulta na não preservação da dimensão e uma provável distorção da imagem. 
+Existem três opções de `<meetOrSlice>`: `meet` (padrão), `slice`, e `none`. Enquanto o `meet` se encarrega de produzir uma visibilidade completa do gráfico (o máximo possível), a função do `slice` é preencher a *viewport* com a `viewBox` e então cortar qualquer outra parte da imagem que não estiver dentro da *viewport* despois desta escala. `none` resulta na não preservação da dimensão e uma provável distorção da imagem.
 
 Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala uniforme que talvez não deveria ser aplicada. Se aumentarmos os valores em pixels da *viewport*, a imagem abaixo das cerejas vai se tornar não uniforme e ficará distorcida.
 
