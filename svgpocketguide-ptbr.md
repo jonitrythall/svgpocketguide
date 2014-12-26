@@ -501,13 +501,13 @@ O seguinte diagrama mostra as quatro opções e o impacto que esses valores tem 
 ![Curva Elíptica](images/curvearc.png)
 
 
-### Embeds From Vector Software
+### Incorporando de um Programa de vetor gráfico
 
-Vector graphics software allows for the generation of more complex shapes and paths while producing SVG code that can be taken, used, and manipulated elsewhere.
+Programas de vetor gráfico permitem a geração de formas e caminhos mais complexos, enquanto produzem código SVG que pode ser capturado, utilizado e manipulado em qualquer lugar.
 
-Once the graphic is complete, the generated XML code, which can be quite lengthy depending on the complexity, can be copied and embedded into HTML. Breaking down each section of the SVG and having the right organizational elements in place can greatly help in navigating and understanding these seemingly complex and wordy documents.
+Uma vez que o desenho estiver completo, o código XML gerado, que pode ser um pouco grande dependendo de sua complexidade, pode ser copiado e incorporado no HTML. Quebrar cada seção do SVG e manter uma organização correta dos elementos, pode ser de grande ajuda na navegação e entendimento de documentos aparentemente complexos. 
 
-Here is the SVG code for an image of some cherries with added classes for enhanced navigation:
+Aqui está o código SVG de algumas cerejas com classes adicionadas para melhor navegação:
 
 		<svg width="215px" height="274px" viewBox="0 0 215 274">
 			<g>
@@ -520,11 +520,11 @@ Here is the SVG code for an image of some cherries with added classes for enhanc
 			</g>
 		</svg>
 
-![Cherries](images/embedcherry.png)
+![Cerejas](images/embedcherry.png)
 
-The attributes within the `svg` element define the workspace, or “canvas” for the graphic. The leaf and the stems are within one `<g>` (group), while the cherries are in another. The string of numerical values define the path the graphic will take and the `fill` and `stroke` attributes set the color for the backgrounds and borders.
+Os atributos dentro do elemento `svg` definem o workspace, ou *"canvas"* para o desenho. A folhas e as hastes estão dentro de um grupo, enquanto as cerejas estão em outro. Os valores números definem o caminho que o desenho irá tomar e o `fill` e `stroke` os atributos que irão definir a cor do preenchimento e bordas.
 
-Once this code is copied it can be run through an SVG optimizer before being placed in HTML, which will help eliminate unnecessary code and spacing and in turn greatly reduce the file size. [Peter Collingridge's SVG Optimiser](http://petercollingridge.appspot.com/svg_optimiser) or [SVGO](https://github.com/svg/svgo) are tools that are very helpful in this regard.
+Uma vez que o código é copiado, ele pode passar por um otimizador de SVG antes de ser colocado no HTML, que irá ajudar a eliminar código desnecessário e espaçamentos, reduzindo bastante o tamanho do arquivo. [Peter Collingridge's SVG Optimiser](http://petercollingridge.appspot.com/svg_optimiser) ou [SVGO](https://github.com/svg/svgo) são ferramentas muito úteis nessa tarefa.
 
 ## Seção 3. Workspace
 
