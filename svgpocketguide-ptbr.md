@@ -208,13 +208,13 @@ Além disso, ao agrupar elementos relacionados, você pode manipular o grupo com
 
 Qualquer elemento que não está contido em um `g` é considerado como seu próprio grupo.
 
-#### use Element
+#### O elemento use
 
-The `<use>` element allows you to reuse elements throughout a document. There are additional attributes that can be included within this element, such as `x`, `y`, `width`, and `height`, which define the mapping location details of the graphic within the coordinate system.
+O elemento `<use>` permite reutilizar elementos ao decorrer do documento. Esses atributos adicionais podem ser incluídos com o elemento, como `x`, `y`, `width`, e `height`, que definem os detalhes de localização do gráfico dentro do sistema de coordenadas.
 
-Using the `xlink:href` attribute here enables you to call on the element to be reused. For example, if there was a `<g>` with an `id` of “apple” containing the image of an apple that needed to be reused this image can be referenced by `<use>`: `<use x="50" y="50" xlink:href="#apple" />`.
-
-This element can be a significant time saver and help minimize required code.
+Usar o atributo `xlink:href`, permite que você chame o elemento para ser reutilizado. Por exemplo, se existe um `<g>` com um `id` "apple" contendo uma imagem de uma maçã que precisa ser reutilizada, essa imagem pode ser referenciada pelo `<use>`: `<use x="50" y="50" xlink:href="#apple" />`
+g
+Este elemento pode poupar um tempo significante e minimizar a quantidade de código requerido.
 
 #### defs Element
 
