@@ -1,4 +1,4 @@
-# Guia de bolso de SVG
+x# Guia de bolso de SVG
 ## [*Por Joni Trythall*](httpw://jonibologna.com/)
 ### Tradução por [*Willian Justen*](http://github.com/willianjusten) e [*Lucas Maia*](http://github.com/lucasmaiaesilva)
 #### [Compre a versão PDF aqui](http://svgpocketguide.com/) (Versão em inglês)
@@ -115,7 +115,7 @@ Fico bastante agradecida pelo suporte a este livro e espero realmente não ter o
 
 Scalable Vector Graphics (SVG) é uma linguagem para descrever gráficos bidimensionais baseada no padrão XML. Esses gráficos consistem em caminhos, imagens e/ou textos capazes de serem escalados e redimensionados sem perder a qualidade de imagem.
 
-Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML para gerar esses gráficos no browser, o qual inclusive, será o foco deste livro.
+Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML para gerar esses gráficos no browser, o qual será o foco deste livro.
 
 Existem muitas vantagens em usar o SVG dessa maneira, incluindo ter acesso a partes individuais do gráfico para propósitos de interatividade, gerando textos pesquisáveis, acesso ao DOM para edições diretas, e promovendo a acessibilidade ao usuário.
 
