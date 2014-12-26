@@ -244,11 +244,11 @@ Também diferente do elemento `<g>`, o `<symbol>` estabelece seu próprio sistem
 
 *SVG viewport* e `viewBox`, que estabelecem o sistema de coordenadas para os gráficos, serão falados mais tarde, numa seção diferente.
 
-### Stacking Order
+### Ordem de empilhamento (*Stackering Order*)
 
-The stacking order of SVG cannot be manipulated by `z-index` in CSS as other elements within HTML can. The order in which SVG elements are stacked depends entirely on their placement within the document fragment.
+A ordem de empilhamento do SVG não pode ser manipulada pelo `z-indez` no CSS como os outros elementos do HTML podem. A ordem que estes elementos são empilhados no SVG dependem inteiramente de sua posição dentro do documento.
 
-The grapes and watermelon below are within the same `<svg>` element. The watermelon appears in front of the grapes because the group containing the paths that make up the watermelon is listed after the grapes in the document.
+As uvas e a melância estão no mesmo elemento `<svg>` abaixo. A melância aparece a frente das uvas porque o grupo que contém o caminho que faz seu desenho está listado antes das uvas no documento.
 
 	<svg>
 		<g class="grapes">
@@ -263,9 +263,9 @@ The grapes and watermelon below are within the same `<svg>` element. The waterme
 		</g>
 	</svg>
 
-![Stacked watermelon and grapes, watermelon on top](images/stackedfirst.png)
+![Melância e uvas empilhadas, melância na frente](images/stackedfirst.png)
 
-If the group containing the grapes was moved to the end of the document it would then appear in front of the watermelon.
+Se o grupo que contém as uvas for movido para o fim do documento, ele irá aparecer então na frente da melância.
 
 	<svg>
 		<g class="watermelon">
@@ -280,9 +280,9 @@ If the group containing the grapes was moved to the end of the document it would
 		</g>
 	</svg>
 
-![Stacked watermelon and grapes, grapes on top](images/stackingtwo.png)
+![Melância e uva empilhadas, uvas na frente](images/stackingtwo.png)
 
-This method of determining stacking order also applies to the individual elements within the group. For example, moving the path of the stem in the grapes image to the end of the group will result in the stem being on top.
+Este método também determina a ordem que os elementos individuais irão empilhar. Por exemplo, movendo o caminho que desenha a haste das uvas para o fim do grupo, irá resultar numa imagem com a haste na frente.
 
 ![Stem on top of grapes](images/stackingthree.png)
 
