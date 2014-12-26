@@ -624,21 +624,21 @@ O exemplo mostrado acima tem o `preserveAspectRatio` de `xMinYMid slice`; as cer
 
 ### Sistema de transformação de coordenadas
 
-O SVG dispõe de alterações adicionais no gráfico como rotação, escala, movimento, aceitando inclusive o uso de *transforms*. As transformações do SVG podem se aplicar desde elementos individuais até um grupo interiro de elementos.
+O SVG dispõe de alterações adicionais no gráfico como rotação, escala, movimento e inclinição através do uso de *transforms*. As transformações do SVG podem se aplicar desde elementos individuais até um grupo inteiro de elementos.
 
-Essas funções são incluidas dentro do elemento a ser manipulado e residem dentro do atributo `<transform>`. Multiplos *transforms* podem ser incluidos em diversas funções dentro deste atributo, por exemplo: `transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`.
+Essas funções são incluídas dentro do elemento a ser manipulado e residem dentro do atributo `<transform>`. Múltiplos *transforms* podem ser incluídos em diversas funções dentro deste atributo, por exemplo: `transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`.
 
-Something important to keep in mind when transforming SVG is that it will impact your coordinate system, or workspace. This is because [transforms create a new user space](http://www.w3.org/TR/SVG/coords.html#EstablishingANewUserSpace) by essentially copying the original and then placing the transformation on the new system itself.
+Uma coisa importante para ficar na cabeça quando transformar SVG é que isto irá impactar no seu sistema de coordenadas ou *workspace*. Isto acontece porque [transforms criam um novo espaço](http://www.w3.org/TR/SVG/coords.html#EstablishingANewUserSpace) ou seja, você está essencialmente copiando o gráfico original e colocando a transformação em um novo sistema de coordenadas.
 
-The following image demonstrates the coordinate system transform that takes place when placing a translation of (100,100) on the group containing the graphic:
+A seguinte imagem demonstra a transformação que o sistema de coordenadas sofre quando se faz uma translação de (100,100) em um grupo contendo o gráfico:
 
-![Translated coordinate system](images/transformcoord.png)
+![Translação do sistema de coordenadas](images/transformcoord.png)
 
-The coordinate system itself has been translated and the image of the lime and lemon has maintained its original positioning within this system. The new user coordinate system has its origin at location (100,100) in the original coordinate system.
+O sistema de coordenadas como um todo é transladado e a imagem da lima e do limão é mantida no posicionamento original com o sistema. O novo sistema de coordenadas tem a origem localizada em (100,100) do sistema de coordenadas original. 
 
-Because of this relationship with the coordinate system, many of these functions will move the graphic even if you are not directly setting a translation on it. For example, attempting to triple an image’s size by including a `scale` value of "3" is multiplying the `x` and `y` coordinates by "3" and the image is scaling along with it, moving it across the screen in the process.
+Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo escalada em torno disso, movendo toda a tela no processo. 
 
-In the case of nested transforms the effects are cumulative, so the final transform on a child element will be based on the accumulation of the transforms before it.
+No caso de transformações em cadeia, os efeitos são acumulativos, então a transformação no elemento filho será baseada na acumulação de transformações antes do mesmo.
 
 
 #### translate
