@@ -530,7 +530,7 @@ Uma vez que o código é copiado, ele pode passar por um otimizador de SVG antes
 
 Talvez o aspecto mais importante do SVG, depois de entender sua estrutura geral e como criar formas básicas é aprender sobre o *workspace* em uso, em outras palavras, entender o sistema de coordenadas no qual os gráficos vão ser mapeados. 
 
-Entender o *workspace* do SVG é útil para saber como renderizar propriamente seu gráfico, porém se torna crucial entender técnicas mais avançadas em SVG. Por exemplo, o mapeamento de gradientes são fortemente estabelecidos pelo sistema de coordenadas do SVG. Este *workspce* é definido por dimensões dos atributos *viewport* e `viewbox`.  
+Entender o *workspace* do SVG é útil para saber como renderizar propriamente seu gráfico, porém se torna crucial entender técnicas mais avançadas em SVG. Por exemplo, o mapeamento de gradientes são fortemente estabelecidos pelo sistema de coordenadas do SVG. Este *workspce* é definido por dimensões da *viewport* e atributos da `viewbox`.  
 
 Esta pêra, felizmente possui o *viewport* e `viewBox` que correspondem um com o outro:
 
@@ -538,9 +538,9 @@ Esta pêra, felizmente possui o *viewport* e `viewBox` que correspondem um com o
     		<!--<path <path que desenha a pêra> />-->
   		</svg>
 
-![Pear](images/viewboxpear1.png)
+![Pêra](images/viewboxpear1.png)
 
-A pêra é inteiramente visível no *browser* e vai possuir escala adaptável quando as dimensões do *viewport* são alterados.
+A pêra é inteiramente visível no *browser* e vai possuir escala adaptável quando as dimensões do *viewport* forem alteradas.
 
 ### viewport
 
