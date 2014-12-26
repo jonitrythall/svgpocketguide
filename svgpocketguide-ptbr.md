@@ -407,11 +407,11 @@ Comandos moveto que começam com sua inicial representam um novo *subpath*, cria
 
 ##### closepath
 
-The closepath (Z or z) ends the current subpath and results in a straight line being drawn from that point to the initial point of the path.
+O *closepath* (Z ou z) finaliza o *path* atual e resulta em uma linha reta sendo desenhada a partir do ponto inicial desse *path*.
 
-If the closepath is followed immediately by a moveto, these moveto coordinates represent the start of the next subpath. If this same closepath is followed by anything other than moveto, the next subpath begins at the same point as the current subpath.
+Se o *closepath* é seguido imediatamente por um *moveto*, as coordenadas desse *moveto* representam o início de um novo *path*. Se este mesmo *closepath* é seguido de qualquer outro elemento sem ser o moveto, o próximo caminho irá iniciar no mesmo ponto do caminho anterior.  
 
-Both an uppercase or lowercase z here have identical outcomes.
+Ambos maiúsculo e mínusculo z, tem o mesmo resultado.
 
 ##### lineto
 
