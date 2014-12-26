@@ -435,17 +435,19 @@ os comandos V e v desenham uma linha vertical do ponto atual.
 
 Um *V* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *v* minúsculo usa posição relativa.
 
-##### Curve Commands
+##### Os comandos de curva
 
-There are three groups of commands that draw curved paths: Cubic Bézier (C, c, S, s), Quadratic Bézier (Q, q, T, t), and Elliptical arc (A, a).
+Existem 3 grupos de comandos que desenham caminhos curvos: *Cubic Bézier* (C, c, S, s), *Quadratic Bézier* (Q, q, T, t), e *Elliptical arc* (A, a).
 
 The following curve sections will introduce the basic concept behind each curve command, review the mapping details, and then provide a diagram for further understanding.
 
+A seguinte seção sobre curvas irá introduzir o conceito básico por trás de cada comando de curva, revisar os detalhes de posicionamento e em seguida, fornecer um diagrama para melhor compreensão. 
+
 ###### Cubic Bézier
 
-The C and c Cubic Bézier commands draw a curve from the current point using (x1,y1) parameters as a control point at the beginning of the curve and (x2,y2) as the control point at the end, defining the shape details of the curve.
+Os comandos C e c de *Cubic Bézier* desenham uma curva utilizando os parâmetros (x1,y1) como ponto de controle do início da curva e (x2,y2) como ponto de controle do final da curva, definindo assim a forma que esta irá possuir.
 
-The S and s commands also draw a Cubic Bézier curve, but in this instance there is an assumption that the first control point is a *reflection* of the second control point.
+Os comandos S e s também irão desenhar uma curva *Cubic Bézier*, mas neste caso iremos assumir que o primeiro ponto de controle é a *reflexão* do segundo ponto de controle.
 
 ![Cubic Bézier](images/curvecubic.png)
 
