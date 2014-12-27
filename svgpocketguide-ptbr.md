@@ -736,11 +736,11 @@ Os exemplos a seguir usam um SVG inline de uvas. Os atributos estão sendo utili
 
 #### stroke
 
-The `stroke` attribute defines the “border” paint of particular shapes and paths.
+O atributo `stroke` define a cor da borda numa forma ou caminho específico.
 
-The following grapes image has a purple stroke: `stroke="#765373"`.
+A seguinte imagem das uvas tem um contorno roxo: `stroke="#765373"`. 
 
-![Grapes](images/stroke1.png)
+![Uvas](images/stroke1.png)
 
 
 #### stroke-width
