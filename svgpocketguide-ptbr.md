@@ -722,7 +722,7 @@ Embora essa propriedade não seja geralmente necessária, ela permite um melhor 
 
 ##### inherit
 
-A value of `inherit` will direct the element to take on the `fill-rule` specified by its parent.
+O valor de `inherit` irá direcionar o elemento a assumir o `fill-rule` especificado em seu elemento pai.
 
 #### fill-opacity
 
