@@ -769,19 +769,19 @@ A haste na imagem seguinte tem o `stroke-linecap` com o valor `square`:
 
 #### stroke-linejoin
 
-`stroke-linejoin` defines how the corners of strokes will look on paths and basic shapes.
+O `stroke-linejoin` define qual aparência os cantos dos contornos irão possuir nos caminhos e formas básicas. 
 
-![Grapes](images/strokelinejoin.png)
+![Uvas](images/strokelinejoin.png)
 
-Here is a look at the grapes with a `stroke-linejoin` of `"bevel"`:
+Segue um exemplo das com uvas com um `stroke-linejoin` no valor `"bevel"`:
 
 	<svg>
-    	<!--<path stroke-linejoin="bevel" <path for grapes> />-->
-    	<!--<path <path for stem> />-->
-    	<!--<path <path for leaf> />-->
+    	<!--<path stroke-linejoin="bevel" <caminho para as uvas> />-->
+    	<!--<path <caminho para a haste> />-->
+    	<!--<path <caminho para a folha> />-->
   	</svg>
 
-![Grapes](images/strokebevel.png)
+![Uvas](images/strokebevel.png)
 
 ##### stroke-miterlimit
 
