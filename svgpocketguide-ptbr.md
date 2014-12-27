@@ -810,7 +810,7 @@ Colocar apenas um número dentro deste valor resulta num espaço entre os traço
 
 ![Uvas](images/strokedasharray.png)
 
-The first grapes image here shows the impact that an even number of listed values has on the grape's path: `stroke-dasharray="20,15,10,8"`.
+A primeira imagem mostra o impacto que um número par de valores faz no caminho da uva: `stroke-dasharray="20,15,10,8"`.
 
 #### stroke-dashoffset
 
