@@ -667,9 +667,7 @@ Permite redimensionar os elementos do svg através da função `scale`. Esta fun
 
 O valor `sy` é opcional e se omitido é assumido como igual ao `sx` que garante consistência no redimensionamento.
 
-A `scale` value of ".5" would render a graphic half the size it was originally, while a value of "3" would triple this initial size. A value of "4,2" would scale a graphic four times its original width, and two times its original height.
-
-Um `scale`no valor de ".5" irá renderizar um gráfico com metade do seu tamanho original, enquanto um valor de "3" irá triplicar seu tamanho inicial. Um valor de "4,2" irá dimensionar o gráfico quatro vezes da sua largura original e duas vezes de seu tamanho original.
+Um `scale`no valor de ".5" irá renderizar um gráfico com metade do seu tamanho original, enquanto um valor de "3" irá triplicar seu tamanho inicial. Um valor de "4,2" irá dimensionar o gráfico quatro vezes da sua largura original e duas vezes de sua altura original.
 
 #### skew
 
