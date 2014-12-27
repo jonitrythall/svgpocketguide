@@ -726,7 +726,7 @@ O valor de `inherit` irá direcionar o elemento a assumir o `fill-rule` especifi
 
 #### fill-opacity
 
-The `fill-opacity` value refers to the opacity level of the interior paint fill. A value of "0" results in complete transparency, "1" applies no transparency, and values in between represent a percentage-based level of opacity.
+O valor de `fill-opacity` se refere ao nível de opacidade do preenchimento no interior. O valor de "0" resulta numa completa transparência, "1" retira toda a transparência, e valores entre represetam um nível em porcentagem da opacidade.
 
 ### Stroke Attributes
 
