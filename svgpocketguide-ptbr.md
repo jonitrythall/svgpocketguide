@@ -702,13 +702,13 @@ Os valores aceitos são `nonzero`, `evenodd`, `inherit`.
 
 ##### nonzero
 
-A value of `nonzero` determines the inside of a point on the canvas by drawing a line from the area in question through the entire shape in any direction and then considering the locations where a segment of the shape crosses this line. This starts with zero and adds one each time a path segment crosses the line from left to right and subtracts one each time a path segment crosses the line from right to left.
+O valor de `nonzero` determina o interior de um ponto em todo o *canvas*, desenhando uma linha partindo da área em questão e entre toda a forma em qualquer direção, e então, considerando o local onde um segmento da forma cruza esta linha. Isso se inicia com zero e adiciona um cada vez que um segmento cruza a linha da esquerda para a direita, e substrai um cada vez que o caminho é cruzado da direita para a esquerda.
 
-If the result is zero after evaluating and counting these intersections then the point is outside the path, otherwise it is inside.
+Se o resultado for zero depois de analisar e contar essas interseções, então o ponto está fora do caminho, caso contrário, ele está dentro.
 
 ![nonzero fill-rule](images/fillrulenonzero.png)
 
-Essentially, if the interior path is drawn clockwise it will be considered as "inside", but if drawn counter-clockwise it will be considered "outside" and therefore be excluded from painting.
+Essencialmente, se o caminho for desenhado no sentido horário, ele é considerado como interno, mas se ele for desenhado no sentido anti-horário ele é considerado externo e será excluído do processo de `fill`.
 
 ##### evenodd
 
