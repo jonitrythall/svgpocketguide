@@ -712,13 +712,13 @@ Essencialmente, se o caminho for desenhado no sentido horário, ele é considera
 
 ##### evenodd
 
-A value of `evenodd` determines the inside of an area on the canvas by drawing a line from that area through the entire shape in any direction and counts the path segments that the line crosses. If this results in an odd number the point is inside, if even the point is outside.
+O valor de `evenodd` determina o interior de um ponto em todo o *canvas*, desenhando uma linha partindo da área em questão e entre toda a forma em qualquer direção, e conta quais segmentos do caminho que essa linha cruzou. Se o resultado é um número ímpar, esse ponto é interno, se é par esse ponto é externo.
 
 ![evenodd fill-rule](images/fillruleevenodd.png)
 
-Given the specific algorithm of the `evenodd` rule, the drawing direction of the interior shape in question is irrelevant, unlike with `nonzero`, as we are simply counting the paths as they cross the line.
+Dado o algoritmo específico de `evenodd`, a direção do desenho no interior da forma é irrelevante, diferente do `nonzero`, já que estamos simplesmente contando os caminhos que cruzam a linha.
 
-While this property is not generally necessary, it will allow for greater `fill` control of a complex graphic, as mentioned.
+Embora essa propriedade não seja geralmente necessária, ela permite um melhor controle do `fill` em desenhos mais complexos, como mencionado anteriormente.
 
 ##### inherit
 
