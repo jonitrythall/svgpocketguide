@@ -113,7 +113,7 @@ Fico bastante agradecida pelo suporte a este livro e espero realmente não ter o
 
 ## Introdução
 
-Scalable Vector Graphics (SVG) é uma linguagem para descrever gráficos bidimensionais baseada no padrão XML. Esses gráficos consistem em caminhos, imagens e/ou textos capazes de serem escalados e redimensionados sem perder a qualidade de imagem.
+Scalable Vector Graphics (SVG) é uma linguagem para descrever gráficos bidimensionais baseada no padrão XML. Esses gráficos consistem em caminhos, imagens e/ou textos capazes de mudarem de escala e serem redimensionados sem perder a qualidade de imagem.
 
 Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML para gerar esses gráficos no browser, o qual será o foco deste livro.
 
@@ -556,7 +556,7 @@ A `viewBox` permite a visualização de uma parte específica de uma parte de um
 
 Os valores `min` representam em qual ponto dentro da imagem a `viewBox` deve iniciar, enquanto o `width` e `height` estabelecem o tamanho do box.
 
-Se nós optarmos por não definir a `viewBox` a imagem não será escalada e irá corresponder a configuração feita na *viewport*.
+Se nós optarmos por não definir a `viewBox` a imagem não será redimensionada e irá corresponder a configuração feita na *viewport*.
 
 Se 50px forem tirados de `width` e `height` da `viewBox`, a porção da imagem da pêra que está visível é reduzida, porém a parte que ainda pode ser visualizada se encaixa nas definições da *viewport*.
 
@@ -596,7 +596,7 @@ Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala
 
 ![Cerejas](images/preserverationone.png)
 
-Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo da *viewport*. O `meet` se certifica que a imagem está escalada para se encaixar dentro da *viewport* da melhor maneira possível.
+Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo da *viewport*. O `meet` se certifica que a imagem está dimensionada para se encaixar dentro da *viewport* da melhor maneira possível.
 
 		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
 			<!--<path <path que desenha a cereja> />-->
@@ -634,9 +634,9 @@ A seguinte imagem demonstra a transformação que o sistema de coordenadas sofre
 
 ![Translação do sistema de coordenadas](images/transformcoord.png)
 
-O sistema de coordenadas como um todo é transladado e a imagem da lima e do limão é mantida no posicionamento original com o sistema. O novo sistema de coordenadas tem a origem localizada em (100,100) do sistema de coordenadas original. 
+O sistema de coordenadas como um todo é transladado e a imagem da lima e do limão é mantida no posicionamento original com o sistema. O novo sistema de coordenadas tem a origem localizada em (100,100) do sistema de coordenadas original.
 
-Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo escalada em torno disso, movendo toda a tela no processo. 
+Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo redimensionada em torno disso, movendo toda a tela no processo.
 
 No caso de transformações em cadeia, os efeitos são acumulativos, então a transformação no elemento filho será baseada na acumulação de transformações antes do mesmo.
 
@@ -677,7 +677,7 @@ Here is a look at an apple before and after adding a `skewX` value of "20": `tra
 
 Aqui está uma maçã antes e depois de adicionar um `skewX` no valor de "20": `transform="skewX(20)"`. *Perceba que a imagem não reflete a mudança nas coordenadas que esta transformação faz.*
 
-![Maça entortada](images/skewapple.png)
+![Maçã entortada](images/skewapple.png)
 
 ## Section 4. Fills and Strokes
 
