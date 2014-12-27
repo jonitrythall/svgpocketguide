@@ -696,9 +696,9 @@ Quando preenchendo uma forma ou caminho, `fill` irá pintar caminhos abertos com
 
 #### fill-rule
 
-The `fill-rule` property indicates the algorithm to be used in determining which parts of the canvas are included inside the shape. This is not always straightforward when working with more complex intersecting or enclosed paths.
+A propriedade de `fill-rule` indica ao algorimo quais partes do canvas devem ser incluídas dentro da forma. Isso nem é sempre é fácil quando se trabalha com interseções mais complexas ou caminhos fechados.
 
-The accepted values here are `nonzero`, `evenodd`, `inherit`.
+Os valores aceitos são `nonzero`, `evenodd`, `inherit`.
 
 ##### nonzero
 
