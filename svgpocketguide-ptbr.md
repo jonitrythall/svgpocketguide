@@ -833,13 +833,13 @@ O atributo `stroke-opacity` permite nível de transparência para os contornos.
 O valor aqui é decimal entre 0 e 1, com 0 sendo completamente transparente.
 
 
-## Section 5. The text Element
+## Seção 5: O elemento texto
 
-The `<text>` element defines a graphic consisting of text. There are a number of attribute options for customization of this text, and gradients, patterns, clipping paths, masks, or filters can also be applied.
+O elemento `<text>` define um gráfico que consiste de texto. Há uma série de opções de atributos para customização deste texto, e gradientes, padrões, recortes, máscaras ou filtros que podem ser aplicados.
 
-Writing and editing `<text>` in SVG provides a very powerful ability to create scalable text as graphics that can be easily changed and edited within the SVG code.
+Escrever e editar o `<text>` no SVG fornece uma poderosa habilidade de criar textos escaláveis assim como os gráficos que podem ser modificados e editados com o código do SVG. 
 
-Remember to be mindful of viewport dimensions when working through the examples in this section. The viewport, as mentioned, will determine the visible portion of the SVG and it may be necessary to change the viewport depending on the alteration specifics.
+Lembre-se de estar consciente das dimensões da *viewport* enquanto trabalhamos nos exemplos desta seção. A *viewport*, como mencionada anteriormente, vai determinar a porção visível do SVG e pode ser necessário modificar a *viewport* dependendo de alguma alteração específica.
 
 ### Basic Attributes
 
