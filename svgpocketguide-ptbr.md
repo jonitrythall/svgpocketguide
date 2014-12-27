@@ -745,9 +745,9 @@ A seguinte imagem das uvas tem um contorno roxo: `stroke="#765373"`.
 
 #### stroke-width
 
-The `stroke-width` value establishes the width of the grape’s stroke, which is set to `6px` on the grapes image.
+O valor de `stroke-width` estabele a largura do contorno das uvas, o qual está definido para `6px`na imagem.
 
-The default value for this attribute is 1. If a percentage value is used, the value is based on the dimensions of the viewport.
+O valor padrão para este atributo é 1. Se um valor em porcentagem é utilizado, o valor é baseado nas dimensões da *viewport*.
 
 #### stroke-linecap
 
