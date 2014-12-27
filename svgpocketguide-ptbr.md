@@ -814,17 +814,17 @@ A primeira imagem mostra o impacto que um número par de valores faz no caminho 
 
 #### stroke-dashoffset
 
-`stroke-dashoffset` specifies the distance into the dash pattern to start the dash.
+O `stroke-dashoffset` especifica a distância para o traço iniciar.
 
 	<svg>
-    	<!--<path stroke-dasharray="40,10" stroke-dashoffset="35" <path for grapes> />-->
-    	<!--<path <path for stem> />-->
-    	<!--<path <path for leaf> />-->
+    	<!--<path stroke-dasharray="40,10" stroke-dashoffset="35" <caminho para as uvas> />-->
+    	<!--<path <caminho para a haste> />-->
+    	<!--<path <caminho para a folha> />-->
   	</svg>
 
-![Grapes](images/strokedashoffset.png)
+![Uvas](images/strokedashoffset.png)
 
-In the example above, there is a dash set to be 40px long, and a `dashoffset` of 35px. At the starting point of the path the dash will not become visible until 35px in to the first 40px dash, which is why the first dash appears significantly shorter.
+No exemplo acima, temos um traço configurado para ter o tamanho de 40px e um `dashoffset` de 35px. No ponto de partida do caminho do traço, ele não será visível até os 35px dos primeiros 40px do traço, e é por isso que o primeiro traço parece significativamente menor.
 
 #### stroke-opacity
 
