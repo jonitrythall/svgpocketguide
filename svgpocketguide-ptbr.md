@@ -728,11 +728,11 @@ O valor de `inherit` irá direcionar o elemento a assumir o `fill-rule` especifi
 
 O valor de `fill-opacity` se refere ao nível de opacidade do preenchimento no interior. O valor de "0" resulta numa completa transparência, "1" retira toda a transparência, e valores entre represetam um nível em porcentagem da opacidade.
 
-### Stroke Attributes
+### Atributos de contorno
 
-There are a number of stroke-related attributes within SVG that allow for the control and manipulation of stroke details. The abilities of these attributes provide for greater control of hand-coded SVG, but also prove convenient when needing to make edits to an existing embedded graphic.
+Existem algums atributos relacionados ao contorno no SVG, que permitem o controle e manipulação dos detalhes do contorno. As habilidades desses atributem fornecem um grande controle no SVG "feito a mão", mas também prova ser útil quando é necessário se fazer edições em gráficos incoroporados já existentes.
 
-The following examples use an inline SVG of grapes. The attributes being used reside directly within the correlating shape’s element.
+Os exemplos a seguir usam um SVG inline de uvas. Os atributos estão sendo utilizados diretamente na forma do elemento.  
 
 #### stroke
 
