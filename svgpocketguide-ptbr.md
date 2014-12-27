@@ -663,11 +663,13 @@ Aqui está uma maçã antes e depois de ter uma rotação de 20 graus aplicada:
 
 #### scale
 
-Scaling allows the resizing of SVG elements through the use of the `scale` function. This function accepts one or two values which specify horizontal and vertical scaling amounts along the appropriate axis: `transform="scale(<sx> [<sy>])"`.
+Permite redimensionar os elementos do svg através da função `scale`. Esta função aceita um ou dois valores que especificam valores de escala horizontal e vertical ao longo do eixo apropriado: `transform="scale(<sx> [<sy>])"`.
 
-The `sy` value is optional and if omitted it is assumed to be equal to `sx` to ensure consistent resizing.
+O valor `sy` é opcional e se omitido é assumido como igual ao `sx` que garante consistência no redimensionamento.
 
 A `scale` value of ".5" would render a graphic half the size it was originally, while a value of "3" would triple this initial size. A value of "4,2" would scale a graphic four times its original width, and two times its original height.
+
+Um `scale`no valor de ".5" irá renderizar um gráfico com metade do seu tamanho original, enquanto um valor de "3" irá triplicar seu tamanho inicial. Um valor de "4,2" irá dimensionar o gráfico quatro vezes da sua largura original e duas vezes de seu tamanho original.
 
 #### skew
 
