@@ -643,9 +643,10 @@ No caso de transformações em cadeia, os efeitos são acumulativos, então a tr
 
 #### translate
 
-The `translate` function specifies the details of moving a shape, and the two numerical values included here direct movement along both the `x` and `y` axis: `transform="translate(<tx>,<ty>)"`. These values can be separated by either whitespace or commas.
+A função `translate` especifica os detalhes para mover uma forma, e os dois valores numéricos includem os movimentos ao longo dos eixos `x` e `y`: `transform="translate(<tx>,<ty>)"`
+Esse valores podem ser separados por espaços ou vírgulas.
 
-The `y` value here is optional and if omitted a value of "0" is assumed.
+O valor `y` é opcional e se omitido é assumido o valor de "0".
 
 
 #### rotate
