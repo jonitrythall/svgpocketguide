@@ -751,21 +751,21 @@ O valor padrão para este atributo é 1. Se um valor em porcentagem é utilizado
 
 #### stroke-linecap
 
-`stroke-linecap` defines which shape the end of an open path will take and there are four acceptable values: `butt`, `round`, `square`, `inherit`.
+O `stroke-linecap` define qual forma terá o final de um caminho aberto e ele aceita quatro valores possíveis: `butt`, `round`, `square`, `inherit`.
 
-![Grapes](images/strokelinecap.png)
+![Uvas](images/strokelinecap.png)
 
-A value of `inherit` will direct the element to take on the `stroke-linecap` specified by its parent.
+O valor de `inherit` irá direcionar o elemento para receber o `stroke-linecap` definido pelo seu elemento pai.
 
-The stem in the following image has a `stroke-linecap` value of `square`:
+A haste na imagem seguinte tem o `stroke-linecap` com o valor `square`:
 
 	<svg>
-    	<!--<path <path for grapes> />-->
-    	<!--<path stroke-linecap="square" <path for stem> />-->
-    	<!--<path <path for leaf> />-->
+    	<!--<path <caminho para a uva> />-->
+    	<!--<path stroke-linecap="square" <caminho para a haste> />-->
+    	<!--<path <caminho para a folha> />-->
   	</svg>
 
-![Grapes](images/strokesquarestem.png)
+![Uvas](images/strokesquarestem.png)
 
 #### stroke-linejoin
 
