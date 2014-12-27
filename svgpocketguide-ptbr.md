@@ -624,7 +624,7 @@ O exemplo mostrado acima tem o `preserveAspectRatio` de `xMinYMid slice`; as cer
 
 ### Sistema de transformação de coordenadas
 
-O SVG dispõe de alterações adicionais no gráfico como rotação, escala, movimento e inclinição através do uso de *transforms*. As transformações do SVG podem se aplicar desde elementos individuais até um grupo inteiro de elementos.
+O SVG dispõe de alterações adicionais no gráfico como rotação, dimensionamento, movimento e torção através do uso de *transforms*. As transformações do SVG podem se aplicar desde elementos individuais até um grupo inteiro de elementos.
 
 Essas funções são incluídas dentro do elemento a ser manipulado e residem dentro do atributo `<transform>`. Múltiplos *transforms* podem ser incluídos em diversas funções dentro deste atributo, por exemplo: `transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`.
 
@@ -672,6 +672,8 @@ Um `scale`no valor de ".5" irá renderizar um gráfico com metade do seu tamanho
 #### skew
 
 SVG elements can be skewed, or made crooked, through the use of the `skewX` and `skewY` functions. The value included within these functions represents a skew transformation in degrees along the appropriate axis.
+
+Elementos SVG podem ser 
 
 Here is a look at an apple before and after adding a `skewX` value of "20": `transform="skewX(20)"`. *Note that this image does not reflect the coordinate change this transform makes.*
 
