@@ -828,9 +828,9 @@ No exemplo acima, temos um traço configurado para ter o tamanho de 40px e um `d
 
 #### stroke-opacity
 
-The `stroke-opacity` attribute allows for a transparency level to be set on strokes.
+O atributo `stroke-opacity` permite nível de transparência para os contornos.
 
-The value here is a decimal number between 0 and 1, with 0 being completely transparent.
+O valor aqui é decimal entre 0 e 1, com 0 sendo completamente transparente.
 
 
 ## Section 5. The text Element
