@@ -785,29 +785,30 @@ Segue um exemplo das com uvas com um `stroke-linejoin` no valor `"bevel"`:
 
 ##### stroke-miterlimit
 
-When two lines meet at a sharp angle and are set to a `stroke-linejoin="miter"`, the `stroke-miterlimit` attribute allows for the specification of how far this joint/corner extends.
+Quando duas linhas se encontram num ângulo agudo e são definidos para `stroke-linejoin="miter"`, o atributo `stroke-miterlimit` permite especificar o quanto irá se extender essa junção/canto.
 
-The length of this joint is called the miter length, and it is measured from the inner corner of the line join to the outer tip of the join.
+O comprimento dessa junção é chamado de comprimento de esquadria, e é medido através do canto interior da linha dessa junção até a ponta exterior dessa junção.
 
-This value is a limit on the ratio of the miter length to the `stroke-width`.
+Esse valor será o limite da razão do comprimento da esquadria pelo `stroke-width`.
 
-1.0 is the smallest possible value for this attribute.
+1.0 é o menor valor possível para este atributo.
 
-The first grape image is set to `stroke-miterlimit="1.0"`, which creates a bevel effect. The `stroke-miterlimit` on the second image is set to `4.0`.
+A primeira imagem está definida para `stroke-miterlimit="1.0"`, o que irá criar um efeito de chanfro. O `stroke-miterlimit` da segunda imagem está definido para `4.0`.
 
-![Grapes](images/strokemiterlimit.png)
+
+![Uvas](images/strokemiterlimit.png)
 
 #### stroke-dasharray
 
-The `stroke-dasharray` attribute turns paths into dashes rather than solid lines.
+O atributo `stroke-dasharray` transforma os caminhos em traços ao invés de linhas sólidas.
 
-Within this attribute you can specify the length of the dash as well as the distance between the dashes, separated with commas or whitespace.
+Com o atributo você pode especificar o tamanho do traço, assim como a distância entre eles, separados por vírgulas or espaços.
 
-If an odd number of values are provided, the list is then repeated to produce an even number of values. For example, `8,6,4` becomes `8,6,4,8,6,4` as shown in the second grapes image below.
+Se um número ímpar de valores for dado, a lista irá repetir para produzir um número par de valores. Por exemplo, `8,6,4` vira `8,6,4,8,6,4` como mostrado na segunda imagem das uvas abaixo.
 
-Placing just one number within this value results in a space between the dashes that is equal to the length of a dash.
+Colocar apenas um número dentro deste valor resulta num espaço entre os traços que é igual ao comprimento de um traço.
 
-![Grapes](images/strokedasharray.png)
+![Uvas](images/strokedasharray.png)
 
 The first grapes image here shows the impact that an even number of listed values has on the grape's path: `stroke-dasharray="20,15,10,8"`.
 
