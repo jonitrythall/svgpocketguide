@@ -651,14 +651,15 @@ O valor `y` é opcional e se omitido é assumido o valor de "0".
 
 #### rotate
 
-A value within `rotate` will specify the shape's rotation at its point of origin (in degrees), which for SVG is 0,0 (top left): `transform="rotate(<rotation angle>)"`.
+O valor com `rotate` irá especificar a rotação da forma a partir de seu ponto de origem (em graus), que para o SVG é 0,0 (superior esquerda): `transform="rotate(<ângulo de rotação>)"`
 
-There is also an option here to include `x` and `y` values: `transform=rotate(<rotation angle> [<cx>,<cy>])`. If supplied, these values establish a new center of rotation other than what is defaulted to (which is 0,0).
+Existe também a opção de incluir os valores de `x` e `y`: `transform=rotate(<ângulo de rotação> [<cx>,<cy>])`. Se adicionado, esses valores estabelecem um novo centro de rotação diferente do que é definido no padrão (que é 0,0).
 
-Here is an apple before and after having a 20 degree rotation applied: `transform="rotate(20)"`.
-*Note that this image does not reflect the coordinate change this transform makes.*
+Aqui está uma maçã antes e depois de ter uma rotação de 20 graus aplicada:
+`transform="rotate(20)"`.
+*Perceba que a imagem não reflete a mudança nas coordenadas que esta transformação faz.*
 
-![Rotated apple](images/rotationapple.png)
+![Maçã rotacionada](images/rotationapple.png)g
 
 #### scale
 
