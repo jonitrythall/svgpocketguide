@@ -671,13 +671,13 @@ Um `scale`no valor de ".5" irá renderizar um gráfico com metade do seu tamanho
 
 #### skew
 
-SVG elements can be skewed, or made crooked, through the use of the `skewX` and `skewY` functions. The value included within these functions represents a skew transformation in degrees along the appropriate axis.
-
-Elementos SVG podem ser 
+Elementos SVG podem ser torcidos, or entortados, através do uso das funções `skewX` e `skewY`. Os valores que que essas funções aceitam representam a transformação em graus ao longo dos eixos apropriados.
 
 Here is a look at an apple before and after adding a `skewX` value of "20": `transform="skewX(20)"`. *Note that this image does not reflect the coordinate change this transform makes.*
 
-![Skewed apple](images/skewapple.png)
+Aqui está uma maçã antes e depois de adicionar um `skewX` no valor de "20": `transform="skewX(20)"`. *Perceba que a imagem não reflete a mudança nas coordenadas que esta transformação faz.*
+
+![Maça entortada](images/skewapple.png)
 
 ## Section 4. Fills and Strokes
 
