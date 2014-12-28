@@ -965,15 +965,15 @@ Outros valores validos são `normal` (padrão), e `inherit`.
 
 ### text-decoration
 
-The `text-decoration` property permits the use of `underline`, `overline`, and `line-through` in SVG text.
+A propriedade `text-decoration` permite o uso de `underline`, `overline`, e `line-through` no texto SVG.
 
-While drawing order does not always have an impact on visual output in SVG, the order does matter in regards to `text-decoration`.  All text decoration values, except `line-through`, should be drawn *before* the text is filled and/or stroked; this renders the text on top of the decorations.
+Enquanto a ordem de desenhar nem sempre tem um impacto no saída visual do SVG, a ordem importa em se tratando do `text-decoration`. Todos os valores de `text-decoration`, exceto `line-through`, devem ser desenhados *antes* do texto ser preenchido e/ou contornado; senão o texto irá renderizar acima da decoração.
 
-`line-through` should be drawn after the text is filled and/or stroked, rendering the decoration on top of the text.
+`line-through`deve ser desenhado depois do texto ser preenchido e/ou contorno, renderizando sobre o texto.
 
-Here is a look at `text-decoration="underline"` and `text-decoration="line-through"`.
+Aqui um exemplo de `text-decoration="underline"` e `text-decoration="line-through"`. 
 
-![Pears Text](images/textdecoration.png)
+![Texto Pears](images/textdecoration.png)
 
 ### text Along a Path
 
