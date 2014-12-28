@@ -927,41 +927,41 @@ O `tspan` que contém "are" possui a seguinte lista de valores de `dy`: `dy="-30
 
 Há uma variedade de propriedades disponíveis quando se usa o elemento do `<text>` no SVG inline, que controla o espaçamento das palavras e letras, similares as capacidades dos programas de vetores gráficos.
 
-Entender como se usam estas propriedades ajuda a garantir que o gráfico vai ser mostrados exatamente como se deseja.
+Entender como se usam estas propriedades ajuda a garantir que o gráfico vai ser mostrado exatamente como se deseja.
 
 #### kerning & letter-spacing
 
-Kerning refers to the process of adjusting the spacing between characters. The `kerning` property allows us to adjust this space based on the kerning tables that are included in the font being used, or set a unique length.
+*Kerning* se refere ao processo de ajustar o espaçamento entre os caracteres. A propriedade `kerning` nos permite ajustar esse espaço baseado na tabela de kerning, que está incluída na fonte utilizada, ou definir um tamanho único.
 
-A value of `auto` indicates that the inter-glyph spacing should be based on the kerning tables that are included in the font being used.
+O valor de `auto` indica que o espaço entre os símbolos deve ser baseado na tabela de kerning que é incluída com a fonte utilizada.
 
-The example below has a `kerning` value of `auto`, which in this instance has no visual impact since it is the default value.
+O exemplo abaixo tem um valor de `kerning` definido em `auto`, que neste caso não tem impacto visual, já que é um valor padrão.
 
 		<svg width="420" height="200">
     		<text x="2" y="50%" fill="#ef9235" font-size="100" font-family="'Raleway', sans-serif" font-weight="bold" kerning="auto">Oranges</text>
   		</svg>
 
-![Oranges Text](images/orangekerning.png)
+![Texto Oranges](images/orangekerning.png)
 
-Adjusting the length between these characters can be done by simply including a numerical value: `kerning="30"`.
+Ajustar o espaçamento entre os caracteres pode ser feito pela simples inclusão do valor: `kerning="30"`.
 
-![Oranges Text](images/orangekerning2.png)
+![Texto Oranges](images/orangekerning2.png)
 
-A value of `inherit` is also valid.
+O valor `inherit` é também válido.
 
-`letter-spacing` has value options of `normal`, `<length>`, or `inherit`. A numerical value here will have the same impact on the spacing as `kerning`. The `letter-spacing` property is intended to be used as supplemental spacing to any spacing already in effect from `kerning`.
+O `letter-spacing` tem opções de valores como `normal`, `<length>`, ou `inherit`. O valor número aqui terá o mesmo impacto que o espaçamento do `kerning`. A propriedade `letter-spacing` se destina a ser usada como espaço suplementar para qualquer outro espaço já feito pelo `kerning`.
 
 #### word-spacing
 
-Th `word-spacing` property specifies the spacing between words.
+A propriedade `word-spacing` especifica o espaço entre as palavras.
 
 	<svg width="750" height="200">
     	<text x="2" y="50%" fill="#ef9235" font-size="70" font-family="'Raleway', sans-serif" word-spacing="30">Oranges are Orange</text>
   	</svg>
 
-![Oranges Text](images/orangewordspace.png)
+![Texto laranjas](images/orangewordspace.png)
 
-Other valid values here are `normal` (default), and `inherit`.
+Outros valores validos são `normal` (padrão), e `inherit`.
 
 ### text-decoration
 
