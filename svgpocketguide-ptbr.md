@@ -981,13 +981,13 @@ Como mencionado, o SVG inline nos permite opções avançadas de customização 
 
 Levando a manipulação um nível a frente, o SVG `<text>` pode seguir um caminho dado pelo elemento `<path>`.
 
-#### The textPath Element
+#### O elemento textPath
 
-The `textPath` element is where all the magic of this feature resides. While SVG text would generally reside within a `<text>` element, it will now reside within a `<textPath>` element within the `<text>` element.
+O elemento `textPath` é onde está toda a mágica dessa habilidade. Enquanto o texto SVG em geral fica no elemento `<text>`, ele agora estará dentro do elemento `<textPath>` com o elemento `<text>`.
 
-This `<textPath>` will then call on the chosen path's `id` which is hanging out in a `<defs>` element waiting to be used.
+O `<textPath>` irá chamar um caminho escolhido a partir de sua `id` que estará determinada no elemento `<defs>` esperando para ser usado.
 
-The basic syntax:
+A sintaxe básica:
 
 	<svg>
     	<defs>
@@ -998,13 +998,13 @@ The basic syntax:
        </text>
     </svg>
 
-Here is a look at the vector path to be used in the code below:
+Aqui como fica o caminho que é feito no código acima:
 
-![Simple path](images/pathsimple.png)
+![Caminho simples](images/pathsimple.png)
 
-After generating this path in vector graphic software the SVG *`<path>` element* code itself (which will not include color like shown above) can be copied and placed within the `<defs>` element in the `<svg>`, which is also shown in the code above.
+Após gerar esse caminho no programa de vetor gráfico, o elemento *`<path>`* do SVG (o que não inclui a cor como mostrado abaixo) pode ser copiado e colocado dentro do elemento `<defs>` no elemento `<svg>`, como mostrado no código abaixo:
 
-![Simple path with text](images/pathsimpletext.png)
+![Caminho simples com texto](images/pathsimpletext.png)
 
 	<svg width="620" height="200">
     	 <defs>
