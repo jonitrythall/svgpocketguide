@@ -998,11 +998,11 @@ A sintaxe básica:
        </text>
     </svg>
 
-Aqui como fica o caminho que é feito no código acima:
+Aqui como fica o caminho que é feito no código abaixo:
 
 ![Caminho simples](images/pathsimple.png)
 
-Após gerar esse caminho no programa de vetor gráfico, o elemento *`<path>`* do SVG (o que não inclui a cor como mostrado abaixo) pode ser copiado e colocado dentro do elemento `<defs>` no elemento `<svg>`, como mostrado no código abaixo:
+Após gerar esse caminho no programa de vetor gráfico, o elemento *`<path>`* do SVG (o que não inclui a cor como mostrado abaixo) pode ser copiado e colocado dentro do elemento `<defs>` no elemento `<svg>`, que também é mostrado no código acima:
 
 ![Caminho simples com texto](images/pathsimpletext.png)
 
@@ -1017,15 +1017,15 @@ Após gerar esse caminho no programa de vetor gráfico, o elemento *`<path>`* do
 
 ##### xlink:href
 
-The `xlink:href` attribute in a `<textPath>` allows us to reference the path to which the text will be rendered on.
+O atributo `xlink:href` em um `<textPath>` nos permite referenciar o caminho em que o texto será renderizado.
 
 ##### startOffset
 
-The `startOffset` attribute represents a text offset length from the start of the `path`. A value of "0%" indicates the start point of the `path`, while "100%" indicates the end point.
+O atributo `startOffset` representa o comprimento do espaçamento do texto a partir do ponto inicial do `path`. Um valor de "0%" indica o ponto inicial do `path`, enquanto "100%" indica o ponto final.
 
-The example below has a `startOffset` of "20%" which pushes the text to begin 20% in along the path. The font size has been decreased to prevent it from rendering out of the viewport when moved.
+O exemplo abaixo tem um `startOffset` de "20%" que irá empurrar o texto para começar em 20% do caminho. O tamanho da fonte é diminuído para prevenir que seja renderizado fora da *viewport* quando movido.
 
-Adding color to the path's stroke via the `<use>` element can aid in understanding what exactly is happening here.
+Adicionando cor ao contorno do caminho via elemento `<use>` pode ajudar a entender exatamente o que acontece.
 
 		<svg width="620" height="200">
      		<defs>
@@ -1038,7 +1038,7 @@ Adding color to the path's stroke via the `<use>` element can aid in understandi
     		</text>
   		</svg>
 
-![Simple path with text](images/pathsimpletext2.png)
+![Caminho simples com texto](images/pathsimpletext2.png)
 
 ## Section 6. Advanced Features: Gradients, Patterns, Clipping Paths
 
