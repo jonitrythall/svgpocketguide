@@ -833,7 +833,7 @@ O atributo `stroke-opacity` permite nível de transparência para os contornos.
 O valor aqui é decimal entre 0 e 1, com 0 sendo completamente transparente.
 
 
-## Seção 5: O elemento texto
+## Seção 5: O elemento text
 
 O elemento `<text>` define um gráfico que consiste de texto. Há uma série de opções de atributos para customização deste texto, e gradientes, padrões, recortes, máscaras ou filtros que podem ser aplicados.
 
@@ -841,23 +841,23 @@ Escrever e editar o `<text>` no SVG fornece uma poderosa habilidade de criar tex
 
 Lembre-se de estar consciente das dimensões da *viewport* enquanto trabalhamos nos exemplos desta seção. A *viewport*, como mencionada anteriormente, vai determinar a porção visível do SVG e pode ser necessário modificar a *viewport* dependendo de alguma alteração específica.
 
-### Basic Attributes
+### Atributos Básicos
 
-SVG text attributes reside within the `<text>` element, which resides inside the `<svg>` element. Through these attributes we can control some basic styling for our text as well as completely spell out its mapping details on the canvas, enabling full control of its placement on the screen.
+Os atributos de texto do SVG ficam dentro do elemento `<text>`, que está dentro no elemento `<svg>`. Através destes atributos podemos controlar alguns elementos de estilo básicos para o nosso texto, assim como decobrir por completo os detalhes de mapeamento dentro do *canvas*, habilitando total controle de sua localização na tela.
 
 #### x, y, dx, dy
 
-The first letter within a `<text>` element is rendered according to the established `x` and `y` values. While the `x` value determines where to start the text along the x axis, the `y` value determines the horizontal location of the *bottom* of the text.
+A primeira letra dentro do elemento `<text>` é renderizada de acordo com o estabelecido em `x` e `y`. Enquanto o valor de `x` determinar onde o texto deve iniciar ao longo eixo x, o valor de `y` determinar a localização horizontal do texto da parte inferior do texto.
 
-While `x` and `y` establish coordinates in an absolute space, `dx` and `dy` establish relative coordinates. This is especially handy when used in conjunction with the `<tspan>` element, which will be discussed further in an upcoming section.
+Enquanto `x` e `y` estabelecem coordenadas em um espaço absoluto, `dx` e `dy` estabelecem em coordenadas relativas. Isto é especialmente útil quando usado em conjunto com o elemento `<tspan>`, que será discutido futuramente na próxima seção.
 
 		<svg width="620" height="100">
     		<text x="30" y="90" fill="#ED6E46" font-size="100" font-family="'Leckerli One', cursive">Watermelon</text>
   		</svg>
 
-![Watermelon Text](images/watermelontext1.png)
+![Texto Watermelon](images/watermelontext1.png)
 
-The above text starts 30px into the viewport of the SVG, and the bottom of the text is set 90px in from the top of this viewport: `x="30" y="90"`.
+O texto acima começa com 30px da viewport do SVG, e a parte inferior do texto é definida para 90px do topo da *viewport*: `x="30" y="90"`.
 
 #### rotate
 
