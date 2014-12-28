@@ -894,17 +894,17 @@ Um valor de `"spacingAndGlyphs"` direciona para que ambos, espaçamento e tamanh
 
 ![Texto Watermelon](images/watermelonlengthadjust.png)
 
-### The tspan Element
+### O elemento tspan
 
-The `<tspan>` element is significant because SVG does not currently support automatic line breaks or word wrapping. `<tspan>` allows us to draw multiple lines of text by singling out certain words or characters to then be manipulated independently.
+O elemento `<tspan>` é importante, porque o SVG atualmente não suporta quebra automática de linhas ou quebra de texto. O `<tspan>` nos permite desenhar múltiplas linhas de texto e  destacar certas palavras ou caracteres para então manipulá-los independentemente.
 
-Instead of defining a new coordinate system for these additional lines, the `<tspan>` element positions these new lines of text in relation to the previous line of text.
+Ao invés de definir um novo sistema de coordenadas para essas linhas atuais, o elemento `<tspan>` posiciona essas novas linhas de texto em relação a linha de texto anterior.
 
-The `<tspan>` element has no visual output on its own, but by specifying more details within the elements we can single out this particular text and have more control over its design and positioning.
+O elemento `<tspan>` não tem saída visual em si, mas especificando mais detalhes dentro do elemento, nós podemos destacar esse texto em particular e ter mais controle sobre o seu design e posicionamento.
 
-In the example below "are" and "delicious" are located within separate `<tspan>` elements within the `<text>` element. By using `dy` within each of these spans, we are positioning the word along the y axis in relation to the word before it.
+No exemplo abaixo "are" e "delicious" estão localizados em diferentes elementos `<tspan>` dentro do elemento `<text>`. Usando `dy` em cada um desses *spans*, nós posicionamos a palavra ao longo do eixo y em relação a palavra anterior a ela.
 
-While "are" is positioned -30px from "Watermelons", "delicious" is positioned 50px from "are".
+Enquanto "are" está posicionado -30px de "Watermelons", "delicious" está posicionado 50px de "are".
 
  		<svg width="775" height="500">
     		<text x="15" y="90" fill="#ED6E46" font-size="60" font-family="'Leckerli One', cursive"> Watermelons
@@ -913,13 +913,15 @@ While "are" is positioned -30px from "Watermelons", "delicious" is positioned 50
     		</text>
   		</svg>
 
-![Watermelon Text](images/watermelontspan.png)
+![Texto Watermelon](images/watermelontspan.png)
 
 You can also move each glyph individually through a list of values, as shown in the example below. The letter/symbol is then moved according to the position of the letter/symbol before it, and "delicious" is now positioned according to the "e" in "are".
 
-![Watermelon Text](images/watermelontspan2.png)
+Você pode mover cada símbolo individualmente através de uma lista de valores, como mostrado no exemplo acima. A letra/símbolo é movida de acordo com a posição da letra/símbolo antes dela, e "delicious" agora é posicionado de acordo com a letra "e" em "are".
 
-The `tspan` containing “are” has the following list of `dy` values: `dy="-30 30 30"`.
+![Texto Watermelon](images/watermelontspan2.png)
+
+O `tspan` que contém "are" possui a seguinte lista de valores de `dy`: `dy="-30 30 30"`.
 
 ### Spacing Properties
 
