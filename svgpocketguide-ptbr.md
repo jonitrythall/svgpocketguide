@@ -1040,13 +1040,13 @@ Adicionando cor ao contorno do caminho via elemento `<use>` pode ajudar a entend
 
 ![Caminho simples com texto](images/pathsimpletext2.png)
 
-## Section 6. Advanced Features: Gradients, Patterns, Clipping Paths
+## Seção 6: Características Avançadas: Gradientes, Padrões, Recortes
 
-### Gradients
+### Gradientes
 
-There are two types of SVG gradients: linear and radial. Linear gradients are generated in a straight line, while radial gradients are circular.
+Existem dois tipos de gradientes SVG: linear e radial. Gradientes lineares são gerados numa linha reta, enquanto gradientes radiais são circulares.
 
-A very simple linear gradient is structured like this:
+Um gradiente linear muito simples é estrutura da seguinte forma:
 
 	<svg>
     	<defs>
@@ -1057,9 +1057,9 @@ A very simple linear gradient is structured like this:
     	</defs>
 	</svg>
 
-The `<svg>` contains a `<defs>` element which allows us to create reusable definitions to be called on later. These definitions have no visual output until they are referenced using their unique ID within the stroke and/or fill attributes for SVG shapes or `<text>`. These shapes and/or text will also reside within the `<svg>` element, but outside of the `<defs>` element.
+O `<svg>` contém o elemento `<defs>` que nos permite criar definições reutilizáveis que podem ser chamadas depois. Essas definições não tem saída visual até que sejam referenciadas usando sua ID única dentro dos atributos de contorno e/ou preenchimento para as formas do SVG ou `<text>`. Essas formas e/ou texto devem estar dentro do elemento `<svg>`, mas fora do elemento `<defs>`.
 
-Once a gradient is built and assigned an ID, it can be called through the `fill` and/or `stroke` attributes within the SVG. For example, `fill= "url(#gradientName)"`.
+Uma vez que o gradiente é criado e recebe uma ID, ele pode ser chamado através dos atributos `fill` e/ou `stroke` no SVG. Por exemplo, `fill= "url(#gradientName)"`.
 
 #### Linear Gradients
 
