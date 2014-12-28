@@ -975,11 +975,11 @@ Aqui um exemplo de `text-decoration="underline"` e `text-decoration="line-throug
 
 ![Texto Pears](images/textdecoration.png)
 
-### text Along a Path
+### Texto ao longo de um caminho
 
-As mentioned, inline SVG provides us with advanced customization options that are similar to the capabilities of vector graphic software. Within the SVG code itself we can position text exactly as we want it to render on the screen.
+Como mencionado, o SVG inline nos permite opções avançadas de customização que são similares as capacidades dos softwares de vetores gráficos. Com o código do SVG em si, nós podemos posicionar um texto exatamente como a gente deseja que seja renderizado na tela.
 
-In taking this manipulation even further, SVG `<text>` can be set to follow a given `<path>` element.
+Levando a manipulação um nível a frente, o SVG `<text>` pode seguir um caminho dado pelo elemento `<path>`.
 
 #### The textPath Element
 
