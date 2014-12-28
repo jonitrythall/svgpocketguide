@@ -923,11 +923,11 @@ Você pode mover cada símbolo individualmente através de uma lista de valores,
 
 O `tspan` que contém "are" possui a seguinte lista de valores de `dy`: `dy="-30 30 30"`.
 
-### Spacing Properties
+### Propriedades de espaçamento
 
-There are a number of properties available when using the `<text>` element within inline SVG that control the spacing of words and letters, similar to the capabilities of vector graphic software.
+Há uma variedade de propriedades disponíveis quando se usa o elemento do `<text>` no SVG inline, que controla o espaçamento das palavras e letras, similares as capacidades dos programas de vetores gráficos.
 
-Understanding how to use these properties helps ensure graphics are displayed exactly as intended.
+Entender como se usam estas propriedades ajuda a garantir que o gráfico vai ser mostrados exatamente como se deseja.
 
 #### kerning & letter-spacing
 
