@@ -861,11 +861,12 @@ O texto acima começa com 30px da viewport do SVG, e a parte inferior do texto �
 
 #### rotate
 
-A rotation can be placed on the individual letters/symbols, and/or on the element as a whole.
+A rotação pode ser utilizada em letras/símbolos individuais, e/ou em um elemento como um todo.
 
-A single value within the `rotate` attribute results in each glyph rotating at that value. A string of values can also be used to target and assign a different rotation value to each letter. If there are not enough values to match the number of letters, the last value sets the rotation for the remaining characters.
+Um valor único com o atributo `rotate` resulta em cada símbolo rotacionado por esse mesmo valor. Um conjunto de valores também pode ser utilizado para direcionar e atribuir diferentes valores de rotação para cada letra. Se não tiverem valores suficientes para o número de letras, o último valor definido na rotação será usado para a rotação dos caracteres restantes. 
 
-The text below has a rotation set on the entire graphic through the `transform` element, but also a value for each glyph: `rotate="20,0,5,30,10,50,5,10,65,5"`.
+O texto abaixo teve uma rotação definida para todo o gráfico atráves do elemento `transform`, mas também possui um valor para cada símbolo: `rotate="20,0,5,30,10,50,5,10,65,5"`
+
 
 		<svg width="600" height="250">
     		<text x="30" y="80" fill="#ED6E46" font-size="100" rotate="20,0,5,30,10,50,5,10,65,5" transform="rotate(8)" font-family="'Leckerli One', cursive">Watermelon</text>
