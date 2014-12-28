@@ -872,27 +872,27 @@ O texto abaixo teve uma rotação definida para todo o gráfico atráves do elem
     		<text x="30" y="80" fill="#ED6E46" font-size="100" rotate="20,0,5,30,10,50,5,10,65,5" transform="rotate(8)" font-family="'Leckerli One', cursive">Watermelon</text>
   		</svg>
 
-![Watermelon Text](images/watermelonrotation.png)
+![Texto Watermelon](images/watermelonrotation.png)
 
 #### textLength & lengthAdjust
 
-The `textLength` attribute specifies the length of the text. The length of the text will adjust to fit the length specified within this attribute by altering the space between the provided characters.
+O atributo `textLength` especifica o comprimento do texto. O comprimento do texto irá ajustar para encaixar no tamanho especificado pelo atributo, alterando o espaço entre os caracteres.
 
-The following example has a `textLength` value of 900px. Notice that the spacing between the characters has increased to fill this space.
+O seguinte exemplo tem um valor de `textLength` de 900px. Perceba que o espaço entre os caracteres foi aumentado para preencher este espaço.
 
 		<svg width="950" height="100">
     		<text x="30" y="90" fill="#ED6E46" font-size="100" textLength="900" font-family="'Leckerli One', cursive">Watermelon</text>
   		</svg>
 
-![Watermelon Text](images/watermelonspacing.png)
+![Texto Watermelon](images/watermelonspacing.png)
 
-When used in conjunction with the `lengthAdjust` attribute, it can be specified that both the letter spacing and glyph size should adjust to fit to these new length values.
+Quando usado em conjunto com o atributo `lengthAdjust`, fica especificado que tanto o espaçamento da letra o tamanho dos símbolos devem se ajustar para caber nos novos valores de comprimento.
 
-A value of `"spacing"` results in an image that resembles the example above where the spacing between the characters has expanded to fill the space: ‘lengthAdjust=”spacing”’.
+Um valor de `"spacing"` resulta numa imagem que se assemelha no exemplo acima, onde espaçamento entre os caracteres foi expandido para preencher o espaço: `lengthAdjust=”spacing”`.
 
-A value of `"spacingAndGlyphs"` directs both the spacing and the glyph size to adjust accordingly: `lengthAdjust="spacingAndGlyphs"`.
+Um valor de `"spacingAndGlyphs"` direciona para que ambos, espaçamento e tamanho do símbolo devem se ajustar de acordo: `lengthAdjust="spacingAndGlyphs"`.
 
-![Watermelon Text](images/watermelonlengthadjust.png)
+![Texto Watermelon](images/watermelonlengthadjust.png)
 
 ### The tspan Element
 
