@@ -643,7 +643,7 @@ No caso de transformações em cadeia, os efeitos são acumulativos, então a tr
 
 #### translate
 
-A função `translate` especifica os detalhes para mover uma forma, e os dois valores numéricos includem os movimentos ao longo dos eixos `x` e `y`: `transform="translate(<tx>,<ty>)"`
+A função `translate` especifica os detalhes para mover uma forma, e os dois valores numéricos incluem os movimentos ao longo dos eixos `x` e `y`: `transform="translate(<tx>,<ty>)"`
 Esse valores podem ser separados por espaços ou vírgulas.
 
 O valor `y` é opcional e se omitido é assumido o valor de "0".
@@ -672,8 +672,6 @@ Um `scale`no valor de ".5" irá renderizar um gráfico com metade do seu tamanho
 #### skew
 
 Elementos SVG podem ser torcidos, or entortados, através do uso das funções `skewX` e `skewY`. Os valores que que essas funções aceitam representam a transformação em graus ao longo dos eixos apropriados.
-
-Here is a look at an apple before and after adding a `skewX` value of "20": `transform="skewX(20)"`. *Note that this image does not reflect the coordinate change this transform makes.*
 
 Aqui está uma maçã antes e depois de adicionar um `skewX` no valor de "20": `transform="skewX(20)"`. *Perceba que a imagem não reflete a mudança nas coordenadas que esta transformação faz.*
 
