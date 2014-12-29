@@ -401,15 +401,15 @@ O elemento `<path>` abaixo contém as coordenadas específicas para renderizaç�
 
 ##### O comando moveto
 
-O comando *moveto* (M ou m) estabelece um novo ponto, como se fosse uma linha sendo movida por um traço por caneta. A linha de código que compreende os dados do *path* precisa começar com o comando *moveto*, como mostrado no exemplo do limão, visto acima.
+O comando *moveto* (M ou m) estabelece um novo ponto, como se fosse uma linha sendo movida por um traço de caneta. A linha de código que compreende os dados do *path* precisa começar com o comando *moveto*, como mostrado no exemplo do limão, visto acima.
 
-Comandos moveto que começam com sua inicial representam um novo *subpath*, criando assim um novo um *path* composto. A inicial maiúscula *M* indica que irá seguir coordenadas absolutas, enquanto a inicial minúscula *m* indica coordenadas relativas.
+Comandos moveto que começam com sua inicial representam um novo *subpath*, criando assim um novo *path* composto. A inicial maiúscula *M* indica que irá seguir coordenadas absolutas, enquanto a inicial minúscula *m* indica coordenadas relativas.
 
 ##### O comando closepath
 
 O *closepath* (Z ou z) finaliza o *path* atual e resulta em uma linha reta sendo desenhada a partir do ponto inicial desse *path*.
 
-Se o *closepath* é seguido imediatamente por um *moveto*, as coordenadas desse *moveto* representam o início de um novo *path*. Se este mesmo *closepath* é seguido de qualquer outro elemento sem ser o moveto, o próximo caminho irá iniciar no mesmo ponto do caminho anterior.
+Se o *closepath* é seguido imediatamente por um *moveto*, as coordenadas desse *moveto* representam o início de um novo *path*. Se este mesmo *closepath* é seguido de qualquer outro elemento que não seja o moveto, o próximo caminho irá iniciar no mesmo ponto do caminho anterior.
 
 Ambos maiúsculo e mínusculo z, tem o mesmo resultado.
 
@@ -419,9 +419,9 @@ O comando lineto desenha uma linha reta do ponto atual até o novo ponto.
 
 ###### L, l
 
-Os comandos *L* e *l* desenham uma linha do ponto atual até o próximo ponto dado nas coordenadas. Este novo ponto se torno o ponto atual e por aí vai.
+Os comandos *L* e *l* desenham uma linha do ponto atual até o próximo ponto dado nas coordenadas. Este novo ponto se torna o ponto atual e por aí vai.
 
-Um *L* maiúsculo determina que irá seguir posicionamento absoluto, enquanto um *l* minúsculo usa posição relativa.
+Um *L* maiúsculo determina que o *path* irá seguir posicionamento absoluto, enquanto um *l* minúsculo usa posição relativa.
 
 ###### H, h
 
@@ -494,7 +494,7 @@ Aqui está um código de um curva elptica básica:
   		<path fill="none" stroke="#333333" stroke-width="3" d="M65,10 a50,25 0 1,0 50,25" />
 	</svg>
 
-O primeiro e último conjunto de valores dentro do *path*, `M65,10` and `50,25`, representam as coordenadas inicial e final, enquanto o segundo conjunto de valores definem os dois raios. O valor de `1.0` (*large-arc-flag* and *sweep-flag*) determina como o arqco será desenhado, a partir das quato diferentes opções.
+O primeiro e último conjunto de valores dentro do *path*, `M65,10` and `50,25`, representam as coordenadas inicial e final, enquanto o segundo conjunto de valores definem os dois raios. O valor de `1.0` (*large-arc-flag* and *sweep-flag*) determina como o arqco será desenhado, a partir das quatro diferentes opções.
 
 O seguinte diagrama mostra as quatro opções e o impacto que esses valores tem na renderização final do segmento de arco.
 
@@ -522,7 +522,7 @@ Aqui está o código SVG de algumas cerejas com classes adicionadas para melhor 
 
 ![Cerejas](images/embedcherry.png)
 
-Os atributos dentro do elemento `svg` definem o workspace, ou *"canvas"* para o desenho. A folhas e as hastes estão dentro de um grupo, enquanto as cerejas estão em outro. Os valores números definem o caminho que o desenho irá tomar e o `fill` e `stroke` os atributos que irão definir a cor do preenchimento e bordas.
+Os atributos dentro do elemento `svg` definem o workspace, ou *"canvas"* para o desenho. A folhas e as hastes estão dentro de um grupo, enquanto as cerejas estão em outro. Os valores em números definem o caminho que o desenho irá tomar e o `fill` e `stroke`, os atributos que irão definir a cor do preenchimento e bordas.
 
 Uma vez que o código é copiado, ele pode passar por um otimizador de SVG antes de ser colocado no HTML, que irá ajudar a eliminar código desnecessário e espaçamentos, reduzindo bastante o tamanho do arquivo. [Peter Collingridge's SVG Optimiser](http://petercollingridge.appspot.com/svg_optimiser) ou [SVGO](https://github.com/svg/svgo) são ferramentas muito úteis nessa tarefa.
 
