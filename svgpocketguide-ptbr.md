@@ -833,15 +833,15 @@ O valor aqui é decimal entre 0 e 1, com 0 sendo completamente transparente.
 
 ## Seção 5: O elemento text
 
-O elemento `<text>` define um gráfico que consiste de texto. Há uma série de opções de atributos para customização deste texto, e gradientes, padrões, recortes, máscaras ou filtros que podem ser aplicados.
+O elemento `<text>` define um gráfico povoado por texto. Existem uma série de opções de atributos para customização deste texto como gradientes, padrões, recortes, máscaras ou filtros que podem ser aplicados.
 
 Escrever e editar o `<text>` no SVG fornece uma poderosa habilidade de criar textos escaláveis assim como os gráficos que podem ser modificados e editados com o código do SVG. 
 
-Lembre-se de estar consciente das dimensões da *viewport* enquanto trabalhamos nos exemplos desta seção. A *viewport*, como mencionada anteriormente, vai determinar a porção visível do SVG e pode ser necessário modificar a *viewport* dependendo de alguma alteração específica.
+Lembre-se de estar consciente das dimensões da *viewport* enquanto trabalhamos nos exemplos desta seção. A *viewport*, como mencionada anteriormente, vai determinar a porção visível do SVG e pode ser necessário modificá-la dependendo de alguma alteração específica.
 
 ### Atributos Básicos
 
-Os atributos de texto do SVG ficam dentro do elemento `<text>`, que está dentro no elemento `<svg>`. Através destes atributos podemos controlar alguns elementos de estilo básicos para o nosso texto, assim como decobrir por completo os detalhes de mapeamento dentro do *canvas*, habilitando total controle de sua localização na tela.
+Os atributos de texto do SVG ficam dentro do elemento `<text>`, que está dentro no elemento `<svg>`. Através destes atributos podemos controlar alguns elementos de estilo básicos para o nosso texto, assim como descobrir por completo os detalhes de mapeamento dentro do *canvas*, habilitando total controle de sua localização na tela.
 
 #### x, y, dx, dy
 
@@ -913,13 +913,11 @@ Enquanto "are" está posicionado -30px de "Watermelons", "delicious" está posic
 
 ![Texto Watermelon](images/watermelontspan.png)
 
-You can also move each glyph individually through a list of values, as shown in the example below. The letter/symbol is then moved according to the position of the letter/symbol before it, and "delicious" is now positioned according to the "e" in "are".
-
-Você pode mover cada símbolo individualmente através de uma lista de valores, como mostrado no exemplo acima. A letra/símbolo é movida de acordo com a posição da letra/símbolo antes dela, e "delicious" agora é posicionado de acordo com a letra "e" em "are".
+Você pode mover cada símbolo individualmente através de uma lista de valores, como mostrado no exemplo abaixo. A letra/símbolo é movida de acordo com a posição da letra/símbolo antes dela, e "delicious" agora é posicionado de acordo com a letra "e" em "are".
 
 ![Texto Watermelon](images/watermelontspan2.png)
 
-O `tspan` que contém "are" possui a seguinte lista de valores de `dy`: `dy="-30 30 30"`.
+O `tspan` que contém *"are"* possui a seguinte lista de valores de `dy`: `dy="-30 30 30"`.
 
 ### Propriedades de espaçamento
 
@@ -1044,7 +1042,7 @@ Adicionando cor ao contorno do caminho via elemento `<use>` pode ajudar a entend
 
 Existem dois tipos de gradientes SVG: linear e radial. Gradientes lineares são gerados numa linha reta, enquanto gradientes radiais são circulares.
 
-Um gradiente linear muito simples é estrutura da seguinte forma:
+Um gradiente linear muito simples é estruturado da seguinte forma:
 
 	<svg>
     	<defs>
