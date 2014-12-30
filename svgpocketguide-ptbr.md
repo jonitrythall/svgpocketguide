@@ -800,7 +800,7 @@ A primeira imagem está definida para `stroke-miterlimit="1.0"`, o que irá cria
 
 O atributo `stroke-dasharray` transforma os caminhos em traços ao invés de linhas sólidas.
 
-Com o atributo você pode especificar o tamanho do traço, assim como a distância entre eles, separados por vírgulas or espaços.
+Com o atributo você pode especificar o tamanho do traço, assim como a distância entre eles, separados por vírgulas ou espaços.
 
 Se um número ímpar de valores for dado, a lista irá repetir para produzir um número par de valores. Por exemplo, `8,6,4` vira `8,6,4,8,6,4` como mostrado na segunda imagem das uvas abaixo.
 
