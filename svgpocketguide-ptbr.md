@@ -1057,15 +1057,15 @@ O `<svg>` contém o elemento `<defs>` que nos permite criar definições reutili
 
 Uma vez que o gradiente é criado e recebe uma ID, ele pode ser chamado através dos atributos `fill` e/ou `stroke` no SVG. Por exemplo, `fill= "url(#gradientName)"`.
 
-#### Linear Gradients
+#### Gradientes Lineares
 
-Linear  gradients change color evenly along a straight line and each point (stop) defined on this line will represent the correlating color within the `<linearGradient>` element. At each point the color is at 100% saturation, and the space in between expresses a transition from one color to the next.
+Gradientes lineares mudam de cor uniformemente ao longo de uma linha e cada ponto definido nesta linha irá representar a correlação das cores dentro do elemento `<linearGradient>`. Cada ponto irá possui a sua respectiva cor com 100% de saturação, e o espaço entre elas expressa a transição de uma cor para outra.
 
-##### stop Nodes
+##### Pontos de parada
 
-`<stop>` nodes can also accept an opacity with `stop-opacity="<value>"`
+Pontos de parada ou *`<stop>` nodes* também podem aceitar parâmetros de opacidade com `stop-opacity="<valor>"`.
 
-Below is the code for a simple linear gradient with two color stops applied to a rectangle:
+Aqui abaixo está o código para um gradiente linear simples com duas cores aplicados em um retângulo:
 
 		<svg width="405" height="105">
     		<defs>
@@ -1077,15 +1077,16 @@ Below is the code for a simple linear gradient with two color stops applied to a
     		<rect x="2" y="2" width="400" height="100" fill= "url(#Gradient1)" stroke="#333333" stroke-width="4px" />
   		</svg>
 
-![Basic Gradient](images/gradientpic1.png)
+![Gradiente Básico](images/gradientpic1.png)
 
-`offset` informs the gradient at what point to assign the correlating `stop-color`.
+O parâmetro `offset` informa ao gradiente em qual ponto atribuir e se correlacionar ao `stop-color`.
 
 ##### x1, y1, x2, y2
 
-The x1, y1, x2, and y2 attribute values represent the start and end points onto which the gradient stops (color changes) are mapped. These percentages will map the gradients respectively along the appropriate axis.
+Os valores contidos nos atributos x1, y1, x2 e y2 representam os pontos iniciais e finais nos quais são mapeados o encerramento do gradiente (mudança de cores). Essas porcentagens irão mapear os gradientes respectivamente ao longo do eixo apropriado.
 
-A `y` value of “100%” and an `x` value of “0” will produce a horizontal gradient, while the reverse will produce a vertical one. Having both values set at “100%” (or any value outside of 0) will render an angled gradient.
+O valor de `y` em "100%" e `x` em "0" vai produzir um gradiente horizontal, enquanto os valores reversos vão gerar um gradiente verticall. Utilizando os dois valores em "100%" (ou qualquer valor diferente de 0) vai renderizar um gradiente angulado.
+
 
 ##### gradientUnits
 
