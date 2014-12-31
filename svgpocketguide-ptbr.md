@@ -1184,11 +1184,11 @@ A opção `userSpaceOnUse` resulta em uma textura determinada pelo sistema de co
 
 ##### patternContentUnits
 
-The `patternContentUnits` attribute values are the same as the values for `patternUnits`, except the coordinate system is now being defined for the contents of the pattern itself.
+O atributo `patternContentUnits` possuem os mesmos valores de `patternUnits`, porém o sistema de coordenadas agora é aplicado ao conteúdo diretamente na textura propriamente dita.
 
-This value, unlike `patternUnits`, defaults to `userSpaceOnUse`, which means that unless one or both of these attributes are specified the shapes drawn within the `<pattern>` are being drawn in  a different coordinate system than the `<pattern>` element is using.
+Este valor, diferentemente de `patternUnits`, tem como padrão o valor `userSpaceOnUse`, o que significa que, pelo menos um ou ambos destes atributos especificam o desenho do formato dentro de `<pattern>`, formas usadas dentro deste elemento pertencem a um sistema de coordenadas diferentes do sistema que o elemento está usando.
 
-Defining `patternUnits="userSpaceOnUse"` within the `<pattern>` element simplifies this process and ensures a consistent workspace.
+Difinindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplificamos esse processo e garantimos um *workspace* mais consistente.
 
 #### Nested Patterns
 
