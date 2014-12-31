@@ -1107,12 +1107,11 @@ O ponto de início para o gradiente abaixo é: x1="20%" y1="30%" x2="40%" y2="80
 O atributo `gradientTransform` é opcional e permite uma maior transformação do gradiente antes de ele ser mapeado, como se fosse uma rotação adicional.
 
 ##### xlink:href
-
-The `xlink:href` attribute allows you to call on the ID of another gradient to inherit its details, but you can also include different values.
+O atributo `xlink:href` permite ao usuário chamar o ID de outros gradientes a fim de "herdar" seus detalhes, mas você também pode sobrescrever valores diferentes. 
 
 		<linearGradient id="repeat" xlink:href="#Gradient-1” spreadMethod="repeat" />
 
-This gradient inherits the details of the first gradient from the beginning of this section, but has an alternate spreadMethod value.
+Este gradiente herda os detalhes do primeiro gradiente do inicio desta seção, porém possui um método alternado no valor `spreadMethod`.
 
 #### Radial Gradients
 
