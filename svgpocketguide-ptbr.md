@@ -1119,7 +1119,7 @@ A maioria dos atributos para um gradiente em radial `<radialGradient>` são os m
 
 ##### cx, cy, r
 
-The `cx`, `cy`, and `r` attributes define the outermost section of the circle and the 100% `stop-color` of the gradient will be mapped to the perimeter of this value. `cx` and `cy` define the center coordinate, while `r` sets the radius of the gradient.
+Os atributos `cx`, `cy` e `r` definem uma seção externa do circulo e os 100% do `stop-color` do gradiente será mapeado ao perímetro deste valor. `cx` e `cy` definem a coordenada do centro, enquanto `r` configura o raio do gradiente.
 
 ##### fx, fy
 
