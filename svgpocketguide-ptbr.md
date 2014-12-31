@@ -1173,10 +1173,8 @@ Aqui está  a sintaxe básica de uma textura aplicada a um retângulo.
 Os atributos básicos para as texturas definem o "canvas", o design e o posicionamento. As texturas podem consistir em caminhos ou formas, podem preencher textos, e podem até mesmo ser preenchidas por outras texturas.
 
 ##### x, y, width, height
-
-The x and y attributes within the `<pattern>` element define how far into the shape the pattern will start. Width and height used within the `<pattern>` element define the actual width and height of the allotted pattern space.
-
-The “basicPattern” referenced above contains the following values: `x="10" y="10" width="40" height="40"`. The pattern will start 10px in from the start of the x axis, 10px in from the start of the y axis, and essentially create a “canvas” that is 40px wide, and 40px high.
+Os atributos `x` e `y` dentro do elemento `<pattern>` definem a distância dentro do formato que a textura irá se iniciar. `width` (largura) e `height` (altura) dentro do elemento `<pattern>` definem o tamanho da textura dentro do espaço do formato.
+O "basicPattern" referenciado acima contém os seguintes valores: `x="10" y="10" width="40" height="40"`. A textura irá iniciar 10px a frente do eixo x, 10 px a frente  do eixo y, e criar um elemento com 40px de largura e 40px de altura.
 
 ##### patternUnits
 
