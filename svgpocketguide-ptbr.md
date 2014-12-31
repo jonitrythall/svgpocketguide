@@ -1150,11 +1150,11 @@ Conforme citado acima, enquanto por padrão o ponto de foco do gradiente é o de
 
 Neste exemplo, o ponto de foco alterna-se na parte inferior direita da imagem.
 
-### Patterns
+### Texturas
 
-Patterns are generally considered one of the more complex paint options available to color the fills and strokes of SVG. Establishing a foundation and understanding the basic syntax can make these seemingly more complex patterns much more obtainable.
+Texturas são geralmente consideradas uma das mais complexas opções de pintura disponíveis para cor e contornos do SVG. Entender os fundamentos e a sintaxe básica podem fazer desses padrões aparentemente mais complexos, muito mais acessíveis.
 
-Here is a look at the syntax for a basic pattern applied to a rectangle:
+Aqui está  a sintaxe básica de uma textura aplicada a um retângulo.
 
 		<svg width="220" height="220">
     		<defs>
@@ -1166,7 +1166,7 @@ Here is a look at the syntax for a basic pattern applied to a rectangle:
       		stroke="#333333" stroke-width="2px" fill="url(#basicPattern)" />
   		</svg>
 
-![Basic pattern](images/patternbasic1.png)
+![Textura Básica](images/patternbasic1.png)
 
 #### Basic Attributes
 
