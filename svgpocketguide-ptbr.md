@@ -1178,9 +1178,9 @@ O "basicPattern" referenciado acima contém os seguintes valores: `x="10" y="10"
 
 ##### patternUnits
 
-The `patternUnits` attribute defines the coordinates for which x, y, width, and height are referenced. The two options here are `userSpaceOnUse` and `objectBoundingBox` (default).
+O atributo `patternUnits` define as coordenadas para quais `x`, `y`, `width` e `height` são referenciados. As duas opções disponíveis são `userSpaceOnUse` e `objectBoundingBox` (padrão).
 
-`userSpaceOnUse` results in a pattern coordinate system that is determined by the coordinate system for the element referencing the `<pattern>`, while `objectBoundingBox` establishes the mapping coordinate system as the bounding box of the element to which the pattern is applied.
+A opção `userSpaceOnUse` resulta em uma textura determinada pelo sistema de coordenadas e referenciada para o elemento `<pattern>`, enquanto `objectBoundingBox` estabelece o mapa de coordenadas baseada no elemento que a textura está aplicada.
 
 ##### patternContentUnits
 
