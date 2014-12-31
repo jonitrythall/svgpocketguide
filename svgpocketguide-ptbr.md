@@ -1218,17 +1218,17 @@ O elemento `<defs>` contém ambas as texturas. Com o elemento `<defs>`, a textur
 
 ![Textura em Cascata](images/patternnest.png)
 
-### Clipping Path
+### Caminhos com Máscaras
 
-The clipping path restricts the region to which paint will be applied to the SVG. Any region drawn outside of the bounds set by the clipping path will not be rendered.
+Os caminhos em máscaras ou recortes restringem a região no qual a pintura será aplicada ao SVG. Qualquer região do desenho que não faça parte do caminho da máscara não será renderizada.
 
-To demonstrate the abilities of this feature, let's use a clipping path consisting of "Apples" text being applied over a tomato colored rectangle and a green circle.
+Para demonstrar as abilidades dessa característica, vamos usar uma máscara em um texto "Apples" sendo aplicada sobre uma coloração de tomate em um retângulo e um circulo verde.
 
-Below are the shapes without the clipping path applied, set to stretch beyond the viewport.
+Abaixo estão os formatos ainda sem a aplicação da máscara, configurada para se extender além da *viewport*.
 
-![Shapes before clipping](images/clippingshapes.png)
+![Formatos antes da máscara](images/clippingshapes.png)
 
-Now, here's a look at the code to apply the "Apples" text to this "canvas".
+Agora temos um visual de como ficaria o código para aplicar o texto "Apples" neste *canvas*.
 
  	<svg width="400px" height="200px">
     	<clipPath id="clip-text">
@@ -1238,9 +1238,9 @@ Now, here's a look at the code to apply the "Apples" text to this "canvas".
     	<circle cx="310" cy="100" r="135" fill="#bbc42a" clip-path="url(#clip-text)" />
   	</svg>
 
-![Text clipping path](images/clippingtext.png)
+![Texto com máscara aplicada](images/clippingtext.png)
 
-The clipping path is defined within the `<clipPath>` element and then called on by both shapes by referencing its unique `id`.
+A aplicação da máscara é definida dentro do elemento `<clipPath>` e então chamada nos dois formatos referenciados por  um único `id`.
 
 ## Conclusion
 
