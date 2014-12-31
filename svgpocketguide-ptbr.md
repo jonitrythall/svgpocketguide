@@ -1113,9 +1113,9 @@ O atributo `xlink:href` permite ao usuário chamar o ID de outros gradientes a f
 
 Este gradiente herda os detalhes do primeiro gradiente do inicio desta seção, porém possui um método alternado no valor `spreadMethod`.
 
-#### Radial Gradients
+#### Gradientes em Radial
 
-Most of the attributes for a `<radialGradient>` are the same as those of `<linearGradient>` except there is a different set of coordinates to work with.
+A maioria dos atributos para um gradiente em radial `<radialGradient>` são os mesmos do `<linearGradient>` com excessão da configuração das coordenadas utilizadas por ele.
 
 ##### cx, cy, r
 
