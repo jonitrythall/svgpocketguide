@@ -1168,9 +1168,9 @@ Aqui está  a sintaxe básica de uma textura aplicada a um retângulo.
 
 ![Textura Básica](images/patternbasic1.png)
 
-#### Basic Attributes
+#### Atributos Básicos
 
-The attributes and values for patterns define the "canvas", the design, and overall positioning. Patterns can consist of paths and/or shapes, can paint text, and can even be nested within another pattern.
+Os atributos básicos para as texturas definem o "canvas", o design e o posicionamento. As texturas podem consistir em caminhos ou formas, podem preencher textos, e podem até mesmo ser preenchidas por outras texturas.
 
 ##### x, y, width, height
 
