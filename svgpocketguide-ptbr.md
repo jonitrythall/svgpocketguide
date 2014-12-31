@@ -1090,7 +1090,7 @@ O valor de `y` em "100%" e `x` em "0" vai produzir um gradiente horizontal, enqu
 
 ##### gradientUnits
 
-The `gradientUnits` attribute defines the coordinate system for the x1, x2, y1, y2 values. The two value options here are ‘userSpaceOnUse’ or ‘objectBoundingBox’. `userSpaceOnUse` sets the gradient coordinating system in absolute units, while `objectBoundingBox` (default) establishes this system within the bounds of the SVG shape itself, the target.
+O atributo `gradientUnits` define um sistema de coordenadas para os valores de x1, x2, y1 e y2. As duas opções de valores aqui são `userSpaceOnUse` ou `objectBoundingBox`. O `userSpaceOnUse` configura as coordenadas do gradiente com unidades absolutas, enquanto `objectBoundingBox` (padrão) estabelece este sistema com os limites do formato do SVG propriamente dito.
 
 ##### spreadMethod
 
