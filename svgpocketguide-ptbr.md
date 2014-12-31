@@ -1244,16 +1244,16 @@ A aplicação da máscara é definida dentro do elemento `<clipPath>` e então c
 
 ## Conclusion
 
-Writing inline SVG enables very useful editing powers and lets us as the author have complete access to all the graphical elements individually. Within this code we are generating graphics that scale without losing image quality, are searchable, and enhance accessibility.
+Escrever SVG *inline* é uma maneira muito útil e poderosa de edição e da ao autor acesso completo a tudo que existe nos elementos de um gráfico de maneira individual. Junto com este código estamos gerando gráficos que são escalados sem nenhuma perda de qualidade da imagem, são pesquisáveis, aumentando sua acessibilidade.
 
-It will most likely take some time tinkering to get comfortable with your SVG writing abilities, but once you do I would recommend working on making your code as short and efficient as possible, exploring [SMIL animations](http://www.w3.org/TR/smil-animation/), and experimenting with [styling SVG elements with CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS).
+Provavelmente levará algum tempo até que você domine a escrita e se sinta confortável com suas habilidades de SVG, porém uma vez que você o faça, recomendo que você faça seu código mais curto e eficiente possível, explorando [animações SMIL](http://www.w3.org/TR/smil-animation/), e experimentando [estilizar elementos SVG com CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS).]
 
-Hopefully this guide acts as both a valuable reference, and an inspiration in terms of understanding the powerful potential of building and manipulating inline SVG.
+Espero que este guia sirva como uma valiosa referência, e inspiração no que se refere ao entendimento do potencial poderoso de construção e manipulação do SVG *inline*.
 
-For news and updates, please visit [the book's site](http://svgpocketguide.com/), and if you have any questions or comments in regards to the book I can be reached [on Twitter](https://twitter.com/JoniTrythall) or by email at [info@jonibologna.com](mailto:info@jonibologna.com).
+Para novidades e *updates*, por favor visite [o site do livro](http://svgpocketguide.com/), e se você tiver alguma pergunta ou comentário a fazer poderá fazê-lo via [Twitter](https://twitter.com/JoniTrythall) ou enviar um email em [info@jonibologna.com](mailto:info@jonibologna.com).
 
 
-![The End](images/theend2.png)
+![Fim](images/theend2.png)
 
 
 
