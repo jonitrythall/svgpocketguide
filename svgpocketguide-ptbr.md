@@ -1104,7 +1104,7 @@ O ponto de início para o gradiente abaixo é: x1="20%" y1="30%" x2="40%" y2="80
 
 ##### gradientTransform
 
-The `gradientTransform` attribute is optional and allows for further transformation of the gradient before it is mapped, like adding a rotation.
+O atributo `gradientTransform` é opcional e permite uma maior transformação do gradiente antes de ele ser mapeado, como se fosse uma rotação adicional.
 
 ##### xlink:href
 
