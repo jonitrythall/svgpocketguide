@@ -1119,13 +1119,13 @@ A maioria dos atributos para um gradiente em radial `<radialGradient>` são os m
 
 ##### cx, cy, r
 
-Os atributos `cx`, `cy` e `r` definem uma seção externa do circulo e os 100% do `stop-color` do gradiente será mapeado ao perímetro deste valor. `cx` e `cy` definem a coordenada do centro, enquanto `r` configura o raio do gradiente.
+Os atributos `cx`, `cy` e `r` definem uma seção externa do circulo e os 100% do `stop-color` do gradiente que será mapeado ao perímetro deste valor. `cx` e `cy` definem a coordenada do centro, enquanto `r` configura o raio do gradiente.
 
 ##### fx, fy
 
-The `fx`, `fy` attributes represent the coordinates for the gradient’s focal point, or innermost circle. Essentially, the center of the gradient does not have to also be its focal point, which can be altered with these values.
+Os atributos `fx` e `fy` representam as coordenadas para o ponto focal do gradiente, ou o ponto mais interno do circulo. Essencialmente, o ponto central do gradiente não necessariamente precisa ser o ponto de foco do gradiente, esses valores podem ser facilmente alterados.
 
-While by default the focal point of the radial gradient would be centered, the focal point attributes can change this. The focal point values for the image below are `fx="95%" fy="70%"`.
+Conforme citado acima, enquanto por padrão o ponto de foco do gradiente é o deverá ser o ponto central, os atributos podem alterar isso. Por exemplo os valores do ponto de foco da imagem abaixo são fx="95%" fy="70%"`.
 
 		<svg width="850px" height="300px">
     		<defs>
@@ -1146,9 +1146,9 @@ While by default the focal point of the radial gradient would be centered, the f
     		<text x="20%" y="75%" fill= "url(#Gradient2)" font-family= "'Signika', sans-serif" font-size="200">Cherry</text>
   		</svg>
 
-![Focal point](images/gradientfocalpoint.png)
+![Ponto de foco](images/gradientfocalpoint.png)
 
-In this example, the focal point shifts to the bottom right of the image.
+Neste exemplo, o ponto de foco alterna-se na parte inferior direita da imagem.
 
 ### Patterns
 
