@@ -1094,13 +1094,13 @@ O atributo `gradientUnits` define um sistema de coordenadas para os valores de x
 
 ##### spreadMethod
 
-The `spreadMethod` attribute’s value specifies how the gradient will spread out through the shape if it starts or ends inside the bounds of the target. If the gradient is set to not fill the shape, `spreadMethod` determines how the gradient should go about covering that empty space. There are three options here: ‘pad’, ‘repeat’, or ‘reflect’.
+O valor do atributo `spreadMethod` especifica como o gradiente irá se propagar através do formato e se ele começa ou termina dentro dos limites do alvo (*target*). Se o gradiente está configurado para não preencher o formato, o `spreadMethod` determina como o gradiente deve se comportar para cobrir o espaço em branco. Existem três opções aqui: `pad`, `repeat` ou `reflect`.
 
-A value of `pad` (default) directs the first and last colors of the gradient to spread out over the remainder of the uncovered target region. A value of `repeat` directs the gradient to repeat the pattern from the beginning continuously. A value of `reflect` will reflect the gradient pattern alternating from start-to-end, end-to-start continuously.
+O valor de `pad` (padrão) direciona a primeira e a última cores do gradiente a se propagar sobre a região não coberta restante. O valor de `repeat` direciona o gradiente a repetir suas cores desde o início continuadamente. O valor em `reflect` irá refletir o padrão alternadamente do início-ao-fim e em seguida do fim-ao-início continuadamente.
 
-The start and end point for the gradient below is: x1="20%" y1="30%" x2="40%" y2="80%".
+O ponto de início para o gradiente abaixo é: x1="20%" y1="30%" x2="40%" y2="80%".
 
-![Spread method](images/gradientspreadmethod.png)
+![Metodo Spread](images/gradientspreadmethod.png)
 
 ##### gradientTransform
 
