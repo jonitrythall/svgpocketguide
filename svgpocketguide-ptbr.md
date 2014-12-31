@@ -1190,11 +1190,10 @@ Este valor, diferentemente de `patternUnits`, tem como padrão o valor `userSpac
 
 Difinindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplificamos esse processo e garantimos um *workspace* mais consistente.
 
-#### Nested Patterns
+#### Textura em Cascata
 
-Patterns can also be nested to create a much more unique and detailed design.
-
-Here is a look at the structure of a basic nested pattern:
+Texturas também podem ser usados em cascata, usamos isso para criar um desenho com estrutura mais única, complexa e detalhada.
+Aqui está um exemplo básico de estrutura em cascata.
 
 	<svg width="204" height="204">
   		<defs>
@@ -1215,9 +1214,9 @@ Here is a look at the structure of a basic nested pattern:
       stroke="#333333" stroke-width="3" fill="url(#rectPattern)" />
 	</svg>
 
-The `<defs>` element contains both patterns. Within `<defs>`, the pattern for the rectangle is calling on the circle pattern via `fill` and the main rectangle is then calling on the rectangle pattern also via `fill`, painting the interior of the main shape with a nested pattern.
+O elemento `<defs>` contém ambas as texturas. Com o elemento `<defs>`, a textura do retângulo está chamando a textura do circulo pelo `fill` e o retângulo principal está então chamando própria textura também via `fill`, pintando o interior da forma formando um efeito em cascata.
 
-![Nested pattern](images/patternnest.png)
+![Textura em Cascata](images/patternnest.png)
 
 ### Clipping Path
 
