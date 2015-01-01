@@ -119,7 +119,7 @@ Em resumo SVG refere-se a códigos escritos e incorporados juntamente com o HTML
 
 Existem muitas vantagens em usar o SVG dessa maneira, incluindo ter acesso a partes individuais do gráfico para propósitos de interatividade, gerando textos pesquisáveis, acesso ao DOM para edições diretas, e promovendo a acessibilidade ao usuário.
 
-Começando com a organização básica e formas simples, nós vamos então continuar a descrever o sistema de coordenadas do SVG ou "canvas", pintando o interior do gráfico e/ou sua borda, transformando-o, e usando a "manipulação gráfica" do texto. Só então vamos acrescentá-lo com toques e técnicas mais avançadas como gradientes e padrões.
+Começando com a organização básica e formas simples, nós vamos então continuar a descrever o sistema de coordenadas do SVG ou "canvas", pintando o interior do gráfico e/ou sua borda, transformando-o, e usando a "manipulação gráfica" do texto. Só então vamos acrescentá-lo com toques e técnicas mais avançadas como gradientes e texturas.
 
 Esse guia tem o propósito de fornecer uma rápida porém consistente introdução para se construir SVG *inline*, e ao mesmo tempo, de forma alguma, abrange todos os recursos disponíveis, portanto, deve ser útil no processo de inicialização de Designers e Desenvolvedores que desejam adicionar o SVG em seu *workflow* de maneira mais acessível possível.
 
@@ -681,11 +681,11 @@ Aqui está uma maçã antes e depois de adicionar um `skewX` no valor de "20": `
 
 `fill` e `stroke` nos permitem pintar o interior e borda de um SVG.
 
-"[Pintar](http://www.w3.org/TR/SVG/painting.html#Introduction)" referencia a ação de aplicar cor, gradientes, padrões ao gráfico através do `fill` e/ou `stroke`.
+"[Pintar](http://www.w3.org/TR/SVG/painting.html#Introduction)" referencia a ação de aplicar cor, gradientes e texturas ao gráfico através do `fill` e/ou `stroke`.
 
 ### Propriedades de preenchimento
 
-O atributo `fill` pinta o interior de um elemento gráfico específico. Este preenchimento pode consistir de uma cor sólida, gradiente ou padrão.
+O atributo `fill` pinta o interior de um elemento gráfico específico. Este preenchimento pode consistir de uma cor sólida, gradiente ou textura.
 
 O interior da forma é determinado examinando todos os caminhos e especificações com o `fill-rule`. 
 
@@ -833,7 +833,7 @@ O valor aqui é decimal entre 0 e 1, com 0 sendo completamente transparente.
 
 ## Seção 5: O elemento text
 
-O elemento `<text>` define um gráfico povoado por texto. Existem uma série de opções de atributos para customização deste texto como gradientes, padrões, recortes, máscaras ou filtros que podem ser aplicados.
+O elemento `<text>` define um gráfico povoado por texto. Existem uma série de opções de atributos para customização deste texto como gradientes, texturas, recortes, máscaras ou filtros que podem ser aplicados.
 
 Escrever e editar o `<text>` no SVG fornece uma poderosa habilidade de criar textos escaláveis assim como os gráficos que podem ser modificados e editados com o código do SVG. 
 
@@ -1036,7 +1036,7 @@ Adicionando cor ao contorno do caminho via elemento `<use>` pode ajudar a entend
 
 ![Caminho simples com texto](images/pathsimpletext2.png)
 
-## Seção 6: Características Avançadas: Gradientes, Padrões, Recortes
+## Seção 6: Características Avançadas: Gradientes, Texturas, Recortes
 
 ### Gradientes
 
@@ -1096,7 +1096,7 @@ O atributo `gradientUnits` define um sistema de coordenadas para os valores de x
 
 O valor do atributo `spreadMethod` especifica como o gradiente irá se propagar através do formato e se ele começa ou termina dentro dos limites do alvo (*target*). Se o gradiente está configurado para não preencher o formato, o `spreadMethod` determina como o gradiente deve se comportar para cobrir o espaço em branco. Existem três opções aqui: `pad`, `repeat` ou `reflect`.
 
-O valor de `pad` (padrão) direciona a primeira e a última cores do gradiente a se propagar sobre a região não coberta restante. O valor de `repeat` direciona o gradiente a repetir suas cores desde o início continuadamente. O valor em `reflect` irá refletir o padrão alternadamente do início-ao-fim e em seguida do fim-ao-início continuadamente.
+O valor de `pad` (padrão) direciona a primeira e a última cores do gradiente a se propagar sobre a região não coberta restante. O valor de `repeat` direciona o gradiente a repetir suas cores desde o início continuadamente. O valor em `reflect` irá refletir a textura alternadamente do início-ao-fim e em seguida do fim-ao-início continuadamente.
 
 O ponto de início para o gradiente abaixo é: x1="20%" y1="30%" x2="40%" y2="80%".
 
