@@ -1242,7 +1242,7 @@ Agora temos um visual de como ficaria o código para aplicar o texto "Apples" ne
 
 A aplicação da máscara é definida dentro do elemento `<clipPath>` e então chamada nos dois formatos referenciados por  um único `id`.
 
-## Conclusion
+## Conclusão
 
 Escrever SVG *inline* é uma maneira muito útil e poderosa de edição e da ao autor acesso completo a tudo que existe nos elementos de um gráfico de maneira individual. Junto com este código estamos gerando gráficos que são escalados sem nenhuma perda de qualidade da imagem, são pesquisáveis, aumentando sua acessibilidade.
 
