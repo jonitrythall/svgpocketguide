@@ -1,4 +1,4 @@
-x# Guia de bolso de SVG
+# Guia de bolso de SVG
 ## [*Por Joni Trythall*](httpw://jonibologna.com/)
 ### Tradução por [*Willian Justen*](http://github.com/willianjusten) e [*Lucas Maia*](http://github.com/lucasmaiaesilva)
 #### [Compre a versão PDF aqui](http://svgpocketguide.com/) (Versão em inglês)
@@ -16,58 +16,58 @@ Fico bastante agradecida pelo suporte a este livro e espero realmente não ter o
 
 ![Heart](images/heart.png)
 
-## Table of Contents
-* Introduction
-	* Before You Begin
-		* Using SVG
-		* Vector Graphic Software
-		* Inline SVG
-		* SVG User Accessibility
-		* General Notes
-* Section 1: Document Organization
-	* Organization & Semantics
-		* svg Element
-		* g Element
-		* use Element
-		* defs Element
-		* symbol Element
-	* Stacking Order
-* Section 2: Basic Shapes & Paths
-	* Basic Shapes
-		* Rectangle
-		* Circle
-		* Ellipse
-		* Line
-		* Polyline
-		* Polygon
-	* The path Element
-		* path data
-			* moveto
-			* closepath
-			* lineto
+## Índice
+* Introdução
+	* Antes de você começar
+		* Usando SVG
+		* Softwares de Vetor Gráfico
+		* Inline SVG na Web
+		* SVG - Acessibilidade do Usuário
+		* Notas Gerais
+* Seção 1. Organização do documento
+	* Organização e Semântica
+		* O elemento svg
+		* O elemento g
+		* O elemento use
+		* O elemento defs
+		* O elemento symbol
+	* Ordem de empilhamento (Stacking Order)
+* Seção 2. Formas Básicas e Paths
+	* Formas básicas
+		* O elemento rect
+		* O elemento circle
+		* O elemento ellipse
+		* O elemento line
+		* O elemento polyline
+		* O elemento polygon
+	* O Elemento path
+		* dados do path
+			* O comando moveto
+			* O comando closepath
+			* O comando lineto
 				* L, l
 				* H, h
 				* V, v
-			* Curve Commands
-				* Cubic Bézier
-				* Quadratic Bézier
-				* Elliptical Arc
-	* Embeds From Vector Software
-* Section 3: Workspace
+			* Os comandos de curva
+				* Curvas Cúbicas de Bézier
+				* Curvas Quadráticas de Bézier
+				* Curva Elíptica
+	* Incorporando de um Programa de vetor gráfico
+* Seção 3. Workspace
 	* viewport
 	* viewBox
 		* preserveAspectRatio
-	* Coordinate System Transforms
+	* Sistema de transformação de coordenadas
 		* translate
 		* rotate
 		* scale
 		* skew
-* Section 4: Fills & Strokes
-	 * fill Properties
+* Seção 4. Preenchimentos e Contornos
+	 * Propriedades de preenchimento
 	 	* fill
 	 	* fill-rule
 	 	* fill-opacity
-	 * stroke Attributes
+	 * Atributos de contorno
 	 	* stroke
 	 	* stroke-width
 	 	* stroke-linecap
@@ -76,40 +76,40 @@ Fico bastante agradecida pelo suporte a este livro e espero realmente não ter o
 	 	* stroke-dasharray
 	 	* stroke-dashoffset
 	 	* stroke-opacity
-* Section 5: The text Element
-	* Basic Attributes
+* Seção 5: O elemento text
+	* Atributos Básicos
 		* x, y, dx, dy
 		* rotate
 		* textLength & lengthAdjust
-	* The tspan Element
-	* Spacing Properties
+	* O elemento tspan
+	* Propriedades de espaçamento
 		* kerning & letter-spacing
 		* word-spacing
 	* text-decoration
-	* text Along a Path
-		* textPath Element
+	* Texto ao longo de um caminho
+		* O elemento textPath
 		* xlink:href
 		* startOffset
-* Section 6: Advanced Features
-	* Gradients
-		* Linear Gradients
-			* stop Nodes
+* Seção 6: Características Avançadas
+	* Gradientes
+		* Gradientes Lineares
+			* Pontos de parada
 			* x1, y1, x2, y2
 			* gradientUnits
 			* spreadMethod
 			* gradientTransform
 			* xlink:href
-		* Radial Gradients
+		* Gradientes em Radial
 		* cx, cy, r
 		* fx, fy
-	* Patterns
-		* Basic Attributes
+	* Texturas
+		* Atributos Básicos
 			* x, y, width, height
 			* patternUnits
 			* patternContentUnits
-		* Nested Patterns
-	* Clipping Path
-* Conclusion
+		* Texturas aninhadas
+	* Caminhos com Máscaras
+* Conclusão
 
 ## Introdução
 
@@ -659,7 +659,7 @@ Aqui está uma maçã antes e depois de ter uma rotação de 20 graus aplicada:
 `transform="rotate(20)"`.
 *Perceba que a imagem não reflete a mudança nas coordenadas que esta transformação faz.*
 
-![Maçã rotacionada](images/rotationapple.png)g
+![Maçã rotacionada](images/rotationapple.png)
 
 #### scale
 
@@ -1190,9 +1190,9 @@ Este valor, diferentemente de `patternUnits`, tem como padrão o valor `userSpac
 
 Difinindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplificamos esse processo e garantimos um *workspace* mais consistente.
 
-#### Textura em Cascata
+#### Texturas Aninhadas
 
-Texturas também podem ser usados em cascata, usamos isso para criar um desenho com estrutura mais única, complexa e detalhada.
+Texturas também podem ser aninhadas, usamos isso para criar um desenho com estrutura mais única, complexa e detalhada.
 Aqui está um exemplo básico de estrutura em cascata.
 
 	<svg width="204" height="204">
