@@ -1065,7 +1065,7 @@ Gradientes lineares mudam de cor uniformemente ao longo de uma linha e cada pont
 
 Pontos de parada ou *`<stop>` nodes* também podem aceitar parâmetros de opacidade com `stop-opacity="<valor>"`.
 
-Aqui abaixo está o código para um gradiente linear simples com duas cores aplicados em um retângulo:
+Aqui abaixo está o código para um gradiente linear simples com duas cores aplicado em um retângulo:
 
 		<svg width="405" height="105">
     		<defs>
@@ -1085,7 +1085,7 @@ O parâmetro `offset` informa ao gradiente em qual ponto atribuir e se correlaci
 
 Os valores contidos nos atributos x1, y1, x2 e y2 representam os pontos iniciais e finais nos quais são mapeados o encerramento do gradiente (mudança de cores). Essas porcentagens irão mapear os gradientes respectivamente ao longo do eixo apropriado.
 
-O valor de `y` em "100%" e `x` em "0" vai produzir um gradiente horizontal, enquanto os valores reversos vão gerar um gradiente verticall. Utilizando os dois valores em "100%" (ou qualquer valor diferente de 0) vai renderizar um gradiente angulado.
+O valor de `y` em "100%" e `x` em "0" vai produzir um gradiente horizontal, enquanto os valores inversos vão gerar um gradiente verticall. Utilizando os dois valores em "100%" (ou qualquer valor diferente de 0) vai renderizar um gradiente angulado.
 
 
 ##### gradientUnits
@@ -1094,17 +1094,17 @@ O atributo `gradientUnits` define um sistema de coordenadas para os valores de x
 
 ##### spreadMethod
 
-O valor do atributo `spreadMethod` especifica como o gradiente irá se propagar através do formato e se ele começa ou termina dentro dos limites do alvo (*target*). Se o gradiente está configurado para não preencher o formato, o `spreadMethod` determina como o gradiente deve se comportar para cobrir o espaço em branco. Existem três opções aqui: `pad`, `repeat` ou `reflect`.
+O valor do atributo `spreadMethod` especifica como o gradiente irá se propagar através da forma e se ele começa ou termina dentro dos limites do alvo (*target*). Se o gradiente está configurado para não preencher o formato, o `spreadMethod` determina como o gradiente deve se comportar para cobrir o espaço em branco. Existem três opções aqui: `pad`, `repeat` ou `reflect`.
 
 O valor de `pad` (padrão) direciona a primeira e a última cores do gradiente a se propagar sobre a região não coberta restante. O valor de `repeat` direciona o gradiente a repetir suas cores desde o início continuadamente. O valor em `reflect` irá refletir a textura alternadamente do início-ao-fim e em seguida do fim-ao-início continuadamente.
 
-O ponto de início para o gradiente abaixo é: x1="20%" y1="30%" x2="40%" y2="80%".
+O ponto de início e ponto final para o gradiente abaixo é: x1="20%" y1="30%" x2="40%" y2="80%".
 
 ![Metodo Spread](images/gradientspreadmethod.png)
 
 ##### gradientTransform
 
-O atributo `gradientTransform` é opcional e permite uma maior transformação do gradiente antes de ele ser mapeado, como se fosse uma rotação adicional.
+O atributo `gradientTransform` é opcional e permite uma transformação futura do gradiente antes de ser mapeado, como adicionar uma rotação.
 
 ##### xlink:href
 O atributo `xlink:href` permite ao usuário chamar o ID de outros gradientes a fim de "herdar" seus detalhes, mas você também pode sobrescrever valores diferentes. 
@@ -1125,7 +1125,7 @@ Os atributos `cx`, `cy` e `r` definem uma seção externa do circulo e os 100% d
 
 Os atributos `fx` e `fy` representam as coordenadas para o ponto focal do gradiente, ou o ponto mais interno do circulo. Essencialmente, o ponto central do gradiente não necessariamente precisa ser o ponto de foco do gradiente, esses valores podem ser facilmente alterados.
 
-Conforme citado acima, enquanto por padrão o ponto de foco do gradiente é o deverá ser o ponto central, os atributos podem alterar isso. Por exemplo os valores do ponto de foco da imagem abaixo são fx="95%" fy="70%"`.
+Conforme citado acima, enquanto por padrão o ponto de foco do gradiente deverá ser o ponto central, os atributos podem alterar isso. Por exemplo os valores do ponto de foco da imagem abaixo são fx="95%" fy="70%"`.
 
 		<svg width="850px" height="300px">
     		<defs>
@@ -1170,23 +1170,24 @@ Aqui está  a sintaxe básica de uma textura aplicada a um retângulo.
 
 #### Atributos Básicos
 
-Os atributos básicos para as texturas definem o "canvas", o design e o posicionamento. As texturas podem consistir em caminhos ou formas, podem preencher textos, e podem até mesmo ser preenchidas por outras texturas.
+Os atributos e valores para as texturas definem o "canvas", o design e o posicionamento. As texturas podem consistir em caminhos ou formas, podem preencher textos, e podem até mesmo ser preenchidas por outras texturas.
 
 ##### x, y, width, height
 Os atributos `x` e `y` dentro do elemento `<pattern>` definem a distância dentro do formato que a textura irá se iniciar. `width` (largura) e `height` (altura) dentro do elemento `<pattern>` definem o tamanho da textura dentro do espaço do formato.
-O "basicPattern" referenciado acima contém os seguintes valores: `x="10" y="10" width="40" height="40"`. A textura irá iniciar 10px a frente do eixo x, 10 px a frente  do eixo y, e criar um elemento com 40px de largura e 40px de altura.
+
+A "textura básica" referenciada acima contém os seguintes valores: `x="10" y="10" width="40" height="40"`. A textura irá iniciar 10px a frente do eixo x, 10 px a frente  do eixo y, e criar um elemento com 40px de largura e 40px de altura.
 
 ##### patternUnits
 
 O atributo `patternUnits` define as coordenadas para quais `x`, `y`, `width` e `height` são referenciados. As duas opções disponíveis são `userSpaceOnUse` e `objectBoundingBox` (padrão).
 
-A opção `userSpaceOnUse` resulta em uma textura determinada pelo sistema de coordenadas e referenciada para o elemento `<pattern>`, enquanto `objectBoundingBox` estabelece o mapa de coordenadas baseada no elemento que a textura está aplicada.
+A opção `userSpaceOnUse` resulta em uma textura determinada pelo sistema de coordenadas que referenciada para o elemento `<pattern>`, enquanto `objectBoundingBox` estabelece o mapa de coordenadas como uma uma caixa delimitadora baseada no elemento que a textura está aplicada.
 
 ##### patternContentUnits
 
 O atributo `patternContentUnits` possuem os mesmos valores de `patternUnits`, porém o sistema de coordenadas agora é aplicado ao conteúdo diretamente na textura propriamente dita.
 
-Este valor, diferentemente de `patternUnits`, tem como padrão o valor `userSpaceOnUse`, o que significa que, pelo menos um ou ambos destes atributos especificam o desenho do formato dentro de `<pattern>`, formas usadas dentro deste elemento pertencem a um sistema de coordenadas diferentes do sistema que o elemento está usando.
+Este valor, diferentemente de `patternUnits`, tem como padrão o valor `userSpaceOnUse`, o que significa que, a menos que um ou ambos destes atributos sejam especificados na forma desenhada com o elemento `<pattern>`, eles serão desenhados em um sistema de coordenadas diferente do que o `<pattern>` está utilizando.
 
 Difinindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplificamos esse processo e garantimos um *workspace* mais consistente.
 
