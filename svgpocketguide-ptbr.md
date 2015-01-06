@@ -108,7 +108,7 @@ Fico bastante agradecida pelo suporte a este livro e espero realmente não ter o
 			* patternUnits
 			* patternContentUnits
 		* Texturas aninhadas
-	* Caminhos com Máscaras
+	* Recortes
 * Conclusão
 
 ## Introdução
@@ -556,7 +556,7 @@ A `viewBox` permite a visualização de uma parte específica de uma parte de um
 
 Os valores `min` representam em qual ponto dentro da imagem a `viewBox` deve iniciar, enquanto o `width` e `height` estabelecem o tamanho do box.
 
-Se nós optarmos por não definir a `viewBox` a imagem não será escalada e irá corresponder a configuração feita na *viewport*.
+Se nós optarmos por não definir a `viewBox` a imagem não será redimensionada e irá corresponder a configuração feita na *viewport*.
 
 Se 50px forem tirados de `width` e `height` da `viewBox`, a porção da imagem da pêra que está visível é reduzida, porém a parte que ainda pode ser visualizada se encaixa nas definições da *viewport*.
 
@@ -596,7 +596,7 @@ Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala
 
 ![Cerejas](images/preserverationone.png)
 
-Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo da *viewport*. O `meet` se certifica que a imagem está escalada para se encaixar dentro da *viewport* da melhor maneira possível.
+Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo da *viewport*. O `meet` se certifica que a imagem está redimensionada para se encaixar dentro da *viewport* da melhor maneira possível.
 
 		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
 			<!--<path <path que desenha a cereja> />-->
@@ -636,7 +636,7 @@ A seguinte imagem demonstra a transformação que o sistema de coordenadas sofre
 
 O sistema de coordenadas como um todo é transladado e a imagem da lima e do limão é mantida no posicionamento original com o sistema. O novo sistema de coordenadas tem a origem localizada em (100,100) do sistema de coordenadas original. 
 
-Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo escalada em torno disso, movendo toda a tela no processo. 
+Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo dimensionada em torno disso, movendo toda a tela no processo. 
 
 No caso de transformações em cadeia, os efeitos são acumulativos, então a transformação no elemento filho será baseada na acumulação de transformações antes do mesmo.
 
@@ -1185,16 +1185,15 @@ A opção `userSpaceOnUse` resulta em uma textura determinada pelo sistema de co
 
 ##### patternContentUnits
 
-O atributo `patternContentUnits` possuem os mesmos valores de `patternUnits`, porém o sistema de coordenadas agora é aplicado ao conteúdo diretamente na textura propriamente dita.
+O atributo `patternContentUnits` possui os mesmos valores de `patternUnits`, porém o sistema de coordenadas agora é definido pelo conteúdo da textura em si.
 
 Este valor, diferentemente de `patternUnits`, tem como padrão o valor `userSpaceOnUse`, o que significa que, a menos que um ou ambos destes atributos sejam especificados na forma desenhada com o elemento `<pattern>`, eles serão desenhados em um sistema de coordenadas diferente do que o `<pattern>` está utilizando.
 
-Difinindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplificamos esse processo e garantimos um *workspace* mais consistente.
+Definindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplificamos esse processo e garantimos um *workspace* mais consistente.
 
 #### Texturas Aninhadas
 
-Texturas também podem ser aninhadas, usamos isso para criar um desenho com estrutura mais única, complexa e detalhada.
-Aqui está um exemplo básico de estrutura em cascata.
+Texturas também podem ser aninhadas para criar um design mais único e detalhado. Aqui está um exemplo básico de uma estrutura aninhada.
 
 	<svg width="204" height="204">
   		<defs>
@@ -1215,19 +1214,19 @@ Aqui está um exemplo básico de estrutura em cascata.
       stroke="#333333" stroke-width="3" fill="url(#rectPattern)" />
 	</svg>
 
-O elemento `<defs>` contém ambas as texturas. Com o elemento `<defs>`, a textura do retângulo está chamando a textura do circulo pelo `fill` e o retângulo principal está então chamando própria textura também via `fill`, pintando o interior da forma formando um efeito em cascata.
+O elemento `<defs>` contém ambas as texturas. Com o elemento `<defs>`, a textura do retângulo está chamando a textura do circulo pelo `fill` e o retângulo principal está então chamando própria textura também via `fill`, pintando o interior da forma principal formando um efeito aninhado.
 
-![Textura em Cascata](images/patternnest.png)
+![Textura aninhada](images/patternnest.png)
 
-### Caminhos com Máscaras
+### Recortes
 
-Os caminhos em máscaras ou recortes restringem a região no qual a pintura será aplicada ao SVG. Qualquer região do desenho que não faça parte do caminho da máscara não será renderizada.
+Os recortes restringem a região na qual a pintura será aplicada ao SVG. Qualquer região do desenho que não faça parte do recorte não será renderizada.
 
-Para demonstrar as abilidades dessa característica, vamos usar uma máscara em um texto "Apples" sendo aplicada sobre uma coloração de tomate em um retângulo e um circulo verde.
+Para demonstrar as habilidades dessa característica, vamos usar um recorte em um texto "Apples" sendo aplicada sobre uma coloração de tomate em um retângulo e um circulo verde.
 
 Abaixo estão os formatos ainda sem a aplicação da máscara, configurada para se extender além da *viewport*.
 
-![Formatos antes da máscara](images/clippingshapes.png)
+![Formatos antes do recorte](images/clippingshapes.png)
 
 Agora temos um visual de como ficaria o código para aplicar o texto "Apples" neste *canvas*.
 
@@ -1239,19 +1238,19 @@ Agora temos um visual de como ficaria o código para aplicar o texto "Apples" ne
     	<circle cx="310" cy="100" r="135" fill="#bbc42a" clip-path="url(#clip-text)" />
   	</svg>
 
-![Texto com máscara aplicada](images/clippingtext.png)
+![Texto com recorte aplicada](images/clippingtext.png)
 
-A aplicação da máscara é definida dentro do elemento `<clipPath>` e então chamada nos dois formatos referenciados por  um único `id`.
+A aplicação do recorte é definida dentro do elemento `<clipPath>` e então chamada nos dois formatos referenciados por  um único `id`.
 
 ## Conclusão
 
-Escrever SVG *inline* é uma maneira muito útil e poderosa de edição e da ao autor acesso completo a tudo que existe nos elementos de um gráfico de maneira individual. Junto com este código estamos gerando gráficos que são escalados sem nenhuma perda de qualidade da imagem, são pesquisáveis, aumentando sua acessibilidade.
+Escrever SVG *inline* é uma maneira muito útil e poderosa de edição e da ao autor acesso completo a tudo que existe nos elementos de um gráfico de maneira individual. Junto com este código estamos gerando gráficos que são redimensionados sem nenhuma perda de qualidade da imagem, são pesquisáveis, aumentando sua acessibilidade.
 
 Provavelmente levará algum tempo até que você domine a escrita e se sinta confortável com suas habilidades de SVG, porém uma vez que você o faça, recomendo que você faça seu código mais curto e eficiente possível, explorando [animações SMIL](http://www.w3.org/TR/smil-animation/), e experimentando [estilizar elementos SVG com CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS).]
 
 Espero que este guia sirva como uma valiosa referência, e inspiração no que se refere ao entendimento do potencial poderoso de construção e manipulação do SVG *inline*.
 
-Para novidades e *updates*, por favor visite [o site do livro](http://svgpocketguide.com/), e se você tiver alguma pergunta ou comentário a fazer poderá fazê-lo via [Twitter](https://twitter.com/JoniTrythall) ou enviar um email em [info@jonibologna.com](mailto:info@jonibologna.com).
+Para novidades e atualizações, por favor visite [o site do livro](http://svgpocketguide.com/), e se você tiver alguma pergunta ou comentário a fazer poderá fazê-lo via [Twitter](https://twitter.com/JoniTrythall) ou enviar um email para [info@jonibologna.com](mailto:info@jonibologna.com).
 
 
 ![Fim](images/theend2.png)
