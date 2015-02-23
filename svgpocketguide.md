@@ -338,7 +338,7 @@ While the `cx` and `cy` values are establishing the center point based on pixel 
 
 #### Line
 
-The <line> element defines a straight line with a start and end point. 
+The `<line>` element defines a straight line with a start and end point. 
 
 		<svg>
   			<line x1="5" y1="5" x2="100" y2="100" stroke="#765373" stroke-width="8"/>
