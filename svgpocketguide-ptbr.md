@@ -494,7 +494,7 @@ Aqui está um código de um curva elptica básica:
   		<path fill="none" stroke="#333333" stroke-width="3" d="M65,10 a50,25 0 1,0 50,25" />
 	</svg>
 
-O primeiro e último conjunto de valores dentro do *path*, `M65,10` and `50,25`, representam as coordenadas inicial e final, enquanto o segundo conjunto de valores definem os dois raios. O valor de `1.0` (*large-arc-flag* and *sweep-flag*) determina como o arqco será desenhado, a partir das quatro diferentes opções.
+O primeiro e último conjunto de valores dentro do *path*, `M65,10` e `50,25`, representam as coordenadas inicial e final, enquanto o segundo conjunto de valores definem os dois raios. O valor de `1.0` (*large-arc-flag* e *sweep-flag*) determina como o arco será desenhado, a partir das quatro diferentes opções.
 
 O seguinte diagrama mostra as quatro opções e o impacto que esses valores tem na renderização final do segmento de arco.
 
