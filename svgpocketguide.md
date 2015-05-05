@@ -1,6 +1,5 @@
 # Pocket Guide to Writing SVG
 ## [*By Joni Trythall*](http://jonibologna.com/)
-#### [Buy the PDF version here](http://svgpocketguide.com/)
 
 ## Thank You!
 
