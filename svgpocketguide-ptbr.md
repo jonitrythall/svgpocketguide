@@ -246,7 +246,7 @@ Também diferente do elemento `<g>`, o `<symbol>` estabelece seu próprio sistem
 
 ### Ordem de empilhamento (*Stackering Order*)
 
-A ordem de empilhamento do SVG não pode ser manipulada pelo `z-indez` no CSS como os outros elementos do HTML podem. A ordem que estes elementos são empilhados no SVG dependem inteiramente de sua posição dentro do documento.
+A ordem de empilhamento do SVG não pode ser manipulada pelo `z-index` no CSS como os outros elementos do HTML podem. A ordem que estes elementos são empilhados no SVG dependem inteiramente de sua posição dentro do documento.
 
 As uvas e a melância estão no mesmo elemento `<svg>` abaixo. A melância aparece a frente das uvas porque o grupo que contém o caminho que faz seu desenho está listado antes das uvas no documento.
 
