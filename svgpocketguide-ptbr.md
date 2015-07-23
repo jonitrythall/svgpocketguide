@@ -143,7 +143,7 @@ A vantagem destes tipos de ferramentas é que você pode exportar seu código SV
 
 #### *Inline* SVG na Web
 
-Para simplificar, ao longo do livro, o DOCTYPE SVG, número da versão assim como xmlns e xml:space foram excluídos de todas os exemplos de código.
+Para simplificar, ao longo do livro, o DOCTYPE SVG, número da versão assim como xmlns e xml:space foram excluídos de todos os exemplos de código.
 
 Esses atributos especificam ao *browser* a [versão do SVG](http://www.w3.org/TR/xml11/) sendo usado no momento assim como o [*namespace*](http://www.w3.org/TR/REC-xml-names/) do documento. A principal coisa a lembrar neste momento é que você geralmente não precisa incluir esses atrtibutos para renderizar com sucesso o seu gráfico no navegador.
 
