@@ -3,19 +3,6 @@
 ### Tradução por [*Willian Justen*](http://github.com/willianjusten) e [*Lucas Maia*](http://github.com/lucasmaiaesilva)
 #### [Compre a versão PDF aqui](http://svgpocketguide.com/) (Versão em inglês)
 
-## Muito Obrigado!
-
-Eu gostaria de dedicar essa sessão inteira para deixar um especial "Muito obrigado!" para:
-
-* [CSS-Tricks](http://css-tricks.com/)
-* [Lincoln Loop](http://lincolnloop.com/)
-* [Designmodo](http://designmodo.com/)
-* [Tahoe Partners](http://tahoepartners.com/Pages/Tahoe%20Partners.aspx)
-
-Fico bastante agradecida pelo suporte a este livro e espero realmente não ter ofendido nenhum de vocês por não utilizar sua fruta favorita.
-
-![Heart](images/heart.png)
-
 ## Índice
 * [Introdução](#introdução)
 	* [Antes de você começar](#antes-de-você-começar)
