@@ -17,99 +17,98 @@ Fico bastante agradecida pelo suporte a este livro e espero realmente não ter o
 ![Heart](images/heart.png)
 
 ## Índice
-* Introdução
-	* Antes de você começar
-		* Usando SVG
-		* Softwares de Vetor Gráfico
-		* Inline SVG na Web
-		* SVG - Acessibilidade do Usuário
-		* Notas Gerais
-* Seção 1. Organização do documento
-	* Organização e Semântica
-		* O elemento svg
-		* O elemento g
-		* O elemento use
-		* O elemento defs
-		* O elemento symbol
-	* Ordem de empilhamento (Stacking Order)
-* Seção 2. Formas Básicas e Paths
-	* Formas básicas
-		* O elemento rect
-		* O elemento circle
-		* O elemento ellipse
-		* O elemento line
-		* O elemento polyline
-		* O elemento polygon
-	* O Elemento path
-		* dados do path
-			* O comando moveto
-			* O comando closepath
-			* O comando lineto
-				* L, l
-				* H, h
-				* V, v
-			* Os comandos de curva
-				* Curvas Cúbicas de Bézier
-				* Curvas Quadráticas de Bézier
-				* Curva Elíptica
-	* Incorporando de um Programa de vetor gráfico
-* Seção 3. Workspace
-	* viewport
-	* viewBox
-		* preserveAspectRatio
-	* Sistema de transformação de coordenadas
-		* translate
-		* rotate
-		* scale
-		* skew
-* Seção 4. Preenchimentos e Contornos
-	 * Propriedades de preenchimento
-	 	* fill
-	 	* fill-rule
-	 	* fill-opacity
-	 * Atributos de contorno
-	 	* stroke
-	 	* stroke-width
-	 	* stroke-linecap
-	 	* stroke-linejoin
-	 		* stroke-miterlimit
-	 	* stroke-dasharray
-	 	* stroke-dashoffset
-	 	* stroke-opacity
-* Seção 5: O elemento text
-	* Atributos Básicos
-		* x, y, dx, dy
-		* rotate
-		* textLength & lengthAdjust
-	* O elemento tspan
-	* Propriedades de espaçamento
-		* kerning & letter-spacing
-		* word-spacing
-	* text-decoration
-	* Texto ao longo de um caminho
-		* O elemento textPath
-		* xlink:href
-		* startOffset
-* Seção 6: Características Avançadas
-	* Gradientes
-		* Gradientes Lineares
-			* Pontos de parada
-			* x1, y1, x2, y2
-			* gradientUnits
-			* spreadMethod
-			* gradientTransform
-			* xlink:href
-		* Gradientes em Radial
-		* cx, cy, r
-		* fx, fy
-	* Texturas
-		* Atributos Básicos
-			* x, y, width, height
-			* patternUnits
-			* patternContentUnits
-		* Texturas aninhadas
-	* Recortes
-* Conclusão
+* [Introdução](#introdução)
+	* [Antes de você começar](#antes-de-você-começar)
+		* [Usando SVG](#usando-svg)
+		* [Softwares de Vetor Gráfico](#sofwares-de-vetor-gráfico)
+		* [Inline SVG na Web](#inline-svg-na-web)
+		* [SVG - Acessibilidade do Usuário](#svg---acessibilidade-do-usuário)
+		* [Notas Gerais](#notas-gerais)
+* [Seção 1. Organização do documento](#seção-1-organização-do-documento)
+	* [Organização e Semântica](#organização-e-semântica)
+		* [O elemento svg](#o-elemento-svg)
+		* [O elemento g](#o-elemento-g)
+		* [O elemento use](#o-elemento-use)
+		* [O elemento defs](#o-elemento-defs)
+		* [O elemento symbol](#o-elemento-symbol)
+	* [Ordem de empilhamento (Stackering Order)](#ordem-de-empilhamento-stackering-order)
+* [Seção 2. Formas Básicas e Paths](#seção-2-formas-básicas-e-paths)
+	* [Formas básicas](#formas-básicas)
+		* [O elemento rect](#o-elemento-rect)
+		* [O elemento circle](#o-elemento-circle)
+		* [O elemento ellipse](#o-elemento-ellipse)
+		* [O elemento line](#o-elemento-line)
+		* [O elemento polyline](#o-elemento-polyline)
+		* [O elemento polygon](#o-elemento-polygon)
+	* [O Elemento path](#o-elemento-path)
+		* [dados do path](#dados-do-path)
+			* [O comando moveto](#o-comando-moveto)
+			* [O comando closepath](#o-comando-closepath)
+			* [O comando lineto](#o-comando-lineto)
+				* [L, l](#l-l)
+				* [H, h](#h-h)
+				* [V, v](#v-v)
+			* [Os comandos de curva](#os-comandos-de-curva)
+				* [Curvas Cúbicas de Bézier](#curvas-cúbicas-de-bézier)
+				* [Curvas Quadráticas de Bézier](#curvas-quadráticas-de-bézier)
+				* [Curva Elíptica](#curva-elíptica)
+	* [Incorporando de um Programa de vetor gráfico](#incorporando-de-um-programa-de-vetor-gráfico)
+* [Seção 3. Workspace](#seção-3-workspace)
+	* [viewport](#viewport)
+	* [viewBox](#viewbox)
+		* [preserveAspectRatio](#preserveaspectratio)
+	* [Sistema de transformação de coordenadas](#sistema-de-transformação-de-coordenadas)
+		* [translate](#translate)
+		* [rotate](#rotate)
+		* [scale](#scale)
+		* [skew](#skew)
+* [Seção 4. Preenchimentos e Contornos](#seção-4-preenchimentos-e-contornos)
+	 * [Propriedades de preenchimento](#propriedades-de-preenchimento)
+	 	* [fill-rule](#fill-rule)
+	 	* [fill-opacity](#fill-opacity)
+	 * [Atributos de contorno](#atributos-de-contorno)
+	 	* [stroke](#stroke)
+	 	* [stroke-width](#stroke-width)
+	 	* [stroke-linecap](#stroke-linecap)
+	 	* [stroke-linejoin](#stroke-linejoin)
+	 		* [stroke-miterlimit](#stroke-miterlimit)
+	 	* [stroke-dasharray](#stroke-dasharray)
+	 	* [stroke-dashoffset](#stroke-dashoffset)
+	 	* [stroke-opacity](#stroke-opacity)
+* [Seção 5: O elemento text](#seção-5-o-elemento-text)
+	* [Atributos Básicos](#atributos-básicos)
+		* [x, y, dx, dy](#x-y-dx-dy)
+		* [rotate](#rotate)
+		* [textLength & lengthAdjust](#textlength--lengthadjust)
+	* [O elemento tspan](#o-elemento-tspan)
+	* [Propriedades de espaçamento](#propriedades-de-espaçamento)
+		* [kerning & letter-spacing](#kerning--letter-spacing)
+		* [word-spacing](#word-spacing)
+	* [text-decoration](#text-decoration)
+	* [Texto ao longo de um caminho](#texto-ao-longo-de-um-caminho)
+		* [O elemento textPath](#o-elemento-textpath)
+		* [xlink:href](#xlinkhref)
+		* [startOffset](#startoffset)
+* [Seção 6: Características Avançadas](#seção-6-características-avançadas-gradientes-texturas-recortes)
+	* [Gradientes](#gradientes)
+		* [Gradientes Lineares](#gradientes-lineares)
+			* [Pontos de parada](#pontos-de-parada)
+			* [x1, y1, x2, y2](#x1-y1-x2-y2)
+			* [gradientUnits](#gradientunits)
+			* [spreadMethod](#spreadmethod)
+			* [gradientTransform](#gradienttransform)
+			* [xlink:href](#xlinkhref-1)
+		* [Gradientes em Radial](#gradientes-em-radial)
+		* [cx, cy, r](#cx-cy-r)
+		* [fx, fy](#fx-fy)
+	* [Texturas](#texturas)
+		* [Atributos Básicos](#atributos-básicos)
+			* [x, y, width, height](#x-y-width-height)
+			* [patternUnits](#patternunits)
+			* [patternContentUnits](#patterncontentunits)
+		* [Texturas aninhadas](#texturas-aninhadas)
+	* [Recortes](#recortes)
+* [Conclusão](#conclusão)
 
 ## Introdução
 
@@ -634,9 +633,9 @@ A seguinte imagem demonstra a transformação que o sistema de coordenadas sofre
 
 ![Translação do sistema de coordenadas](images/transformcoord.png)
 
-O sistema de coordenadas como um todo é transladado e a imagem da lima e do limão é mantida no posicionamento original com o sistema. O novo sistema de coordenadas tem a origem localizada em (100,100) do sistema de coordenadas original. 
+O sistema de coordenadas como um todo é transladado e a imagem da lima e do limão é mantida no posicionamento original com o sistema. O novo sistema de coordenadas tem a origem localizada em (100,100) do sistema de coordenadas original.
 
-Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo dimensionada em torno disso, movendo toda a tela no processo. 
+Devido a este relacionamento com o sistema de coordenadas, várias das funções irão mover o desenho mesmo que você não defina diretamente a translação no elemento. Por exemplo, a tentativa de triplicar o tamanho de uma imagem com um `scale` no valor de "3", está multiplicando as coordenadas `x` e `y` por "3" e a imagem está sendo dimensionada em torno disso, movendo toda a tela no processo.
 
 No caso de transformações em cadeia, os efeitos são acumulativos, então a transformação no elemento filho será baseada na acumulação de transformações antes do mesmo.
 
@@ -687,7 +686,7 @@ Aqui está uma maçã antes e depois de adicionar um `skewX` no valor de "20": `
 
 O atributo `fill` pinta o interior de um elemento gráfico específico. Este preenchimento pode consistir de uma cor sólida, gradiente ou textura.
 
-O interior da forma é determinado examinando todos os caminhos e especificações com o `fill-rule`. 
+O interior da forma é determinado examinando todos os caminhos e especificações com o `fill-rule`.
 
 Quando preenchendo uma forma ou caminho, `fill` irá pintar caminhos abertos como se o último ponto estivesse conectado ao primeiro, apesar de a cor do `stroke` nessa seção não ser renderizada.
 
@@ -730,13 +729,13 @@ O valor de `fill-opacity` se refere ao nível de opacidade do preenchimento no i
 
 Existem algums atributos relacionados ao contorno no SVG, que permitem o controle e manipulação dos detalhes do contorno. As habilidades desses atributem fornecem um grande controle no SVG "feito a mão", mas também prova ser útil quando é necessário se fazer edições em gráficos incoroporados já existentes.
 
-Os exemplos a seguir usam um SVG inline de uvas. Os atributos estão sendo utilizados diretamente na forma do elemento.  
+Os exemplos a seguir usam um SVG inline de uvas. Os atributos estão sendo utilizados diretamente na forma do elemento.
 
 #### stroke
 
 O atributo `stroke` define a cor da borda numa forma ou caminho específico.
 
-A seguinte imagem das uvas tem um contorno roxo: `stroke="#765373"`. 
+A seguinte imagem das uvas tem um contorno roxo: `stroke="#765373"`.
 
 ![Uvas](images/stroke1.png)
 
@@ -767,7 +766,7 @@ A haste na imagem seguinte tem o `stroke-linecap` com o valor `square`:
 
 #### stroke-linejoin
 
-O `stroke-linejoin` define qual aparência os cantos dos contornos irão possuir nos caminhos e formas básicas. 
+O `stroke-linejoin` define qual aparência os cantos dos contornos irão possuir nos caminhos e formas básicas.
 
 ![Uvas](images/strokelinejoin.png)
 
@@ -835,7 +834,7 @@ O valor aqui é decimal entre 0 e 1, com 0 sendo completamente transparente.
 
 O elemento `<text>` define um gráfico povoado por texto. Existem uma série de opções de atributos para customização deste texto como gradientes, texturas, recortes, máscaras ou filtros que podem ser aplicados.
 
-Escrever e editar o `<text>` no SVG fornece uma poderosa habilidade de criar textos escaláveis assim como os gráficos que podem ser modificados e editados com o código do SVG. 
+Escrever e editar o `<text>` no SVG fornece uma poderosa habilidade de criar textos escaláveis assim como os gráficos que podem ser modificados e editados com o código do SVG.
 
 Lembre-se de estar consciente das dimensões da *viewport* enquanto trabalhamos nos exemplos desta seção. A *viewport*, como mencionada anteriormente, vai determinar a porção visível do SVG e pode ser necessário modificá-la dependendo de alguma alteração específica.
 
@@ -861,7 +860,7 @@ O texto acima começa com 30px da viewport do SVG, e a parte inferior do texto �
 
 A rotação pode ser utilizada em letras/símbolos individuais, e/ou em um elemento como um todo.
 
-Um valor único com o atributo `rotate` resulta em cada símbolo rotacionado por esse mesmo valor. Um conjunto de valores também pode ser utilizado para direcionar e atribuir diferentes valores de rotação para cada letra. Se não tiverem valores suficientes para o número de letras, o último valor definido na rotação será usado para a rotação dos caracteres restantes. 
+Um valor único com o atributo `rotate` resulta em cada símbolo rotacionado por esse mesmo valor. Um conjunto de valores também pode ser utilizado para direcionar e atribuir diferentes valores de rotação para cada letra. Se não tiverem valores suficientes para o número de letras, o último valor definido na rotação será usado para a rotação dos caracteres restantes.
 
 O texto abaixo teve uma rotação definida para todo o gráfico atráves do elemento `transform`, mas também possui um valor para cada símbolo: `rotate="20,0,5,30,10,50,5,10,65,5"`
 
@@ -967,7 +966,7 @@ Enquanto a ordem de desenhar nem sempre tem um impacto no saída visual do SVG, 
 
 `line-through`deve ser desenhado depois do texto ser preenchido e/ou contorno, renderizando sobre o texto.
 
-Aqui um exemplo de `text-decoration="underline"` e `text-decoration="line-through"`. 
+Aqui um exemplo de `text-decoration="underline"` e `text-decoration="line-through"`.
 
 ![Texto Pears](images/textdecoration.png)
 
@@ -1107,7 +1106,7 @@ O ponto de início e ponto final para o gradiente abaixo é: x1="20%" y1="30%" x
 O atributo `gradientTransform` é opcional e permite uma transformação futura do gradiente antes de ser mapeado, como adicionar uma rotação.
 
 ##### xlink:href
-O atributo `xlink:href` permite ao usuário chamar o ID de outros gradientes a fim de "herdar" seus detalhes, mas você também pode sobrescrever valores diferentes. 
+O atributo `xlink:href` permite ao usuário chamar o ID de outros gradientes a fim de "herdar" seus detalhes, mas você também pode sobrescrever valores diferentes.
 
 		<linearGradient id="repeat" xlink:href="#Gradient-1” spreadMethod="repeat" />
 
@@ -1254,9 +1253,3 @@ Para novidades e atualizações, por favor visite [o site do livro](http://svgpo
 
 
 ![Fim](images/theend2.png)
-
-
-
-
-
-
