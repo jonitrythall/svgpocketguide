@@ -1,19 +1,6 @@
 # Pocket Guide to Writing SVG
 ## [*By Joni Trythall*](http://jonibologna.com/)
 
-## Thank You!
-
-I would like to take this entire section to give a special “Thank you so much!” to:
-
-* [CSS-Tricks](http://css-tricks.com/)
-* [Lincoln Loop](http://lincolnloop.com/)
-* [Designmodo](http://designmodo.com/)
-* [Tahoe Partners](http://www.tahoepartners.com/)
-
-Your support for this book is so appreciated and I truly hope I have not offended any of you by potentially excluding your favorite fruit.
-
-![Heart](images/heart.png)
-
 ## Table of Contents
 * [Introduction](#introduction)
 	* [Before You Begin](#before-you-begin)
