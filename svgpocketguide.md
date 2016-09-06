@@ -1,5 +1,4 @@
 # Pocket Guide to Writing SVG
-## [*By Joni Trythall*](http://jonibologna.com/)
 
 ## Table of Contents
 * [Introduction](#introduction)
