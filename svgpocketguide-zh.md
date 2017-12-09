@@ -872,56 +872,88 @@ The above example has a `preserveAspectRatio` of `xMinYMid slice`; the cherries 
 
 SVG enables the additional altering of graphics such as rotation, scaling, moving, and skewing through the use of transforms. The SVG author can apply transforms to individual elements or to an entire group of elements.
 
+使用`transform`可以让SVG的图形做旋转、缩放、位移和扭曲等操作。SVG作者可以将`transform`应用于单个元素或整个元素组。
+
 These functions are included within the element to be manipulated and reside within the `<transform>` attribute. Multiple transforms can be used by including several functions inside this attribute, for example: `transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`.
+
+在元素中使用`<transform>`属性，将这些变换函数用于SVG元素中。这个属性中包含多个函数，言外之外你可以使用多个变形，例如：`transform="translate(<tx>,<ty>) rotate(<rotation angle>)" />`。
 
 Something important to keep in mind when transforming SVG is that it will impact your coordinate system, or workspace. This is because [transforms create a new user space](http://www.w3.org/TR/SVG/coords.html#EstablishingANewUserSpace) by essentially copying the original and then placing the transformation on the new system itself.
 
+在操作SVG变形时有一点需要特别注意，它将会影响您的坐标系统或工作区。这是因为[变形创建了一个新的用户空间](http://www.w3.org/TR/SVG/coords.html#EstablishingANewUserSpace)，本质上是复制原来的，然后将变形放置在新的系统本身上。
+
 The following image demonstrates the coordinate system transform that takes place when placing a translation of (100,100) on the group containing the graphic:
+
+下图演示了在包含图形的组中进行`(100,100)`位移变形时发生的坐标系统变换。
 
 ![Translated coordinate system](images/transformcoord.png)
 
 The coordinate system itself has been translated and the image of the lime and lemon has maintained its original positioning within this system. The new user coordinate system has its origin at location (100,100) in the original coordinate system.
 
+坐标系统本身已经位移了，而酸橙(lime)和柠檬(lemon)的两个图像在各自的系统中保持了原来的位置。新的用户坐标系统在原来的坐标系统中的`(100, 100)`位置处。
+
 Because of this relationship with the coordinate system, many of these functions will move the graphic even if you are not directly setting a translation on it. For example, attempting to triple an image’s size by including a `scale` value of "3" is multiplying the `x` and `y` coordinates by "3" and the image is scaling along with it, moving it across the screen in the process.
+
+由于坐标系统的关系，这些函数将会移动图形，即使你没有直接在它上面设置`transition`。例如，将`scale`的值设置为`3`，将会试图将图形放大三倍，`x`和`y`的坐标都将会乘以`3`，而图形与它一起缩放，在整个过程中就会移动它。
 
 In the case of nested transforms the effects are cumulative, so the final transform on a child element will be based on the accumulation of the transforms before it.
 
+也允许变换嵌套，在这种情况之下，效果将会被累积在一起。因此，子元素的最终变换将基于在它之前的变换的累积。
 
-#### translate
+#### `translate`
 
 The `translate` function specifies the details of moving a shape, and the two numerical values included here direct movement along both the `x` and `y` axis: `transform="translate(<tx>,<ty>)"`. These values can be separated by either whitespace or commas.
 
+`translate`函数指定一个图形的位移细节，两个数值直接指定图形在`x`和`y`轴上的位移：`transform="translate(<tx>,<ty>)"`。这些值可以由空格或逗号分隔。
+
 The `y` value here is optional and if omitted a value of "0" is assumed.
 
+这里的`y`值是可选的，如果忽略不设置，其值是`0`。
 
-#### rotate
+#### `rotate`
 
 A value within `rotate` will specify the shape's rotation at its point of origin (in degrees), which for SVG is 0,0 (top left): `transform="rotate(<rotation angle>)"`.
 
+`rotate`的值将指定图形在其原点旋转的度数，而SVG的原点在左上角`(0,0)`：`transform="rotate(<rotation angle>)"`。
+
 There is also an option here to include `x` and `y` values: `transform=rotate(<rotation angle> [<cx>,<cy>])`. If supplied, these values establish a new center of rotation other than what is defaulted to (which is 0,0).
+
+这里还有一个选项，包括`x`和`y`的值：`transform=rotate(<rotation angle> [<cx>,<cy>])`。如果提供了，这些值将建立一个新的旋转中心，而不是默认值`(0,0)`。
 
 Here is an apple before and after having a 20 degree rotation applied: `transform="rotate(20)"`.
 *Note that this image does not reflect the coordinate change this transform makes.*
 
+下图是一个苹果未做旋转和旋转`20deg`之后的效果：`transform="rotate(20)"`。**注意，此图像并不反映该旋转所产生的坐标变换。**
+
 ![Rotated apple](images/rotationapple.png)
 
-#### scale
+#### `scale`
 
 Scaling allows the resizing of SVG elements through the use of the `scale` function. This function accepts one or two values which specify horizontal and vertical scaling amounts along the appropriate axis: `transform="scale(<sx> [<sy>])"`.
 
+通过`scale`函数可以调整SVG图形的缩放。该函数接受一个或两个值，其中指定了元素在`x`轴和`y`轴上的缩放值：`transform="scale(<sx> [<sy>])"`。
+
 The `sy` value is optional and if omitted it is assumed to be equal to `sx` to ensure consistent resizing.
+
+`sy`的值是可选的，如果未显式设置，它的值为`sx`，以确保正常调整图形大小。
 
 A `scale` value of ".5" would render a graphic half the size it was originally, while a value of "3" would triple this initial size. A value of "4,2" would scale a graphic four times its original width, and two times its original height.
 
-#### skew
+`scale`的值如果是`.5`，图形将是原图形的一半大小，而`3`的值将会把原图形放大三倍。如果是一个`4,2`的值，图形的宽度是原图宽的四倍，高是原图高的两倍。
+
+#### `skew`
 
 SVG elements can be skewed, or made crooked, through the use of the `skewX` and `skewY` functions. The value included within these functions represents a skew transformation in degrees along the appropriate axis.
 
+通过使用`skewX`和`skewY`可以让SVG元素扭曲。这两个函数中包含的值表示沿对应轴做适当的倾斜变换。
+
 Here is a look at an apple before and after adding a `skewX` value of "20": `transform="skewX(20)"`. *Note that this image does not reflect the coordinate change this transform makes.*
+
+下图是苹果图莆添加`skewX`值`20`：`transform="skewX(20)"`前后的效果。**注意，此图形不反映该变换所产生的坐标变化。**
 
 ![Skewed apple](images/skewapple.png)
 
-## Section 4. Fills and Strokes
+## 第4节: 填充和描边
 
 `fill` and `stroke` allow us to paint to the interior and border of SVG.
 
