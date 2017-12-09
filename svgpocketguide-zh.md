@@ -505,9 +505,15 @@ Depending on the shape this path can get very complex, especially when there are
 
 The path data is contained in a `d` attribute within a `<path>` element, defining the outline for a shape: `<path d="<path data specifics>" />`.
 
+路径数据包含在`<path>`元素内的`d`属性中，定义了形状的轮廓：`<path d =“<path data specifics>”/>`。 
+
 This data included within the `d` attribute spell out the *moveto*, *line*, *curve*, *arc* and *closepath* instructions for the path.
 
+`d`属性中的这些数据说明了路径的`moveto`，`line`，`curve`，`arc`和`closepath`指令。
+
 The `<path>` details below define the path specifics for a graphic of a lime:
+
+下面的`<path>`详细信息定义了青柠图形的路径细节：
 
 	<svg width="258px" height="184px">
   		<path fill="#7AA20D" stroke="#7AA20D" stroke-width="9" stroke-linejoin="round" d="M248.761,92c0,9.801-7.93,17.731-17.71,17.731c-0.319,0-0.617,0-0.935-0.021c-10.035,37.291-51.174,65.206-100.414,65.206 c-49.261,0-90.443-27.979-100.435-65.334c-0.765,0.106-1.531,0.149-2.317,0.149c-9.78,0-17.71-7.93-17.71-17.731 c0-9.78,7.93-17.71,17.71-17.71c0.787,0,1.552,0.042,2.317,0.149C39.238,37.084,80.419,9.083,129.702,9.083	c49.24,0,90.379,27.937,100.414,65.228h0.021c0.298-0.021,0.617-0.021,0.914-0.021C240.831,74.29,248.761,82.22,248.761,92z" />
@@ -515,57 +521,91 @@ The `<path>` details below define the path specifics for a graphic of a lime:
 
 ![Lime's path](images/pathlime.png)
 
-##### moveto
+##### `moveto`
 
 The moveto commands (M or m) establish a new point, as lifting a pen and starting to draw in a new location on paper would. The line of code comprising the path data must begin with a moveto command, as shown in the above example of the lime.
 
+`moveto`命令（`M`或`m`）建立一个新的点，就像提起一支钢笔，并在纸上一个新位置绘制。包括路径数据的代码行必须以`moveto`命令开始，如上面的例子所示。
+
 moveto commands that follow the initial one represent the start of a new subpath, creating a compound path. An uppercase M here indicates absolute coordinates will follow, while a lowercase m indicates relative coordinates.
 
-##### closepath
+`moveto`命令跟在初始化路径之后，代表新子路径的开始和复合路径的创建。这里的大写字母`M`表示绝对坐标，小写字母`m`表示相对坐标。
+
+##### `closepath`
 
 The closepath (Z or z) ends the current subpath and results in a straight line being drawn from that point to the initial point of the path.
 
+`closepath`（`Z`或`z`）表示当前子路径的结束，并从该点到路径的初始点绘制直线。 
+
 If the closepath is followed immediately by a moveto, these moveto coordinates represent the start of the next subpath. If this same closepath is followed by anything other than moveto, the next subpath begins at the same point as the current subpath.
+
+如果`closepath`之后紧跟着一个`moveto`，这些`moveto`坐标表示下一个子路径的开始。如果这个相同的`closepath`之后是`moveto`之外的任何东西，则下一个子路径从当前子路径的点开始。 
 
 Both an uppercase or lowercase z here have identical outcomes.
 
-##### lineto
+这里大写或小写`z`没有区别。
+
+##### `lineto`
 
 The lineto commands draw straight lines from the current point to a new point.
 
-###### L, l
+`lineto`命令从当前点到新点绘制直线。
+
+###### `L`, `l`
 
 The L and l commands draw a line from the current point to the next provided point coordinates. This new point then becomes the current point, and so on.
 
+`L`和`l`命令从当前点绘制一条线到下一个提供的点坐标。这个新点然后变成当前点，以此类推。 
+
 An uppercase L signals that absolute positioning will follow, while a lowercase l is relative.
 
-###### H, h
+大写`L`表示绝对定位，而小写`l`是相对定位。
+
+###### `H`, `h`
 
 The H and h commands draw a horizontal line from the current point.
 
+`H`和`h`命令从当前点绘制水平线。
+
 An uppercase H signals that absolute positioning will follow, while a lowercase h is relative.
 
-###### V, v
+大写`H`表示绝对定位，而小写`h`是相对定位。
+
+###### `V`, `v`
 
 The V and v commands draw a vertical line from the current point.
 
+`V`和`v`命令从当前点绘制垂直线。
+
 An uppercase V signals that absolute positioning will follow, while a lowercase v is relative.
 
-##### Curve Commands
+大写`V`表示绝对定位，而小写`v`是相对定位。
+
+##### 曲线命令
 
 There are three groups of commands that draw curved paths: Cubic Bézier (C, c, S, s), Quadratic Bézier (Q, q, T, t), and Elliptical arc (A, a).
 
+有三组命令绘制曲线路径：**CubicBézier**（`C`，`c`，`S`，`s`），**二次贝塞尔**（`Q`，`q`，`T`，`t`）和**椭圆弧**（`A`，`a`）。 
+
 The following curve sections will introduce the basic concept behind each curve command, review the mapping details, and then provide a diagram for further understanding.
+
+以下曲线部分将介绍每条曲线命令的基本概念，和映射的详细信息，然后提供一个图表供进一步了解。
 
 ###### Cubic Bézier
 
 The C and c Cubic Bézier commands draw a curve from the current point using (x1,y1) parameters as a control point at the beginning of the curve and (x2,y2) as the control point at the end, defining the shape details of the curve.
 
+`C`和`c` **CubicBézier**命令从当前点绘制曲线，使用`(x1，y1)`参数作为曲线开始处的控制点，`(x2，y2)`作为结束处的控制点，定义形状细节曲线。
+
 The S and s commands also draw a Cubic Bézier curve, but in this instance there is an assumption that the first control point is a *reflection* of the second control point.
+
+`S`和`s`命令还绘制立方贝塞尔曲线，但在这种情况下，存在第一控制点是第二控制点的反射的假设。 
 
 ![Cubic Bézier](images/curvecubic.png)
 
 The following code draws a basic Cubic Bézier curve:
+
+下面的代码绘制了一个基本的CubicBézier曲线：
 
 	<svg>
   		<path fill="none" stroke="#333333" stroke-width="3" d="M10,55 C15,5 100,5 100,55" />
@@ -573,19 +613,29 @@ The following code draws a basic Cubic Bézier curve:
 
 Manipulating the first and last sets of values for this curve will impact its start and end location, while manipulating the two center values will impact the shape and positioning of the curve itself at the beginning and end.
 
+该曲线的第一和最后一组值将影响其开始和结束位置，两个中心值将影响曲线本身在开始和结束时的形状和定位。
+
 The S and s commands also draw a Cubic Bézier curve, but in this instance there is an assumption that the first control point is a *reflection* of the last control point for the previous C command. This reflection is relative to the start point of the S command.
+
+`S`和`s`命令也绘制立方贝塞尔曲线，但在这种情况下，假设第一个控制点是前一个`C`命令的最后一个控制点的反映。则会作为相对于`S`命令的开始点。
 
 ![S Command Reflection](images/scommand.png)
 
 An uppercase C signals that absolute positioning will follow, while a lowercase c is relative. This same logic applies to S and s.
 
+大写字母`C`表示绝对定位，而小写字母`c`是相对定位。`S`和`s`也是一样。
+
 ###### Quadratic Bézier
 
 Quadratic Bézier curves (Q, q, T, t) are similar to Cubic Bézier curves except that they only have one control point.
 
+二次贝塞尔曲线（`Q`，`q`，`T`，`t`）类似于立方贝塞尔曲线，除了它只有一个控制点。
+
 ![Quadratic Bézier](images/curvequad.png)
 
 The following code draws a basic Quadratic Bézier curve:
+
+以下代码绘制了一个基本的二次贝塞尔曲线：
 
 	<svg>
   		<path fill="none" stroke="#333333" stroke-width="3" d="M20,50 Q40,5 100,50" />
@@ -593,17 +643,27 @@ The following code draws a basic Quadratic Bézier curve:
 
 Manipulating the first and last sets of values, `M20,50` and `100,50`, impacts the positioning of the beginning and end points of the curve. The center set of values, `Q40,5`, define the control point for the curve, establishing its shape.
 
+操作第一个和最后一组值`M20,50`和`100,50`会影响曲线起点和终点的位置。中心值集`Q40,5`定义曲线的控制点，确定其形状。
+
 Q and q draw the curve from the initial point to the end point using (x1,y1) as the control. T and t draw the curve from the initial point to the end point by assuming that the control point is a reflection of the control on the *previously* listed command relative to the start point of the new T or t command.
+
+`Q`和`q`使用`(x1，y1)`作为控件从初始点到终点绘制曲线。 `T`和`t`通过假设控制点是相对于新的`T`或`t`命令的开始点的先前列出的命令的控制的反映，从初始点到终点绘制曲线。
 
 ![T Command Control Point](images/curvetcontrol.png)
 
 An uppercase Q signals that absolute positioning will follow, while a lowercase q is relative. This same logic applies to T and t.
 
+大写的`Q`表示绝对定位，而小写的`q`是相对定位。`T`和`t`也是一样。
+
 ###### Elliptical Arc
 
 An Elliptical Arc (A, a) defines a segment of an ellipse. These segments are created through the A or a commands which create the arc by specifying the start point, end point, x and y radii, rotation, and direction.
 
+椭圆弧（`A`，`a`）定义椭圆的线段。这些段通过`A`或命令创建，通过指定起点，终点，`x`和`y`半径，旋转和方向创建弧。
+
 Here is a look at the code for a basic Elliptical Arc:
+
+下面是一个基本椭圆弧的代码：
 
 	<svg>
   		<path fill="none" stroke="#333333" stroke-width="3" d="M65,10 a50,25 0 1,0 50,25" />
@@ -611,35 +671,48 @@ Here is a look at the code for a basic Elliptical Arc:
 
 The first and last sets of values within this path, `M65,10` and `50,25` represent initial and final coordinates, while the second set of values define the two radii. The values of `1,0` (large-arc-flag and sweep-flag) determine how the arc is drawn, as there are four different options here.
 
+该路径中的第一和最后一组值，`M65,10`和`50,25`表示初始和最终坐标，而第二组值定义两个半径。 `1,0`（大弧标志和顺时针标志）的值确定如何绘制圆弧，因为这里有四个不同的选项。 
+
 The following diagram shows the four arc options and the impact that large-arc-flag and sweep-flag values have on the final rendering of the arc segment.
+
+下图显示了四个弧选项以及大弧标志值和顺时针标志值对弧段的最终渲染的影响。
 
 ![Elliptical Arc](images/curvearc.png)
 
-
-### Embeds From Vector Software
+### 矢量软件嵌入
 
 Vector graphics software allows for the generation of more complex shapes and paths while producing SVG code that can be taken, used, and manipulated elsewhere.
 
+矢量图形软件可以制作更复杂的形状和路径，同时可以导出SVG代码在其他地方使用和操作。
+
 Once the graphic is complete, the generated XML code, which can be quite lengthy depending on the complexity, can be copied and embedded into HTML. Breaking down each section of the SVG and having the right organizational elements in place can greatly help in navigating and understanding these seemingly complex and wordy documents.
+
+一旦图形完成，生成的XML代码可以被复制并嵌入到HTML中，图形越复杂代码越长。分解SVG的每个部分并且运用适当的组织元素可以极大地帮助引导和理解这些复杂和冗长的代码。
 
 Here is the SVG code for an image of some cherries with added classes for enhanced navigation:
 
-		<svg width="215px" height="274px" viewBox="0 0 215 274">
-			<g>
-				<path class="stems" fill="none" stroke="#7AA20D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M54.817,169.848c0,0,77.943-73.477,82.528-104.043c4.585-30.566,46.364,91.186,27.512,121.498" />
-				<path class="leaf" fill="#7AA20D" stroke="#7AA20D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M134.747,62.926c-1.342-6.078,0.404-12.924,5.762-19.681c11.179-14.098,23.582-17.539,40.795-17.846 c0.007,0,22.115-0.396,26.714-20.031c-2.859,12.205-5.58,24.168-9.774,36.045c-6.817,19.301-22.399,48.527-47.631,38.028 C141.823,75.784,136.277,69.855,134.747,62.926z" />
-			</g>
-			<g>
-				<path class="r-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M164.836,193.136 c1.754-0.12,3.609-0.485,5.649-1.148c8.512-2.768,21.185-6.985,28.181,3.152c15.076,21.845,5.764,55.876-18.387,66.523 c-27.61,12.172-58.962-16.947-56.383-45.005c1.266-13.779,8.163-35.95,26.136-27.478	C155.46,191.738,159.715,193.485,164.836,193.136z" />
-				<path class="l-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M55.99,176.859 c1.736,0.273,3.626,0.328,5.763,0.135c8.914-0.809,22.207-2.108,26.778,9.329c9.851,24.647-6.784,55.761-32.696,60.78 c-29.623,5.739-53.728-29.614-44.985-56.399c4.294-13.154,15.94-33.241,31.584-20.99C47.158,173.415,50.919,176.062,55.99,176.859z" />
-			</g>
-		</svg>
+这里是一些樱桃的SVG代码图像，添加了引导类：
+
+	<svg width="215px" height="274px" viewBox="0 0 215 274">
+		<g>
+			<path class="stems" fill="none" stroke="#7AA20D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M54.817,169.848c0,0,77.943-73.477,82.528-104.043c4.585-30.566,46.364,91.186,27.512,121.498" />
+			<path class="leaf" fill="#7AA20D" stroke="#7AA20D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M134.747,62.926c-1.342-6.078,0.404-12.924,5.762-19.681c11.179-14.098,23.582-17.539,40.795-17.846 c0.007,0,22.115-0.396,26.714-20.031c-2.859,12.205-5.58,24.168-9.774,36.045c-6.817,19.301-22.399,48.527-47.631,38.028 C141.823,75.784,136.277,69.855,134.747,62.926z" />
+		</g>
+		<g>
+			<path class="r-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M164.836,193.136 c1.754-0.12,3.609-0.485,5.649-1.148c8.512-2.768,21.185-6.985,28.181,3.152c15.076,21.845,5.764,55.876-18.387,66.523 c-27.61,12.172-58.962-16.947-56.383-45.005c1.266-13.779,8.163-35.95,26.136-27.478	C155.46,191.738,159.715,193.485,164.836,193.136z" />
+			<path class="l-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M55.99,176.859 c1.736,0.273,3.626,0.328,5.763,0.135c8.914-0.809,22.207-2.108,26.778,9.329c9.851,24.647-6.784,55.761-32.696,60.78 c-29.623,5.739-53.728-29.614-44.985-56.399c4.294-13.154,15.94-33.241,31.584-20.99C47.158,173.415,50.919,176.062,55.99,176.859z" />
+		</g>
+	</svg>
 
 ![Cherries](images/embedcherry.png)
 
 The attributes within the `svg` element define the workspace, or “canvas” for the graphic. The leaf and the stems are within one `<g>` (group), while the cherries are in another. The string of numerical values define the path the graphic will take and the `fill` and `stroke` attributes set the color for the backgrounds and borders.
 
+`svg`元素中的属性定义工作区，或图形的“画布”。叶和茎在一个`g`（组）内，而樱桃在另一个。数字字符串定义图形将采用的路径，`fill`和`stroke`属性设置背景和边框的颜色。
+
 Once this code is copied it can be run through an SVG optimizer before being placed in HTML, which will help eliminate unnecessary code and spacing and in turn greatly reduce the file size. [Peter Collingridge's SVG Optimiser](http://petercollingridge.appspot.com/svg-optimiser) or [SVGO](https://github.com/svg/svgo) are tools that are very helpful in this regard.
+
+将这个代码复制下来，它会通过一个SVG优化器在被放置在HTML之前，以助于消除不必要的代码和间距，进而大大缩小文件。 关于这个方面[Peter Collingridge的SVG Optimiser](//petercollingridge.appspot.com/svg-optimiser)和[SVGO](//github.com/svg/svgo)也是非常有用的工具。
 
 ## Section 3. The Workspace
 
