@@ -233,59 +233,95 @@ This section will introduce the key to writing SVG - the `<svg>` element - and r
 
 The `<svg>` element is classified as both a container and a structural element, and can be used to nest a standalone SVG fragment inside the document. This fragment establishes its own coordinate system.
 
+`<svg>`元素归属于容器和结构元素，在文档内允许嵌套使用独立的SVG片段。每个独立的片段都有自己的坐标系。
+
 The attributes used within this element, such as `width`, `height`, `preserveAspectRatio` and `viewBox` define the canvas for the graphic being written.
+
+此元素中使用的属性（如`width`，`height`，`preserveAspectRatio`和`viewBox`）定义正在写入图形的画布。
 
 When obtaining SVG code from certain vector software there is [a lot of additional info](http://www.w3.org/TR/SVG/struct.html#SVGElement) within the `<svg>` element, such as the SVG version number (indicates the SVG language version being used) and DOCTYPE. As I’ve mentioned, that information will not be included in examples throughout this guide, and their exclusion will not prevent your graphics from rendering on the screen.
 
-#### g Element
+当从某些矢量软件获得SVG代码时，在`<svg>`元素中有很多[附加信息](//www.w3.org/TR/SVG/struct.html#SVGElement)，例如SVG版本号（指示正在使用的SVG语言版本）和`DOCTYPE`。正如我已经提到的，这些信息不会包括在本指南的示例中，缺少它们不会阻止你的图形在屏幕上呈现。
+
+#### `g`元素
 
 The `g` element is a container element for grouping related graphics together. Utilizing this element in conjunction with description and title elements provides information about your graphic, and aids in organization and accessibility by grouping related graphical components together.
 
+`g`元素是组合相关图形的容器元素。将此元素与描述和标题元素结合使用提供图形的相关信息，并将相关图形组件分在同一组在一起提高访问性。 
+
 Also, by grouping related elements together you can manipulate the group as a whole versus the individual parts. This is especially handy when animating these elements, for example, as the animation can be applied to the group.
+
+此外，通过相关元素分在同一组，可以将它们看作一个整体与各个独立的部分。移动这些元素尤其方便，例如，可以移动整个组。 
 
 Any element that is not contained within a `g` is assumed to be its own group.
 
-#### use Element
+不包含在`g`中的任何元素则认为有它们自己的组。
+
+#### `use`元素
 
 The `<use>` element allows you to reuse elements throughout a document. There are additional attributes that can be included within this element, such as `x`, `y`, `width`, and `height`, which define the mapping location details of the graphic within the coordinate system.
 
+`<use>`元素允许您在整个文档中重复使用元素。此元素中可以包含其他属性，例如`x`，`y`，`width`和`height`，这些属性定义图形在坐标系中的详细映射位置。 
+
 Using the `xlink:href` attribute here enables you to call on the element to be reused. For example, if there was a `<g>` with an `id` of “apple” containing the image of an apple that needed to be reused this image can be referenced by `<use>`: `<use x="50" y="50" xlink:href="#apple" />`.
+
+在这里使用`xlink:href`属性可以调用要重用的元素。例如，如果存在需要重新使用的苹果的图像的`apple`的`id`的`<g>`，则该图像可以由`<use>`：`<use x =“50”y =“50” xlink:href =“＃apple”/>`。 
 
 This element can be a significant time saver and help minimize required code.
 
-#### defs Element
+这个元素作为一个重要的时间保护程序帮助压缩代码。
+
+#### `defs`元素
 
 While `<use>` permits the reuse of a graphic already rendered, graphics within a `<defs>` element are not rendered onto the canvas, but are able to be referenced and then rendered through the use of `xlink:href`.
 
+虽然`<use>`允许重用已经渲染的图形，但`<defs>`元素中的图形不会渲染到画布上，而是能够被引用，然后通过使用`xlink:href`来渲染。 
+
 Graphics are defined within `<defs>` and can then be used throughout the document by referencing the `id` of that graphic.
+
+图形在`<defs>`中定义，然后可以通过引用该图形的`id`在整个文档中使用。 
 
 For example, the following code draws a very simple gradient within a rectangle:
 
-		<svg>
-    		<defs>
-      			<linearGradient id="Gradient-1">
-        			<stop offset="0%" stop-color="#bbc42a" />
-        			<stop offset="100%" stop-color="#765373" />
-      			</linearGradient>
-    		</defs>
-    		<rect x="10" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="3px" />
-  		</svg>
+例如，下面的代码绘制一个非常简单的矩形渐变：
+
+	<svg>
+    	<defs>
+      		<linearGradient id="Gradient-1">
+        		<stop offset="0%" stop-color="#bbc42a" />
+        		<stop offset="100%" stop-color="#765373" />
+      		</linearGradient>
+    	</defs>
+    	<rect x="10" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="3px" />
+  	</svg>
 
 The contents of the `<defs>` has no visual output until called on by referencing its unique `id`, which in this instance is being done through the `fill` attribute of the rectangle.
 
-#### symbol Element
+`<defs>`除非引用其唯一的`id`来调用，不然内容没有直观的输出，在这个实例中通过矩形的`fill`属性完成内容渲染。
+
+#### `symbol`元素
 
 The `<symbol>` element is similar to `<g>` as it provides a way to group elements, however,  elements within `<symbol>` have no visual output (like `<defs>`) until called on with the `<use>` element.
 
+`<symbol>`元素类似于`<g>`，因为它提供了一种组元素的方法，但是，如果没有使用`<use>`元素，`<symbol>`中的元素没有可视化输出（如`<defs>`）。 
+
 Also unlike the `<g>` element, `<symbol>` establishes its own coordinate system separate from the viewport it's rendered in.
+
+它也不同于`<g>`元素，`<symbol>`建立自己的坐标系，与渲染的视口分开。 
 
 SVG viewport and `viewBox`, which establish the coordinate system for the graphics being mapped, will be addressed further in a different section.
 
-### Stacking Order
+SVG的`viewport`和`viewBox`共同建立被映射的图形的坐标系统，将进一步介绍不同的部分。
+
+### 堆叠顺序
 
 The stacking order of SVG cannot be manipulated by `z-index` in CSS as other elements within HTML can. The order in which SVG elements are stacked depends entirely on their placement within the document fragment.
 
+HTML中的其他元素的堆叠顺序可以CSS中的`z-index`操纵，但SVG不能。 SVG元素的堆叠顺序完全取决于它们在文档片段中的位置。 
+
 The grapes and watermelon below are within the same `<svg>` element. The watermelon appears in front of the grapes because the group containing the paths that make up the watermelon is listed after the grapes in the document.
+
+下面的葡萄和西瓜在同一个`<svg>`元素中。西瓜出现在葡萄前面，因为文档中包含组成西瓜的路径的组被列在葡萄之后。
 
 	<svg>
 		<g class="grapes">
@@ -304,6 +340,8 @@ The grapes and watermelon below are within the same `<svg>` element. The waterme
 
 If the group containing the grapes was moved to the end of the document it would then appear in front of the watermelon.
 
+如果包含葡萄的组被移动到文档的末尾，它将出现在西瓜的前面。
+
 	<svg>
 		<g class="watermelon">
 			<!--<path <outside path> />-->
@@ -321,106 +359,149 @@ If the group containing the grapes was moved to the end of the document it would
 
 This method of determining stacking order also applies to the individual elements within the group. For example, moving the path of the stem in the grapes image to the end of the group will result in the stem being on top.
 
+这种定型的堆叠顺序的方法也适用于组内的每一个元素。例如，将葡萄的茎的路径移动到组的末尾将导致茎在顶部。
+
 ![Stem on top of grapes](images/stackingthree.png)
 
-## Section 2. Basic Shapes and Paths
+## 第2节：基本图形和路径
 
 Basic SVG shapes can be written by hand in HTML but you may eventually experience the need to use a much more complex graphic inline. These more complex graphics can be created with vector software, but for now let’s look at the basics that can easily be hand coded.
 
+当你需要在HTML中使用更复杂的内联SVG图形时就没有办法再手工编写了。那些更复杂的图形可以使用矢量软件创建，但现在我们来学习下手动编码的基础。
 
-### Basic Shapes
+### 基本图形
 
 SVG contains the following set of basic shape elements: rectangles, circles, ellipses, straight lines, polylines, and polygons. Each element requires a set of attributes before it renders, like coordinates and size details.
 
-#### Rectangle
+SVG包含以下基本形状元素集：**矩形，圆形，椭圆形，直线，折线和多边形**。每个元素在渲染之前需要一些属性，如坐标和大小等详细信息。
+
+#### 矩形
 
 The `<rect>` element defines a rectangle.
 
-		<svg>
-  			<rect width="200" height="100" fill="#BBC42A" />
-		</svg>
+`<rect>`元素定义一个矩形。
+
+	<svg>
+  		<rect width="200" height="100" fill="#BBC42A" />
+	</svg>
 
 ![Rectangle](images/basicrect.png)
 
 The `width` and `height` attributes establish the size of the rectangle, while `fill` sets the interior color for the shape. The numerical values default to pixels and `fill` would default to black when left unspecified.
 
+`width`和`height`属性确定矩形的大小，而`fill`则设置形状的内部颜色。数值默认为`px`，当未指定时，`fill`将默认为`black`。 
+
 Other attributes that can be included are `x` and `y` coordinates. These values will move the shape along the appropriate axis according to the dimensions set by the `<svg>` element.
+
+其他属性还有`x`和`y`坐标。这些值将图形沿`<svg>`元素对应的轴移动相应的距离。
 
 It is also possible to create rounded corners by specifying values within `rx` and `ry` attributes. For example, `rx="5" ry="10"` will produce horizontal sides of corners that have a 5px radius, and vertical sides of corners that have a 10px radius.
 
-#### Circle
+也可以通过指定`rx`和`ry`属性中的值来创建圆角。例如，`rx =“5” ry =“10”`将产生具有`5px`半径的角的水平边，以及具有`10px`半径的角的垂直边。
+
+#### 圆形
 
 The `<circle>` element is mapped based on a center point and an outer radius.
 
-		<svg>
-  			<circle cx="75" cy="75" r="75" fill="#ED6E46" />
-		</svg>
+基于中心点和外半径设置`<circle>`元素。
+
+	<svg>
+  		<circle cx="75" cy="75" r="75" fill="#ED6E46" />
+	</svg>
 
 ![Line](images/basiccircle.png)
 
 The `cx` and `cy` coordinates establish the location of the center of the circle in relation to the workplace dimensions set by the `<svg>`.
 
+`cx`和`cy`坐标建立圆的中心相对于由`<svg>`设置的工作空间尺寸的位置。
+
 The `r` attribute sets the size of the outer radius.
 
-#### Ellipse
+`r`属性设置外半径的大小。
+
+#### 椭圆
 
 An `<ellipse>` element defines an ellipse that is mapped based on a center point and two radii.
 
-		<svg>
-  			<ellipse cx="100" cy="100" rx="100" ry="50" fill="#7AA20D" />
-		</svg>
+`<ellipse>`元素基于中心点和两个半径定义椭圆。
+
+	<svg>
+  		<ellipse cx="100" cy="100" rx="100" ry="50" fill="#7AA20D" />
+	</svg>
 
 ![Ellipse](images/basicellipse.png)
 
 While the `cx` and `cy` values are establishing the center point based on pixel distance into the SVG coordinate space, the `rx` and `ry` values are defining the radius of the sides of the shape.
 
-#### Line
+当`cx`和`cy`值基于到SVG坐标空间中的像素距离建立中心点时，`rx`和`ry`值定义形状的边的半径。
+
+#### 直线
 
 The `<line>` element defines a straight line with a start and end point.
 
-		<svg>
-  			<line x1="5" y1="5" x2="100" y2="100" stroke="#765373" stroke-width="8"/>
-		</svg>
+`line`元素定义具有开始点和结束点的直线。
+
+	<svg>
+  		<line x1="5" y1="5" x2="100" y2="100" stroke="#765373" stroke-width="8"/>
+	</svg>
 
 ![Line](images/basicline.png)
 
 Together the `x1` and `y1` values establish the coordinates for the start of the line, while the `x2` and `y2` values establish the end of the line.
 
-#### Polyline
+`x1`和`y1`值确定线的开始坐标，而`x2`和`y2`值确定线的结束坐标。
+
+#### 折线
 
 The `<polyline>` element defines a set of connected straight line segments, generally resulting in an open shape (start and end points that do not connect).
 
-		<svg>
-  			<polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill="white" 			stroke="#BBC42A" stroke-width="6" />
-		</svg>
+`<polyline>`元素定义了一组相连的直线段，通常构成开放形状（不连接的开始点和结束点）。
+
+	<svg>
+  		<polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill="white" stroke="#BBC42A" stroke-width="6" />
+	</svg>
 
 ![Polyline](images/basicpolyline.png)
 
 The values within `points` establish the shape's location on the `x` and `y` axis throughout the shape and are grouped as `x,y` throughout the list of values.
 
+在整个形状中`points`的值在`x`和`y`轴上建立形状的位置，并且在整个值列表中被分组为`x`，`y`。
+
 An odd number of points here is an error.
 
-#### Polygon
+不能使用奇数点。
+
+#### 多边形
 
 A `<polygon>` element defines a closed shape consisting of connected lines.
 
-		<svg>
-  			<polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" 					fill="#ED6E46" />
-		</svg>
+`<polygon>`元素定义由连接的线组成的闭合形状。
+
+	<svg>
+  		<polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" fill="#ED6E46" />
+	</svg>
 
 ![Polygon](images/basicpolygon.png)
 
 The points of the polygon shape are defined through a series of eight grouped `x,y` values.
 
+多边形形状的点通过八组的`x`，`y`值来定义。
+
 This element can also produce other closed shapes depending on the number of defined points.
 
-### The path Element
+该元素还可以根据点的数量产生其他闭合形状。
+
+### `path`元素
 
 SVG paths represent the outline of a shape. This shape can be filled, stroked, used to navigate text, and/or used as a clipping path.
 
+SVG路径表示形状的轮廓。此形状可以填充，描边，并用于导航文本和/或用作剪切路径。
+
 Depending on the shape this path can get very complex, especially when there are many [curves](http://www.w3.org/TR/SVG/paths.html#PathDataCurveCommands) involved. Gaining a basic understanding of how they work and the syntax involved, however, will help make these particular paths much more manageable.
 
-#### path data
+当涉及许多[曲线](//www.w3.org/TR/SVG/paths.html#PathDataCurveCommands)时，这个路径会变得非常复杂。然而，理解工作原理和涉及的语法将有助于管理这些特定路径。
+
+#### `path`数据
 
 The path data is contained in a `d` attribute within a `<path>` element, defining the outline for a shape: `<path d="<path data specifics>" />`.
 
