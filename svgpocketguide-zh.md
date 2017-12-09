@@ -957,81 +957,129 @@ Here is a look at an apple before and after adding a `skewX` value of "20": `tra
 
 `fill` and `stroke` allow us to paint to the interior and border of SVG.
 
+`fill`和`stroke`允许我们填充SVG和绘制其边框。
+
 "[Paint](http://www.w3.org/TR/SVG/painting.html#Introduction)" refers to the action of applying colors, gradients, or patterns to graphics through `fill` and/or `stroke`.
 
-### fill Properties
+[绘制(Paint)](//www.w3.org/TR/SVG/painting.html#Introduction)指的是通过`fill`和(或)`stroke`给SVG图形添加颜色、渐变或图案等。
+
+### `fill`属性
 
 The `fill` attribute paints the interior of a specific graphical element. This fill can consist of a solid color, gradient, or pattern.
 
+`fill`属性就要用来绘制图形元素的内部。这个填充可以是纯色、渐变或图案。
+
 The interior of a shape is determined by examining all subpaths and specifications spelled out within the `fill-rule`.
+
+图形内部是通过检查`fill-rule`中列出的所有子路径和规范来确定的。
 
 When filling a shape or path, `fill` will paint open paths as if the last point of the path connected with the first, even though a `stroke` color on this section of the path would not render.
 
+当填充一个形状或路径时，`fill`将会画出一条开放的路径，就像路径的第一个点连接最后一个点一样，即使路径上的`stroke`颜色也不会被呈现。
 
-#### fill-rule
+#### `fill-rule`
 
 The `fill-rule` property indicates the algorithm to be used in determining which parts of the canvas are included inside the shape. This is not always straightforward when working with more complex intersecting or enclosed paths.
 
+`fill-rule`属性表示用于确定画布中哪些部分在形状内部的算法。在使用更复杂的交叉或封装路径时，这并不那么简单。
+
 The accepted values here are `nonzero`, `evenodd`, `inherit`.
 
-##### nonzero
+其接受的值主要有：`nonzero`、`evenodd`和`inherit`。
+
+##### `nonzero`
 
 A value of `nonzero` determines the inside of a point on the canvas by drawing a line from the area in question through the entire shape in any direction and then considering the locations where a segment of the shape crosses this line. This starts with zero and adds one each time a path segment crosses the line from left to right and subtracts one each time a path segment crosses the line from right to left.
 
+`nonzero`的值决定了画布内的一个点，通过这个点的任意方向上绘制一条线，然后再考虑穿过这条线另一个部分形状的位置。这将从零开始，并在每次路径段从左到右的时候添加一个路径，每次路径段从右到左的时候再减去一次。
+
 If the result is zero after evaluating and counting these intersections then the point is outside the path, otherwise it is inside.
+
+如果在计算和计算这些交集之后得到的结果是零，那么这个点就在路径之外，否则它就在里面。
 
 ![nonzero fill-rule](images/fillrulenonzero.png)
 
 Essentially, if the interior path is drawn clockwise it will be considered as "inside", but if drawn counter-clockwise it will be considered "outside" and therefore be excluded from painting.
 
-##### evenodd
+从本质上讲，如果将内部路径按顺时针方向画，它将被认为是内（`inside`），但如果按逆时针方向画，则会被讷为是外（`outside`），因此被排除在绘制之外。
+
+##### `evenodd`
 
 A value of `evenodd` determines the inside of an area on the canvas by drawing a line from that area through the entire shape in any direction and counts the path segments that the line crosses. If this results in an odd number the point is inside, if even the point is outside.
+
+`evenodd`的值决定了画布上一个区域的内部，通过在任何方向上通过整个形状绘制一条线，并计算出线交叉的路径段。如果这个结果是奇数，那么这个点就在里面，如果是偶数，则这个点在外面。
 
 ![evenodd fill-rule](images/fillruleevenodd.png)
 
 Given the specific algorithm of the `evenodd` rule, the drawing direction of the interior shape in question is irrelevant, unlike with `nonzero`, as we are simply counting the paths as they cross the line.
 
+考虑到`evenodd`的具体算法，内部图形绘制的方向是无关的，这个与非零不同的是，只是在计算它们穿过直线时的路径。
+
 While this property is not generally necessary, it will allow for greater `fill` control of a complex graphic, as mentioned.
 
-##### inherit
+虽然这个属性通常不是必需的，但是它将允许更大的`fill`，用于控制一个复杂的图形，如上所述。
+
+##### `inherit`
 
 A value of `inherit` will direct the element to take on the `fill-rule` specified by its parent.
 
-#### fill-opacity
+`inherit`的值将引导元素接受其父元素指定的`fill-rule`。
+
+#### `fill-opacity`
 
 The `fill-opacity` value refers to the opacity level of the interior paint fill. A value of "0" results in complete transparency, "1" applies no transparency, and values in between represent a percentage-based level of opacity.
 
-### Stroke Attributes
+`fill-opacity`的值是指内部填充的不透明度。`0`表示完全透明，`1`表示不透明，两者之间的值代表了一个基于百分比的不透明度。
+
+### 描边属性
 
 There are a number of stroke-related attributes within SVG that allow for the control and manipulation of stroke details. The abilities of these attributes provide for greater control of hand-coded SVG, but also prove convenient when needing to make edits to an existing embedded graphic.
 
+在SVG中有许多与描边有关的属性，允许你在绘制图形时控制和操作描边的细节。这些属性提供的能力能让你更好的手工编写SVG代码，更好的控制绘制的图形。当需要对嵌入的图形进行编辑时，也能更方便的操作。
+
 The following examples use an inline SVG of grapes. The attributes being used reside directly within the correlating shape’s element.
 
-#### stroke
+下面的例子使用了内联的SVG，绘制了一个葡萄。被使用的属性直接在图形元素当中。
+
+#### `stroke`
 
 The `stroke` attribute defines the “border” paint of particular shapes and paths.
 
+`stroke`属性定义了特定图形和路径的边框。
+
 The following grapes image has a purple stroke: `stroke="#765373"`.
+
+比如下面的葡萄图形有一个紫色的描边效果：`stroke="#765373"`：
 
 ![Grapes](images/stroke1.png)
 
+*[点击这里可以查看Demo效果](//codepen.io/jonitrythall/pen/c54df7a7715a7ca9163df9868c2ee699)*
 
-#### stroke-width
+#### `stroke-width`
 
 The `stroke-width` value establishes the width of the grape’s stroke, which is set to `6px` on the grapes image.
 
+`stroke-width`值设置了描边的粗累，比如使用此属性设置葡萄描边的粗细，如上图的紫色葡萄，它的值就设置了`6px`。
+
 The default value for this attribute is 1. If a percentage value is used, the value is based on the dimensions of the viewport.
 
-#### stroke-linecap
+该属性的默认值为`1`。如果使用百分比值，将会基于`viewport`的尺寸来进行计算。
+
+#### `stroke-linecap`
 
 `stroke-linecap` defines which shape the end of an open path will take and there are four acceptable values: `butt`, `round`, `square`, `inherit`.
+
+`stroke-linecap`定义了开放路径的终点（也称为线帽），其有四个值：`butt`、`round`、`square`和`inherit`。
 
 ![Grapes](images/strokelinecap.png)
 
 A value of `inherit` will direct the element to take on the `stroke-linecap` specified by its parent.
 
+`inherit`的值将指定元素继承其父元素指定的`stroke-linecap`。
+
 The stem in the following image has a `stroke-linecap` value of `square`:
+
+下图是葡萄茎图形的`stroke-linecap`设置为`square`的效果：
 
 	<svg>
     	<!--<path <path for grapes> />-->
@@ -1041,13 +1089,19 @@ The stem in the following image has a `stroke-linecap` value of `square`:
 
 ![Grapes](images/strokesquarestem.png)
 
-#### stroke-linejoin
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/210d9a8a7d3dba61b021c02b94575512)*
+
+#### `stroke-linejoin`
 
 `stroke-linejoin` defines how the corners of strokes will look on paths and basic shapes.
+
+`stroke-linejoin`定义了路径和基本形状连接处的风格。
 
 ![Grapes](images/strokelinejoin.png)
 
 Here is a look at the grapes with a `stroke-linejoin` of `"bevel"`:
+
+下面使用`stroke-linejoin`定义了葡萄形状连接处的风格为`bevel`：
 
 	<svg>
     	<!--<path stroke-linejoin="bevel" <path for grapes> />-->
@@ -1057,37 +1111,65 @@ Here is a look at the grapes with a `stroke-linejoin` of `"bevel"`:
 
 ![Grapes](images/strokebevel.png)
 
-##### stroke-miterlimit
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/b2b49681ed92c0a7063123421879d15d)*
+
+##### `stroke-miterlimit`
 
 When two lines meet at a sharp angle and are set to a `stroke-linejoin="miter"`, the `stroke-miterlimit` attribute allows for the specification of how far this joint/corner extends.
 
+当两条线相交于成一个角，并设置为`stroke-linejoin="miter"`，其中`stroke-miterlimit`属性允许指定这个角延伸的距离。
+
 The length of this joint is called the miter length, and it is measured from the inner corner of the line join to the outer tip of the join.
+
+这个连接的长度被称为`miter`长度，它是从线的内角连接到外端的距离。
 
 This value is a limit on the ratio of the miter length to the `stroke-width`.
 
+这个值是指`miter`长度受`stroke-width`的限制。
+
 1.0 is the smallest possible value for this attribute.
+
+这个属性的最小的可能值是`1.0`。
 
 The first grape image is set to `stroke-miterlimit="1.0"`, which creates a bevel effect. The `stroke-miterlimit` on the second image is set to `4.0`.
 
+第一个葡萄图形设置了`stroke-miterlimit="1.0"`，这将产生了一个斜角效果。第二个葡萄的图形设置了`stroke-miterlimit="4.0"`。
+
 ![Grapes](images/strokemiterlimit.png)
 
-#### stroke-dasharray
+*[点击这里可以查看Demo效果](//codepen.io/jonitrythall/pen/a0afcecca7a8c19a305ff3edb2adddf1)*
+
+#### `stroke-dasharray`
 
 The `stroke-dasharray` attribute turns paths into dashes rather than solid lines.
 
+`stroke-dasharray`属性把路径变成了破折线，而不是实线。
+
 Within this attribute you can specify the length of the dash as well as the distance between the dashes, separated with commas or whitespace.
+
+在这个属性中，您可以指定破折线的长度，使用逗号或空格来分隔破折号之间的距离。
 
 If an odd number of values are provided, the list is then repeated to produce an even number of values. For example, `8,6,4` becomes `8,6,4,8,6,4` as shown in the second grapes image below.
 
+如果提供的值是奇数值，表示该列表值将会重复，以产生偶数个数值。比如`8,6,4`将变成`8,6,4,8,6,4`，如下图所示。
+
 Placing just one number within this value results in a space between the dashes that is equal to the length of a dash.
+
+在这个值中只放置一个数字，就会在破折线之间的空间中产生等于相同长度的破折线。
 
 ![Grapes](images/strokedasharray.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/0e6de428698ed9a202fb05fdac1c806c)*
+
 The first grapes image here shows the impact that an even number of listed values has on the grape's path: `stroke-dasharray="20,15,10,8"`.
 
-#### stroke-dashoffset
+第一个葡萄图形展示了一个偶数值时的葡萄图形效果：`stroke-dasharray="20,15,10,8"`。
+
+#### `stroke-dashoffset`
 
 `stroke-dashoffset` specifies the distance into the dash pattern to start the dash.
+
+`stroke-dashoffset`属性用来指定破折号之间的距离。
 
 	<svg>
     	<!--<path stroke-dasharray="40,10" stroke-dashoffset="35" <path for grapes> />-->
@@ -1097,16 +1179,23 @@ The first grapes image here shows the impact that an even number of listed value
 
 ![Grapes](images/strokedashoffset.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/ec8d136c05ac274f3343a7fd64bb2203)*
+
 In the example above, there is a dash set to be 40px long, and a `dashoffset` of 35px. At the starting point of the path the dash will not become visible until 35px in to the first 40px dash, which is why the first dash appears significantly shorter.
 
-#### stroke-opacity
+在上面的例子中，破折线设置了`40px`长度，以及`dashoffset`的值设置为`35px`。在路径的起始点，在`35px`到`40px`的破折线将不会出现，这就是为什么第一个破折号显得更短。
+
+#### `stroke-opacity`
 
 The `stroke-opacity` attribute allows for a transparency level to be set on strokes.
 
+`stroke-opacity`属性用来设置描边的透明度。
+
 The value here is a decimal number between 0 and 1, with 0 being completely transparent.
 
+他的值是`0`到`1`之间，其中`0`是表示描边完全透明，不可见。
 
-## Section 5. The text Element
+## 第5节: `text`元素
 
 The `<text>` element defines a graphic consisting of text. There are a number of attribute options for customization of this text, and gradients, patterns, clipping paths, masks, or filters can also be applied.
 
