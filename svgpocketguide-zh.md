@@ -42,7 +42,7 @@
 	* [viewport](#viewport)
 	* [viewBox](#viewbox)
 		* [preserveAspectRatio](#preserveaspectratio)
-	* [坐标系统转换](#坐标系统转换)
+	* [坐标系统变换](#坐标系统变换)
 		* [translate](#translate)
 		* [rotate](#rotate)
 		* [scale](#scale)
@@ -74,7 +74,7 @@
 		* [textPath元素](#textpath元素)
 		* [xlink:href](#xlinkhref)
 		* [startOffset](#startoffset)
-* [第6节: 高级特性——渐变，纹理，剪辑路径](#第6节-高级特性-渐变-纹理-剪辑路径)
+* [第6节: 高级特性——渐变，图案，剪辑路径](#第6节-高级特性-渐变-纹理-剪辑路径)
 	* [渐变](#渐变)
 		* [线性渐变](#线性渐变)
 			* [停止节点](#停止节点)
@@ -86,12 +86,12 @@
 		* [径向渐变](#径向渐变)
 		* [cx, cy, r](#cx-cy-r)
 		* [fx, fy](#fx-fy)
-	* [纹理](#纹理)
+	* [图案](#纹理)
 		* [基本属性](#基本属性)
 			* [x, y, width, height](#x-y-width-height)
 			* [patternUnits](#patternunits)
 			* [patternContentUnits](#patterncontentunits)
-		* [纹理嵌套](#纹理嵌套)
+		* [图案嵌套](#纹理嵌套)
 	* [剪辑路径](#剪辑路径)
 * [总结](#总结)
 
@@ -714,103 +714,161 @@ Once this code is copied it can be run through an SVG optimizer before being pla
 
 将这个代码复制下来，它会通过一个SVG优化器在被放置在HTML之前，以助于消除不必要的代码和间距，进而大大缩小文件。 关于这个方面[Peter Collingridge的SVG Optimiser](//petercollingridge.appspot.com/svg-optimiser)和[SVGO](//github.com/svg/svgo)也是非常有用的工具。
 
-## Section 3. The Workspace
+## 第3节: 工作区域
 
 Perhaps the most important aspect of SVG, after understanding its general structure and how to create basic shapes, is getting a grasp of the workspace in use, or in other words, the coordinate system to which the graphics will be mapped.
 
+或许SVG中最重要的方向是了解它的总结结构，以及如何创建基本图形，然而要掌握这些就需要掌握SVG的工作区，或者换句话说，图形将映射到工作区的坐标系统。
+
 Understanding the workspace of SVG is helpful in properly rendering your artwork, but becomes crucial once you get into more advanced SVG features. For example, the mapping of gradients and patterns relies heavily on the established coordinate system. This workspace is defined by the dimensions of the viewport and `viewBox` attributes.
+
+理解SVG的工作区有助于帮你更好的，更正确的呈现您的作品，但是一旦进入了高级的SVG特性时，这个就变得非常重要。例如，渐变和图案的映射需要严重的依赖已建立的坐标系统。这个工作区域主要由SVG的`viewport`和`viewBox`属性来定义。
 
 This pear, happily, has a matching viewport and `viewBox`:
 
-		<svg width="115" height="190" viewBox="0 0 115 190">
-    		<!--<path <pear's drawing path> />-->
-  		</svg>
+幸运的是，这个梨图形配置了相应的`viewport`和`viewBox`：
+
+	<svg width="115" height="190" viewBox="0 0 115 190">
+    	<!--<path <pear's drawing path> />-->
+  	</svg>
 
 ![Pear](images/viewboxpear1.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/3a8c995a969cbcbc5c589aa9ad7de491)*
+
 The entire pear is visible in the browser and will scale accordingly when the viewport dimensions are changed.
 
-### viewport
+整个梨在浏览器中都可见，但当`viewport`发生变更时，这个梨的图形也将想应的会进行绽放。
+
+### `viewport`
 
 The viewport is the visible section of an SVG. While SVG can be as wide or as high as you wish, limiting the viewport will mean that only a certain section of the image can be visible at a time.
 
+`viewport`是用来设置SVG可见区域。虽然SVG正如你期望的一样设置了`width`或`height`属性，但设置了`viewport`将意味着图像中只有某个部分可以在SVG的工作区域可见。
+
 The viewport is set through `height` and `width` attributes within the `<svg>`.
+
+通过`<svg>`元素的`height`和`width`属性可以设置`viewport`。
 
 If these values are not defined, the dimensions of the viewport will generally be determined by other indicators within the SVG, like the width of the outermost SVG element. However, leaving this undefined leaves our artwork susceptible to being cut off.
 
-### viewBox
+如果这些值没有显式定义，那么`viewport`的大小通常由SVG中的其他指标来决定，比如`SVG`外面元素的宽高。只不过，离开这个不确定的地方（指的是不确定的SVG的`viewport`），我们的图形（艺术作品）就很容易被截断。
+
+### `viewBox`
 
 The `viewBox` allows for the specification that a given set of graphics stretch to fit a particular container element. These values include four numbers separated by commas or spaces: `min-x`, `min-y`, `width`, and `height` that should generally be set to the bounds of the viewport.
 
+`viewBox`允许你指定一组图形拉伸以适应特定的容器元素。这些值包括由逗号和空格分隔的四个数字：`min-x`、`min-y`、`width`和`height`，这些数字通常设置为`viewport`的边界值。
+
 The `min` values represent at what point within the image the viewBox should start, while the `width` and `height` establish the size of the box.
+
+`min`值表示在`viewBox`的图形应该从哪个点开始，而`width`和`height`用来确定盒子的大小。
 
 If we choose not to define a `viewBox` the image will not scale to match the bounds set by the viewport.
 
+如果我们不显式的定义`viewBox`，那么图形将无法与设置的`viewport`相匹配。
+
 If 50px were taken off the `width` and `height` of the pear image `viewBox`, the portion of the pear that is visible is reduced, but then what is left visible will scale to fit to the bounds of the viewport.
 
-		<svg width="115px" height="190px" viewBox="0 0 65 140">
-			<!--<path <pear's drawing path> />-->
-		</svg>
+如果`viewBox`的`width`和`height`大小比梨图形各小`50px`，那么梨的可见部分就会减少，其剩下的部分则会缩放到`viewport`的边界。
+
+	<svg width="115px" height="190px" viewBox="0 0 65 140">
+		<!--<path <pear's drawing path> />-->
+	</svg>
 
 ![Pear](images/viewboxpear2reduced.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/a1f47ea097e886493cf1d483629e655a)*
+
 The `min` values within the `viewBox` define the origin of the `viewBox` within the parent element. In other words, the point within the `viewBox` at which you want it to begin matching up the viewport. In the above pear image, the `min` values are set to 0,0 (top left). Let's change these to 50, 30: `viewBox="50 30 115 190"`.
 
-		<svg width="115" height="190" viewBox="50 30 115 190">
-			<!--<path <pear's drawing path> />-->
-		</svg>
+`viewBox`中的`min`值定义了其父元素中的`viewBox`的原始值。换句话说，在`viewBox`中，你希望它匹配`viewport`的开始点。在上面的梨图形中，`min`值设置为`0`（左上角）。让我们把这些值更改变`50,30`：`viewBox= 50 30 115 190`。
+
+	<svg width="115" height="190" viewBox="50 30 115 190">
+		<!--<path <pear's drawing path> />-->
+	</svg>
 
 ![Pear](images/viewboxpearminval.png)
 
+*[点击这里可以查看Demo效果](//codepen.io/jonitrythall/pen/46aaa8d7e8296945def4490ad5fd69d1)*
+
 The `viewBox` now starts 50px in from the `x` axis and 30px in from the `y` axis. In altering these values the section of the pear that is focused on has changed.
+
+`viewBox`现在从`x`轴的`50px`处开始，从`y`轴的`30px`处开始。在改变这些值时，梨图形的部分已经改变了。
 
 #### preserveAspectRatio
 
 If the viewport and `viewBox` do not have the same width to height ratio, the `preserveAspectRatio` attribute directs the browser how to display the image.
 
+如果`viewport`和`viewBox`不具备相同的宽高比例，则`preserveAspectRatio`属性将指示浏览器如何显示图形。
+
 `preserveAspectRatio` takes two parameters, `<align>` and `<meetOrSlice>`. The first parameter takes two parts and directs the `viewBox`'s alignment within the viewport. The second is optional and indicates how the aspect ratio is to be preserved.
 
-`preserveAspectRatio="xMaxYMax meet"`
+`preserveAspectRatio`有两个参数，`<align>`和`<meetOrSlice>`。第一个参数包含两个部分，并在`viewport`中引导`viewBox`的对齐。第二个参数是可选的，并指出如何保持宽高比例。
+
+	preserveAspectRatio="xMaxYMax meet"
 
 These values will align the bottom right corner of the `viewBox` to the bottom right corner of the viewport. `meet` preserves the aspect ratio by scaling the `viewBox` to fit within the viewport as much as possible.
 
+这些值将把`viewBox`的右下角对齐到`viewport`的右下角。`meet`将会通过缩放`viewBox`来适应`viewport`，从而保持宽高比例。
+
 There are three `<meetOrSlice>` options: meet (default), slice, and none. While `meet` ensures complete visibility of the graphic (as much as possible), `slice` attempts to fill the viewport with the `viewBox` and will then slice off any part of the image that does not fit inside the viewport after this scaling. `none` results in no preserved aspect ratio and a potentially distorted image.
+
+`<meetOrSlice>`有三个选项：`meet`（默认值）、`slice`和`none`。在满足确保图形（尽可能多）的可见性的同时，`slice`尝试用`viewBox`填充`viewport`，然后将图形的任何部分切掉。`none`不会宽高比，图形会在`viewport`里扭曲。
 
 Perhaps the most straightforward value here is "none", which establishes that uniform scaling should not be applied. If we then increase the pixel values of the viewport, the below image of cherries will stretch non-uniformly and look distorted.
 
-		<svg width="500" height="400" viewBox="0 0 250 600" preserveAspectRatio="none">
-			<!--<path <cherry drawing path> />-->
-		</svg>
+也许这里最直接的值是`none`，这表明不会有统一的缩放。如果我们增加`viewport`的像素值，下面的樱桃图形将会拉伸不均匀，樱桃看起来会扭曲。
+
+	<svg width="500" height="400" viewBox="0 0 250 600" preserveAspectRatio="none">
+		<!--<path <cherry drawing path> />-->
+	</svg>
 
 ![Cherries](images/preserverationone.png)
 
+*[点击这里可以查看Demo效果](//codepen.io/jonitrythall/pen/8943154485dcb3662f95a6756f1d097b)*
+
 The `preserveAspectRatio` for the image below is set to `xMinYMax meet` which is aligning the bottom left corner of the `viewBox` to the bottom left corner of the viewport (which is now outlined). `meet` is ensuring the image is scaling to fit inside the viewport as much as possible.
 
-		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
-			<!--<path <cherry drawing path> />-->
-		</svg>
+下图中的`preserveAspectRatio`属性值设置为`xMinYMax meet`，它将`viewBox`的左下角和`viewport`的左下角对齐。`meet`是确保图像在`viewport`中尽可能的缩放。
+
+	<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
+		<!--<path <cherry drawing path> />-->
+	</svg>
 
 ![Cherries](images/preserveaspect2.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/9edd85f9931af23b30726845c184ee9b)*
+
 Here are the same cherries when `meet` is changed  to `slice`:
 
-		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax slice" style="border: 1px solid #333333;">
-			<!--<path <cherry drawing path> />-->
-		</svg>
+当`meet`变为`slice`时，樱桃图形的效果：
+
+	<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax slice" style="border: 1px solid #333333;">
+		<!--<path <cherry drawing path> />-->
+	</svg>
 
 ![Cherries](images/preserveslice.png)
 
+*[点击这里可以查看Demo效果](//codepen.io/jonitrythall/pen/2eede68379ac3f2702e5e30342a3ce0b)*
+
 Note that the alignment values do not have to correlate.
 
-		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMid slice" style="border: 1px solid #333333;">
-			<!--<path <cherry drawing path> />-->
-		</svg>
+注意，对象值并无关联。
+
+	<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMid slice" style="border: 1px solid #333333;">
+		<!--<path <cherry drawing path> />-->
+	</svg>
 
 ![Cherries](images/preservenocorrelate.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/63e0bed4bd9b7519da1c2f287963d4f6)*
+
 The above example has a `preserveAspectRatio` of `xMinYMid slice`; the cherries are now aligned along the middle of the `y` axis of the viewport.
 
-### Coordinate System Transforms
+上面的例子中`preserveAspectRatio`的值为`xMinYMid slice`，这些樱桃现在没有沿着`viewport`的`y`轴的中间方向排列。
+
+### 坐标系统变换
 
 SVG enables the additional altering of graphics such as rotation, scaling, moving, and skewing through the use of transforms. The SVG author can apply transforms to individual elements or to an entire group of elements.
 
@@ -1441,3 +1499,5 @@ For news and updates, please visit [the book's site](http://svgpocketguide.com/)
 
 
 ![The End](images/theend2.png)
+
+> 特别声明：[简介](#简介)、[第1节： 文档组织](#第1节-文档组织)和[第2节：基本图形和路径](#第2节-基本图形和路径)由[沪江技术学院](//hujiangtech.github.io/tech/)翻译整理。
