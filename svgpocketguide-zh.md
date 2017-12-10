@@ -1199,120 +1199,194 @@ The value here is a decimal number between 0 and 1, with 0 being completely tran
 
 The `<text>` element defines a graphic consisting of text. There are a number of attribute options for customization of this text, and gradients, patterns, clipping paths, masks, or filters can also be applied.
 
+`<text>`元素定义了由文本组成的图形。有许多属性选项可以定制文本图形，而且渐变、图案、剪切路径、蒙板和过滤器也可以应用在`text`元素之上。
+
 Writing and editing `<text>` in SVG provides a very powerful ability to create scalable text as graphics that can be easily changed and edited within the SVG code.
+
+SVG提供了能力强大的`<text>`元素，用于创建可伸缩的文本作为图形，而且易于在SVG代码中修改和编辑。
 
 Remember to be mindful of viewport dimensions when working through the examples in this section. The viewport, as mentioned, will determine the visible portion of the SVG and it may be necessary to change the viewport depending on the alteration specifics.
 
-### Basic Attributes
+在使用本节中提到的示例时，要特别注意`viewport`尺寸。正如前面提到的，`viewport`将决定SVG的可见部分，有时有必要根据修改的细节来更改`viewport`。
+
+### 基本属性
 
 SVG text attributes reside within the `<text>` element, which resides inside the `<svg>` element. Through these attributes we can control some basic styling for our text as well as completely spell out its mapping details on the canvas, enabling full control of its placement on the screen.
 
-#### x, y, dx, dy
+SVG的文本属性位于`<text>`元素内，该元素放置在`<svg>`元素内。通过这些属性，可以控制文本的一些基本样式，并在画布上完全呈现其映射的细节，从而完全控制它在屏幕上的效果。
+
+#### `x`, `y`, `dx`, `dy`
 
 The first letter within a `<text>` element is rendered according to the established `x` and `y` values. While the `x` value determines where to start the text along the x axis, the `y` value determines the horizontal location of the *bottom* of the text.
 
+`<text>`元素中的第一个字母是根据已创建的坐标系统中的`x`和`y`值来呈现的。`x`值决定了文本在`x`轴上开始位置处，而`y`值决定了文本底部的水平位置。
+
 While `x` and `y` establish coordinates in an absolute space, `dx` and `dy` establish relative coordinates. This is especially handy when used in conjunction with the `<tspan>` element, which will be discussed further in an upcoming section.
 
-		<svg width="620" height="100">
-    		<text x="30" y="90" fill="#ED6E46" font-size="100" font-family="'Leckerli One', cursive">Watermelon</text>
-  		</svg>
+`x`和`y`在坐标系统中是绝对坐标，而`dx`和`dy`是相对坐标。当与`<tspan>`元素一起使用时，这一点特别方便，这将在接下来的部分中进行讨论。
+
+	<svg width="620" height="100">
+    	<text x="30" y="90" fill="#ED6E46" font-size="100" font-family="'Leckerli One', cursive">Watermelon</text>
+  	</svg>
 
 ![Watermelon Text](images/watermelontext1.png)
 
+*[点击这里可以查看Demo效果](//codepen.io/jonitrythall/pen/e62394e43969fecb4269036260a3a575)*
+
 The above text starts 30px into the viewport of the SVG, and the bottom of the text is set 90px in from the top of this viewport: `x="30" y="90"`.
 
-#### rotate
+上面的文本距SVG的`viewport`中左侧距离`30px`，而文本底部则从`viewport`顶部`90px`处。即：`x="30" y="90"`。
+
+#### `rotate`
 
 A rotation can be placed on the individual letters/symbols, and/or on the element as a whole.
 
+可以将旋转放置在单个字母（字符）或者整个元素上。
+
 A single value within the `rotate` attribute results in each glyph rotating at that value. A string of values can also be used to target and assign a different rotation value to each letter. If there are not enough values to match the number of letters, the last value sets the rotation for the remaining characters.
+
+`rotate`属性中的单个值会导致每个符号在该值上旋转。一系列值也可以用于文本的每个字母，并为每个字母分配不同的旋转值。如果没有足够的值来匹配字母的数量，最后一个值将为其他字母设置旋转。
 
 The text below has a rotation set on the entire graphic through the `transform` element, but also a value for each glyph: `rotate="20,0,5,30,10,50,5,10,65,5"`.
 
-		<svg width="600" height="250">
-    		<text x="30" y="80" fill="#ED6E46" font-size="100" rotate="20,0,5,30,10,50,5,10,65,5" transform="rotate(8)" font-family="'Leckerli One', cursive">Watermelon</text>
-  		</svg>
+下面的文本通过`transform`给每个文本设置旋转效果，每个字母的旋转的值： `rotate="20,0,5,30,10,50,5,10,65,5"`。
+
+	<svg width="600" height="250">
+    	<text x="30" y="80" fill="#ED6E46" font-size="100" rotate="20,0,5,30,10,50,5,10,65,5" transform="rotate(8)" font-family="'Leckerli One', cursive">Watermelon</text>
+  	</svg>
 
 ![Watermelon Text](images/watermelonrotation.png)
 
-#### textLength & lengthAdjust
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/d46fe22b170668927920220e13c1093f)*
+
+#### `textLength`和`lengthAdjust`
 
 The `textLength` attribute specifies the length of the text. The length of the text will adjust to fit the length specified within this attribute by altering the space between the provided characters.
 
+`textLength`属性指定文本的长度。文本的长度将通过改变所提供的字符之间的空格来适应该属性中指定的长度。
+
 The following example has a `textLength` value of 900px. Notice that the spacing between the characters has increased to fill this space.
 
-		<svg width="950" height="100">
-    		<text x="30" y="90" fill="#ED6E46" font-size="100" textLength="900" font-family="'Leckerli One', cursive">Watermelon</text>
-  		</svg>
+下面的例子有一个`textLength`值为`900px`。得注意的是，字符之间的间距增加了，以填充这个空间。
+
+	<svg width="950" height="100">
+    	<text x="30" y="90" fill="#ED6E46" font-size="100" textLength="900" font-family="'Leckerli One', cursive">Watermelon</text>
+  	</svg>
 
 ![Watermelon Text](images/watermelonspacing.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/3020091b8dbd6e77c22827d6c31e35fc)*
+
 When used in conjunction with the `lengthAdjust` attribute, it can be specified that both the letter spacing and glyph size should adjust to fit to these new length values.
+
+当和`lengthAdjust`属性一起使用时，可以指定字母间距和字形大小都应该调整以适应这些新的长度值。
 
 A value of `"spacing"` results in an image that resembles the example above where the spacing between the characters has expanded to fill the space: ‘lengthAdjust=”spacing”’.
 
+`"spacing"`的值与上面的例子类似，在上面的例子中，字符的间距扩大到填充空间：`lengthAdjust=”spacing”`。
+
 A value of `"spacingAndGlyphs"` directs both the spacing and the glyph size to adjust accordingly: `lengthAdjust="spacingAndGlyphs"`.
+
+`"spacingAndGlyphs"`的值指定了间距和字形的大小来做相应的调整：`lengthAdjust="spacingAndGlyphs"`。
 
 ![Watermelon Text](images/watermelonlengthadjust.png)
 
-### The tspan Element
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/dec7865c1584e965742d52151236db65)*
+
+### `tspan`元素
 
 The `<tspan>` element is significant because SVG does not currently support automatic line breaks or word wrapping. `<tspan>` allows us to draw multiple lines of text by singling out certain words or characters to then be manipulated independently.
 
+`<tspan>`元素很重要，因为SVG目前不支持自动换行。`<tspan>`允许我们通过将某些单词或字符单独进行操，用来绘制多行文本。
+
 Instead of defining a new coordinate system for these additional lines, the `<tspan>` element positions these new lines of text in relation to the previous line of text.
+
+而不是为这些额外的行定义一个新的坐标系统，`<tspan>`元素将这些新的文本行与上一行的文本关联起来。
 
 The `<tspan>` element has no visual output on its own, but by specifying more details within the elements we can single out this particular text and have more control over its design and positioning.
 
+`<tspan>`元素本身并不会输出可见的的东西，但是通过在元素中指定更多的细节，我们可以将该文本单独输出，并对其设计和定位有更多的控制。
+
 In the example below "are" and "delicious" are located within separate `<tspan>` elements within the `<text>` element. By using `dy` within each of these spans, we are positioning the word along the y axis in relation to the word before it.
+
+在下面的示例中，`"are"`和`"delicious"`位于`<text>`元素的`<span>`元素中。通过在每个`span`中的`dy`，可以将这个词沿着`y`轴与前面的词关联起来。
 
 While "are" is positioned -30px from "Watermelons", "delicious" is positioned 50px from "are".
 
- 		<svg width="775" height="500">
-    		<text x="15" y="90" fill="#ED6E46" font-size="60" font-family="'Leckerli One', cursive"> Watermelons
-      			<tspan dy="-30" fill="#bbc42a" font-size="80">are</tspan>
-      			<tspan dy="50">delicious</tspan>
-    		</text>
-  		</svg>
+虽然`"are"`的位置在`"Watermelons"`的`-30px`位置处，但`"delicious"`的位置是`50px`。
+
+ 	<svg width="775" height="500">
+    	<text x="15" y="90" fill="#ED6E46" font-size="60" font-family="'Leckerli One', cursive"> Watermelons
+      		<tspan dy="-30" fill="#bbc42a" font-size="80">are</tspan>
+      		<tspan dy="50">delicious</tspan>
+    	</text>
+  	</svg>
 
 ![Watermelon Text](images/watermelontspan.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/ea83c21659cf118df5b5d64b14b2a1c9)*
+
 You can also move each glyph individually through a list of values, as shown in the example below. The letter/symbol is then moved according to the position of the letter/symbol before it, and "delicious" is now positioned according to the "e" in "are".
+
+你还可以通过一个列表值单独移二甲双胍每个字母，如下面的示例所示。字母和符号随后根据字母和符号的位置移动，`"delicious"`现在根据`"are"`中的`"e"`位置定位。
 
 ![Watermelon Text](images/watermelontspan2.png)
 
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/943ca861a5154a2e2fbe3394d2031fda)*
+
 The `tspan` containing “are” has the following list of `dy` values: `dy="-30 30 30"`.
 
-### Spacing Properties
+包含`"are"`的`tspan`有以下`dy`值：`dy="-30 30 30"`。
+
+### 间距属性
 
 There are a number of properties available when using the `<text>` element within inline SVG that control the spacing of words and letters, similar to the capabilities of vector graphic software.
 
+当在内联SVG中使用`<text>`元素来控制单词和字母的间距时，可以使用许多属性，类似于矢量图形软件的功能。
+
 Understanding how to use these properties helps ensure graphics are displayed exactly as intended.
 
-#### kerning & letter-spacing
+了解如何使用这些属性有助于确保图形完全按照预期显示。
+
+#### `kerning`和`letter-spacing`
 
 Kerning refers to the process of adjusting the spacing between characters. The `kerning` property allows us to adjust this space based on the kerning tables that are included in the font being used, or set a unique length.
 
+`kerning`指的是调整字符间距的过程。`kerning`属性允许我们根据使用的字体中包含的`kerning`来调整这个空间，或者设置一个独特的长度。
+
 A value of `auto` indicates that the inter-glyph spacing should be based on the kerning tables that are included in the font being used.
+
+`auto`值表示字形间距应该基于所使用的字体中包含的`kerning`列表。
 
 The example below has a `kerning` value of `auto`, which in this instance has no visual impact since it is the default value.
 
-		<svg width="420" height="200">
-    		<text x="2" y="50%" fill="#ef9235" font-size="100" font-family="'Raleway', sans-serif" font-weight="bold" kerning="auto">Oranges</text>
-  		</svg>
+下面的例子中`kerning`的值为`auto`，在这个示例中，它没有可见的影响，因为它是默认值。
+
+	<svg width="420" height="200">
+    	<text x="2" y="50%" fill="#ef9235" font-size="100" font-family="'Raleway', sans-serif" font-weight="bold" kerning="auto">Oranges</text>
+  	</svg>
 
 ![Oranges Text](images/orangekerning.png)
 
 Adjusting the length between these characters can be done by simply including a numerical value: `kerning="30"`.
 
+调整这些字符之间的长度可以简单地包括一个数值：`kerning="30"`。
+
 ![Oranges Text](images/orangekerning2.png)
 
 A value of `inherit` is also valid.
 
+`inherit`的值也是有效的。
+
 `letter-spacing` has value options of `normal`, `<length>`, or `inherit`. A numerical value here will have the same impact on the spacing as `kerning`. The `letter-spacing` property is intended to be used as supplemental spacing to any spacing already in effect from `kerning`.
 
-#### word-spacing
+`letter-spacing`的值有`normal`、`<length>`和`inherit`。这里的数值与`kerning`的间距有相同的效果。`letter-spacing`的属性是已经从`kerning`生效的补充间距。
+
+#### `word-spacing`
 
 Th `word-spacing` property specifies the spacing between words.
+
+`word-spacing`属性是用来指定单词之间的间距。
 
 	<svg width="750" height="200">
     	<text x="2" y="50%" fill="#ef9235" font-size="70" font-family="'Raleway', sans-serif" word-spacing="30">Oranges are Orange</text>
@@ -1322,15 +1396,25 @@ Th `word-spacing` property specifies the spacing between words.
 
 Other valid values here are `normal` (default), and `inherit`.
 
-### text-decoration
+其他有效的值还包括`normal`(默认值)和`inherit`。
+
+### `text-decoration`
 
 The `text-decoration` property permits the use of `underline`, `overline`, and `line-through` in SVG text.
 
+`text-decoration`属性允许在SVG的文本图形上添加下划线，其值包括：`underline`、`overline`和`line-through`。
+
 While drawing order does not always have an impact on visual output in SVG, the order does matter in regards to `text-decoration`.  All text decoration values, except `line-through`, should be drawn *before* the text is filled and/or stroked; this renders the text on top of the decorations.
+
+虽然绘制图形的顺序并不总是会对SVG图形输出产生影响，但是`text-decoration`方面顺序确实很重要。`text-decoration`所有值（除了`line-throught`之外），应该在文本填充和描边之前使用这个属性。
 
 `line-through` should be drawn after the text is filled and/or stroked, rendering the decoration on top of the text.
 
+`line-through`应该在文本填充或描边后绘制，不然将会在文本的顶部呈现。
+
 Here is a look at `text-decoration="underline"` and `text-decoration="line-through"`.
+
+下面的效果是使用了`text-decoration="underline"`和`text-decoration="line-through"`。
 
 ![Pears Text](images/textdecoration.png)
 
@@ -1340,7 +1424,7 @@ As mentioned, inline SVG provides us with advanced customization options that ar
 
 In taking this manipulation even further, SVG `<text>` can be set to follow a given `<path>` element.
 
-#### The textPath Element
+#### 沿着路径的文本
 
 The `textPath` element is where all the magic of this feature resides. While SVG text would generally reside within a `<text>` element, it will now reside within a `<textPath>` element within the `<text>` element.
 
