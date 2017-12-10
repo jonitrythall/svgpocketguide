@@ -1418,19 +1418,29 @@ Here is a look at `text-decoration="underline"` and `text-decoration="line-throu
 
 ![Pears Text](images/textdecoration.png)
 
-### text Along a Path
+### 沿着路径的文本
 
 As mentioned, inline SVG provides us with advanced customization options that are similar to the capabilities of vector graphic software. Within the SVG code itself we can position text exactly as we want it to render on the screen.
 
+正如前面提到的，内联SVG为我们提供了与矢量图形软件类似的高级定制选项。在SVG代码中，我们可以准确定位文本，就像我们希望它在屏幕上显示一样。
+
 In taking this manipulation even further, SVG `<text>` can be set to follow a given `<path>` element.
 
-#### 沿着路径的文本
+在进一步处理此操作时，SVG的`<text>`可以根据`<path>`元素，指定文本根据路径呈现文本。
+
+#### `textPath`元素
 
 The `textPath` element is where all the magic of this feature resides. While SVG text would generally reside within a `<text>` element, it will now reside within a `<textPath>` element within the `<text>` element.
 
+`textPath`元素是这个特性所有魔法所在。虽然SVG的文本在`<text>`元素内，而`<textPath>`元素在`<text>`元素内。
+
 This `<textPath>` will then call on the chosen path's `id` which is hanging out in a `<defs>` element waiting to be used.
 
+这个`<textPath>`元素将调用所选择的`id`路径，它在`<defs>`元素中等待被使用。
+
 The basic syntax:
+
+基本语法如下：
 
 	<svg>
     	<defs>
@@ -1443,45 +1453,59 @@ The basic syntax:
 
 Here is a look at the vector path to be used in the code below:
 
+下面是代码中使用的向量路径：
+
 ![Simple path](images/pathsimple.png)
 
 After generating this path in vector graphic software the SVG *`<path>` element* code itself (which will not include color like shown above) can be copied and placed within the `<defs>` element in the `<svg>`, which is also shown in the code above.
 
+在矢量图形软件中生成此路径后，SVG的`<path>`元素代码本身（不包括如上所示的颜色），可以在`<svg>`中复制并放置在`<svg>`中，同时也显示在上面的代码中。
+
 ![Simple path with text](images/pathsimpletext.png)
 
 	<svg width="620" height="200">
-    	 <defs>
+    	<defs>
   			<path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
-  	     </defs>
-     	 <text x="2" y="40%" fill="#765373" font-size="30" font-family="'Lato', sans-serif">
+  	    </defs>
+     	<text x="2" y="40%" fill="#765373" font-size="30" font-family="'Lato', sans-serif">
      		<textPath xlink:href="#testPath">There are over 8,000 grape varieties worldwide.</textPath>
-     	 </text>
+     	</text>
    	</svg>
 
-##### xlink:href
+##### `xlink:href`
 
 The `xlink:href` attribute in a `<textPath>` allows us to reference the path to which the text will be rendered on.
 
-##### startOffset
+`xlink:href`是`<textPath>`的属性，允许我们引用文本根据指定的路径呈现。
+
+##### `startOffset`
 
 The `startOffset` attribute represents a text offset length from the start of the `path`. A value of "0%" indicates the start point of the `path`, while "100%" indicates the end point.
 
+`startOffset`属性表示从`path`开始时的文本偏移长度。`0%`的值表示`path`的起始点，而`100%`表示终点。
+
 The example below has a `startOffset` of "20%" which pushes the text to begin 20% in along the path. The font size has been decreased to prevent it from rendering out of the viewport when moved.
+
+下面的例子有一个`20%`的`startoffset`，它推动文本在路径的`20%`处开始。当移动时，字体大小已经减少，以防止它从`viewport`中呈现出来。
 
 Adding color to the path's stroke via the `<use>` element can aid in understanding what exactly is happening here.
 
-		<svg width="620" height="200">
-     		<defs>
-  				<path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
-  			</defs>
-    		<use xlink:href="#testPath" fill="none" stroke="#7aa20d" stroke-width="2"/>
-    		<text x="2" y="40%" fill="#765373" font-size="20" font-family="'Lato', sans-serif">
-      			<textPath xlink:href="#testPath" startOffset="20%">There are over 8,000 grape varieties worldwide.
-      			</textPath>
-    		</text>
-  		</svg>
+通过`<use>`元素添加路径的描边颜色，可以帮助我们理解这里发生的事情。
+
+	<svg width="620" height="200">
+     	<defs>
+  			<path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
+  		</defs>
+    	<use xlink:href="#testPath" fill="none" stroke="#7aa20d" stroke-width="2"/>
+    	<text x="2" y="40%" fill="#765373" font-size="20" font-family="'Lato', sans-serif">
+      		<textPath xlink:href="#testPath" startOffset="20%">There are over 8,000 grape varieties worldwide.
+      		</textPath>
+    	</text>
+  	</svg>
 
 ![Simple path with text](images/pathsimpletext2.png)
+
+*[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/b60cb49eb60d4db158fc9c81b1b6cd64)*
 
 ## Section 6. Advanced Features: Gradients, Patterns, Clipping Paths
 
