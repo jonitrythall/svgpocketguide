@@ -1507,13 +1507,17 @@ Adding color to the path's stroke via the `<use>` element can aid in understandi
 
 *[点击这里查看Demo效果](//codepen.io/jonitrythall/pen/b60cb49eb60d4db158fc9c81b1b6cd64)*
 
-## Section 6. Advanced Features: Gradients, Patterns, Clipping Paths
+## 第6节: 高级特性——渐变，图案，剪辑路径
 
-### Gradients
+### 渐变
 
 There are two types of SVG gradients: linear and radial. Linear gradients are generated in a straight line, while radial gradients are circular.
 
+SVG渐变有两种类型：线性渐变和径向渐变。线性渐变是在直线上产生的，而径向渐变是圆形的。
+
 A very simple linear gradient is structured like this:
+
+一个非常简单的线性渐变就像下面这样：
 
 	<svg>
     	<defs>
@@ -1526,148 +1530,212 @@ A very simple linear gradient is structured like this:
 
 The `<svg>` contains a `<defs>` element which allows us to create reusable definitions to be called on later. These definitions have no visual output until they are referenced using their unique ID within the stroke and/or fill attributes for SVG shapes or `<text>`. These shapes and/or text will also reside within the `<svg>` element, but outside of the `<defs>` element.
 
+`<svg>`包含一个`<defs>`元素，允许我们创建可重用的声明，以便稍后调用。这些定义输出用户并不可见，下到它们在描边或填充中被使用唯一的`id`时，才会在SVG的图形或`<text>`中被调用。这些图形或文本在`<svg>`元素中，但在`<defs>`元素之外。
+
 Once a gradient is built and assigned an ID, it can be called through the `fill` and/or `stroke` attributes within the SVG. For example, `fill= "url(#gradientName)"`.
 
-#### Linear Gradients
+一旦建立了一个渐变并分配一个`id`，它就可以通过SVG中的`fill`或`stroke`属性来调用。例如：`fill= "url(#gradientName)"`。
+
+#### 线性渐变
 
 Linear  gradients change color evenly along a straight line and each point (stop) defined on this line will represent the correlating color within the `<linearGradient>` element. At each point the color is at 100% saturation, and the space in between expresses a transition from one color to the next.
 
-##### stop Nodes
+线性渐变沿着一条直线改变颜色，在这个直线上定义的每个点将代表`<linearGradient>`元素内关联颜色。在每一个点上，颜色都是`100%`的饱和，中间的空间表示从一种颜色过渡到下一种颜色。
+
+##### 停止节点
 
 `<stop>` nodes can also accept an opacity with `stop-opacity="<value>"`
 
+`<stop>`节点可以使用`stop-opacity="<value>"`来设置透明度。
+
 Below is the code for a simple linear gradient with two color stops applied to a rectangle:
 
-		<svg width="405" height="105">
-    		<defs>
-      			<linearGradient id="Gradient1" x1="0" y1="0" x2="100%" y2="0">
-        			<stop offset="0%" stop-color="#BBC42A" />
-        			<stop offset="100%" stop-color="#ED6E46" />
-      			</linearGradient>
-    		</defs>
-    		<rect x="2" y="2" width="400" height="100" fill= "url(#Gradient1)" stroke="#333333" stroke-width="4px" />
-  		</svg>
+下面是一个简单的线性渐变的示例代码，应用于矩形的两个颜色的线性渐变：
+
+	<svg width="405" height="105">
+    	<defs>
+      		<linearGradient id="Gradient1" x1="0" y1="0" x2="100%" y2="0">
+        		<stop offset="0%" stop-color="#BBC42A" />
+        		<stop offset="100%" stop-color="#ED6E46" />
+      		</linearGradient>
+    	</defs>
+    	<rect x="2" y="2" width="400" height="100" fill= "url(#Gradient1)" stroke="#333333" stroke-width="4px" />
+  	</svg>
 
 ![Basic Gradient](images/gradientpic1.png)
 
 `offset` informs the gradient at what point to assign the correlating `stop-color`.
 
-##### x1, y1, x2, y2
+`offset`用来指定线性渐变的`stop-color`的位置。
+
+##### `x1`, `y1`, `x2`, `y2`
 
 The x1, y1, x2, and y2 attribute values represent the start and end points onto which the gradient stops (color changes) are mapped. These percentages will map the gradients respectively along the appropriate axis.
 
+`x1`，`y1`，`x2`和`y2`属性值表示渐变停止（颜色变化）映射的开始和结束点。这些百分数将沿适当的轴分别绘制渐变。
+
 A `y` value of “100%” and an `x` value of “0” will produce a horizontal gradient, while the reverse will produce a vertical one. Having both values set at “100%” (or any value outside of 0) will render an angled gradient.
 
-##### gradientUnits
+`100%`的`y`的值和`0`的`x`值将产生水平渐变，反之则会产生垂直渐变。将两个值设置为`100%`（或`0`之外的任何值）将会创建一个倾斜的渐变。
+
+##### `gradientUnits`
 
 The `gradientUnits` attribute defines the coordinate system for the x1, x2, y1, y2 values. The two value options here are ‘userSpaceOnUse’ or ‘objectBoundingBox’. `userSpaceOnUse` sets the gradient coordinating system in absolute units, while `objectBoundingBox` (default) establishes this system within the bounds of the SVG shape itself, the target.
 
-##### spreadMethod
+`gradientUnits`属性定义了`x1`、`x2`、`y1`和`y2`值的坐标系统。这里有两个选项：`userSpaceOnUse`或
+`objectBoundingBox`。`userSpaceOnUse`使用的是坐标系统中的绝对单元值，而`objectBoundingBox`（默认值）在SVG图形本身的范围建立这个系统（相对坐标值）。
+
+##### `spreadMethod`
 
 The `spreadMethod` attribute’s value specifies how the gradient will spread out through the shape if it starts or ends inside the bounds of the target. If the gradient is set to not fill the shape, `spreadMethod` determines how the gradient should go about covering that empty space. There are three options here: ‘pad’, ‘repeat’, or ‘reflect’.
 
+`spreadMethod`属性的值指定渐变如何在目标范围内展开或结束。如果渐变不在图形的填充中使用，`spreadMethod`将会决定渐变应该如何覆盖那个空白区域。这里有三个值可选：`pad`、`repeat`和`reflect`。
+
 A value of `pad` (default) directs the first and last colors of the gradient to spread out over the remainder of the uncovered target region. A value of `repeat` directs the gradient to repeat the pattern from the beginning continuously. A value of `reflect` will reflect the gradient pattern alternating from start-to-end, end-to-start continuously.
+
+`pad`（默认值）的值指定渐变的第一个和最后一个颜色在未被发现的目标区域的其余部分展开。`repeat`的值指定渐变从一开始就重复使用这个模式。`reflect`的值指定渐变的从开始到结束的渐变模式，连续不断的执行。
 
 The start and end point for the gradient below is: x1="20%" y1="30%" x2="40%" y2="80%".
 
+下面的渐变的开始和结束点是：`x1="20%" y1="30%" x2="40%" y2="80%"`。
+
 ![Spread method](images/gradientspreadmethod.png)
 
-##### gradientTransform
+##### `gradientTransform`
 
 The `gradientTransform` attribute is optional and allows for further transformation of the gradient before it is mapped, like adding a rotation.
 
-##### xlink:href
+`gradientTransform`属性是可选的，并允许给渐变添加旋转等功能。
+
+##### `xlink:href`
 
 The `xlink:href` attribute allows you to call on the ID of another gradient to inherit its details, but you can also include different values.
 
-		<linearGradient id="repeat" xlink:href="#Gradient-1” spreadMethod="repeat" />
+`xlink:href`属性允许你调用另一个渐变的`id`所有的信息，但你也可以包含不同的值。
+
+	<linearGradient id="repeat" xlink:href="#Gradient-1” spreadMethod="repeat" />
 
 This gradient inherits the details of the first gradient from the beginning of this section, but has an alternate spreadMethod value.
 
-#### Radial Gradients
+渐变从本节点开始就继承了第一个渐变的细节，但是有一个`spreadMethod`值。
+
+#### 径向渐变
 
 Most of the attributes for a `<radialGradient>` are the same as those of `<linearGradient>` except there is a different set of coordinates to work with.
 
-##### cx, cy, r
+`<radialGradient>`的大多数属性与`<linearGradient>`相同，除非有不同的坐标系统。
+
+##### `cx`, `cy`, `r`
 
 The `cx`, `cy`, and `r` attributes define the outermost section of the circle and the 100% `stop-color` of the gradient will be mapped to the perimeter of this value. `cx` and `cy` define the center coordinate, while `r` sets the radius of the gradient.
 
-##### fx, fy
+`cx`，`cy`和`y`属性定义了圆的最外层，而渐变的`100%`的`stop-color`将这个值映射到圆的周长上。`cx`和`cy`定义了径向渐变的圆心，而`r`则是设置径向渐变的半径。
+
+##### `fx`, `fy`
 
 The `fx`, `fy` attributes represent the coordinates for the gradient’s focal point, or innermost circle. Essentially, the center of the gradient does not have to also be its focal point, which can be altered with these values.
 
+`fx`和`fy`属性代表了渐变的焦点，或者说是最内层圆的坐标。本质上，渐变的中心不需要它的焦点，可以用这些值来改变它。
+
 While by default the focal point of the radial gradient would be centered, the focal point attributes can change this. The focal point values for the image below are `fx="95%" fy="70%"`.
 
-		<svg width="850px" height="300px">
-    		<defs>
-      			<radialGradient id="Gradient2" cy="60%" fx="95%" fy="70%" r="2">
-        			<stop offset="0%" stop-color="#ED6E46" />
-        			<stop offset="10%" stop-color="#b4c63b" />
-        			<stop offset="20%" stop-color="#ef5b2b" />
-        			<stop offset="30%" stop-color="#503969" />
-        			<stop offset="40%" stop-color="#ab6294" />
-        			<stop offset="50%" stop-color="#1cb98f" />
-        			<stop offset="60%" stop-color="#48afc1" />
-        			<stop offset="70%" stop-color="#b4c63b" />
-        			<stop offset="80%" stop-color="#ef5b2b" />
-        			<stop offset="90%" stop-color="#503969" />
-        			<stop offset="100%" stop-color="#ab6294" />
-      			</radialGradient>
-    		</defs>
-    		<text x="20%" y="75%" fill= "url(#Gradient2)" font-family= "'Signika', sans-serif" font-size="200">Cherry</text>
-  		</svg>
+默认情况下，径向渐变的焦点将能圆的中心为中心，焦点属性可以改变这一点。以下图像的焦点值为：`fx="95%" fy="70%"`：
+
+	<svg width="850px" height="300px">
+    	<defs>
+      		<radialGradient id="Gradient2" cy="60%" fx="95%" fy="70%" r="2">
+        		<stop offset="0%" stop-color="#ED6E46" />
+    			<stop offset="10%" stop-color="#b4c63b" />
+    			<stop offset="20%" stop-color="#ef5b2b" />
+        		<stop offset="30%" stop-color="#503969" />
+        		<stop offset="40%" stop-color="#ab6294" />
+        		<stop offset="50%" stop-color="#1cb98f" />
+        		<stop offset="60%" stop-color="#48afc1" />
+        		<stop offset="70%" stop-color="#b4c63b" />
+        		<stop offset="80%" stop-color="#ef5b2b" />
+        		<stop offset="90%" stop-color="#503969" />
+        		<stop offset="100%" stop-color="#ab6294" />
+      		</radialGradient>
+    	</defs>
+    	<text x="20%" y="75%" fill= "url(#Gradient2)" font-family= "'Signika', sans-serif" font-size="200">Cherry</text>
+  	</svg>
 
 ![Focal point](images/gradientfocalpoint.png)
 
 In this example, the focal point shifts to the bottom right of the image.
 
-### Patterns
+在这个示例中，焦点转移到图像的右下角。
+
+### 图案
 
 Patterns are generally considered one of the more complex paint options available to color the fills and strokes of SVG. Establishing a foundation and understanding the basic syntax can make these seemingly more complex patterns much more obtainable.
 
+图案通常被认为是用`fill`和`stroke`来给SVG图形来填充或描边更复杂的图形。理解图案的基本语法可以使这些看起来复杂的图案变得更容易。
+
 Here is a look at the syntax for a basic pattern applied to a rectangle:
 
-		<svg width="220" height="220">
-    		<defs>
-      			<pattern id="basicPattern" x="10" y="10" width="40" height="40" 								patternUnits="userSpaceOnUse">
-       				<circle cx="20" cy="20" r="20" fill= "#BBC42A" />
-    			</pattern>
-  			</defs>
-  			<rect x="10" y="10" width="200" height="200"
-      		stroke="#333333" stroke-width="2px" fill="url(#basicPattern)" />
-  		</svg>
+下面是用于图案来填充矩形的基本语法：
+
+	<svg width="220" height="220">
+    	<defs>
+      		<pattern id="basicPattern" x="10" y="10" width="40" height="40" patternUnits="userSpaceOnUse">
+       			<circle cx="20" cy="20" r="20" fill= "#BBC42A" />
+    		</pattern>
+  		</defs>
+  		<rect x="10" y="10" width="200" height="200" stroke="#333333" stroke-width="2px" fill="url(#basicPattern)" />
+  	</svg>
 
 ![Basic pattern](images/patternbasic1.png)
 
-#### Basic Attributes
+#### 基本属性
 
 The attributes and values for patterns define the "canvas", the design, and overall positioning. Patterns can consist of paths and/or shapes, can paint text, and can even be nested within another pattern.
 
-##### x, y, width, height
+图案的属性和值定义了画布、设计和整体位置。图案可以由路径或图形组成，可以绘制文本，甚至可以嵌套在另一个图案中。
+
+##### `x`, `y`, `width`, `height`
 
 The x and y attributes within the `<pattern>` element define how far into the shape the pattern will start. Width and height used within the `<pattern>` element define the actual width and height of the allotted pattern space.
 
+`<pattern>`元素的`x`和`y`属性定义了图案从图形哪个位置开始。在`<pattern>`元素内使用`width`和`height`定义了图案的宽度和高度。
+
 The “basicPattern” referenced above contains the following values: `x="10" y="10" width="40" height="40"`. The pattern will start 10px in from the start of the x axis, 10px in from the start of the y axis, and essentially create a “canvas” that is 40px wide, and 40px high.
 
-##### patternUnits
+上面引用的`basicPattern`包含了`x="10" y="10" width="40" height="40"`。表示从`x`轴的`10px`，`y`轴的`10px`处开始，创建一个`40px`的宽和`40px`的高的画布。
+
+##### `patternUnits`
 
 The `patternUnits` attribute defines the coordinates for which x, y, width, and height are referenced. The two options here are `userSpaceOnUse` and `objectBoundingBox` (default).
 
+`patternUnits`属性定义了`x`、`y`、`width`和`height`所引用的坐标。这里有两个选项：`userSpaceOnUse`和`objectBoundingBox`（默认值）。
+
 `userSpaceOnUse` results in a pattern coordinate system that is determined by the coordinate system for the element referencing the `<pattern>`, while `objectBoundingBox` establishes the mapping coordinate system as the bounding box of the element to which the pattern is applied.
 
-##### patternContentUnits
+`userSpaceOnUse`在图案坐标系统由引用`<pattern>`元素的坐标系统决定，而`objectBoundingBox`则建立映射坐标系统基于该图案所应用的元素的容器。
+
+##### `patternContentUnits`
 
 The `patternContentUnits` attribute values are the same as the values for `patternUnits`, except the coordinate system is now being defined for the contents of the pattern itself.
 
+`patternContentUnits`属性的值与`patternUnits`的值相同，只是现在为图案本身的内容定义了坐标系统。
+
 This value, unlike `patternUnits`, defaults to `userSpaceOnUse`, which means that unless one or both of these attributes are specified the shapes drawn within the `<pattern>` are being drawn in  a different coordinate system than the `<pattern>` element is using.
+
+与`patternUnits`不同，这个值默认为`userSpaceOnUse`，这意味着除非其中一个或两个属性被指定为`<pattern>`中所绘制的形状，否则它们将被绘制在不同的坐标系统中，而不是`<pattern>`元素所使用的。
 
 Defining `patternUnits="userSpaceOnUse"` within the `<pattern>` element simplifies this process and ensures a consistent workspace.
 
-#### Nested Patterns
+在`<pattern>`元素中定义`patternUnits="userSpaceOnUse"`简化了这个过程，并确保了一个一致的工作区域。
+
+#### 图案嵌套
 
 Patterns can also be nested to create a much more unique and detailed design.
 
+图案也可以嵌套，以创建更加独特和详细的设计。
+
 Here is a look at the structure of a basic nested pattern:
+
+下面是图案嵌套的一个基本结构：
 
 	<svg width="204" height="204">
   		<defs>
@@ -1690,19 +1758,29 @@ Here is a look at the structure of a basic nested pattern:
 
 The `<defs>` element contains both patterns. Within `<defs>`, the pattern for the rectangle is calling on the circle pattern via `fill` and the main rectangle is then calling on the rectangle pattern also via `fill`, painting the interior of the main shape with a nested pattern.
 
+`<defs>`元素包含两个模式。在`<defs>`中，矩形的图案是通过`fill`来调用圆形图案，而主矩形则通过`fill`来调用矩形图案，并将主矩形的内部绘制成嵌套的图案。
+
 ![Nested pattern](images/patternnest.png)
 
-### Clipping Path
+### 剪切路径
 
 The clipping path restricts the region to which paint will be applied to the SVG. Any region drawn outside of the bounds set by the clipping path will not be rendered.
 
+剪切咱径限制了将绘制图形应用到SVG的区域。在剪切路径设置的范围之外的任何区域都不会被渲染。
+
 To demonstrate the abilities of this feature, let's use a clipping path consisting of "Apples" text being applied over a tomato colored rectangle and a green circle.
 
+为了演示这个功能的特性，让我们使用一个包含`“Apple”`文本的裁剪路径，它被应用于一个番茄矩形和绿色圆圈。
+
 Below are the shapes without the clipping path applied, set to stretch beyond the viewport.
+
+下面是没有使用剪切路径的图形，设置超出`viewport`的范围。
 
 ![Shapes before clipping](images/clippingshapes.png)
 
 Now, here's a look at the code to apply the "Apples" text to this "canvas".
+
+现在，我们来看看`Apple`文本应用于画布的代码：
 
  	<svg width="400px" height="200px">
     	<clipPath id="clip-text">
@@ -1716,16 +1794,25 @@ Now, here's a look at the code to apply the "Apples" text to this "canvas".
 
 The clipping path is defined within the `<clipPath>` element and then called on by both shapes by referencing its unique `id`.
 
-## Conclusion
+剪切路径在`<clipPath>`元素中定义，然后通过引用其唯一的`id`来调用这两个形状。
+
+## 总结
 
 Writing inline SVG enables very useful editing powers and lets us as the author have complete access to all the graphical elements individually. Within this code we are generating graphics that scale without losing image quality, are searchable, and enhance accessibility.
 
+编写内联SVG是一个非常有用的编辑功能，并使用我们能够独立地访问所有图形元素。在这段代码中，我们生成的图形在不丢失图像质量的情况下，可以增加搜索功能和增强可访问性。
+
 It will most likely take some time tinkering to get comfortable with your SVG writing abilities, but once you do I would recommend working on making your code as short and efficient as possible, exploring [SMIL animations](http://www.w3.org/TR/smil-animation/), and experimenting with [styling SVG elements with CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS).
+
+它可能需要我们花一些时间掌握修改SVG的能力，但一旦你掌握了这些能力，并且使你的代码尽可能的短和高效，那么就可以开始去[探索SMIL动画](//www.w3.org/TR/smil-animation)和尝试[用CSS给SVG元素添加样式](//developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/SVG_and_CSS)。
 
 Hopefully this guide acts as both a valuable reference, and an inspiration in terms of understanding the powerful potential of building and manipulating inline SVG.
 
+希望这个指南有一定的参考价值，也能让你理解和操作内联SVG提供一定的灵感。
+
 For news and updates, please visit [the book's site](http://svgpocketguide.com/), and if you have any questions or comments in regards to the book I can be reached [on Twitter](https://twitter.com/JoniTrythall) or by email at [info@jonibologna.com](mailto:info@jonibologna.com).
 
+有关于相关的更新，请访问[本书的网站](//svgpocketguide.com)，如果你有任何关于这本书的问题和评论，可以在[Twitter](//twitter.com/JoniTrythall)上或者通过电子邮件[info@jonibologna.com](mailto:info@jonibologna.com)与我沟通。
 
 ![The End](images/theend2.png)
 
