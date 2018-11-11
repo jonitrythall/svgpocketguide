@@ -1812,7 +1812,7 @@ Hopefully this guide acts as both a valuable reference, and an inspiration in te
 
 For news and updates, please visit [the book's site](http://svgpocketguide.com/), and if you have any questions or comments in regards to the book I can be reached [on Twitter](https://twitter.com/JoniTrythall) or by email at [info@jonibologna.com](mailto:info@jonibologna.com).
 
-有关于相关的更新，请访问[本书的网站](//svgpocketguide.com)，如果你有任何关于这本书的问题和评论，可以在[Twitter](//twitter.com/JoniTrythall)上或者通过电子邮件[info@jonibologna.com](mailto:info@jonibologna.com)与我沟通。
+如果你有任何关于这本书的问题和评论，可以在[Twitter](//twitter.com/JoniTrythall)。
 
 ![The End](images/theend2.png)
 
