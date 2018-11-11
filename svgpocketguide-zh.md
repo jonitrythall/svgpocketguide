@@ -1810,7 +1810,7 @@ Hopefully this guide acts as both a valuable reference, and an inspiration in te
 
 希望这个指南有一定的参考价值，也能让你理解和操作内联SVG提供一定的灵感。
 
-For news and updates, please visit [the book's site](http://svgpocketguide.com/), and if you have any questions or comments in regards to the book I can be reached [on Twitter](https://twitter.com/JoniTrythall) or by email at [info@jonibologna.com](mailto:info@jonibologna.com).
+If you have any questions or comments in regards to the book I can be reached [on Twitter].
 
 如果你有任何关于这本书的问题和评论，可以在[Twitter](//twitter.com/JoniTrythall)。
 
