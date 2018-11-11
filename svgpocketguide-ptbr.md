@@ -1236,7 +1236,7 @@ Provavelmente levará algum tempo até que você domine a escrita e se sinta con
 
 Espero que este guia sirva como uma valiosa referência, e inspiração no que se refere ao entendimento do potencial poderoso de construção e manipulação do SVG *inline*.
 
-Para novidades e atualizações, por favor visite [o site do livro](http://svgpocketguide.com/), e se você tiver alguma pergunta ou comentário a fazer poderá fazê-lo via [Twitter](https://twitter.com/JoniTrythall) ou enviar um email para [info@jonibologna.com](mailto:info@jonibologna.com).
+E se você tiver alguma pergunta ou comentário a fazer poderá fazê-lo via [Twitter](https://twitter.com/JoniTrythall).
 
 
 ![Fim](images/theend2.png)
