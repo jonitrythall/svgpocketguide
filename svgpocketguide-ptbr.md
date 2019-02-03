@@ -135,9 +135,12 @@ Esses atributos especificam ao *browser* a [versão do SVG](http://www.w3.org/TR
 
 Vamos dar uma olhada nestes atributos agora, em um exemplo de código SVG gerado pelo Illustrator, para garantir que isso não irá deixá-lo surpreso quando começar:
 
-	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
-	</svg>
+```xml
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+</svg>
+```
+
 
 Na maioria dos casos o DOCTYPE e seus atributos dentro do elemento `<svg>` não são essenciais para que seu gráfico seja renderizados e podem ser descartados, com o objetivo de "limpar" seu código.
 
@@ -161,9 +164,12 @@ Além disso tudo, você pode também copiar o código como está, colar dentro d
 
 Finalmente, alguns exemplos irão conter porções de gráficos com códigos comentados a fim de minimizar o tamanho do bloco de código quando aquela porção particular não é essencial para a explicação do tópico em si.
 
-	<svg>
-		<!--<path d=<this path is commented out> />-->
-	</svg>
+```xml
+<svg>
+  <!--<path d=<this path is commented out> />-->
+</svg>
+```
+
 
 ## Seção 1. Organização do documento
 
@@ -210,15 +216,18 @@ Gráficos são definidos com o `<defs>` e podem ser utilizados no decorrer do do
 
 Por exemplo, o seguinte código desenha um gradiente muito simples em um retângulo:
 
-		<svg>
-    		<defs>
-      			<linearGradient id="Gradient-1">
-        			<stop offset="0%" stop-color="#bbc42a" />
-        			<stop offset="100%" stop-color="#765373" />
-      			</linearGradient>
-    		</defs>
-    		<rect x="10" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="3px" />
-  		</svg>
+```xml
+<svg>
+  <defs>
+    <linearGradient id="Gradient-1">
+      <stop offset="0%" stop-color="#bbc42a" />
+      <stop offset="100%" stop-color="#765373" />
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="3px" />
+</svg>
+```
+
 
 O conteúdo de `<defs>` não tem saída visual até que seja chamado pela sua referência única, o `id`, que neste caso está sendo feito através do atributo `fill` do retângulo.
 
@@ -236,35 +245,41 @@ A ordem de empilhamento do SVG não pode ser manipulada pelo `z-index` no CSS co
 
 As uvas e a melância estão no mesmo elemento `<svg>` abaixo. A melância aparece a frente das uvas porque o grupo que contém o caminho que faz seu desenho está listado antes das uvas no documento.
 
-	<svg>
-		<g class="grapes">
-			<!--<path <stem path> />-->
-			<!--<path <grapes path> />-->
-			<!--<path <leaf path> />-->
-		</g>
-		<g class="watermelon">
-			<!--<path <outside path> />-->
-			<!--<path <inside path> />-->
-			<!--<path <seeds path> />-->
-		</g>
-	</svg>
+```xml
+<svg>
+  <g class="grapes">
+    <!--<path <stem path> />-->
+    <!--<path <grapes path> />-->
+    <!--<path <leaf path> />-->
+  </g>
+  <g class="watermelon">
+    <!--<path <outside path> />-->
+    <!--<path <inside path> />-->
+    <!--<path <seeds path> />-->
+  </g>
+</svg>
+```
+
 
 ![Melância e uvas empilhadas, melância na frente](images/stackedfirst.png)
 
 Se o grupo que contém as uvas for movido para o fim do documento, ele irá aparecer então na frente da melância.
 
-	<svg>
-		<g class="watermelon">
-			<!--<path <outside path> />-->
-			<!--<path <inside path> />-->
-			<!--<path <seeds path> />-->
-		</g>
-		<g class="grapes">
-			<!--<path <stem path> />-->
-			<!--<path <grapes path> />-->
-			<!--<path <leaf path> />-->
-		</g>
-	</svg>
+```xml
+<svg>
+  <g class="watermelon">
+    <!--<path <outside path> />-->
+    <!--<path <inside path> />-->
+    <!--<path <seeds path> />-->
+  </g>
+  <g class="grapes">
+    <!--<path <stem path> />-->
+    <!--<path <grapes path> />-->
+    <!--<path <leaf path> />-->
+  </g>
+</svg>
+```
+
 
 ![Melância e uva empilhadas, uvas na frente](images/stackingtwo.png)
 
@@ -285,9 +300,11 @@ O SVG possui os seguintes elementos que compõe as formas básicas: retângulos,
 
 O elemento `<rect>` é usado para definir o retângulo.
 
-		<svg>
-  			<rect width="200" height="100" fill="#BBC42A" />
-		</svg>
+```xml
+<svg>
+  <rect width="200" height="100" fill="#BBC42A" />
+</svg>
+```
 
 ![Retângulo](images/basicrect.png)
 
@@ -302,9 +319,11 @@ Também é possível criar cantos arredondados espeificando valores com os atrib
 
 O elemento `<circle>` é usado para definir um círculo mapeado com base em um ponto central e pelo tamanho de seu raio.
 
-		<svg>
-  			<circle cx="75" cy="75" r="75" fill="#ED6E46" />
-		</svg>
+```xml
+<svg>
+  <circle cx="75" cy="75" r="75" fill="#ED6E46" />
+</svg>
+```
 
 ![Círculo Básico](images/basiccircle.png)
 
@@ -316,10 +335,11 @@ O atributo `r` define o tamanho do raio do circulo.
 
 O elemento `<ellipse>` define uma elipse na qual seu mapeamento basea-se em um ponto central e  dois raios.
 
-
-		<svg>
-  			<ellipse cx="100" cy="100" rx="100" ry="50" fill="#7AA20D" />
-		</svg>
+```xml
+<svg>
+  <ellipse cx="100" cy="100" rx="100" ry="50" fill="#7AA20D" />
+</svg>
+```
 
 ![Elipse](images/basicellipse.png)
 
@@ -329,9 +349,11 @@ Enquanto os valores `cx` e `cy` estabelecem um ponto central baseado na distânc
 
 O elemento `<line>` define uma linha simples com um ponto inicial e um ponto final.
 
-		<svg>
-  			<line x1="5" y1="5" x2="100" y2="100" stroke="#765373" stroke-width="8"/>
-		</svg>
+```xml
+<svg>
+  <line x1="5" y1="5" x2="100" y2="100" stroke="#765373" stroke-width="8"/>
+</svg>
+```
 
 ![Line](images/basicline.png)
 
@@ -341,9 +363,11 @@ Juntos, os valores `x1` e `y1` estabelecem as coordenadas para o ponto de inicio
 
 O elemento `<polyline>` é usado para definir um conjunto de linhas simples interligadas que, geralmente, resultam em um formato aberto (os pontos de início e fim não são conectados).
 
-		<svg>
-  			<polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill="white" 			stroke="#BBC42A" stroke-width="6" />
-		</svg>
+```xml
+<svg>
+  <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" fill="white" stroke="#BBC42A" stroke-width="6" />
+</svg>
+```
 
 ![Polyline](images/basicpolyline.png)
 
@@ -355,9 +379,11 @@ Qualquer número diferente de entradas aqui, retornará erro.
 
 O elemento `<polygon>` é usado para definir uma forma fechada, que consistem em linhas conectadas.
 
-		<svg>
-  			<polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" 					fill="#ED6E46" />
-		</svg>
+```xml
+<svg>
+  <polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" fill="#ED6E46" />
+</svg>
+```
 
 ![Polygon](images/basicpolygon.png)
 
@@ -379,9 +405,12 @@ Estes dados são incluídos no atributo `d` acompanhado de instruções sobre o 
 
 O elemento `<path>` abaixo contém as coordenadas específicas para renderização de um limão:
 
-	<svg width="258px" height="184px">
-  		<path fill="#7AA20D" stroke="#7AA20D" stroke-width="9" stroke-linejoin="round" d="M248.761,92c0,9.801-7.93,17.731-17.71,17.731c-0.319,0-0.617,0-0.935-0.021c-10.035,37.291-51.174,65.206-100.414,65.206 c-49.261,0-90.443-27.979-100.435-65.334c-0.765,0.106-1.531,0.149-2.317,0.149c-9.78,0-17.71-7.93-17.71-17.731 c0-9.78,7.93-17.71,17.71-17.71c0.787,0,1.552,0.042,2.317,0.149C39.238,37.084,80.419,9.083,129.702,9.083	c49.24,0,90.379,27.937,100.414,65.228h0.021c0.298-0.021,0.617-0.021,0.914-0.021C240.831,74.29,248.761,82.22,248.761,92z" />
-	</svg>
+```xml
+<svg width="258px" height="184px">
+  <path fill="#7AA20D" stroke="#7AA20D" stroke-width="9" stroke-linejoin="round" d="M248.761,92c0,9.801-7.93,17.731-17.71,17.731c-0.319,0-0.617,0-0.935-0.021c-10.035,37.291-51.174,65.206-100.414,65.206 c-49.261,0-90.443-27.979-100.435-65.334c-0.765,0.106-1.531,0.149-2.317,0.149c-9.78,0-17.71-7.93-17.71-17.731 c0-9.78,7.93-17.71,17.71-17.71c0.787,0,1.552,0.042,2.317,0.149C39.238,37.084,80.419,9.083,129.702,9.083	c49.24,0,90.379,27.937,100.414,65.228h0.021c0.298-0.021,0.617-0.021,0.914-0.021C240.831,74.29,248.761,82.22,248.761,92z" />
+</svg>
+```
+
 
 ![Path do Limão](images/pathlime.png)
 
@@ -437,9 +466,12 @@ Os comandos S e s também irão desenhar uma curva cúbica de Bézier, mas neste
 
 O seguinte código desenha uma curva cúbica de Bézier básica:
 
-	<svg>
-  		<path fill="none" stroke="#333333" stroke-width="3" d="M10,55 C15,5 100,5 100,55" />
-	</svg>
+```xml
+<svg>
+  <path fill="none" stroke="#333333" stroke-width="3" d="M10,55 C15,5 100,5 100,55" />
+</svg>
+```
+
 
 Manipulando o primeiro e o último conjunto de pontos para essa curva, irá impactar na localização do seu início e fim, enquanto manipular os dois pontos centrais, irá impactar na forma e posicionamento da curva em si.
 
@@ -458,9 +490,11 @@ As Curvas Quadráticas de Bézier (Q, q, T, t) são similares as Curvas Cúbicas
 
 O seguinte código desenha uma curva quadrática de Bézier básica:
 
-	<svg>
-  		<path fill="none" stroke="#333333" stroke-width="3" d="M20,50 Q40,5 100,50" />
-	</svg>
+```xml
+<svg>
+  <path fill="none" stroke="#333333" stroke-width="3" d="M20,50 Q40,5 100,50" />
+</svg>
+```
 
 Manipulando o primeiro e último conjunto de valores, `M20,50` e `100,50`, irá impactar no posicionamento dos pontos de início e fim da curva. O conjunto central dos valores, `Q40,5`, define o ponto de controle da curva, estabelecendo sua forma.
 
@@ -476,9 +510,12 @@ Uma curva elíptica (A, a) define um segmento de uma elipse. Esses segmentos sã
 
 Aqui está um código de um curva elptica básica:
 
-	<svg>
-  		<path fill="none" stroke="#333333" stroke-width="3" d="M65,10 a50,25 0 1,0 50,25" />
-	</svg>
+```xml
+<svg>
+  <path fill="none" stroke="#333333" stroke-width="3" d="M65,10 a50,25 0 1,0 50,25" />
+</svg>
+```
+
 
 O primeiro e último conjunto de valores dentro do *path*, `M65,10` e `50,25`, representam as coordenadas inicial e final, enquanto o segundo conjunto de valores definem os dois raios. O valor de `1.0` (*large-arc-flag* e *sweep-flag*) determina como o arco será desenhado, a partir das quatro diferentes opções.
 
@@ -495,16 +532,19 @@ Uma vez que o desenho estiver completo, o código XML gerado, que pode ser um po
 
 Aqui está o código SVG de algumas cerejas com classes adicionadas para melhor navegação:
 
-		<svg width="215px" height="274px" viewBox="0 0 215 274">
-			<g>
-				<path class="stems" fill="none" stroke="#7AA20D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M54.817,169.848c0,0,77.943-73.477,82.528-104.043c4.585-30.566,46.364,91.186,27.512,121.498" />
-				<path class="leaf" fill="#7AA20D" stroke="#7AA20D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M134.747,62.926c-1.342-6.078,0.404-12.924,5.762-19.681c11.179-14.098,23.582-17.539,40.795-17.846 c0.007,0,22.115-0.396,26.714-20.031c-2.859,12.205-5.58,24.168-9.774,36.045c-6.817,19.301-22.399,48.527-47.631,38.028 C141.823,75.784,136.277,69.855,134.747,62.926z" />
-			</g>
-			<g>
-				<path class="r-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M164.836,193.136 c1.754-0.12,3.609-0.485,5.649-1.148c8.512-2.768,21.185-6.985,28.181,3.152c15.076,21.845,5.764,55.876-18.387,66.523 c-27.61,12.172-58.962-16.947-56.383-45.005c1.266-13.779,8.163-35.95,26.136-27.478	C155.46,191.738,159.715,193.485,164.836,193.136z" />
-				<path class="l-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M55.99,176.859 c1.736,0.273,3.626,0.328,5.763,0.135c8.914-0.809,22.207-2.108,26.778,9.329c9.851,24.647-6.784,55.761-32.696,60.78 c-29.623,5.739-53.728-29.614-44.985-56.399c4.294-13.154,15.94-33.241,31.584-20.99C47.158,173.415,50.919,176.062,55.99,176.859z" />
-			</g>
-		</svg>
+```xml
+<svg width="215px" height="274px" viewBox="0 0 215 274">
+  <g>
+    <path class="stems" fill="none" stroke="#7AA20D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M54.817,169.848c0,0,77.943-73.477,82.528-104.043c4.585-30.566,46.364,91.186,27.512,121.498" />
+    <path class="leaf" fill="#7AA20D" stroke="#7AA20D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M134.747,62.926c-1.342-6.078,0.404-12.924,5.762-19.681c11.179-14.098,23.582-17.539,40.795-17.846 c0.007,0,22.115-0.396,26.714-20.031c-2.859,12.205-5.58,24.168-9.774,36.045c-6.817,19.301-22.399,48.527-47.631,38.028 C141.823,75.784,136.277,69.855,134.747,62.926z" />
+  </g>
+  <g>
+    <path class="r-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M164.836,193.136 c1.754-0.12,3.609-0.485,5.649-1.148c8.512-2.768,21.185-6.985,28.181,3.152c15.076,21.845,5.764,55.876-18.387,66.523 c-27.61,12.172-58.962-16.947-56.383-45.005c1.266-13.779,8.163-35.95,26.136-27.478	C155.46,191.738,159.715,193.485,164.836,193.136z" />
+    <path class="l-cherry" fill="#ED6E46" stroke="#ED6E46" stroke-width="12" d="M55.99,176.859 c1.736,0.273,3.626,0.328,5.763,0.135c8.914-0.809,22.207-2.108,26.778,9.329c9.851,24.647-6.784,55.761-32.696,60.78 c-29.623,5.739-53.728-29.614-44.985-56.399c4.294-13.154,15.94-33.241,31.584-20.99C47.158,173.415,50.919,176.062,55.99,176.859z" />
+  </g>
+</svg>
+```
+
 
 ![Cerejas](images/embedcherry.png)
 
@@ -520,9 +560,12 @@ Entender o *workspace* do SVG é útil para saber como renderizar propriamente s
 
 Esta pêra, felizmente possui a *viewport* e `viewBox` que correspondem um com o outro:
 
-		<svg width="115" height="190" viewBox="0 0 115 190">
-    		<!--<path <path que desenha a pêra> />-->
-  		</svg>
+```xml
+<svg width="115" height="190" viewBox="0 0 115 190">
+  <!--<path <pear's drawing path> />-->
+</svg>
+```
+
 
 ![Pêra](images/viewboxpear1.png)
 
@@ -546,17 +589,23 @@ Se nós optarmos por não definir a `viewBox` a imagem não será redimensionada
 
 Se 50px forem tirados de `width` e `height` da `viewBox`, a porção da imagem da pêra que está visível é reduzida, porém a parte que ainda pode ser visualizada se encaixa nas definições da *viewport*.
 
-		<svg width="115px" height="190px" viewBox="0 0 65 140">
-			<!--<path <path que desenha a pêra> />-->
-		</svg>
+```xml
+<svg width="115px" height="190px" viewBox="0 0 65 140">
+  <!--<path <pear's drawing path> />-->
+</svg>
+```
+
 
 ![Pêra](images/viewboxpear2reduced.png)
 
 Os valores de `min` dentro da `viewBox` definem o início da `viewBox` dentro de seu elemento pai. Em outras palavras, os pontos dentro da `viewBox` são as coordenadas no qual iremos criar o campo de visualização. No desenho da pêra acima os valores de `min` eram 0,0 (topo, esquerda). Vamos mudar esses valores para 50, 30: `viewBox="50 30 115 190"`.
 
-		<svg width="115" height="190" viewBox="50 30 115 190">
-			<!--<path <path que desenha a pêra> />-->
-		</svg>
+```xml
+<svg width="115" height="190" viewBox="50 30 115 190">
+  <!--<path <pear's drawing path> />-->
+</svg>
+```
+
 
 ![Pêra](images/viewboxpearminval.png)
 
@@ -576,33 +625,45 @@ Existem três opções de `<meetOrSlice>`: `meet` (padrão), `slice`, e `none`. 
 
 Talvez o valor mais inapropriado aqui é o *none*, no qual estabelece uma escala uniforme que talvez não deveria ser aplicada. Se aumentarmos os valores em pixels da *viewport*, a imagem abaixo das cerejas vai se tornar não uniforme e ficará distorcida.
 
-		<svg width="500" height="400" viewBox="0 0 250 600" preserveAspectRatio="none">
-			<!--<path <path que desenha a cereja> />-->
-		</svg>
+```xml
+<svg width="500" height="400" viewBox="0 0 250 600" preserveAspectRatio="none">
+  <!--<path <cherry drawing path> />-->
+</svg>
+```
+
 
 ![Cerejas](images/preserverationone.png)
 
 Já o `preserveAspectRatio` da imagem abaixo está configurado para `xMinYMax meet` no qual está alinhado ao canto inferior esquerdo da *viewport*. O `meet` se certifica que a imagem está redimensionada para se encaixar dentro da *viewport* da melhor maneira possível.
 
-		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
-			<!--<path <path que desenha a cereja> />-->
-		</svg>
+```xml
+<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax meet" style="border: 1px solid #333333;">
+  <!--<path <cherry drawing path> />-->
+</svg>
+```
+
 
 ![Cerejas](images/preserveaspect2.png)
 
 Aqui nós temos as mesmas cerejas quando `meet` é mudado para `slice`:
 
-		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax slice" style="border: 1px solid #333333;">
-			<!--<path <path que desenha a cereja> />-->
-		</svg>
+```xml
+<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMax slice" style="border: 1px solid #333333;">
+  <!--<path <cherry drawing path> />-->
+</svg>
+```
+
 
 ![Cerejas](images/preserveslice.png)
 
 Perceba que os valores de alinhamento não precisam ser corrigidos.
 
-		<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMid slice" style="border: 1px solid #333333;">
-			<!--<path <path que desenha a cereja> />-->
-		</svg>
+```xml
+<svg width="350" height="150" viewBox="0 0 300 300" preserveAspectRatio="xMinYMid slice" style="border: 1px solid #333333;">
+  <!--<path <cherry drawing path> />-->
+</svg>
+```
+
 
 ![Cherries](images/preservenocorrelate.png)
 
@@ -743,11 +804,13 @@ O valor de `inherit` irá direcionar o elemento para receber o `stroke-linecap` 
 
 A haste na imagem seguinte tem o `stroke-linecap` com o valor `square`:
 
-	<svg>
-    	<!--<path <caminho para a uva> />-->
-    	<!--<path stroke-linecap="square" <caminho para a haste> />-->
-    	<!--<path <caminho para a folha> />-->
-  	</svg>
+```xml
+<svg>
+  <!--<path <path for grapes> />-->
+  <!--<path stroke-linecap="square" <path for stem> />-->
+  <!--<path <path for leaf> />-->
+</svg>
+```
 
 ![Uvas](images/strokesquarestem.png)
 
@@ -759,11 +822,13 @@ O `stroke-linejoin` define qual aparência os cantos dos contornos irão possuir
 
 Segue um exemplo das com uvas com um `stroke-linejoin` no valor `"bevel"`:
 
-	<svg>
-    	<!--<path stroke-linejoin="bevel" <caminho para as uvas> />-->
-    	<!--<path <caminho para a haste> />-->
-    	<!--<path <caminho para a folha> />-->
-  	</svg>
+```xml
+<svg>
+  <!--<path stroke-linejoin="bevel" <path for grapes> />-->
+  <!--<path <path for stem> />-->
+  <!--<path <path for leaf> />-->
+</svg>
+```
 
 ![Uvas](images/strokebevel.png)
 
@@ -800,11 +865,13 @@ A primeira imagem mostra o impacto que um número par de valores faz no caminho 
 
 O `stroke-dashoffset` especifica a distância para o traço iniciar.
 
-	<svg>
-    	<!--<path stroke-dasharray="40,10" stroke-dashoffset="35" <caminho para as uvas> />-->
-    	<!--<path <caminho para a haste> />-->
-    	<!--<path <caminho para a folha> />-->
-  	</svg>
+```xml
+<svg>
+  <!--<path stroke-dasharray="40,10" stroke-dashoffset="35" <path for grapes> />-->
+  <!--<path <path for stem> />-->
+  <!--<path <path for leaf> />-->
+</svg>
+```
 
 ![Uvas](images/strokedashoffset.png)
 
@@ -835,9 +902,11 @@ A primeira letra dentro do elemento `<text>` é renderizada de acordo com o esta
 
 Enquanto `x` e `y` estabelecem coordenadas em um espaço absoluto, `dx` e `dy` estabelecem em coordenadas relativas. Isto é especialmente útil quando usado em conjunto com o elemento `<tspan>`, que será discutido futuramente na próxima seção.
 
-		<svg width="620" height="100">
-    		<text x="30" y="90" fill="#ED6E46" font-size="100" font-family="'Leckerli One', cursive">Watermelon</text>
-  		</svg>
+```xml
+<svg width="620" height="100">
+  <text x="30" y="90" fill="#ED6E46" font-size="100" font-family="'Leckerli One', cursive">Watermelon</text>
+</svg>
+```
 
 ![Texto Watermelon](images/watermelontext1.png)
 
@@ -851,10 +920,11 @@ Um valor único com o atributo `rotate` resulta em cada símbolo rotacionado por
 
 O texto abaixo teve uma rotação definida para todo o gráfico atráves do elemento `transform`, mas também possui um valor para cada símbolo: `rotate="20,0,5,30,10,50,5,10,65,5"`
 
-
-		<svg width="600" height="250">
-    		<text x="30" y="80" fill="#ED6E46" font-size="100" rotate="20,0,5,30,10,50,5,10,65,5" transform="rotate(8)" font-family="'Leckerli One', cursive">Watermelon</text>
-  		</svg>
+```xml
+<svg width="600" height="250">
+  <text x="30" y="80" fill="#ED6E46" font-size="100" rotate="20,0,5,30,10,50,5,10,65,5" transform="rotate(8)" font-family="'Leckerli One', cursive">Watermelon</text>
+</svg>
+```
 
 ![Texto Watermelon](images/watermelonrotation.png)
 
@@ -864,9 +934,11 @@ O atributo `textLength` especifica o comprimento do texto. O comprimento do text
 
 O seguinte exemplo tem um valor de `textLength` de 900px. Perceba que o espaço entre os caracteres foi aumentado para preencher este espaço.
 
-		<svg width="950" height="100">
-    		<text x="30" y="90" fill="#ED6E46" font-size="100" textLength="900" font-family="'Leckerli One', cursive">Watermelon</text>
-  		</svg>
+```xml
+<svg width="950" height="100">
+  <text x="30" y="90" fill="#ED6E46" font-size="100" textLength="900" font-family="'Leckerli One', cursive">Watermelon</text>
+</svg>
+```
 
 ![Texto Watermelon](images/watermelonspacing.png)
 
@@ -890,12 +962,14 @@ No exemplo abaixo "are" e "delicious" estão localizados em diferentes elementos
 
 Enquanto "are" está posicionado -30px de "Watermelons", "delicious" está posicionado 50px de "are".
 
- 		<svg width="775" height="500">
-    		<text x="15" y="90" fill="#ED6E46" font-size="60" font-family="'Leckerli One', cursive"> Watermelons
-      			<tspan dy="-30" fill="#bbc42a" font-size="80">are</tspan>
-      			<tspan dy="50">delicious</tspan>
-    		</text>
-  		</svg>
+```xml
+<svg width="775" height="500">
+  <text x="15" y="90" fill="#ED6E46" font-size="60" font-family="'Leckerli One', cursive"> Watermelons
+    <tspan dy="-30" fill="#bbc42a" font-size="80">are</tspan>
+    <tspan dy="50">delicious</tspan>
+  </text>
+</svg>
+```
 
 ![Texto Watermelon](images/watermelontspan.png)
 
@@ -919,9 +993,11 @@ O valor de `auto` indica que o espaço entre os símbolos deve ser baseado na ta
 
 O exemplo abaixo tem um valor de `kerning` definido em `auto`, que neste caso não tem impacto visual, já que é um valor padrão.
 
-		<svg width="420" height="200">
-    		<text x="2" y="50%" fill="#ef9235" font-size="100" font-family="'Raleway', sans-serif" font-weight="bold" kerning="auto">Oranges</text>
-  		</svg>
+```xml
+<svg width="420" height="200">
+  <text x="2" y="50%" fill="#ef9235" font-size="100" font-family="'Raleway', sans-serif" font-weight="bold" kerning="auto">Oranges</text>
+</svg>
+```
 
 ![Texto Oranges](images/orangekerning.png)
 
@@ -937,9 +1013,11 @@ O `letter-spacing` tem opções de valores como `normal`, `<length>`, ou `inheri
 
 A propriedade `word-spacing` especifica o espaço entre as palavras.
 
-	<svg width="750" height="200">
-    	<text x="2" y="50%" fill="#ef9235" font-size="70" font-family="'Raleway', sans-serif" word-spacing="30">Oranges are Orange</text>
-  	</svg>
+```xml
+<svg width="750" height="200">
+  <text x="2" y="50%" fill="#ef9235" font-size="70" font-family="'Raleway', sans-serif" word-spacing="30">Oranges are Orange</text>
+</svg>
+```
 
 ![Texto laranjas](images/orangewordspace.png)
 
@@ -971,14 +1049,17 @@ O `<textPath>` irá chamar um caminho escolhido a partir de sua `id` que estará
 
 A sintaxe básica:
 
-	<svg>
-    	<defs>
-  			<path id="testPath" d="<....>"/>
-  	    </defs>
-       <text>
-      		<textPath xlink:href="#testPath">Place text here</textPath>
-       </text>
-    </svg>
+```xml
+<svg>
+  <defs>
+    <path id="testPath" d="<....>"/>
+  </defs>
+  <text>
+    <textPath xlink:href="#testPath">Place text here</textPath>
+  </text>
+</svg>
+```
+
 
 Aqui como fica o caminho que é feito no código abaixo:
 
@@ -988,14 +1069,16 @@ Após gerar esse caminho no programa de vetor gráfico, o elemento *`<path>`* do
 
 ![Caminho simples com texto](images/pathsimpletext.png)
 
-	<svg width="620" height="200">
-    	 <defs>
-  			<path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
-  	     </defs>
-     	 <text x="2" y="40%" fill="#765373" font-size="30" font-family="'Lato', sans-serif">
-     		<textPath xlink:href="#testPath">There are over 8,000 grape varieties worldwide.</textPath>
-     	 </text>
-   	</svg>
+```xml
+<svg width="620" height="200">
+  <defs>
+    <path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
+  </defs>
+  <text x="2" y="40%" fill="#765373" font-size="30" font-family="'Lato', sans-serif">
+    <textPath xlink:href="#testPath">There are over 8,000 grape varieties worldwide.</textPath>
+  </text>
+</svg>
+```
 
 ##### xlink:href
 
@@ -1009,16 +1092,17 @@ O exemplo abaixo tem um `startOffset` de "20%" que irá empurrar o texto para co
 
 Adicionando cor ao contorno do caminho via elemento `<use>` pode ajudar a entender exatamente o que acontece.
 
-		<svg width="620" height="200">
-     		<defs>
-  				<path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
-  			</defs>
-    		<use xlink:href="#testPath" fill="none" stroke="#7aa20d" stroke-width="2"/>
-    		<text x="2" y="40%" fill="#765373" font-size="20" font-family="'Lato', sans-serif">
-      			<textPath xlink:href="#testPath" startOffset="20%">There are over 8,000 grape varieties worldwide.
-      			</textPath>
-    		</text>
-  		</svg>
+```xml
+<svg width="620" height="200">
+  <defs>
+    <path id="testPath" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" />
+  </defs>
+  <use xlink:href="#testPath" fill="none" stroke="#7aa20d" stroke-width="2"/>
+  <text x="2" y="40%" fill="#765373" font-size="20" font-family="'Lato', sans-serif">
+    <textPath xlink:href="#testPath" startOffset="20%">There are over 8,000 grape varieties worldwide.</textPath>
+  </text>
+</svg>
+```
 
 ![Caminho simples com texto](images/pathsimpletext2.png)
 
@@ -1030,14 +1114,16 @@ Existem dois tipos de gradientes SVG: linear e radial. Gradientes lineares são 
 
 Um gradiente linear muito simples é estruturado da seguinte forma:
 
-	<svg>
-    	<defs>
-        	<linearGradient id="gradientName">
-            	<stop offset="<%>" stop-color="<color>" />
-            	<stop offset="<%>" stop-color="<color>" />
-        	</linearGradient>
-    	</defs>
-	</svg>
+```xml
+<svg>
+  <defs>
+    <linearGradient id="gradientName">
+      <stop offset="<%>" stop-color="<color>" />
+      <stop offset="<%>" stop-color="<color>" />
+    </linearGradient>
+  </defs>
+</svg>
+```
 
 O `<svg>` contém o elemento `<defs>` que nos permite criar definições reutilizáveis que podem ser chamadas depois. Essas definições não tem saída visual até que sejam referenciadas usando sua ID única dentro dos atributos de contorno e/ou preenchimento para as formas do SVG ou `<text>`. Essas formas e/ou texto devem estar dentro do elemento `<svg>`, mas fora do elemento `<defs>`.
 
@@ -1053,15 +1139,17 @@ Pontos de parada ou *`<stop>` nodes* também podem aceitar parâmetros de opacid
 
 Aqui abaixo está o código para um gradiente linear simples com duas cores aplicado em um retângulo:
 
-		<svg width="405" height="105">
-    		<defs>
-      			<linearGradient id="Gradient1" x1="0" y1="0" x2="100%" y2="0">
-        			<stop offset="0%" stop-color="#BBC42A" />
-        			<stop offset="100%" stop-color="#ED6E46" />
-      			</linearGradient>
-    		</defs>
-    		<rect x="2" y="2" width="400" height="100" fill= "url(#Gradient1)" stroke="#333333" stroke-width="4px" />
-  		</svg>
+```xml
+<svg width="405" height="105">
+  <defs>
+    <linearGradient id="Gradient1" x1="0" y1="0" x2="100%" y2="0">
+      <stop offset="0%" stop-color="#BBC42A" />
+      <stop offset="100%" stop-color="#ED6E46" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="400" height="100" fill= "url(#Gradient1)" stroke="#333333" stroke-width="4px" />
+</svg>
+```
 
 ![Gradiente Básico](images/gradientpic1.png)
 
@@ -1095,7 +1183,9 @@ O atributo `gradientTransform` é opcional e permite uma transformação futura 
 ##### xlink:href
 O atributo `xlink:href` permite ao usuário chamar o ID de outros gradientes a fim de "herdar" seus detalhes, mas você também pode sobrescrever valores diferentes.
 
-		<linearGradient id="repeat" xlink:href="#Gradient-1” spreadMethod="repeat" />
+```xml
+<linearGradient id="repeat" xlink:href="#Gradient-1” spreadMethod="repeat" />
+```
 
 Este gradiente herda os detalhes do primeiro gradiente do inicio desta seção, porém possui um método alternado no valor `spreadMethod`.
 
@@ -1113,24 +1203,26 @@ Os atributos `fx` e `fy` representam as coordenadas para o ponto focal do gradie
 
 Conforme citado acima, enquanto por padrão o ponto de foco do gradiente deverá ser o ponto central, os atributos podem alterar isso. Por exemplo os valores do ponto de foco da imagem abaixo são fx="95%" fy="70%"`.
 
-		<svg width="850px" height="300px">
-    		<defs>
-      			<radialGradient id="Gradient2" cy="60%" fx="95%" fy="70%" r="2">
-        			<stop offset="0%" stop-color="#ED6E46" />
-        			<stop offset="10%" stop-color="#b4c63b" />
-        			<stop offset="20%" stop-color="#ef5b2b" />
-        			<stop offset="30%" stop-color="#503969" />
-        			<stop offset="40%" stop-color="#ab6294" />
-        			<stop offset="50%" stop-color="#1cb98f" />
-        			<stop offset="60%" stop-color="#48afc1" />
-        			<stop offset="70%" stop-color="#b4c63b" />
-        			<stop offset="80%" stop-color="#ef5b2b" />
-        			<stop offset="90%" stop-color="#503969" />
-        			<stop offset="100%" stop-color="#ab6294" />
-      			</radialGradient>
-    		</defs>
-    		<text x="20%" y="75%" fill= "url(#Gradient2)" font-family= "'Signika', sans-serif" font-size="200">Cherry</text>
-  		</svg>
+```xml
+<svg width="850px" height="300px">
+  <defs>
+    <radialGradient id="Gradient2" cy="60%" fx="95%" fy="70%" r="2">
+      <stop offset="0%" stop-color="#ED6E46" />
+      <stop offset="10%" stop-color="#b4c63b" />
+      <stop offset="20%" stop-color="#ef5b2b" />
+      <stop offset="30%" stop-color="#503969" />
+      <stop offset="40%" stop-color="#ab6294" />
+      <stop offset="50%" stop-color="#1cb98f" />
+      <stop offset="60%" stop-color="#48afc1" />
+      <stop offset="70%" stop-color="#b4c63b" />
+      <stop offset="80%" stop-color="#ef5b2b" />
+      <stop offset="90%" stop-color="#503969" />
+      <stop offset="100%" stop-color="#ab6294" />
+    </radialGradient>
+  </defs>
+  <text x="20%" y="75%" fill= "url(#Gradient2)" font-family= "'Signika', sans-serif" font-size="200">Cherry</text>
+</svg>
+```
 
 ![Ponto de foco](images/gradientfocalpoint.png)
 
@@ -1142,15 +1234,16 @@ Texturas são geralmente consideradas uma das mais complexas opções de pintura
 
 Aqui está  a sintaxe básica de uma textura aplicada a um retângulo.
 
-		<svg width="220" height="220">
-    		<defs>
-      			<pattern id="basicPattern" x="10" y="10" width="40" height="40" 								patternUnits="userSpaceOnUse">
-       				<circle cx="20" cy="20" r="20" fill= "#BBC42A" />
-    			</pattern>
-  			</defs>
-  			<rect x="10" y="10" width="200" height="200"
-      		stroke="#333333" stroke-width="2px" fill="url(#basicPattern)" />
-  		</svg>
+```xml
+<svg width="220" height="220">
+  <defs>
+    <pattern id="basicPattern" x="10" y="10" width="40" height="40" 								patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="20" fill= "#BBC42A" />
+    </pattern>
+  </defs>
+  <rect x="10" y="10" width="200" height="200" stroke="#333333" stroke-width="2px" fill="url(#basicPattern)" />
+</svg>
+```
 
 ![Textura Básica](images/patternbasic1.png)
 
@@ -1181,24 +1274,19 @@ Definindo `patternUnits=userSpaceOnUse` dentro do elemento `<pattern>` simplific
 
 Texturas também podem ser aninhadas para criar um design mais único e detalhado. Aqui está um exemplo básico de uma estrutura aninhada.
 
-	<svg width="204" height="204">
-  		<defs>
-    		<pattern id="circlePattern"
-             x="4" y="4" width="75" height="75"
-             patternUnits="userSpaceOnUse">
-      			<circle cx="12" cy="12" r="8"
-            stroke="#ed6e46" stroke-width="3" fill="#765373" />
-    		</pattern>
-			<pattern id="rectPattern"
-             x="10" y="10" width="50" height="50"
-             patternUnits="userSpaceOnUse">
-      			<rect x="2" y="2" width="30" height="30"
-              stroke="#bbc42a" stroke-width="3" fill="url(#circlePattern)" />
-    		</pattern>
-  		</defs>
-  		<rect x="2" y="2" width="200" height="200"
-      stroke="#333333" stroke-width="3" fill="url(#rectPattern)" />
-	</svg>
+```xml
+<svg width="204" height="204">
+  <defs>
+    <pattern id="circlePattern" x="4" y="4" width="75" height="75" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="8" stroke="#ed6e46" stroke-width="3" fill="#765373" />
+    </pattern>
+    <pattern id="rectPattern" x="10" y="10" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="30" height="30" stroke="#bbc42a" stroke-width="3" fill="url(#circlePattern)" />
+    </pattern>
+  </defs>
+  <rect x="2" y="2" width="200" height="200" stroke="#333333" stroke-width="3" fill="url(#rectPattern)" />
+</svg>
+```
 
 O elemento `<defs>` contém ambas as texturas. Com o elemento `<defs>`, a textura do retângulo está chamando a textura do circulo pelo `fill` e o retângulo principal está então chamando própria textura também via `fill`, pintando o interior da forma principal formando um efeito aninhado.
 
@@ -1216,13 +1304,15 @@ Abaixo estão os formatos ainda sem a aplicação da máscara, configurada para 
 
 Agora temos um visual de como ficaria o código para aplicar o texto "Apples" neste *canvas*.
 
- 	<svg width="400px" height="200px">
-    	<clipPath id="clip-text">
-      		<text x="0" y="50%" fill="#f27678" font-size="120px" font-family=" 'Signika', sans-serif">Apples</text>
-    	</clipPath>
-    	<rect x="0" y="0" width="200" height="200" fill="#ed6e46" clip-path="url(#clip-text)" />
-    	<circle cx="310" cy="100" r="135" fill="#bbc42a" clip-path="url(#clip-text)" />
-  	</svg>
+```xml
+<svg width="400px" height="200px">
+  <clipPath id="clip-text">
+    <text x="0" y="50%" fill="#f27678" font-size="120px" font-family=" 'Signika', sans-serif">Apples</text>
+  </clipPath>
+  <rect x="0" y="0" width="200" height="200" fill="#ed6e46" clip-path="url(#clip-text)" />
+  <circle cx="310" cy="100" r="135" fill="#bbc42a" clip-path="url(#clip-text)" />
+</svg>
+```
 
 ![Texto com recorte aplicada](images/clippingtext.png)
 
